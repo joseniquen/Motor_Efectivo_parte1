@@ -5,7 +5,7 @@ Feature: Caso plantilla
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
     Then Ingreso el usuario 'ychiroque'
-		And Ingreso la contraseña 'Efectiva.2023'
+		And Ingreso la contraseña 'Triunfos.2022'
 		When doy click en el boton ingresar
 				
 		#seccion de filtro

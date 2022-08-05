@@ -49,7 +49,7 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
 			try { 
 				String[] commands = new String[]{}; 
-				commands = new String[]{"C:\\Users\\jniquen\\Downloads\\PhotoUpload"+i+".exe"};
+				commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 				Runtime.getRuntime().exec(commands); 
 			} catch (IOException e) {}
 			SeleniumWaiters.waitSeconds(15);

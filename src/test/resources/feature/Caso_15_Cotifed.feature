@@ -4,15 +4,15 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'EXT_JNIQUEN'
-		And Ingreso la contraseña 'Efectiva.2023'
+    Then Ingreso el usuario 'ychiroque'
+		And Ingreso la contraseña 'Triunfos.2022'
 		When doy click en el boton ingresar
 				
 		#seccion de filtro
 		When esperar 15 segundos
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "00069340"
+		And Ingreso numero de documento "22755108"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When esperar 10 segundos
@@ -29,10 +29,6 @@ Feature: Caso plantilla
    #seccion de oferta comercial
    When esperar 7 segundos
    When Validar que se recupero ingreso vigente
- 	 And Ingreso modelo de producto "G4030-44LM"
-	 And seleciono coincidencia de modelo de producto
- 	 And Ingreso precio de venta de producto "1399"
- 	 And esperar 15 segundos
  	 #Seguros
  	 #Seguro de Salud 12 Meses
 	 #Seguro de Salud 24 Meses
@@ -45,11 +41,11 @@ Feature: Caso plantilla
 	 #Accidentes Personales
 	 #Seguro Oncológico 
  	 And Validar seguros marcados
- 	 #And Selecciono seguros
-	 #|seguros|
-	 #|Seguro de Salud 48 Meses|
-	 #|Accidentes Personales|
-	 #|Seguro Oncológico|
+ 	 And Selecciono seguros
+	 |seguros|
+	 |Seguro de Salud 48 Meses|
+	 |Accidentes Personales|
+	 |Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmacion de alerta
 	 And Titular selecciono pais "PERU"
@@ -63,17 +59,17 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Lab Años "50"
 	 And Titular ingreso Ant Lab Meses "4"
 	 And Titular ingreso inicial "0"
-	 And Titular ingreso cantidad a solicitar "5000"
+	 And Titular ingreso cantidad a solicitar "1000"
 	 And Titular fecha de pago "7 de cada mes"
 	 And Doy click en el boton simular
 	 When esperar 10 segundos
-	 When Elijo campaña "CAMP_PREMIUM" con plazo "18 meses"
+	 When Elijo campaña "CAMPANA ONE TO ONE" con plazo "18 meses"
 	 And Doy click en el boton continuar
 	 
 	 #seccion confirmacion de solicitud
 	 And Selecciono requisito y cargo archivo
 	     | requisitos |
-		   | FICHA COSTEO FICHA C|
+		   | BOLETA|
 		   | DNI        |
 		   | DNI REVERSO|
 		   | ARBITRIO   | 
