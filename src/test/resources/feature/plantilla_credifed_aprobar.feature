@@ -12,15 +12,15 @@ Feature: Caso 1
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10837777"
+		When ingresar instancia de proceso "10836800"
 		And dar click en pulsar para ver instancia
 		When esperar 7 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia |doc_titular|linea_producto|nro_solicitud|
-		|PIURA   |15616677   |EFECTIVO      |10837777     |
-		Then doy click en aprobar solicitud de credito
+		|PIURA   |07521101   |EFECTIVO      |10836800     |
+		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 15 segundos
 

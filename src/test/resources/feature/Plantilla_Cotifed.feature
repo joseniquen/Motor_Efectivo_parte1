@@ -80,37 +80,37 @@ Feature: Caso plantilla
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
 		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
-   #seccion datos adicionales
-   And Doy click en el boton continuar datos adicionales
-   And Ingreso correo de datos principales "correo_prueba@gmail.com"
-   And Ingreso numero de celular de datos principales "924695269"
-   And Selecciono prefijo de datos principales "01-LIMA"
-   And Ingreso numero de telefono fijo de datos principales "454787"
-   And Selecciono departamento de info domiciliaria "LIMA"
-   And Selecciono provincia de info domiciliaria "LIMA"
-   And Selecciono distrito de info domiciliaria "SANTIAGO DE SURCO"
-   And Ingreso avenida de info domiciliaria "Av. Caminos del inca 2461"
-   When esperar 10 segundos
-   And Doy click en confirmar geopoint de info domiciliaria
-   And Retornar al iframe por defecto
-   When esperar 5 segundos
-   And Selecciono referencia de info domiciliaria "PASANDO DEL"
-   And Ingreso descripcion de info domiciliaria "Parque de la amistad"
-   And Ingreso nombre centro de info laboral "FINANCIERA EFECTIVA S.A."
-   And Selecciono prefijo de info laboral "01-LIMA"
-   And Ingreso numero de telefono fijo de info laboral "754787"
-   And Ingreso celular de info laboral "974695869"
-   And Ingreso ruc de centro de info laboral "20605554114"
-   And Selecciono departamento de info laboral "LIMA"
-   And Selecciono provincia de info laboral "LIMA"
-   And Selecciono distrito de info laboral "SANTIAGO DE SURCO"
-   And Ingreso avenida de info laboral "Av. Caminos del inca 2461"
-   When esperar 10 segundos
-   And Doy click en confirmar geopoint de info laboral
-   And Retornar al iframe por defecto
-   When esperar 5 segundos
-   And Selecciono referencia de info laboral "PASANDO DEL"
-   And Ingreso descripcion de info laboral "Parque de la amistad"
+	     #seccion datos adicionales
+	     And Doy click en el boton continuar datos adicionales
+	     And Ingreso correo de datos principales "correo_prueba@gmail.com"
+	     And Ingreso numero de celular de datos principales "924695269"
+	     And Selecciono prefijo de datos principales "01-LIMA"
+	     And Ingreso numero de telefono fijo de datos principales "454787"
+	     And Selecciono departamento de info domiciliaria "LIMA"
+	     And Selecciono provincia de info domiciliaria "LIMA"
+	     And Selecciono distrito de info domiciliaria "SANTIAGO DE SURCO"
+	     And Ingreso avenida de info domiciliaria "Av. Caminos del inca 2461"
+	     When esperar 10 segundos
+	     And Doy click en confirmar geopoint de info domiciliaria
+	     And Retornar al iframe por defecto
+	     When esperar 5 segundos
+	     And Selecciono referencia de info domiciliaria "PASANDO DEL"
+	     And Ingreso descripcion de info domiciliaria "Parque de la amistad"
+	     And Ingreso nombre centro de info laboral "FINANCIERA EFECTIVA S.A."
+	     And Selecciono prefijo de info laboral "01-LIMA"
+	     And Ingreso numero de telefono fijo de info laboral "754787"
+	     And Ingreso celular de info laboral "974695869"
+	     And Ingreso ruc de centro de info laboral "20605554114"
+	     And Selecciono departamento de info laboral "LIMA"
+	     And Selecciono provincia de info laboral "LIMA"
+	     And Selecciono distrito de info laboral "SANTIAGO DE SURCO"
+	     And Ingreso avenida de info laboral "Av. Caminos del inca 2461"
+	     When esperar 10 segundos
+	     And Doy click en confirmar geopoint de info laboral
+	     And Retornar al iframe por defecto
+	     When esperar 5 segundos
+	     And Selecciono referencia de info laboral "PASANDO DEL"
+	     And Ingreso descripcion de info laboral "Parque de la amistad"
 	 And Doy click en el boton solicitar
 	 And Obtener numero de solicitud
 	 When Terminar solicitud

@@ -12,14 +12,14 @@ Feature: Caso 1
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10837835"
+		When ingresar instancia de proceso "10836800"
 		And dar click en pulsar para ver instancia
 		When esperar 7 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia |doc_titular|linea_producto|nro_solicitud|
-		|PIURA   |47074303   |EFECTIVO      |10837835     |
+		|PIURA   |07521101   |EFECTIVO      |10836800     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 15 segundos
@@ -28,7 +28,7 @@ Feature: Caso 1
 		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "07 Datos del Titular"
-	  When esperar 10 segundos
+	  When esperar 15 segundos
 	  When verifica si existe error en consentimiento digital
 		When doy click en boton editar
 		When selecciono tipo de venta "RECEPTIVA"
@@ -39,10 +39,9 @@ Feature: Caso 1
 		And ingreso celular principal "580458721"
 		And ingreso celular secundario "423114987"
 		And elijo e ingreso telefono fijo "LIMA" "1894651"
-		And ingreso correo electronico "example_2@gmail.com"
+		And ingreso correo electronico "example_5@gmail.com"
 		Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 5 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		#datos de titular
@@ -55,7 +54,7 @@ Feature: Caso 1
 	 	When selecciono departamento "LIMA"
 	 	When selecciono provincia "LIMA"
 	 	When selecciono distrito "SANTIAGO DE SURCO"
-	 	And ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2417"
+	 	And ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
 	 	Then click en ubicar mapa
 	 	When esperar 15 segundos
 	 	Then doy click en aceptar la ubicacion correcta en el mapa
@@ -64,10 +63,9 @@ Feature: Caso 1
 	 	Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "08 Información Domiciliaria Titular"
 	 	And selecciono tipo de referencia "FRENTE A"
-	 	And ingreso la referencia "PARQUE DE LA AMISTADa"
+	 	And ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 5 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		
@@ -81,7 +79,7 @@ Feature: Caso 1
 		And selecciono situacion laboral "DEPENDIENTE"
 	  Then selecciono ocupacion "ABOGADO"
 		And ingreso declarado "90000"
-		And registro antiguedad laboral "30" años y "9" meses
+		And registro antiguedad laboral "30" años y "6" meses
 		When esperar 10 segundos
 		When revisar el detalle de deudas subir sustento
 		Then doy click en guardar datos
@@ -101,7 +99,7 @@ Feature: Caso 1
 	  When selecciono departamento laboral "LIMA"
 	 	When selecciono provincia laboral "LIMA"
 	 	When selecciono distrito laboral "SANTIAGO DE SURCO"
-	 	And ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2460"
+	 	And ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	Then click en ubicar mapa laboral
 	 	When esperar 15 segundos
 	 	Then doy click en aceptar la ubicacion correcta en el mapa laboral
