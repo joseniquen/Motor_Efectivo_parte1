@@ -56,7 +56,7 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Lab Años "50"
 	 And Titular ingreso Ant Lab Meses "4"
 	 And Titular ingreso inicial "0"
-	 And Titular ingreso cantidad a solicitar "1000"
+	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular fecha de pago "7 de cada mes"
 	 And Doy click en el boton simular
 	 When esperar 10 segundos
