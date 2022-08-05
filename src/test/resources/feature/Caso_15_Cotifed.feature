@@ -12,16 +12,13 @@ Feature: Caso plantilla
 		When esperar 15 segundos
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "40104014"
+		And Ingreso numero de documento "09030382"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
-		When esperar 10 segundos
 		When Doy click en filtrar
 		
 	 #seccion de linea de producto
-	 When esperar 10 segundos
 	 And Confirmacion de alerta
-	 #When esperar 4 segundos
 	 And selecciono linea de producto "EFECTIVO"
 	 Then dar click en Continuar
    
@@ -59,7 +56,7 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Lab Años "50"
 	 And Titular ingreso Ant Lab Meses "4"
 	 And Titular ingreso inicial "0"
-	 And Titular ingreso cantidad a solicitar "1000"
+	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular fecha de pago "7 de cada mes"
 	 And Doy click en el boton simular
 	 When esperar 10 segundos
