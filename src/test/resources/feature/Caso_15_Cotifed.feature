@@ -12,16 +12,13 @@ Feature: Caso plantilla
 		When esperar 15 segundos
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "40104014"
+		And Ingreso numero de documento "09030382"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
-		When esperar 10 segundos
 		When Doy click en filtrar
 		
 	 #seccion de linea de producto
-	 When esperar 10 segundos
 	 And Confirmacion de alerta
-	 #When esperar 4 segundos
 	 And selecciono linea de producto "EFECTIVO"
 	 Then dar click en Continuar
    
