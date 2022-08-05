@@ -17,14 +17,15 @@ public class CotifedGeneralidadesPage {
 	}
 	public void ConfirmarAlerta()
 	{
-		WebElement Alerta = SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),10000);	
-		if (Alerta.isDisplayed()) {
-			
+		try {
+			WebElement Alerta = SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),10);
+			//WebElement eleSelected= driver.findElement(By.xpath("//*[@id='swal2-title']"));
 			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),20000).click();
-		}
-		else {
+			
+		} catch (Exception e) {
 			System.out.println("No se mostró alerta");
-		}	
+		}
+		
 	}
 	
 	public void IrAIframePorDefecto()
