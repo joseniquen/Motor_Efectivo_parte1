@@ -4,8 +4,8 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'ychiroque'
-		And Ingreso la contraseña 'Triunfos.2022'
+    Then Ingreso el usuario 'EXT_JNIQUEN'
+		And Ingreso la contraseña 'Efectiva.2022'
 		When doy click en el boton ingresar
 				
 		#seccion de filtro
@@ -55,12 +55,12 @@ Feature: Caso plantilla
 	 When esperar 7 segundos
 	 And Titular ingreso Ant Lab Años "50"
 	 And Titular ingreso Ant Lab Meses "4"
-	 And Titular ingreso inicial "0"
+	 #And Titular ingreso inicial "0"
 	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular fecha de pago "7 de cada mes"
 	 And Doy click en el boton simular
 	 When esperar 10 segundos
-	 When Elijo campaña "CAMPANA ONE TO ONE" con plazo "18 meses"
+	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
 	 
 	 #seccion confirmacion de solicitud

@@ -54,7 +54,9 @@ public class CotifedOfertaComercialSteps {
 	}
 	@Then("Validar que se recupero ingreso vigente")
 	public void validar_ingreso_vigente() {
-		if(cotifedOfertaComercialPage.getValidaIngresoVigente().isDisplayed()) {
+		System.out.println("aca1");
+		if(cotifedOfertaComercialPage.getValidaIngresoVigente().size()!=0) {
+			System.out.println("aca2");
 			cotifedOfertaComercialPage.getValidaIngresoVigenteButtonOk().click();
 		}
 	}

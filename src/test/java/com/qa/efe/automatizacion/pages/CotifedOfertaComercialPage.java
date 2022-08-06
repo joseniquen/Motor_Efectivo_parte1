@@ -17,9 +17,9 @@ public class CotifedOfertaComercialPage {
 			 ) {
 		this.driver = driverManager.getDriver();
 	}
-	public WebElement getValidaIngresoVigente()
+	public List<WebElement> getValidaIngresoVigente()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//h2[@id='swal2-title']"),20000);
+		return  driver.findElements(By.xpath("//h2[@id='swal2-title']"));
 	}
 	public WebElement getValidaIngresoVigenteButtonOk()
 	{
