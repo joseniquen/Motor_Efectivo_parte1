@@ -10,6 +10,7 @@ import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -26,13 +27,16 @@ public class CotifedConfirmacionSolicitudSteps {
 	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
 	private WebDriver driver;
 	private CotifedGeneralidadesPage generalidadesPage;
+	private IntegracionStore integracionStore;
 
-	public CotifedConfirmacionSolicitudSteps( WebDriverManager driverManager, CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage
-			 ,CotifedGeneralidadesPage generalidadesPage) {
+	public CotifedConfirmacionSolicitudSteps( 
+			WebDriverManager driverManager, 
+			CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage,
+			IntegracionStore integracionStore
+			 ) {
 		this.driver = driverManager.getDriver();
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
-		this.generalidadesPage = generalidadesPage;
-
+		this.integracionStore=integracionStore;
 	}
 	
 	@When("Elijo tipo de desembolso {string}")
@@ -42,28 +46,98 @@ public class CotifedConfirmacionSolicitudSteps {
 	}
 		
 	@When("Selecciono requisito y cargo archivo")
-	public void Selecciono_requisito_y_cargo_archivo (DataTable requisitos)
-	{
-		List<Map<String, String>> items = requisitos.asMaps(String.class, String.class);
-		for (int i = 0; i < items.size(); i++) {
-			Map<String, String> item = items.get(i);
-			//System.out.println("tabla: "+item.get("requisitos"));
-			cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,item.get("requisitos")).click();
-			cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-			cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-			try { 
-				String[] commands = new String[]{}; 
-				commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-				Runtime.getRuntime().exec(commands); 
-			} catch (IOException e) {}
-			while(generalidadesPage.Pantalla_Carga().size() != 0) {
-			}
-			SeleniumWaiters.waitSeconds(2);	
-			if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-				cotifedConfirmacionSolicitudPage.getBtnOk().click();
-				Selecciono_requisito_y_cargo_archivo(requisitos);
+	public void Selecciono_requisito_y_cargo_archivo ()
+	{	
+		int divs = cotifedConfirmacionSolicitudPage.numRequisitos();
+		System.out.println(divs);
+		for (int i = 0; i < divs; i++) {
+			if(i==1) {
+				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
+					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
+					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
+					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+					try { 
+						String[] commands = new String[]{}; 
+						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+						Runtime.getRuntime().exec(commands); 
+					} catch (IOException e) {}
+					while(generalidadesPage.Pantalla_Carga().size() != 0) {
+					}
+					SeleniumWaiters.waitSeconds(2);	
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						Selecciono_requisito_y_cargo_archivo();
+					}
+				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
+					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
+					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
+					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+					try { 
+						String[] commands = new String[]{}; 
+						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+						Runtime.getRuntime().exec(commands); 
+					} catch (IOException e) {}
+					while(generalidadesPage.Pantalla_Carga().size() != 0) {
+					}
+					SeleniumWaiters.waitSeconds(2);	
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						Selecciono_requisito_y_cargo_archivo();
+					}				}
+			}else if(i==2) {
+				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
+					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
+					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
+					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+					try { 
+						String[] commands = new String[]{}; 
+						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+						Runtime.getRuntime().exec(commands); 
+					} catch (IOException e) {}
+					while(generalidadesPage.Pantalla_Carga().size() != 0) {
+					}
+					SeleniumWaiters.waitSeconds(2);	
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						Selecciono_requisito_y_cargo_archivo();
+					}
+				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
+					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
+					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
+					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+					try { 
+						String[] commands = new String[]{}; 
+						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+						Runtime.getRuntime().exec(commands); 
+					} catch (IOException e) {}
+					while(generalidadesPage.Pantalla_Carga().size() != 0) {
+					}
+					SeleniumWaiters.waitSeconds(2);	
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						Selecciono_requisito_y_cargo_archivo();
+					}
+				}
+			}else {
+				cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
+				cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
+				cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+				try { 
+					String[] commands = new String[]{}; 
+					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+					Runtime.getRuntime().exec(commands); 
+				} catch (IOException e) {}
+				while(generalidadesPage.Pantalla_Carga().size() != 0) {
+				}
+				SeleniumWaiters.waitSeconds(2);	
+				if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+					cotifedConfirmacionSolicitudPage.getBtnOk().click();
+					Selecciono_requisito_y_cargo_archivo();
+				}
 			}
 		}
+		
+		
 	}
 	
 	@Then("Ingreso referencias telefonicas")

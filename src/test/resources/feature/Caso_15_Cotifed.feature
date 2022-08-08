@@ -4,7 +4,7 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'EXT_JNIQUEN'
+    Then Ingreso el usuario 'ext_fsosa'
 		And Ingreso la contraseña 'Efectiva.2022'
 		When doy click en el boton ingresar
 				
@@ -69,11 +69,7 @@ Feature: Caso plantilla
 	 When Cargando datos espere...
 	 #seccion confirmacion de solicitud
 	 And Selecciono requisito y cargo archivo
-	     | requisitos |
-		   | BOLETA|
-		   | DNI        |
-		   | DNI REVERSO|
-		   | ARBITRIO   | 
+
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
