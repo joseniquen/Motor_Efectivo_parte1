@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
+import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
@@ -24,11 +25,14 @@ import java.util.stream.Collectors;
 public class CotifedConfirmacionSolicitudSteps {
 	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
 	private WebDriver driver;
+	private CotifedGeneralidadesPage generalidadesPage;
 
 	public CotifedConfirmacionSolicitudSteps( WebDriverManager driverManager, CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage
-			 ) {
+			 ,CotifedGeneralidadesPage generalidadesPage) {
 		this.driver = driverManager.getDriver();
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
+		this.generalidadesPage = generalidadesPage;
+
 	}
 	
 	@When("Elijo tipo de desembolso {string}")
@@ -52,7 +56,13 @@ public class CotifedConfirmacionSolicitudSteps {
 				commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 				Runtime.getRuntime().exec(commands); 
 			} catch (IOException e) {}
-			SeleniumWaiters.waitSeconds(15);
+			while(generalidadesPage.Pantalla_Carga().size() != 0) {
+			}
+			SeleniumWaiters.waitSeconds(2);	
+			if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+				cotifedConfirmacionSolicitudPage.getBtnOk().click();
+				Selecciono_requisito_y_cargo_archivo(requisitos);
+			}
 		}
 	}
 	
@@ -87,8 +97,6 @@ public class CotifedConfirmacionSolicitudSteps {
 	public void Obtener_numero_solicitud() {	
 		String nroSolicitud = cotifedConfirmacionSolicitudPage.getNroSolicitud().getText();
 		System.out.println(nroSolicitud);
-		//integrationStore.codePrevent = numbers;
-		//return numbers;
 	}
 	@When("Terminar solicitud")
 	public void Terminar_solicitud() {	

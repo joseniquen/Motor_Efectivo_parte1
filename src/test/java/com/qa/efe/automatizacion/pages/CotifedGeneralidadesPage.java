@@ -32,4 +32,8 @@ public class CotifedGeneralidadesPage {
 	{
 		driver.switchTo().defaultContent();
 	}
+	public List<WebElement> Pantalla_Carga()
+	{
+		return  driver.findElements(By.xpath("//app-loading-cot/div"));
+	}
 }

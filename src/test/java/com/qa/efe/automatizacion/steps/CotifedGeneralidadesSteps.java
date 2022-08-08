@@ -36,6 +36,12 @@ public class CotifedGeneralidadesSteps {
 	public void Retornar_al_iframe_por_defecto() {
 		generalidadesPage.IrAIframePorDefecto();
 	}
-	
+	@Then("Cargando datos espere...")
+	public void pantalla_carga() {
+		
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
+	}
 	
 }

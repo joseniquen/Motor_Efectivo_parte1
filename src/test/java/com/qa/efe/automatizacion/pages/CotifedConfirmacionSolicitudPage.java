@@ -81,5 +81,8 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10000);	
 	}
-	
+	public List<WebElement> getErrorSharePoint()
+	{
+		return  driver.findElements(By.xpath("//h2[contains(.,'Hubo un error al consumir el servicio EnviarArchivoSharePoint')]/parent::div/parent::div[@style='display: flex;']"));	
+	}
 }

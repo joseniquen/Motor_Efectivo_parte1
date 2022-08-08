@@ -9,23 +9,25 @@ Feature: Caso plantilla
 		When doy click en el boton ingresar
 				
 		#seccion de filtro
-		When esperar 15 segundos
+		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
 		And Ingreso numero de documento "09030382"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
+		When Cargando datos espere...
 		
 	 #seccion de linea de producto
 	 And Confirmacion de alerta
 	 And selecciono linea de producto "EFECTIVO"
+	 When Cargando datos espere...
 	 Then dar click en Continuar
+   When Cargando datos espere...
    
    #seccion de oferta comercial
-   When esperar 7 segundos
    When Validar que se recupero ingreso vigente
- 	 And esperar 15 segundos
+   When Cargando datos espere...
  	 #Seguros
  	 #Seguro de Salud 12 Meses
 	 #Seguro de Salud 24 Meses
@@ -50,19 +52,21 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Dom Años "45"
 	 And Titular ingreso Ant Dom Meses "11"
 	 And Titular ingreso declarado "20000"
-	 When esperar 7 segundos
+   When Cargando datos espere...
 	 And Titular doy check a Usar Ingreso Declarado
-	 When esperar 7 segundos
+   When Cargando datos espere...
 	 And Titular ingreso Ant Lab Años "50"
 	 And Titular ingreso Ant Lab Meses "4"
 	 #And Titular ingreso inicial "0"
 	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular fecha de pago "7 de cada mes"
+	 When Cargando datos espere...
 	 And Doy click en el boton simular
-	 When esperar 10 segundos
+   When Cargando datos espere...
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
+	 When Cargando datos espere...
 	 And Doy click en el boton continuar
-	 
+	 When Cargando datos espere...
 	 #seccion confirmacion de solicitud
 	 And Selecciono requisito y cargo archivo
 	     | requisitos |
