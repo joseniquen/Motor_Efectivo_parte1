@@ -25,7 +25,7 @@ public class CotifedLineaProductoSteps {
 	@Then("selecciono linea de producto {string}")
 	public void selecciono_Linea_Producto(String lineaProducto) {
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
-		//SeleniumWaiters.waitSeconds(10);
+		SeleniumWaiters.waitSeconds(10);
 	}
 	@Then("dar click en Continuar")
 	public void click_filtrar() {

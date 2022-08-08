@@ -19,10 +19,11 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div//label/span[contains(.,'"+tipoDesembolso+"')]"),10000);
 	}
-	public WebElement getSelectTipoRequisitos(int i,String opcion)
+	public WebElement getSelectTipoRequisitos(int i,int opcion)
 	{ 	
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']"),20000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),20000);
+		//return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option["+opcion+"]"),20000);
 	}
 	public WebElement getClickSeleccionar(int opcion)
 	{ 	
@@ -80,6 +81,11 @@ public class CotifedConfirmacionSolicitudPage {
 	public WebElement getBtnOk()
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10000);	
+	}
+	public int numRequisitos()
+	{
+		SeleniumWaiters.waitSeconds(5);
+		return  driver.findElements(By.xpath("//div[@class='m12 row']")).size();
 	}
 	
 }
