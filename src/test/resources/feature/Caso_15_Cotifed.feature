@@ -13,6 +13,7 @@ Feature: Caso plantilla
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
 		And Ingreso numero de documento "09030382"
+		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar

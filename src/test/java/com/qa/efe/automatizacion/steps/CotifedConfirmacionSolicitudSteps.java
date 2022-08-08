@@ -27,16 +27,19 @@ public class CotifedConfirmacionSolicitudSteps {
 	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
 	private WebDriver driver;
 	private CotifedGeneralidadesPage generalidadesPage;
+	private CotifedGeneralidadesSteps cotifedGeneralidadesSteps;
 	private IntegracionStore integracionStore;
 
 	public CotifedConfirmacionSolicitudSteps( 
 			WebDriverManager driverManager, 
 			CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage,
-			IntegracionStore integracionStore
+			IntegracionStore integracionStore,
+			CotifedGeneralidadesSteps cotifedGeneralidadesSteps
 			 ) {
 		this.driver = driverManager.getDriver();
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
 		this.integracionStore=integracionStore;
+		this.cotifedGeneralidadesSteps=cotifedGeneralidadesSteps;
 	}
 	
 	@When("Elijo tipo de desembolso {string}")
@@ -61,9 +64,9 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
-					while(generalidadesPage.Pantalla_Carga().size() != 0) {
-					}
-					SeleniumWaiters.waitSeconds(2);	
+					cotifedGeneralidadesSteps.pantalla_carga();
+					
+					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						Selecciono_requisito_y_cargo_archivo();
@@ -77,9 +80,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
-					while(generalidadesPage.Pantalla_Carga().size() != 0) {
-					}
-					SeleniumWaiters.waitSeconds(2);	
+					cotifedGeneralidadesSteps.pantalla_carga();
+					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						Selecciono_requisito_y_cargo_archivo();
@@ -94,9 +96,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
-					while(generalidadesPage.Pantalla_Carga().size() != 0) {
-					}
-					SeleniumWaiters.waitSeconds(2);	
+					cotifedGeneralidadesSteps.pantalla_carga();
+					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						Selecciono_requisito_y_cargo_archivo();
@@ -110,9 +111,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
-					while(generalidadesPage.Pantalla_Carga().size() != 0) {
-					}
-					SeleniumWaiters.waitSeconds(2);	
+					cotifedGeneralidadesSteps.pantalla_carga();
+					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						Selecciono_requisito_y_cargo_archivo();
@@ -127,9 +127,8 @@ public class CotifedConfirmacionSolicitudSteps {
 					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 					Runtime.getRuntime().exec(commands); 
 				} catch (IOException e) {}
-				while(generalidadesPage.Pantalla_Carga().size() != 0) {
-				}
-				SeleniumWaiters.waitSeconds(2);	
+				cotifedGeneralidadesSteps.pantalla_carga();
+				SeleniumWaiters.waitSeconds(5);	
 				if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 					cotifedConfirmacionSolicitudPage.getBtnOk().click();
 					Selecciono_requisito_y_cargo_archivo();
