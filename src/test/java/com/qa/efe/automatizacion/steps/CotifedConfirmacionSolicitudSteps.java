@@ -54,7 +54,8 @@ public class CotifedConfirmacionSolicitudSteps {
 		int divs = cotifedConfirmacionSolicitudPage.numRequisitos();
 		System.out.println(divs);
 		for (int i = 0; i < divs; i++) {
-			if(i==1) {
+			System.out.println(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText());
+			if(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText().equals("DNI")) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
@@ -85,8 +86,10 @@ public class CotifedConfirmacionSolicitudSteps {
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						Selecciono_requisito_y_cargo_archivo();
-					}				}
-			}else if(i==2) {
+					}				
+				}
+			}
+			else if(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText().equals("DNI REVERSO")) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();

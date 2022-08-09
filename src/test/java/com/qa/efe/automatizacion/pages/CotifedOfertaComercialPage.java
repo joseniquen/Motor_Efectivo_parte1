@@ -144,4 +144,30 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'CONTINUAR')]"),10000);	
 	}
+	public WebElement getSituacion()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"),5);
+	}	
+	public List<WebElement> getSituacion_existe()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"));
+	}	
+
+	public WebElement getOpcionSituacion(String situacion)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select/option[contains(.,'"+situacion+"')]"),5);	
+	}
+	public WebElement getOcupacion()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select"),5);
+	}	
+	public List<WebElement> getOcupacion_existe()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Ocupación*']/parent::div//select"));
+	}	
+	public WebElement getOpcionOcupacion(String ocupacion)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select/option[contains(.,'"+ocupacion+"')]"),5);	
+	}
+	
 }
