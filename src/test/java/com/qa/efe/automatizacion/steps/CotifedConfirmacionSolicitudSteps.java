@@ -47,7 +47,7 @@ public class CotifedConfirmacionSolicitudSteps {
 	{
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
 	}
-		
+
 	@When("Selecciono requisito y cargo archivo")
 	public void Selecciono_requisito_y_cargo_archivo ()
 	{	
@@ -137,9 +137,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					Selecciono_requisito_y_cargo_archivo();
 				}
 			}
-		}
-		
-		
+		}	
 	}
 	
 	@Then("Ingreso referencias telefonicas")

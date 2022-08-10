@@ -29,19 +29,26 @@ public class CotifedLoginSteps {
 	
 	@Then("Ingreso el usuario {string}")
 	public void ingreso_el_usuario(String usuario) {
-		loginPage.gettxtUsuario().sendKeys(usuario);
-		;	
+		loginPage.gettxtUsuario().sendKeys(usuario);		
 	}
 
 	@Then("Ingreso la contraseña {string}")
 	public void ingreso_la_contraseña(String contraseña) {
-		loginPage.gettxtContrasena().sendKeys(contraseña);
-		;		
+		loginPage.gettxtContrasena().sendKeys(contraseña);	
 	}
 
 	@When("doy click en el boton ingresar")
 	public void doy_click_en_el_boton_ingresar() {
 		loginPage.getbtnIngresar().click();
+	}
+	@When("valido que no haya sesiones abiertas")
+	public void valido_sesiones_abiertas() {
+		if(loginPage.getTextSesionAbierta().size()!=0){
+			loginPage.getbtnSesionesAbiertas().click();
+			SeleniumWaiters.waitSeconds(3);
+			loginPage.getbtnSesionesAbiertas().click();
+
+		}
 		;
 	}
 }

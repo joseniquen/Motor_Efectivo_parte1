@@ -73,7 +73,7 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getBtnSolicitar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10000);	
 	}
 	public WebElement getNroSolicitud() {
 		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body//div[2]/div[3]/div/div/label[1]"), 1000);
