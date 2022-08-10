@@ -22,36 +22,36 @@ public class CredifedGeneralidadesPage {
 	
 	public WebElement cambio_iframe(String titleIframe)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),10);
 	}
 
 	public void verificar_consentimiento_digital()
 	{
 		List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_19_1_5_2_2\"]/div[@style='display: block;']"));
-		//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10000);
+		//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
 		if (verificar.size()!=0) {
 			System.out.println("esta abierto el cuadro");
-			SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10000).click();
+			SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
 		} 
 	}
 	public WebElement click_btn_guardar()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("button-button-MenuEditarCV1:buttonGuardar"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("button-button-MenuEditarCV1:buttonGuardar"),10);
 	}
 	public WebElement click_btn_sobreescribir_datos()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("button-button-ModalMenuEditarGuardar:buttonAceptar"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("button-button-ModalMenuEditarGuardar:buttonAceptar"),10);
 	}
 	public WebElement click_btn_continuar()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Continuar >>']"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Continuar >>']"),10);
 	}
 	public void scrollTo(WebElement element) {
 		NavigationHelpers.scrollToElement(driver, element);
 	}
 	public WebElement pestañas_menu(String opcion)
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='"+opcion+"']"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='"+opcion+"']"),10);
 	}
 	
 }

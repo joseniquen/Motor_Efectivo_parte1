@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumWaiters {
 	public static WebElement findElement(WebDriver driver, By by) {
-		return findElement(driver, by, 10000);
+		return findElement(driver, by, 10);
 	}
 	
 	public static WebElement findElement(WebDriver driver, By by, int timeout) {

@@ -17,12 +17,12 @@ public class CredifedLoginPage {
 
 	public WebElement getUsuarioBpm()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("username"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("username"),10);
 	}
 	
 	public WebElement gettxtContrasenaBpm ()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("password"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("password"),10);
 	}
 	
 	public WebElement getbtnContinuar ()
@@ -32,7 +32,7 @@ public class CredifedLoginPage {
 	public void conexion_segura_bpm ()
 	{
 		driver.findElement(By.id("details-button")).click();
-		SeleniumWaiters.findElement(driver, By.id("proceed-link"), 10000).click();
+		SeleniumWaiters.findElement(driver, By.id("proceed-link"), 10).click();
 	}
 
 }

@@ -16,16 +16,16 @@ public class CredifedOfertaComercialPage {
 		this.driver = driverManager.getDriver();
 	}
 	public WebElement click_simular() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:btnSimunar"),10000);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:btnSimunar"),10);
 	}
 	public WebElement click_aprobar() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:AprobarButton"),10000);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:AprobarButton"),10);
 	}
 	public WebElement click_aceptar() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:Button1"),10000);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:Button1"),10);
 	}
 	public WebElement verificar_resumen_sol() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10000);
+		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10);
 	}
 	public List<WebElement> verificar_sol_aprobada() {
 		return driver.findElements(By.xpath("//a[@title='Pulse para trabajar en la tarea']"));

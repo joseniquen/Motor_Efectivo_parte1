@@ -23,20 +23,20 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getValidaIngresoVigenteButtonOk()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK.']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK.']"),10);
 	}
 	public WebElement getTxtModeloProducto()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//mat-form-field/input"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//mat-form-field/input"),10);
 	}
 
 	public WebElement getModeloProductoSelect() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//mat-option/span[1]"), 10000);
+		return SeleniumWaiters.findElement(driver, By.xpath("//mat-option/span[1]"), 10);
 	}
 
 	public WebElement getTxPrecioProducto()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-data//label[contains(.,'Precio de venta*')]/parent::div/input"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-data//label[contains(.,'Precio de venta*')]/parent::div/input"),10);
 	}
 
 	public void validarSegurosMarcados()
@@ -62,7 +62,7 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getCbxEstado()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),10);
 	}
 	public List<WebElement> getCbxEstado_existe()
 	{
@@ -70,23 +70,23 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getOpcionEstado(String estado)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estado+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estado+"')]"),10);	
 	}
 	public WebElement getCbxPais()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='País de Nacimiento']/parent::div//select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='País de Nacimiento']/parent::div//select"),10);
 	}	
 	public WebElement getOpcionPais(String pais)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='País de Nacimiento']/parent::div//select/option[contains(.,'"+pais+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='País de Nacimiento']/parent::div//select/option[contains(.,'"+pais+"')]"),10);	
 	}
 	public WebElement getCbxTipoVivienda()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select"),10);
 	}	
 	public WebElement getOpcionTipoVivienda(String TipoVivienda)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select/option[contains(.,'"+TipoVivienda+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select/option[contains(.,'"+TipoVivienda+"')]"),10);	
 	}
 	public List<WebElement> getCbxTipoVivienda_existe()
 	{
@@ -94,11 +94,11 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getTxtAntDomAnios()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//input[@id='antiguedadAniosVivienda']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//input[@id='antiguedadAniosVivienda']"),10);
 	}
 	public WebElement getTxtAntDomMeses()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//input[@id='antiguedadMesesVivienda']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//input[@id='antiguedadMesesVivienda']"),10);
 	}
 	public WebElement getTxtIngresoDeclarado()
 	{
@@ -106,7 +106,7 @@ public class CotifedOfertaComercialPage {
 	}	
 	public WebElement getCheckIngreso()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Usar Ingreso declarado')]"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Usar Ingreso declarado')]"),10);
 	}	
 	public WebElement getTxtAntLabAnios()
 	{
@@ -126,15 +126,15 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getCbxFechaPago()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Fecha de pago*']/parent::div/select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Fecha de pago*']/parent::div/select"),10);
 	}
 	public WebElement getOpcionFechaPago(String fechaPago)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Fecha de pago*']/parent::div/select/option[contains(.,'"+fechaPago+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Fecha de pago*']/parent::div/select/option[contains(.,'"+fechaPago+"')]"),10);	
 	}
 	public WebElement getBtnSimular()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SIMULAR')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SIMULAR')]"),10);	
 	}
 	public List<WebElement> getColumnas()
 	{
@@ -142,7 +142,7 @@ public class CotifedOfertaComercialPage {
 	}
 	public WebElement getBtnContinuar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'CONTINUAR')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'CONTINUAR')]"),10);	
 	}
 	public WebElement getSituacion()
 	{

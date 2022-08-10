@@ -16,35 +16,35 @@ public class CotifedFiltroPage {
 	
 	public WebElement getCbxTienda()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select"),10);
 	}
 	public WebElement getOpcionTienda(String tienda)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select/option[contains(.,'"+tienda+"')]"),10000);
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select/option[contains(.,'"+tienda+"')]"),10);
 	}
 	public WebElement getCbxTipoDoc()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div/select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div/select"),10);
 	}
 	
 	public WebElement getOpcionTipoDoc(String tipoDoc)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div/select/option[contains(.,'"+tipoDoc+"')]"),10000);
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div/select/option[contains(.,'"+tipoDoc+"')]"),10);
 	}
 	public WebElement getTxtEmail()
 	{
-		return  SeleniumWaiters.findElement(driver,By.name("email"),20000);
+		return  SeleniumWaiters.findElement(driver,By.name("email"),10);
 	}
 	public WebElement getTxtNumeroDoc()
 	{
-		return  SeleniumWaiters.findElement(driver,By.name("numberDoc"),20000);
+		return  SeleniumWaiters.findElement(driver,By.name("numberDoc"),10);
 	}
 	public WebElement getTxtNumeroCell()
 	{
-		return  SeleniumWaiters.findElement(driver,By.name("cell"),20000);
+		return  SeleniumWaiters.findElement(driver,By.name("cell"),10);
 	}
 	public WebElement getBtnFiltrar()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='FILTRAR']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='FILTRAR']"),10);
 	}
 }
