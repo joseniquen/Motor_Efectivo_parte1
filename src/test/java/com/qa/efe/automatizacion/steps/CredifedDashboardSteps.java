@@ -46,13 +46,21 @@ public class CredifedDashboardSteps {
 	@When("dar click en pulsar para ver instancia")
 	public void ver_instancia()
 	{
-		credifedDashboardPage.ver_instancia().click();
+		try {
+			credifedDashboardPage.ver_instancia().click();
+		}catch (Exception e) {
+			credifedDashboardPage.ver_instancia_en().click();
+		}
+		
 	}
 	@Then("validar datos de la solicitud de credito")
 	public void validar_datos_solicitud(DataTable seguros) {
 		List<Map<String, String>> items = seguros.asMaps(String.class, String.class);
 			Map<String, String> item = items.get(0);
-			System.out.println("item: "+item.get("seguros"));
+			System.out.println("agencia: "+item.get("agencia"));
+			System.out.println("doc_titular: "+item.get("doc_titular"));
+			System.out.println("linea_producto: "+item.get("linea_producto"));
+			System.out.println("nro_solicitud: "+item.get("nro_solicitud"));
 			String agencia = item.get("agencia");
 			String doc_titular = item.get("doc_titular");
 			String linea_producto = item.get("linea_producto");
@@ -74,7 +82,11 @@ public class CredifedDashboardSteps {
 	@When("doy click en analizar solicitud de credito")
 	public void click_analizar_sol_credito()
 	{
-		credifedDashboardPage.click_analizar_sol_credito().click();
+		try {
+			credifedDashboardPage.click_analizar_sol_credito().click();
+		}catch (Exception e) {
+			credifedDashboardPage.click_analizar_sol_credito_en().click();
+		}
 	}
 	@When("doy click en aprobar solicitud de credito")
 	public void click_aprobar_sol_credito()
