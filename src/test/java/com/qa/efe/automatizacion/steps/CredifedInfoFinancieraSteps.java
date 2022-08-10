@@ -41,9 +41,9 @@ public class CredifedInfoFinancieraSteps {
 	@When("ingreso declarado {string}")
 	public void ingreso_declarado(String opcion)
 	{
-		credifedInfoFinancieraPage.ingreso_declarado().click();
-		credifedInfoFinancieraPage.ingreso_declarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		credifedInfoFinancieraPage.ingreso_declarado().sendKeys(opcion);
+		//credifedInfoFinancieraPage.ingreso_declarado().click();
+		//credifedInfoFinancieraPage.ingreso_declarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoFinancieraPage.ingreso_declarado(opcion);
 	}
 	@When("registro antiguedad laboral {string} años y {string} meses")
 	public void antiguedad_laboral(String opcion,String opcion1)
@@ -58,18 +58,22 @@ public class CredifedInfoFinancieraSteps {
 	@When("revisar el detalle de deudas subir sustento")
 	public void detalle_deudas()
 	{
+		try {
+			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.detalle_deudas());
+			credifedInfoFinancieraPage.detalle_deudas().click();
+			credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
+			try { 
+				String[] commands = new String[]{}; 
+				commands = new String[]{"C:\\Users\\jniquen\\Downloads\\PhotoUpload.exe"};
+				Runtime.getRuntime().exec(commands); 
+			} catch (IOException e) {}
+			SeleniumWaiters.waitSeconds(15);
+			credifedInfoFinancieraPage.click_cargar_archivo().click();
+			SeleniumWaiters.waitSeconds(15);
+		} catch (Exception e) {
+			System.out.println("No es necesario subir sustento");
+		}
 		
-		credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.detalle_deudas());
-		credifedInfoFinancieraPage.detalle_deudas().click();
-		credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
-		try { 
-			String[] commands = new String[]{}; 
-			commands = new String[]{"C:\\Users\\jniquen\\Downloads\\PhotoUpload.exe"};
-			Runtime.getRuntime().exec(commands); 
-		} catch (IOException e) {}
-		SeleniumWaiters.waitSeconds(15);
-		credifedInfoFinancieraPage.click_cargar_archivo().click();
-		SeleniumWaiters.waitSeconds(15);
 	}
 	
 }

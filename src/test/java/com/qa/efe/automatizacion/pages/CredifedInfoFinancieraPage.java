@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,8 +31,13 @@ public class CredifedInfoFinancieraPage {
 	}
 	public WebElement ingreso_declarado() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:nuevoIngresoPrincipalDecimal"),10000);
-		 
 	}
+	
+	public void ingreso_declarado(String ingreso) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;      
+		js.executeScript("document.getElementById('decimal-input-InformacionAdicionalLaboralCV2:nuevoIngresoPrincipalDecimal').value='"+ingreso+"'");
+	}
+	
 	public WebElement antiguedad_laboral_anio() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalAniosInteger"),10000);
 		 
@@ -41,9 +47,11 @@ public class CredifedInfoFinancieraPage {
 		 
 	}
 	public WebElement detalle_deudas() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1[0]:AddButton\"]/span"),10000);
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1[0]:AddButton\"]/span"),10);
 		 
 	}
+	
+	
 	public WebElement click_seleccionar_Archivo() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Seleccionar...']"),10000);
 		 

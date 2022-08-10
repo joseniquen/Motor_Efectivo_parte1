@@ -31,13 +31,13 @@ public class CredifedGeneralidadesSteps {
 	@Then("cambio de iframe a {string}")
 	public void cambio_iframe(String titleIframe) {
 		driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe(titleIframe));	
-
+		System.out.println("cambio de inframe a default 2");
 	}
 
 	@Then("cambio de inframe a default")
 	public void cambio_iframe_Default() {
 		driver.switchTo().defaultContent();
-
+		System.out.println("cambio de inframe a default");
 	}
 	
 	@When("verifica si existe error en consentimiento digital")
@@ -45,6 +45,14 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificar_consentimiento_digital();
 	}
+	
+	@When("verifica si existe error en ejecución de servicio")
+	public void veriricar_error_ejecucion_servicio()
+	{
+		credifedGeneralidadesPage.verificar_error_ejecutar_servicio();
+	}
+
+	
 	@When("doy click en guardar datos")
 	public void click_btn_guardar()
 	{
@@ -54,7 +62,12 @@ public class CredifedGeneralidadesSteps {
 	@When("acepto para sobreescribir datos originales")
 	public void click_btn_sobreescribir_datos()
 	{
-		credifedGeneralidadesPage.click_btn_sobreescribir_datos().click();
+		try {
+			credifedGeneralidadesPage.click_btn_sobreescribir_datos().click();
+		} catch (Exception e) {
+			System.out.println("Pasa ok");
+		}
+		
 	}
 	@When("doy click en continuar")
 	public void click_btn_continuar()

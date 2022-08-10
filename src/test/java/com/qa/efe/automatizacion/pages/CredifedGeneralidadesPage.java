@@ -22,7 +22,7 @@ public class CredifedGeneralidadesPage {
 	
 	public WebElement cambio_iframe(String titleIframe)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),20);
 	}
 
 	public void verificar_consentimiento_digital()
@@ -34,13 +34,24 @@ public class CredifedGeneralidadesPage {
 			SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10000).click();
 		} 
 	}
+	
+	public void verificar_error_ejecutar_servicio()
+	{
+		List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_8_1_3_2_1\"]"));
+		//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10000);
+		if (verificar.size()!=0) {
+			System.out.println("esta abierto el cuadro de error ejecutar servicio");
+			SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:direccionDisplay:Button1"),10000).click();
+		} 
+	}
+	
 	public WebElement click_btn_guardar()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-MenuEditarCV1:buttonGuardar"),10000);
 	}
 	public WebElement click_btn_sobreescribir_datos()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("button-button-ModalMenuEditarGuardar:buttonAceptar"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("button-button-ModalMenuEditarGuardar:buttonAceptar"),10);
 	}
 	public WebElement click_btn_continuar()
 	{

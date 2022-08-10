@@ -106,6 +106,9 @@ Feature: Caso 14
 	 	And ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	Then click en ubicar mapa laboral
 	 	When esperar 15 segundos
+	 	#temporal
+	 	When verifica si existe error en ejecución de servicio
+	 	#temporal
 	 	Then doy click en aceptar la ubicacion correcta en el mapa laboral
 	 	When esperar 10 segundos
 	 	Then cambio de inframe a default
