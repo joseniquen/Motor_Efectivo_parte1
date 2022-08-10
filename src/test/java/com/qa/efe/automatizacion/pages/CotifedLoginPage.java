@@ -35,6 +35,6 @@ public class CotifedLoginPage {
 	}
 	public WebElement getbtnSesionesAbiertas()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='ACEPTAR']"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='ACEPTAR']"),10);
 	}
 }

@@ -16,7 +16,7 @@ public class CredifedValidacionRequisitosPage {
 		this.driver = driverManager.getDriver();
 	}
 	public WebElement aprob_solicitud() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:continuarAprobacionButton"),10000);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:continuarAprobacionButton"),10);
   
 	}
 	public List<WebElement> nro_list_doc() {
@@ -24,7 +24,7 @@ public class CredifedValidacionRequisitosPage {
   
 	}
 	public WebElement ckeck_list_doc(int opcion) {
-		return SeleniumWaiters.findElement(driver,By.id("switch-toggler-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("switch-toggler-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]"),10);
   
 	}
 	public List<WebElement> ckeck_list_doc_isChecked(int opcion) {
@@ -36,7 +36,7 @@ public class CredifedValidacionRequisitosPage {
   
 	}
 	public WebElement cargar_archivo(int opcion) {
-		return SeleniumWaiters.findElement(driver,By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:AddButton"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:AddButton"),10);
   
 	}
 	
@@ -46,7 +46,7 @@ public class CredifedValidacionRequisitosPage {
 	}
 	public WebElement click_cargar_archivo(int opcion) {
 		System.out.println("numero de boton "+opcion);
-		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:UploadButton"),10000);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:UploadButton"),10);
 		 
 	}
 }

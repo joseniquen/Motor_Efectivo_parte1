@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features= "src/test/resources/feature", 
-		glue= {"com.qa.motor.steps"},
+		glue= {"com.qa.efe.automatizcion.steps"},
 		monochrome = true,
 		plugin= {
 				"pretty", 

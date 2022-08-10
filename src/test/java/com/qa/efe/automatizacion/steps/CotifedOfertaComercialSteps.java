@@ -227,7 +227,7 @@ public class CotifedOfertaComercialSteps {
 		int columnIndex = columnss.indexOf(campania);
 		columnIndex=columnIndex+1;
 		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td["+columnIndex+"]/div";
-		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10000).click();
+		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
 	}
 	
 	@Then("Doy click en el boton continuar")

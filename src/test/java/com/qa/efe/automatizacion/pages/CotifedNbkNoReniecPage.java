@@ -33,63 +33,63 @@ public class CotifedNbkNoReniecPage {
 	}
 	public WebElement getCbxEstadoCivil()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionEstadoCivil(String estadoCivil)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estadoCivil+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estadoCivil+"')]"),10);	
 	}
 	public WebElement getCbxDepartamento()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionDepartamento(String departamento)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select/option[contains(.,'"+departamento+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select/option[contains(.,'"+departamento+"')]"),10);	
 	}
 	public WebElement getCbxProvincia()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionProvincia(String provincia)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select/option[contains(.,'"+provincia+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select/option[contains(.,'"+provincia+"')]"),10);	
 	}
 	public WebElement getCbxDistrito()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionDistrito(String distrito)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select/option[contains(.,'"+distrito+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select/option[contains(.,'"+distrito+"')]"),10);	
 	}
 	public WebElement getCbxTipoVivienda()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionTipoVivienda(String tipoVivienda)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select/option[contains(.,'"+tipoVivienda+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select/option[contains(.,'"+tipoVivienda+"')]"),10);	
 	}
 	public WebElement getCbxSituacion()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionSituacion(String situacion)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select/option[contains(.,'"+situacion+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select/option[contains(.,'"+situacion+"')]"),10);	
 	}
 	public WebElement getCbxOcupacion()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionOcupacion(String ocupacion)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select/option[contains(.,'"+ocupacion+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select/option[contains(.,'"+ocupacion+"')]"),10);	
 	}
 	public WebElement getTxtIngreso()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ingreso*']/parent::div//input"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ingreso*']/parent::div//input"),10);	
 	}
 	public WebElement getTxtAntLabAnios()
 	{

@@ -20,7 +20,7 @@ public class CotifedLineaProductoPage {
 		List<WebElement> solicitudes = driver.findElements(By.xpath("//*[@id='swal2-title']"));	
 		if (solicitudes.size()!=0) {
 			
-			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),20000).click();
+			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),10).click();
 		}
 		else {
 			System.out.println("No se encontraron encontraron solicitudes pendientes");
@@ -28,18 +28,18 @@ public class CotifedLineaProductoPage {
 	}
 	public WebElement getCategoriaLineaProducto(String lineaProducto)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td/select"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td/select"),10);
 	}
 	public WebElement getOpcionCategoriaLineaProducto(String lineaProducto, String opcion)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td/select/option[contains(.,'"+opcion+"')]"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement getLineaProducto(String lineaProducto)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td[2]/div/p/parent::div"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td[2]/div/p/parent::div"),10);
 	}
 	public WebElement getBtnContinuar()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='CONTINUAR']"),20000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='CONTINUAR']"),10);
 	}
 }

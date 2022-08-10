@@ -54,7 +54,7 @@ Feature: Caso 1
 	 And Titular selecciono tipo de vivienda "PROPIA"
 	 And Titular ingreso Ant Dom Años "45"
 	 And Titular ingreso Ant Dom Meses "11"
-	 And Titular ingreso declarado "20000"
+	 And Titular ingreso declarado "10"
 	 When esperar 7 segundos
 	 And Titular doy check a Usar Ingreso Declarado
 	 When esperar 7 segundos

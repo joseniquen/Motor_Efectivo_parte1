@@ -19,12 +19,12 @@ public class CredifedDashboardPage {
 	
 	public WebElement click_procesos()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='dashboard-menu-item-2015.27']/div/div[2]/a"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='dashboard-menu-item-2015.27']/div/div[2]/a"),10);
 	}
 	public WebElement ingresar_proceso()
 	{
-		SeleniumWaiters.findElement(driver,By.id("editor_BaseTextDirectionMixin_0"),10000).click();
-		return SeleniumWaiters.findElement(driver,By.id("frag0_BaseTextDirectionMixin_0"),10000);
+		SeleniumWaiters.findElement(driver,By.id("editor_BaseTextDirectionMixin_0"),10).click();
+		return SeleniumWaiters.findElement(driver,By.id("frag0_BaseTextDirectionMixin_0"),10);
 	}
 	public WebElement ver_instancia()
 	{
@@ -36,7 +36,7 @@ public class CredifedDashboardPage {
 	}
 	public WebElement mostrar_mas()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl']/div[3]"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl']/div[3]"),10);
 	}
 	public WebElement click_analizar_sol_credito()
 	{
@@ -48,22 +48,22 @@ public class CredifedDashboardPage {
 	}
 	public WebElement click_reclamar_tarea()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("ClaimDialog_0_claim"),10000);
+		return SeleniumWaiters.findElement(driver,By.id("ClaimDialog_0_claim"),10);
 	}
 	public List<WebElement> valida_existe_reclamar_tarea()
 	{
 		return driver.findElements(By.xpath("//*[@id='dijit_Dialog_0']"));
 	}
 	public WebElement compruebo_agencia() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_0']/span[2]"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_0']/span[2]"),10);
 	}
 	public WebElement compruebo_nroDoc() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_2']/span[2]"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_2']/span[2]"),10);
 	}
 	public WebElement compruebo_linea_producto() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_6']/span[2]"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_6']/span[2]"),10);
 	}
 	public WebElement compruebo_nro_sol() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_12']/span[2]"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_12']/span[2]"),10);
 	}
 }

@@ -17,18 +17,18 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getRdbtipoDesembolso(String tipoDesembolso)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div//label/span[contains(.,'"+tipoDesembolso+"')]"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div//label/span[contains(.,'"+tipoDesembolso+"')]"),10);
 	}
 	public WebElement getSelectTipoRequisitos(int i,int opcion)
 	{ 	
-		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']"),20000).click();
-		//return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),20000);
-		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option["+opcion+"]"),20000);
+		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']"),10).click();
+		//return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),10);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option["+opcion+"]"),10);
 	}
 	public WebElement getClickSeleccionar(int opcion)
 	{ 	
 		opcion = opcion +1;
-		return SeleniumWaiters.findElement(driver,By.xpath("//h3[text()='Requisitos']/parent::div/parent::div/parent::app-requirements/div[2]/div/div["+opcion+"]/div[2]/button"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//h3[text()='Requisitos']/parent::div/parent::div/parent::app-requirements/div[2]/div/div["+opcion+"]/div[2]/button"),10);
 	}
 	public WebElement getClickInsertar(int opcion)
 	{ 	
@@ -37,50 +37,50 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getCbxParentesco()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Parentesco']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Parentesco']/parent::div//select"),10);
 	}
 	public WebElement getOpcionParentesco(String parentesco)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Parentesco']/parent::div//select/option[contains(.,'"+parentesco+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Parentesco']/parent::div//select/option[contains(.,'"+parentesco+"')]"),10);	
 	}
 	public WebElement getTxtNombres()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Nombres']/parent::div/input"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Nombres']/parent::div/input"),10);
 	}
 	public WebElement getTxtApellidos()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Apellidos']/parent::div/input"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Apellidos']/parent::div/input"),10);
 	}
 	public WebElement getCbxPrefijo()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Prefijo']/parent::div//select"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Prefijo']/parent::div//select"),10);
 	}
 	public WebElement getOpcionPrefijo(String prefijo)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Prefijo']/parent::div//select/option[contains(.,'"+prefijo+"')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Prefijo']/parent::div//select/option[contains(.,'"+prefijo+"')]"),10);	
 	}
 	public WebElement getTxtTelefono()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Teléfono fijo']/parent::div/input"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Teléfono fijo']/parent::div/input"),10);
 	}
 	public WebElement getTxtCelular()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Num de Celular']/parent::div/input"),10000);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Num de Celular']/parent::div/input"),10);
 	}
 	public WebElement getBtnAgregar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/span/em[text()='add_circle']"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/span/em[text()='add_circle']"),10);	
 	}
 	public WebElement getBtnSolicitar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10);	
 	}
 	public WebElement getNroSolicitud() {
 		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body//div[2]/div[3]/div/div/label[1]"), 1000);
 	}
 	public WebElement getBtnOk()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10);	
 	}
 	public List<WebElement> getErrorSharePoint()
 	{
@@ -94,35 +94,35 @@ public class CotifedConfirmacionSolicitudPage {
 	
 	public WebElement getEntidadTipoDesembolso(String opcion)
 	{
-		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select"),10000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select"),10).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement getTitularTipoDesembolso()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Titular']/parent::div/input"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Titular']/parent::div/input"),10);	
 	}
 	public WebElement getCuentaTipoDesembolso()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Cuenta']/parent::div/input"),10000);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Cuenta']/parent::div/input"),10);	
 	}
 	public WebElement getDepartamentoTipoDesembolso(String opcion)
 	{
-		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select"),10000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select"),10).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement getProvinciaTipoDesembolso(String opcion)
 	{
-		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select"),10000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select"),10).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement getDistritoTipoDesembolso(String opcion)
 	{
-		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select"),10000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select"),10).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement getTiendaTipoDesembolso(String opcion)
 	{
-		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select"),10000).click();
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select"),10).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
 }
