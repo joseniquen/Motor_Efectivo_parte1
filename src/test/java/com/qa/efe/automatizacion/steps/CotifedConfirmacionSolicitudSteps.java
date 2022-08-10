@@ -47,13 +47,13 @@ public class CotifedConfirmacionSolicitudSteps {
 	{
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
 	}
-		
+
 	@When("Selecciono requisito y cargo archivo")
-	public void Selecciono_requisito_y_cargo_archivo ()
+	public void Selecciono_requisito_y_cargo_archivo (int i)
 	{	
 		int divs = cotifedConfirmacionSolicitudPage.numRequisitos();
 		System.out.println(divs);
-		for (int i = 0; i < divs; i++) {
+		for (i = 0; i < divs; i++) {
 			if(i==1) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
@@ -64,12 +64,17 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
+					System.out.println("aca1");
 					cotifedGeneralidadesSteps.pantalla_carga();
-					
+					System.out.println("aca2");
 					SeleniumWaiters.waitSeconds(5);	
+					System.out.println("aca3");
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						System.out.println("aca4");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						Selecciono_requisito_y_cargo_archivo();
+						System.out.println("aca5");
+						Selecciono_requisito_y_cargo_archivo(i);
+						System.out.println("aca6");
 					}
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
@@ -80,12 +85,19 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
+					System.out.println("aca1");
 					cotifedGeneralidadesSteps.pantalla_carga();
+					System.out.println("aca2");
 					SeleniumWaiters.waitSeconds(5);	
+					System.out.println("aca3");
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						System.out.println("aca4");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						Selecciono_requisito_y_cargo_archivo();
-					}				}
+						System.out.println("aca5");
+						Selecciono_requisito_y_cargo_archivo(i);
+						System.out.println("aca6");
+					}			
+				}
 			}else if(i==2) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
@@ -96,11 +108,17 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
+					System.out.println("aca1");
 					cotifedGeneralidadesSteps.pantalla_carga();
+					System.out.println("aca2");
 					SeleniumWaiters.waitSeconds(5);	
+					System.out.println("aca3");
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						System.out.println("aca4");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						Selecciono_requisito_y_cargo_archivo();
+						System.out.println("aca5");
+						Selecciono_requisito_y_cargo_archivo(i);
+						System.out.println("aca6");
 					}
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
@@ -111,11 +129,17 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {}
+					System.out.println("aca1");
 					cotifedGeneralidadesSteps.pantalla_carga();
+					System.out.println("aca2");
 					SeleniumWaiters.waitSeconds(5);	
+					System.out.println("aca3");
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						System.out.println("aca4");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						Selecciono_requisito_y_cargo_archivo();
+						System.out.println("aca5");
+						Selecciono_requisito_y_cargo_archivo(i);
+						System.out.println("aca6");
 					}
 				}
 			}else {
@@ -127,11 +151,17 @@ public class CotifedConfirmacionSolicitudSteps {
 					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 					Runtime.getRuntime().exec(commands); 
 				} catch (IOException e) {}
+				System.out.println("aca1");
 				cotifedGeneralidadesSteps.pantalla_carga();
+				System.out.println("aca2");
 				SeleniumWaiters.waitSeconds(5);	
+				System.out.println("aca3");
 				if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+					System.out.println("aca4");
 					cotifedConfirmacionSolicitudPage.getBtnOk().click();
-					Selecciono_requisito_y_cargo_archivo();
+					System.out.println("aca5");
+					Selecciono_requisito_y_cargo_archivo(i);
+					System.out.println("aca6");
 				}
 			}
 		}

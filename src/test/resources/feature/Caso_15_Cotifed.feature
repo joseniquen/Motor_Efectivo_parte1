@@ -4,10 +4,12 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'ext_fsosa'
+    Then Ingreso el usuario 'EXT_JNIQUEN'
 		And Ingreso la contraseña 'Efectiva.2022'
+		And doy click en el boton ingresar
+		When Cargando datos espere...
+		And valido que no haya sesiones abiertas
 		When doy click en el boton ingresar
-				
 		#seccion de filtro
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
@@ -29,23 +31,14 @@ Feature: Caso plantilla
    #seccion de oferta comercial
    When Validar que se recupero ingreso vigente
    When Cargando datos espere...
- 	 #Seguros
- 	 #Seguro de Salud 12 Meses
-	 #Seguro de Salud 24 Meses
-	 #Seguro de Salud 36 Meses
-	 #Seguro de Salud 48 Meses
-	 #Seguro de Salud 60 Meses
-	 #Multirriesgo Electro
-	 #Contigo Familia plan Básico
-	 #Contigo Familia plan Plus
-	 #Accidentes Personales
-	 #Seguro Oncológico 
+ 	 #Seguros|#Seguro de Salud 12 Meses|#Seguro de Salud 24 Meses|#Seguro de Salud 36 Meses|#Seguro de Salud 48 Meses
+	 #Seguro de Salud 60 Meses|#Multirriesgo Electro|#Contigo Familia plan Básico|#Contigo Familia plan Plus
+	 #Accidentes Personales|#Seguro Oncológico 
  	 And Validar seguros marcados
- 	 #And Selecciono seguros
-	 #|seguros|
-	 #|Seguro de Salud 48 Meses|
-	 #|Accidentes Personales|
-	 #|Seguro Oncológico|
+ 	 And Selecciono seguros
+	 |seguros|
+	 |Seguro de Salud 12 Meses|
+	 |Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmacion de alerta
 	 And Titular selecciono pais "PERU"
@@ -70,12 +63,10 @@ Feature: Caso plantilla
 	 When Cargando datos espere...
 	 #seccion confirmacion de solicitud
 	 And Selecciono requisito y cargo archivo
-
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
 		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
-
 	 And Doy click en el boton solicitar
 	 And Obtener numero de solicitud
 	 When Terminar solicitud
