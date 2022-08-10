@@ -5,18 +5,21 @@ public class IntegracionStore implements Store {
 	public String tipo_documento;
 	public int iframe;
 	public int registro_operaciones;
+	public int carga_archivos;
 	@Override
 	public void reset() {
 		tipo_documento="";
 		cuenta = "";
 		iframe= 1;
 		registro_operaciones= 0;
+		carga_archivos=0;
 	}
 	public IntegracionStore() {
 		tipo_documento="";
 		cuenta = "";
 		iframe= 1;
 		registro_operaciones= 0;
+		carga_archivos=0;
 
 	}
 	

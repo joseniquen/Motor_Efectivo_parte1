@@ -9,7 +9,6 @@ Feature: Caso plantilla
 		And doy click en el boton ingresar
 		When Cargando datos espere...
 		And valido que no haya sesiones abiertas
-		When doy click en el boton ingresar
 		#seccion de filtro
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
@@ -66,6 +65,10 @@ Feature: Caso plantilla
 	 And Doy click en el boton continuar
 	 When Cargando datos espere...
 	 #seccion confirmacion de solicitud
+	 #Abono en Cuenta de Ahorros titular|#Tarjeta prepagada
+	 #Desembolso de efectivo en tienda vendedor|#Desembolso en otra tienda
+	 And Elijo tipo de desembolso "Desembolso de efectivo en tienda vendedor"
+	 
 	 And Selecciono requisito y cargo archivo
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
