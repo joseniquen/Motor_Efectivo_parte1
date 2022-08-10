@@ -40,6 +40,7 @@ public class CotifedGeneralidadesSteps {
 	public void pantalla_carga() {
 		
 		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+			//System.out.println("1");
 		}
 		SeleniumWaiters.waitSeconds(2);
 	}

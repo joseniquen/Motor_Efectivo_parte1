@@ -45,8 +45,9 @@ public class CotifedLoginSteps {
 	public void valido_sesiones_abiertas() {
 		if(loginPage.getTextSesionAbierta().size()!=0){
 			loginPage.getbtnSesionesAbiertas().click();
-			SeleniumWaiters.waitSeconds(3);
-			loginPage.getbtnSesionesAbiertas().click();
+			SeleniumWaiters.waitSeconds(4);
+			//loginPage.getbtnSesionesAbiertas().click();
+			loginPage.getbtnIngresar().click();
 
 		}
 		;

@@ -92,4 +92,37 @@ public class CotifedConfirmacionSolicitudPage {
 		return  driver.findElements(By.xpath("//div[@class='m12 row']")).size();
 	}
 	
+	public WebElement getEntidadTipoDesembolso(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select"),10000).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Entidad']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+	}
+	public WebElement getTitularTipoDesembolso()
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Titular']/parent::div/input"),10000);	
+	}
+	public WebElement getCuentaTipoDesembolso()
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Cuenta']/parent::div/input"),10000);	
+	}
+	public WebElement getDepartamentoTipoDesembolso(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select"),10000).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+	}
+	public WebElement getProvinciaTipoDesembolso(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select"),10000).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+	}
+	public WebElement getDistritoTipoDesembolso(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select"),10000).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+	}
+	public WebElement getTiendaTipoDesembolso(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select"),10000).click();
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select/option[contains(.,'"+opcion+"')]"),10000);
+	}
 }

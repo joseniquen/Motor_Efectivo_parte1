@@ -46,6 +46,17 @@ public class CotifedConfirmacionSolicitudSteps {
 	public void Elijo_tipo_desembolso(String tipoDesembolso)
 	{
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
+		if(tipoDesembolso.equals("Abono en Cuenta de Ahorros titular")) {
+			cotifedConfirmacionSolicitudPage.getEntidadTipoDesembolso("EFECTIVA").click();
+			cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys("TITULAR CUENTA");
+			cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolso().sendKeys("123456789321");
+		}else if(tipoDesembolso.equals("Desembolso en otra tienda")) {
+			cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso("LIMA").click();
+			cotifedConfirmacionSolicitudPage.getProvinciaTipoDesembolso("LIMA").click();
+			cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso("SANTIAGO DE SURCO").click();
+			cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso("OFICINA PRINCIPAL").click();
+
+		}
 	}
 
 	@When("Selecciono requisito y cargo archivo")
@@ -53,7 +64,8 @@ public class CotifedConfirmacionSolicitudSteps {
 	{	
 		int divs = cotifedConfirmacionSolicitudPage.numRequisitos();
 		System.out.println(divs);
-		for (int i = 0; i < divs; i++) {
+		int i =integracionStore.carga_archivos;
+		for (i = 0; i < divs; i++) {
 			System.out.println(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText());
 			if(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText().equals("DNI")) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
@@ -70,6 +82,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						integracionStore.carga_archivos=i;
 						Selecciono_requisito_y_cargo_archivo();
 					}
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
@@ -85,6 +98,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						integracionStore.carga_archivos=i;
 						Selecciono_requisito_y_cargo_archivo();
 					}				
 				}
@@ -103,6 +117,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						integracionStore.carga_archivos=i;
 						Selecciono_requisito_y_cargo_archivo();
 					}
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
@@ -118,6 +133,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					SeleniumWaiters.waitSeconds(5);	
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						integracionStore.carga_archivos=i;
 						Selecciono_requisito_y_cargo_archivo();
 					}
 				}
@@ -134,6 +150,7 @@ public class CotifedConfirmacionSolicitudSteps {
 				SeleniumWaiters.waitSeconds(5);	
 				if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 					cotifedConfirmacionSolicitudPage.getBtnOk().click();
+					integracionStore.carga_archivos=i;
 					Selecciono_requisito_y_cargo_archivo();
 				}
 			}
