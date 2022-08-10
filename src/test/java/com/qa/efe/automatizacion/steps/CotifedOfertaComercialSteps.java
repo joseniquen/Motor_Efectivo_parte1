@@ -145,6 +145,38 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getCheckIngreso().click();
 	}
 	
+	@Then("Titular ingreso situacion {string}")
+	public void Titular_ingreso_situacion(String situacion) {
+		if(cotifedOfertaComercialPage.getSituacion_existe().size()!=0) {
+			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {
+				cotifedOfertaComercialPage.getSituacion().click();
+				cotifedOfertaComercialPage.getOpcionSituacion(situacion).click();
+			}
+			else{
+				System.out.println("campo deshabilitado");
+			}
+		}else {
+			System.out.println("campo no existe");
+		}
+		
+	}
+	
+	@Then("Titular ingreso ocupacion {string}")
+	public void Titular_ingreso_ocupacion(String ocupacion) {
+		if(cotifedOfertaComercialPage.getOcupacion_existe().size()!=0) {
+			if (cotifedOfertaComercialPage.getOcupacion().isEnabled()) {
+				cotifedOfertaComercialPage.getOcupacion().click();
+				cotifedOfertaComercialPage.getOpcionOcupacion(ocupacion).click();
+			}
+			else{
+				System.out.println("campo deshabilitado");
+			}
+		}else {
+			System.out.println("campo no existe");
+		}
+		
+	}
+	
 	@Then("Titular ingreso Ant Lab Años {string}")
 	public void Titular_ingreso_Ant_Lab_Anios(String LabAnios) {
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
