@@ -4,8 +4,8 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'EXT_JNIQUEN'
-		And Ingreso la contraseña 'Efectiva.2022'
+    Then Ingreso el usuario 'ychiroque'
+		And Ingreso la contraseña 'Triunfos.2022'
 		When doy click en el boton ingresar
 				
 		#seccion de filtro
