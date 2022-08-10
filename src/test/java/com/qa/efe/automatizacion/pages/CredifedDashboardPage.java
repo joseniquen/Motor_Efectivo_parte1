@@ -28,7 +28,11 @@ public class CredifedDashboardPage {
 	}
 	public WebElement ver_instancia()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para ver la instancia.']"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para ver la instancia.']"),10);
+	}
+	public WebElement ver_instancia_en()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to view instance.']"),10);
 	}
 	public WebElement mostrar_mas()
 	{
@@ -36,7 +40,11 @@ public class CredifedDashboardPage {
 	}
 	public WebElement click_analizar_sol_credito()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10000);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
+	}
+	public WebElement click_analizar_sol_credito_en()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
 	}
 	public WebElement click_reclamar_tarea()
 	{

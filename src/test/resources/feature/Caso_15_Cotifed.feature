@@ -13,7 +13,7 @@ Feature: Caso plantilla
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "09030382"
+		And Ingreso numero de documento "05364817"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
@@ -56,7 +56,7 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Lab Meses "4"
 	 #And Titular ingreso inicial "0"
 	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular fecha de pago "7 de cada mes"
+	 And Titular fecha de pago "29 de cada mes"
 	 When Cargando datos espere...
 	 And Doy click en el boton simular
    When Cargando datos espere...
