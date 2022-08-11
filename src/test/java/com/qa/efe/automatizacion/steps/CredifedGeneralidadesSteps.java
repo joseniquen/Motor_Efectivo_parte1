@@ -49,7 +49,31 @@ public class CredifedGeneralidadesSteps {
 	@When("verifica si existe error en ejecución de servicio")
 	public void veriricar_error_ejecucion_servicio()
 	{
-		credifedGeneralidadesPage.verificar_error_ejecutar_servicio();
+		credifedGeneralidadesPage.verificar_error_ejecutar_servicio_direccion();
+	}
+	
+	@When("verifica si existe error en filtro evaluar domicilio")
+	public void veriricar_error_filtro_evaluar_domicilio()
+	{
+		credifedGeneralidadesPage.verificar_error_ejecutar_filtro_evaluar_domicilio();
+	}
+	
+	@When("verifica si existe error en referencias telefonicas")
+	public void veriricar_error_referencias_telefonicas()
+	{
+		credifedGeneralidadesPage.verificar_error_referencias_telefonicas();
+	}
+	
+	@When("verifica si existe error en filtro evaluacion financiera")
+	public void veriricar_error_filtro_evaluacion_financiera()
+	{
+		credifedGeneralidadesPage.verificar_error_filtro_informacion_financiera();
+	}
+	
+	@When("verifica si existe error en filtro evaluar personas")
+	public void veriricar_error_filtro_personas()
+	{
+		credifedGeneralidadesPage.verificar_error_filtro_personas();
 	}
 
 	

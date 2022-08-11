@@ -13,14 +13,14 @@ Feature: Caso 14
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10851042"
+		When ingresar instancia de proceso "10851262"
 		And dar click en pulsar para ver instancia
 		When esperar 7 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |05364817   |EFECTIVO      |10851042     |
+		|CHICLAYO   |05364817   |EFECTIVO      |10851262     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 10 segundos
@@ -29,7 +29,10 @@ Feature: Caso 14
 		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "07 Datos del Titular"
-	  When esperar 10 segundos
+	  When esperar 15 segundos
+	  #temporal
+		When verifica si existe error en filtro evaluar personas
+		#temporal
 	  When verifica si existe error en consentimiento digital
 		When doy click en boton editar
 		When selecciono tipo de venta "RECEPTIVA"
@@ -47,10 +50,13 @@ Feature: Caso 14
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		#datos de titular
-		
+
 		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "08 Información Domiciliaria Titular"
+	  #temporal
+	  When verifica si existe error en filtro evaluar domicilio
+	  #temporal
 	  When doy click en boton editar
 	  #informacion domiciliaria de titular
 	 	When selecciono departamento "LIMA"
@@ -59,6 +65,9 @@ Feature: Caso 14
 	 	And ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
 	 	Then click en ubicar mapa
 	 	When esperar 15 segundos
+	 	#temporal
+	 	When verifica si existe error en ejecución de servicio
+	 	#temporal
 	 	Then doy click en aceptar la ubicacion correcta en el mapa
 	 	When esperar 10 segundos
 	  Then cambio de inframe a default
@@ -85,6 +94,9 @@ Feature: Caso 14
 		And registro antiguedad laboral "30" años y "7" meses
 		When esperar 10 segundos
 		When revisar el detalle de deudas subir sustento
+		#temporal
+	 	When verifica si existe error en filtro evaluacion financiera
+	 	#temporal
 		Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
 		When esperar 10 segundos
@@ -107,7 +119,7 @@ Feature: Caso 14
 	 	Then click en ubicar mapa laboral
 	 	When esperar 15 segundos
 	 	#temporal
-	 	When verifica si existe error en ejecución de servicio
+	 	#When verifica si existe error en ejecución de servicio
 	 	#temporal
 	 	Then doy click en aceptar la ubicacion correcta en el mapa laboral
 	 	When esperar 10 segundos
@@ -128,6 +140,7 @@ Feature: Caso 14
 	  #When doy click en boton editar
 	  #informacion referencias telefonicas
 	  When esperar 10 segundos
+	  When verifica si existe error en referencias telefonicas
 	  Then click en agregar nueva referencia
 	  When creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|

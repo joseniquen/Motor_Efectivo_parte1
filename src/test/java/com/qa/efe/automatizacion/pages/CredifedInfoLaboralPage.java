@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -9,9 +10,11 @@ import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 public class CredifedInfoLaboralPage {
 	private WebDriver driver;
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
 
-	public CredifedInfoLaboralPage( WebDriverManager driverManager) {
+	public CredifedInfoLaboralPage( WebDriverManager driverManager,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.driver = driverManager.getDriver();
+		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
 	
 	public WebElement getCentroTrabajo() {
@@ -36,6 +39,10 @@ public class CredifedInfoLaboralPage {
 	
 	public WebElement select_departamento(String opcion)
 	{
+		WebElement longitud = driver.findElement(By.id("div_5_1_1_1")); 
+		//SeleniumWaiters.findElement(driver,By.id("lbl_10_682230"),10);
+		System.out.println(longitud);
+		credifedGeneralidadesPage.scrollTo(longitud);
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:departamentoSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:departamentoSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
@@ -68,7 +75,7 @@ public class CredifedInfoLaboralPage {
 	}
 	public WebElement click_aceptar_ubicar_mapa()
 	{
-		driver.switchTo().frame(driver.findElement(By.id("framegeo")));
-		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 10);
+		driver.switchTo().frame(driver.findElement(By.id("framegeo")));	
+		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 20);
 	}
 }

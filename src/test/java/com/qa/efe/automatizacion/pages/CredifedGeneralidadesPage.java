@@ -34,6 +34,83 @@ public class CredifedGeneralidadesPage {
 			SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
 		} 
 	}
+	
+	public void verificar_error_ejecutar_servicio_direccion()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_8_1_3_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:direccionDisplay:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en servicio dirección");
+		}
+		
+	}
+	
+	public void verificar_error_ejecutar_filtro_evaluar_domicilio()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_10_1_5_4_1_4_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en filtro evaluar domicilio");
+		}
+		
+	}
+	
+	
+	public void verificar_error_filtro_personas()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_19_1_5_13_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en filtro personas");
+		}
+		
+	}
+	
+	public void verificar_error_filtro_informacion_financiera()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_16_1_6_4_1_3_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en filtro personas");
+		}
+		
+	}
+	
+	public void verificar_error_referencias_telefonicas()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_9_1_5_2_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en referencias telefonicas");
+		}
+		
+	}
+	
 	public WebElement click_btn_guardar()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-MenuEditarCV1:buttonGuardar"),10);

@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,9 +29,12 @@ public class CredifedInfoFinancieraPage {
 		SeleniumWaiters.findElement(driver, By.id("singleselect-InformacionAdicionalLaboralCV2:ocupacionPrincipalSingle_Select"),10).click();
 		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-InformacionAdicionalLaboralCV2:ocupacionPrincipalSingle_Select']/option[contains(.,'"+opcion+"')]"),10);
 	}
-	public WebElement ingreso_declarado() {
+	/*public WebElement ingreso_declarado() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:nuevoIngresoPrincipalDecimal"),10);
-		 
+	}*/
+	public void ingreso_declarado(String opcion) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;      
+		js.executeScript("document.getElementById('decimal-input-InformacionAdicionalLaboralCV2:nuevoIngresoPrincipalDecimal').value='"+opcion+"'");
 	}
 	public WebElement antiguedad_laboral_anio() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalAniosInteger"),10);
