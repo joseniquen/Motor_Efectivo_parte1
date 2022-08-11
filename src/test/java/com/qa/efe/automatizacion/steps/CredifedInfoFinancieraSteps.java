@@ -64,11 +64,11 @@ public class CredifedInfoFinancieraSteps {
 			credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
 			try { 
 				String[] commands = new String[]{}; 
-				commands = new String[]{"C:\\Users\\jniquen\\Downloads\\PhotoUpload.exe"};
+				commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 				Runtime.getRuntime().exec(commands); 
 			} catch (IOException e) {}
 			SeleniumWaiters.waitSeconds(15);
-			credifedInfoFinancieraPage.click_cargar_archivo().click();
+			credifedInfoFinancieraPage.click_cargar_archivo_en().click();
 			SeleniumWaiters.waitSeconds(15);
 		} catch (Exception e) {
 			System.out.println("No es necesario subir sustento");

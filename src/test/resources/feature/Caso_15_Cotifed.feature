@@ -4,7 +4,7 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'EXT_JNIQUEN'
+    Then Ingreso el usuario 'ext_fsosa'
 		And Ingreso la contraseña 'Efectiva.2022'
 		And doy click en el boton ingresar
 		When Cargando datos espere...
@@ -13,7 +13,7 @@ Feature: Caso plantilla
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "05364817"
+		And Ingreso numero de documento "42614677"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
@@ -44,7 +44,7 @@ Feature: Caso plantilla
 	 And Titular selecciono tipo de vivienda "PROPIA"
 	 And Titular ingreso Ant Dom Años "45"
 	 And Titular ingreso Ant Dom Meses "11"
-	 And Titular ingreso declarado "10"
+	 And Titular ingreso declarado "8000"
    When Cargando datos espere...
 	 And Titular doy check a Usar Ingreso Declarado
    When Cargando datos espere...
@@ -56,7 +56,7 @@ Feature: Caso plantilla
 	 And Titular ingreso Ant Lab Meses "4"
 	 #And Titular ingreso inicial "0"
 	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular fecha de pago "29 de cada mes"
+	 And Titular fecha de pago "3 de cada mes"
 	 When Cargando datos espere...
 	 And Doy click en el boton simular
    When Cargando datos espere...

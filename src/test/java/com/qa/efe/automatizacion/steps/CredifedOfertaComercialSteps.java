@@ -33,8 +33,9 @@ public class CredifedOfertaComercialSteps {
 	{
 		
 		credifedOfertaComercialPage.click_aceptar().click();
+		credifedOfertaComercialPage.click_confirmar().click();
 	}
-	@When("verificar que estemmos en la pantalla reusmen del credito")
+	@When("verificar que estemos en la pantalla resumen del credito")
 	public void verificar_pantalla_resumen()
 	{
 		credifedOfertaComercialPage.verificar_resumen_sol();
@@ -44,7 +45,8 @@ public class CredifedOfertaComercialSteps {
 	{
 		SeleniumWaiters.waitSeconds(30);
 		List<WebElement> element = credifedOfertaComercialPage.verificar_sol_aprobada();
-		if (element.size()!=0) {
+		List<WebElement> element1 = credifedOfertaComercialPage.verificar_excepciones();
+		if (element1.size()!=0) {
 			System.out.println("La solicitud de credito contiene una excepcion");
 		} else {
 			System.out.println("Su solicitud ah sido registrada y aprobada correctamente ");

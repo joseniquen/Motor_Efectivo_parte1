@@ -49,11 +49,15 @@ public class CredifedInfoFinancieraPage {
 		 
 	}
 	public WebElement click_seleccionar_Archivo() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Seleccionar...']"),10);
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Select...']"),10);
 		 
 	}
 	public WebElement click_cargar_archivo() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//button[text()=\"Cargar\"]"),10);
+		 
+	}
+	public WebElement click_cargar_archivo_en() {
+		return SeleniumWaiters.findElement(driver, By.xpath("//button[text()=\"Upload\"]"),10);
 		 
 	}
 	

@@ -46,6 +46,12 @@ public class CredifedGeneralidadesSteps {
 		credifedGeneralidadesPage.verificar_consentimiento_digital();
 	}
 	
+	@When("verifica si existe error en normalizar direccion")
+	public void veriricar_error_normalizar_direccion()
+	{
+		credifedGeneralidadesPage.verificar_error_normalizar_direccion();
+	}
+	
 	@When("verifica si existe error en ejecución de servicio")
 	public void veriricar_error_ejecucion_servicio()
 	{

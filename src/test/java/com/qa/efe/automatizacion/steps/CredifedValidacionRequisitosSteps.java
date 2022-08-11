@@ -44,7 +44,7 @@ public class CredifedValidacionRequisitosSteps {
 				SeleniumWaiters.waitSeconds(5);
 				try { 
 					String[] commands = new String[]{}; 
-					commands = new String[]{"C:\\Users\\jniquen\\Downloads\\PhotoUpload.exe"};
+					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 					Runtime.getRuntime().exec(commands); 
 				} catch (IOException e) {}
 				SeleniumWaiters.waitSeconds(15);

@@ -50,6 +50,21 @@ public class CredifedGeneralidadesPage {
 		
 	}
 	
+	public void verificar_error_normalizar_direccion()
+	{
+		try {
+			List<WebElement> verificar = driver.findElements(By.xpath("//*[@id=\"div_5_1_3_2_1\"]"));
+			//WebElement verificar = SeleniumWaiters.findElement(driver,By.id("div_4"),10);
+			if (verificar.size()!=0) {
+				System.out.println("esta abierto el cuadro");
+				SeleniumWaiters.findElement(driver,By.id("button-button-UbicacionGeograficaCV1:direccionPrincipalDisplay:Button1"),10).click();
+			} 
+		} catch (Exception e) {
+			System.out.println("No hay error en servicio dirección");
+		}
+		
+	}
+	
 	public void verificar_error_ejecutar_filtro_evaluar_domicilio()
 	{
 		try {
