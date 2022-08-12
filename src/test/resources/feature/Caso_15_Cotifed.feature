@@ -20,6 +20,7 @@ Feature: Caso plantilla
 		When Doy click en filtrar
 		When Cargando datos espere...
 		
+		
 	 #seccion de linea de producto
 	 And Confirmacion de alerta
 	 
