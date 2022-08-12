@@ -3,12 +3,15 @@ package com.qa.efe.automatizacion.pages;
 import java.util.Iterator;
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+
+
 
 public class CotifedOfertaComercialPage {
 	private WebDriver driver;
@@ -103,7 +106,7 @@ public class CotifedOfertaComercialPage {
 	public WebElement getTxtIngresoDeclarado()
 	{
 		return driver.findElement(By.id("declaredIncome"));
-	}	
+	}
 	public WebElement getCheckIngreso()
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Usar Ingreso declarado')]"),10);
