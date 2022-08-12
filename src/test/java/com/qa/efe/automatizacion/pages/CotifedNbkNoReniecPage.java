@@ -3,6 +3,7 @@ package com.qa.efe.automatizacion.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -10,8 +11,8 @@ import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 public class CotifedNbkNoReniecPage {
-	private WebDriver driver;
-
+private WebDriver driver;
+	
 	public CotifedNbkNoReniecPage(WebDriverManager driverManager) {
 		this.driver = driverManager.getDriver();
 	}
@@ -31,13 +32,35 @@ public class CotifedNbkNoReniecPage {
 	{
 		return driver.findElement(By.id("matLastName"));
 	}
+	public WebElement getCbxSexo()
+	{
+		return SeleniumWaiters.findElement(driver, By.xpath("//div/label[text()='Sexo*']/parent::div//select"));
+	}
+	public WebElement getOpcionSexo(String sexo)
+	{
+		return SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Sexo*']/parent::div//select/option[contains(.,'"+sexo+"')]"), 10);
+	}
 	public WebElement getCbxEstadoCivil()
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),10);
 	}
 	public WebElement getOpcionEstadoCivil(String estadoCivil)
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estadoCivil+"')]"),10);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select/option[contains(.,'"+estadoCivil+"')]"),10);
+	}
+	public void getInputNac(String fecha)
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("document.getElementById('dateOfBirth').removeAttribute('readonly')");	
+		driver.findElement(By.id("dateOfBirth")).click();
+		//js.executeScript("document.getElementById('dateOfBirth').value='"+fecha+"'");
+		driver.findElement(By.id("dateOfBirth")).sendKeys(fecha);
+		
+	}
+	public void getInputNac2()
+	{
+		WebElement dateBox = driver.findElement(By.xpath("//form//input[@name='dateOfBirth']"));
+		dateBox.sendKeys("12121990");
 	}
 	public WebElement getCbxDepartamento()
 	{
@@ -98,5 +121,19 @@ public class CotifedNbkNoReniecPage {
 	public WebElement getTxtAntLabMeses()
 	{
 		return driver.findElement(By.id("monthOfEmployment"));
+	}
+	public boolean validarLink()
+	{
+		String url = driver.getCurrentUrl();
+		return url.contains("nbk-no-reniec");
+	}
+	public WebElement getBtnFiltrar() 
+	{
+		return SeleniumWaiters.findElement(driver, By.xpath("/html/body/app-root/app-modules/app-banked-reniec/div[2]/div[1]/div/div/button[2]"));
+	}
+
+	public WebElement getAlertTmp()
+	{
+		return SeleniumWaiters.findElement(driver, By.xpath("/html/body/div[5]/div/div[3]/button[1]"));
 	}
 }

@@ -33,6 +33,7 @@ public class CredifedOfertaComercialSteps {
 	{
 		
 		credifedOfertaComercialPage.click_aceptar().click();
+		SeleniumWaiters.waitSeconds(10);
 		credifedOfertaComercialPage.click_confirmar().click();
 	}
 	@When("verificar que estemos en la pantalla resumen del credito")

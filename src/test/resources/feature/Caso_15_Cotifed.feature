@@ -13,7 +13,7 @@ Feature: Caso plantilla
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "00000005"
+		And Ingreso numero de documento "04645301"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
@@ -22,6 +22,21 @@ Feature: Caso plantilla
 		
 	 #seccion de linea de producto
 	 And Confirmacion de alerta
+	 
+	 #seccion nbk-no-reniec
+		
+		Then Ingreso datos personales
+		 | primer_nombre  |   segundo_nombre   |   apellido_paterno  |  apellido_materno |  sexo      |  estado_civil  |  fecha_nac   |
+		 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
+		
+		Then Ingreso informacion de vivienda
+	   | departamento |  provincia  |  distrito  |  tipo_vivienda  |
+	   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |
+	   
+	   Then Ingreso informacion laboral
+	   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
+	   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
+	 
 	 And selecciono linea de producto "EFECTIVO"
 	 When Cargando datos espere...
 	 Then dar click en Continuar
@@ -36,8 +51,9 @@ Feature: Caso plantilla
  	 And Validar seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 |Seguro de Salud 12 Meses|
-	 |Seguro Oncológico|
+	 |Contigo Familia plan Básico|
+	 #|Seguro de Salud 12 Meses|
+	 #|Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmacion de alerta
 	 And Titular selecciono pais "PERU"
@@ -60,7 +76,8 @@ Feature: Caso plantilla
 	 When Cargando datos espere...
 	 And Doy click en el boton simular
    When Cargando datos espere...
-	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
+	 #When Elijo campaña "CAMPANA ONE TO ONE" con plazo "6 meses"
+	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "24 meses"
 	 When Cargando datos espere...
 	 And Doy click en el boton continuar
 	 When Cargando datos espere...

@@ -107,6 +107,10 @@ public class CotifedOfertaComercialPage {
 	{
 		return driver.findElement(By.id("declaredIncome"));
 	}
+	public String getTxtIngresoDeclaradoReadOnly()
+	{
+		return driver.findElement(By.id("declaredIncome")).getAttribute("readonly");
+	}
 	public WebElement getCheckIngreso()
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Usar Ingreso declarado')]"),10);

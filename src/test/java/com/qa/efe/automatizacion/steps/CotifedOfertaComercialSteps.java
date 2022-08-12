@@ -135,14 +135,23 @@ public class CotifedOfertaComercialSteps {
 	}
 	
 	@Then("Titular ingreso declarado {string}")
-	public void Titular_ingreso_declarado(String ingresoDeclarado) {
-		cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(ingresoDeclarado);
+	public void Titular_ingreso_declarado(String ingresoDeclarado) {	
+		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
+			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(ingresoDeclarado);	
+		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
+			System.out.println("EL CHECK ESTÁ MARCADO");
+		}	
 	}
 	
 	@Then("Titular doy check a Usar Ingreso Declarado")
 	public void Titular_doy_check_Usar_Ingreso_Declarado() {
-		cotifedOfertaComercialPage.getCheckIngreso().click();
+		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
+			cotifedOfertaComercialPage.getCheckIngreso().click();
+		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
+				System.out.println("EL CHECK ESTÁ SELECCIONADO");	
+		}
+		
 	}
 	
 	@Then("Titular ingreso situacion {string}")
@@ -203,6 +212,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@Then("Titular fecha de pago {string}")
 	public void Titular_fecha_pago(String fechaPago) {
+		SeleniumWaiters.waitSeconds(3);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
 	}
@@ -226,7 +236,7 @@ public class CotifedOfertaComercialSteps {
 		
 		int columnIndex = columnss.indexOf(campania);
 		columnIndex=columnIndex+1;
-		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td["+columnIndex+"]/div";
+		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td['"+columnIndex+"']/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
 	}
 	
