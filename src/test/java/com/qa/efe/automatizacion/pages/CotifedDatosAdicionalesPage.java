@@ -11,9 +11,11 @@ import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 public class CotifedDatosAdicionalesPage {
 	private WebDriver driver;
+	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 
-	public CotifedDatosAdicionalesPage(WebDriverManager driverManager) {
+	public CotifedDatosAdicionalesPage(WebDriverManager driverManager,CotifedGeneralidadesPage cotifedGeneralidadesPage) {
 		this.driver = driverManager.getDriver();
+		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
 	public WebElement getBtnContinuarDatosAdicionales()
 	{
@@ -38,6 +40,14 @@ public class CotifedDatosAdicionalesPage {
 	public WebElement getTxtTelefonoPersona()
 	{
 		return driver.findElement(By.id("nroTelefonoPersona"));
+	}
+	public void buscar_titulo_dom() {
+		WebElement element = driver.findElement(By.xpath("//div/p[text()='Informacion Domiciliaria']"));
+		cotifedGeneralidadesPage.scrollTo(element);
+	}
+	public void buscar_titulo_lab() {
+		WebElement element = driver.findElement(By.xpath("//div/p[text()='Informacion Laboral']"));
+		cotifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement getCbxDepartamentoInfoDomiciliaria()
 	{
@@ -66,6 +76,10 @@ public class CotifedDatosAdicionalesPage {
 	public WebElement getTxtAvenidaInfoDomiciliaria()
 	{
 		return driver.findElement(By.id("nombreVia"));
+	}
+	public void buscar_referencia() {
+		WebElement element = driver.findElement(By.xpath("//div/label[text()='Referencia']"));
+		cotifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement getBtnConfirmarInfoDomiciliaria()
 	{
@@ -139,6 +153,10 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("nombreViaWork"));
 	}
+	public WebElement getTxtCalleAvenida()
+	{
+		return driver.findElement(By.xpath("//div/label[text()='Calle / Avenida']"));
+	}
 	public WebElement getBtnConfirmarInfoLaboral()
 	{
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='framegeoWork']")));
@@ -152,7 +170,7 @@ public class CotifedDatosAdicionalesPage {
 	}	
 	public WebElement getOpcionCbxReferenciaInfoLaboral(String referencia)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Referencia(*)']/parent::div//select/option[contains(.,'"+referencia+"')]"),10);	
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Referencia']/parent::div//select/option[contains(.,'"+referencia+"')]"),10);	
 	}
 	public WebElement getTxtDescripcionInfoLaboral()
 	{

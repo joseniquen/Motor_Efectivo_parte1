@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -44,10 +46,15 @@ public class CredifedInfoFinancieraPage {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalMesesInteger"),10);
 		 
 	}
-	public WebElement detalle_deudas() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1[0]:AddButton\"]/span"),10);
+	public WebElement detalle_deudas(int opc) {
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1['"+opc+"']:AddButton\"]/span"),10);
 		 
 	}
+	public List<WebElement> list_detalle_deudas() {
+		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3\"]/div[2]/div[2]/div/table/tbody/tr")); 
+		 
+	}
+	
 	public WebElement click_seleccionar_Archivo() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Select...']"),10);
 		 

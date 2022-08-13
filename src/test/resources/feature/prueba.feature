@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Caso 1
 
     #Modificar obligatoriamente los siguientes inputs:

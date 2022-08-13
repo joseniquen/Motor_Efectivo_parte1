@@ -10,6 +10,7 @@ import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.qa.efe.automatizacion.stores.File;
 import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 import io.cucumber.datatable.DataTable;
@@ -29,17 +30,20 @@ public class CotifedConfirmacionSolicitudSteps {
 	private CotifedGeneralidadesPage generalidadesPage;
 	private CotifedGeneralidadesSteps cotifedGeneralidadesSteps;
 	private IntegracionStore integracionStore;
+	private File file;
 
 	public CotifedConfirmacionSolicitudSteps( 
 			WebDriverManager driverManager, 
 			CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage,
 			IntegracionStore integracionStore,
-			CotifedGeneralidadesSteps cotifedGeneralidadesSteps
+			CotifedGeneralidadesSteps cotifedGeneralidadesSteps,
+			File file
 			 ) {
 		this.driver = driverManager.getDriver();
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
 		this.integracionStore=integracionStore;
 		this.cotifedGeneralidadesSteps=cotifedGeneralidadesSteps;
+		this.file=file;
 	}
 	
 	@When("Elijo tipo de desembolso {string}")
@@ -186,7 +190,9 @@ public class CotifedConfirmacionSolicitudSteps {
 	
 	@When("Obtener numero de solicitud")
 	public void Obtener_numero_solicitud() {	
+		cotifedConfirmacionSolicitudPage.getTextSolicitar();
 		String nroSolicitud = cotifedConfirmacionSolicitudPage.getNroSolicitud().getText();
+		file.cargarDatos(integracionStore.dni,nroSolicitud);
 		System.out.println(nroSolicitud);
 	}
 	@When("Terminar solicitud")

@@ -6,6 +6,7 @@ public class IntegracionStore implements Store {
 	public int iframe;
 	public int registro_operaciones;
 	public int carga_archivos;
+	public String dni;
 	@Override
 	public void reset() {
 		tipo_documento="";
@@ -13,6 +14,7 @@ public class IntegracionStore implements Store {
 		iframe= 1;
 		registro_operaciones= 0;
 		carga_archivos=0;
+		dni="";
 	}
 	public IntegracionStore() {
 		tipo_documento="";
@@ -20,6 +22,7 @@ public class IntegracionStore implements Store {
 		iframe= 1;
 		registro_operaciones= 0;
 		carga_archivos=0;
+		dni="";
 
 	}
 	
