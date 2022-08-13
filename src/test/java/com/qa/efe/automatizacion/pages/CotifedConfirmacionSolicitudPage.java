@@ -11,9 +11,11 @@ import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 public class CotifedConfirmacionSolicitudPage {
 	private WebDriver driver;
+	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 
-	public CotifedConfirmacionSolicitudPage(WebDriverManager driverManager) {
+	public CotifedConfirmacionSolicitudPage(WebDriverManager driverManager,CotifedGeneralidadesPage cotifedGeneralidadesPage) {
 		this.driver = driverManager.getDriver();
+		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
 	public WebElement getRdbtipoDesembolso(String tipoDesembolso)
 	{
@@ -73,10 +75,15 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getBtnSolicitar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10);	
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10);	
+	}
+	public void getTextSolicitar()
+	{
+		WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'Solicitar')]"));
+		cotifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement getNroSolicitud() {
-		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body//div[2]/div[3]/div/div/label[1]"), 1000);
+		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body/app-root/app-modules/app-aditional-data-main/div[3]/div/div/label[1]"), 10);
 	}
 	public WebElement getBtnOk()
 	{

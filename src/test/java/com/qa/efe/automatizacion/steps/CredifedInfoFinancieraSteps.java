@@ -1,9 +1,12 @@
 package com.qa.efe.automatizacion.steps;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoFinancieraPage;
@@ -59,17 +62,21 @@ public class CredifedInfoFinancieraSteps {
 	public void detalle_deudas()
 	{
 		try {
-			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.detalle_deudas());
-			credifedInfoFinancieraPage.detalle_deudas().click();
-			credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
-			try { 
-				String[] commands = new String[]{}; 
-				commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-				Runtime.getRuntime().exec(commands); 
-			} catch (IOException e) {}
-			SeleniumWaiters.waitSeconds(15);
-			credifedInfoFinancieraPage.click_cargar_archivo_en().click();
-			SeleniumWaiters.waitSeconds(15);
+			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.detalle_deudas(0));
+			List<WebElement> elemento = credifedInfoFinancieraPage.list_detalle_deudas();
+			for (int i = 0; i < elemento.size(); i++) {
+				credifedInfoFinancieraPage.detalle_deudas(i).click();
+				credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
+				try { 
+					String[] commands = new String[]{}; 
+					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+					Runtime.getRuntime().exec(commands); 
+				} catch (IOException e) {}
+				SeleniumWaiters.waitSeconds(15);
+				credifedInfoFinancieraPage.click_cargar_archivo_en().click();
+				SeleniumWaiters.waitSeconds(15);
+			}
+			
 		} catch (Exception e) {
 			System.out.println("No es necesario subir sustento");
 		}

@@ -34,7 +34,13 @@ public class CredifedOfertaComercialSteps {
 		
 		credifedOfertaComercialPage.click_aceptar().click();
 		SeleniumWaiters.waitSeconds(10);
-		credifedOfertaComercialPage.click_confirmar().click();
+		List<WebElement> element = credifedOfertaComercialPage.ventana_validar_aprobacion();
+		if(element.size()!=0) {
+			credifedOfertaComercialPage.click_validar_aprobacion().click();
+		}else {
+			credifedOfertaComercialPage.click_confirmar().click();
+		}
+		
 	}
 	@When("verificar que estemos en la pantalla resumen del credito")
 	public void verificar_pantalla_resumen()

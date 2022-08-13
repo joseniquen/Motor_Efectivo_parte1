@@ -65,6 +65,7 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@Then("Selecciono departamento de info domiciliaria {string}")
 	public void Selecciono_departamento_info_domiciliaria(String departamento) {
+		cotifedDatosAdicionalesPage.buscar_titulo_dom();
 		cotifedDatosAdicionalesPage.getCbxDepartamentoInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDepartamentoInfoDomiciliaria(departamento).click();
 	}
@@ -108,6 +109,7 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@Then("Ingreso nombre centro de info laboral {string}")
 	public void Ingreso_nombre_centro_info_laboral(String centro) {
+		cotifedDatosAdicionalesPage.buscar_titulo_lab();
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(centro);
 	}
@@ -158,23 +160,27 @@ public class CotifedDatosAdicionalesSteps {
 	public void Ingreso_avenida_info_laboral(String avenida) {
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(avenida);
-		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.ENTER);
+		cotifedDatosAdicionalesPage.getTxtCalleAvenida().click();
+		cotifedDatosAdicionalesPage.buscar_referencia();
+		//cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.ENTER);
 	}
 	
 	@Then("Doy click en confirmar geopoint de info laboral")
 	public void Doy_click_confirmar_geopoint_info_laboral() {
-		cotifedDatosAdicionalesPage.getBtnConfirmarInfoLaboral().sendKeys(Keys.ENTER);
+		cotifedDatosAdicionalesPage.getBtnConfirmarInfoLaboral().click();
 		System.out.println("click en aceptar coordenadas");
 	}
 	
 	@Then("Selecciono referencia de info laboral {string}")
 	public void Selecciono_referencia_info_laboral(String referencia) {
+		System.out.println(referencia);
 		cotifedDatosAdicionalesPage.getCbxReferenciaInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxReferenciaInfoLaboral(referencia).click();
 	}                                 
 	
 	@Then("Ingreso descripcion de info laboral {string}")
 	public void Ingreso_descripcion_info_laboral(String descripcion) {
+		System.out.println(descripcion);
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoLaboral().sendKeys(descripcion);
 	}

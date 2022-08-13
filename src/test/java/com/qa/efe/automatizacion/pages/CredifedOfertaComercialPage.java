@@ -27,6 +27,12 @@ public class CredifedOfertaComercialPage {
 	public WebElement click_confirmar() {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:confirmarButton"),10);
 	}
+	public WebElement click_validar_aprobacion() {
+		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:volverButton"),10);
+	}
+	public List<WebElement> ventana_validar_aprobacion() {
+		return driver.findElements(By.id("div_23_1_1_12_1"));
+	}
 	public WebElement verificar_resumen_sol() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10);
 	}

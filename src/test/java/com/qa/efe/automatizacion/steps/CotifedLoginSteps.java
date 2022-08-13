@@ -9,17 +9,20 @@ import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedLoginPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.qa.efe.automatizacion.stores.File;
 
 public class CotifedLoginSteps {
 	private CotifedLoginPage loginPage;
 	private WebDriver driver;
 	private PropertiesManager propertiesManager;
+	private File file;
 
-	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager, CotifedLoginPage loginPage
+	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager, CotifedLoginPage loginPage, File file
 			 ) {
 		this.propertiesManager = propertiesManager;
 		this.driver = driverManager.getDriver();
 		this.loginPage = loginPage;
+		this.file=file;
 	}
 
 	@Given("Abrir login cotifed")

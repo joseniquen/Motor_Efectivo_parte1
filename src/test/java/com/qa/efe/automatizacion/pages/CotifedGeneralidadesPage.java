@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.efe.automatizacion.shared.NavigationHelpers;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
@@ -49,4 +50,8 @@ public class CotifedGeneralidadesPage {
 	{
 		return  driver.findElements(By.xpath("//app-loading-cot/div"));
 	}
+	public void scrollTo(WebElement element) {
+		NavigationHelpers.scrollToElement(driver, element);
+	}
+	
 }
