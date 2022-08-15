@@ -9,8 +9,6 @@ Feature: Caso 1
         #Importe a solicitar
         #Dia de pago
         #Campaña y plazo de cliente
-        #Nombre de la captura asientos
-        #Ruta y nombre de la captura del cronograma
 
   @web
   Scenario: Línea de producto  Efectivo

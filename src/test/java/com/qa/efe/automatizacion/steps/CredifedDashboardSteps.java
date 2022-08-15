@@ -66,7 +66,12 @@ public class CredifedDashboardSteps {
 			String linea_producto = item.get("linea_producto");
 			String nro_solicitud = item.get("nro_solicitud");
 			//credifedDashboardPage.getSeleccionTipoSeguro().click();
-			credifedDashboardPage.mostrar_mas().click();
+			try {
+				credifedDashboardPage.mostrar_mas().click();
+			} catch (Exception e) {
+				System.out.println("No hay mostrar más");
+			}
+			
 			assertTrue(credifedDashboardPage.compruebo_agencia().getText().equals(agencia));
 			System.out.println("aca1");
 			assertTrue(credifedDashboardPage.compruebo_nroDoc().getText().equals(doc_titular));
