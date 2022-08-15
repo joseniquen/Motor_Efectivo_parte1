@@ -49,6 +49,8 @@ public class CotifedFiltroSteps {
 	public void ingreso_Numero_Doc(String NumeroDoc) {
 		filtroPage.getTxtNumeroDoc().sendKeys(NumeroDoc);
 		integracionStore.dni=NumeroDoc;
+		System.out.println(NumeroDoc);
+		System.out.println(integracionStore.dni);
 	}
 	@Then("Ingreso correo {string}")
 	public void ingreso_correo(String correo) {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 public class File {
 	public void cargarDatos(String dni, String solicitud) {
-		String fileName = "target/cliente_"+dni+".txt";
+		String fileName = "target/cliente_"+dni+"_"+solicitud+".txt";
 	    String encoding = "UTF-8";
 	    try{
 	    PrintWriter writer = new PrintWriter(fileName, encoding);

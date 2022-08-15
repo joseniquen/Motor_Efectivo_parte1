@@ -2,8 +2,8 @@
 Feature: Caso 1
 
 	#Modificar obligatoriamente los siguientes inputs:
-      #Usuario cotifed
-      #Contraseña cotifed
+      #Usuario credifed
+      #Contraseña credifed
       #Numero de cotizacion
       #Agencia
       #Documento del cliente
@@ -27,14 +27,14 @@ Feature: Caso 1
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10851647"
+		When ingresar instancia de proceso "10851703"
 		And dar click en pulsar para ver instancia
-		When esperar 7 segundos
+		When esperar 10 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10851647     |
+		|CHICLAYO   |01054864   |EFECTIVO      |10851703     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 10 segundos

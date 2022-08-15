@@ -144,8 +144,27 @@ public class CotifedConfirmacionSolicitudSteps {
 			}else {
 				cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
 				cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-				cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-				try { 
+				do {
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+						System.out.println("antes del click");
+						cotifedConfirmacionSolicitudPage.getBtnOk().click();
+						System.out.println("antes del click");
+					}
+					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+					try { 
+						String[] commands = new String[]{}; 
+						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+						Runtime.getRuntime().exec(commands); 
+					} catch (IOException e) {
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+					}
+					cotifedGeneralidadesSteps.pantalla_carga();
+					SeleniumWaiters.waitSeconds(10);	
+					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0);
+				/*try { 
 					String[] commands = new String[]{}; 
 					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 					Runtime.getRuntime().exec(commands); 
@@ -156,7 +175,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					cotifedConfirmacionSolicitudPage.getBtnOk().click();
 					integracionStore.carga_archivos=i;
 					Selecciono_requisito_y_cargo_archivo();
-				}
+				}*/
 			}
 		}	
 	}
@@ -194,6 +213,7 @@ public class CotifedConfirmacionSolicitudSteps {
 		String nroSolicitud = cotifedConfirmacionSolicitudPage.getNroSolicitud().getText();
 		file.cargarDatos(integracionStore.dni,nroSolicitud);
 		System.out.println(nroSolicitud);
+		System.out.println(integracionStore.dni);
 	}
 	@When("Terminar solicitud")
 	public void Terminar_solicitud() {	
