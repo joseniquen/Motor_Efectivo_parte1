@@ -28,7 +28,7 @@ Feature: Caso 1
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "01054864"
+		And Ingreso numero de documento "04645301"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"

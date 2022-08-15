@@ -62,8 +62,14 @@ public class CredifedInfoFinancieraSteps {
 	public void detalle_deudas()
 	{
 		try {
-			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.detalle_deudas(0));
+			System.out.println("1");
+			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.bajar_deudas());
+			System.out.println(credifedInfoFinancieraPage.detalle_deudas(0));
+			
+			System.out.println("2");
 			List<WebElement> elemento = credifedInfoFinancieraPage.list_detalle_deudas();
+			System.out.println(elemento);
+			
 			for (int i = 0; i < elemento.size(); i++) {
 				credifedInfoFinancieraPage.detalle_deudas(i).click();
 				credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
