@@ -20,8 +20,8 @@ Feature: Caso 1
 
     Given Abrir login cretifed
     Then Validacion de conexion segura 
-    Then Ingreso usuario bpm 'ext_fsosa'
-		And Ingreso contraseña bpm 'Efectiva.2022'
+    Then Ingreso usuario bpm 'ychiroque'
+		And Ingreso contraseña bpm 'Triunfos.2022'
 		When doy click en el boton continuar
 		
 		#dashboard

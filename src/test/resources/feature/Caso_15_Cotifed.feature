@@ -4,8 +4,8 @@ Feature: Caso plantilla
   @web
   Scenario: Caso de primera plantilla 
     Given Abrir login cotifed
-    Then Ingreso el usuario 'ext_fsosa'
-		And Ingreso la contraseña 'Efectiva.2022'
+    Then Ingreso el usuario 'ychiroque'
+		And Ingreso la contraseña 'Triunfos.2022'
 		And doy click en el boton ingresar
 		When Cargando datos espere...
 		And valido que no haya sesiones abiertas
