@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedOfertaComercialPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
@@ -14,9 +15,11 @@ import io.cucumber.java.en.When;
 public class CredifedOfertaComercialSteps {
 	private WebDriver driver;
 	private CredifedOfertaComercialPage credifedOfertaComercialPage;
-	public CredifedOfertaComercialSteps( WebDriverManager driverManager,CredifedOfertaComercialPage credifedOfertaComercialPage) {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	public CredifedOfertaComercialSteps(CredifedGeneralidadesPage credifedGeneralidadesPage, WebDriverManager driverManager,CredifedOfertaComercialPage credifedOfertaComercialPage) {
 		this.driver = driverManager.getDriver();
 		this.credifedOfertaComercialPage = credifedOfertaComercialPage;
+		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
 	@When("doy click en simular")
 	public void click_simular()
@@ -36,9 +39,71 @@ public class CredifedOfertaComercialSteps {
 		SeleniumWaiters.waitSeconds(10);
 		List<WebElement> element = credifedOfertaComercialPage.ventana_validar_aprobacion();
 		if(element.size()!=0) {
-			credifedOfertaComercialPage.click_validar_aprobacion().click();
-		}else {
+			credifedOfertaComercialPage.click_validar_aprobacion().click();	
+			SeleniumWaiters.waitSeconds(10);
+			
+			driver.switchTo().defaultContent();
+			System.out.println("cambio de inframe a default");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("09 Información Financiera Titular"));	
+			System.out.println("cambio de inframe a 09 Información Financiera Titular");
+			
+			credifedGeneralidadesPage.pestañas_menu("Oferta Comercial").click();
+			SeleniumWaiters.waitSeconds(10);
+			
+			driver.switchTo().defaultContent();
+			System.out.println("cambio de inframe a default");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("22 Oferta Comercial"));	
+			System.out.println("cambio de inframe a 22 Oferta Comercial");
+			
+			credifedOfertaComercialPage.click_simular().click();
+			SeleniumWaiters.waitSeconds(5);
+			try {
+				credifedOfertaComercialPage.click_aprobar().click();
+			} catch (Exception e) {
+				credifedOfertaComercialPage.click_simular().click();
+				SeleniumWaiters.waitSeconds(5);
+				credifedOfertaComercialPage.click_aprobar().click();
+			}
+			
+			SeleniumWaiters.waitSeconds(7);
+			
+			driver.switchTo().defaultContent();
+			System.out.println("cambio de inframe a default");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Resumen Solicitud"));	
+			System.out.println("cambio de inframe a Resumen Solicitud");
+			
+			verificar_pantalla_resumen();
+			credifedOfertaComercialPage.click_aceptar().click();
+			SeleniumWaiters.waitSeconds(10);
+			
 			credifedOfertaComercialPage.click_confirmar().click();
+			SeleniumWaiters.waitSeconds(7);
+			
+			driver.switchTo().defaultContent();
+			System.out.println("cambio de inframe a default");
+			
+			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("View Instance Details"));	
+			
+			System.out.println("cambio de inframe a View Instance Details");
+			
+			verificar_sol_aprobada();
+			
+		}else {
+			System.out.println("antes 1");
+			credifedOfertaComercialPage.click_confirmar().click();
+			System.out.println("despues 1");
 		}
 		
 	}
