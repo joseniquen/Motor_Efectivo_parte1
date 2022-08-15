@@ -27,14 +27,14 @@ Feature: Caso 1
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10851703"
+		When ingresar instancia de proceso "10851785"
 		And dar click en pulsar para ver instancia
 		When esperar 10 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |01054864   |EFECTIVO      |10851703     |
+		|CHICLAYO   |04645301   |EFECTIVO      |10851785     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 10 segundos
