@@ -56,7 +56,6 @@ public class CredifedInfoFinancieraPage {
 	}
 	public List<WebElement> list_detalle_deudas() {
 		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3\"]/div[2]/div[2]/div/table/tbody/tr")); 
-		 
 	}
 	
 	public WebElement click_seleccionar_Archivo() {
