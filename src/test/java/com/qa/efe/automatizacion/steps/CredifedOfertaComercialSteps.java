@@ -89,16 +89,6 @@ public class CredifedOfertaComercialSteps {
 			SeleniumWaiters.waitSeconds(10);
 			
 			credifedOfertaComercialPage.click_confirmar().click();
-			SeleniumWaiters.waitSeconds(7);
-			
-			driver.switchTo().defaultContent();
-			System.out.println("cambio de inframe a default");
-			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("View Instance Details"));	
-			
-			System.out.println("cambio de inframe a View Instance Details");
-			
-			verificar_sol_aprobada();
 			
 		}else {
 			System.out.println("antes 1");
