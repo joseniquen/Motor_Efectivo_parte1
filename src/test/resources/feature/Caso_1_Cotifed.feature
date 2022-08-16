@@ -53,6 +53,7 @@ Feature: Caso 1
 	   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
 	 
 	 And selecciono linea de producto "EFECTIVO"
+	 And Confirmacion de alerta
 	 When Cargando datos espere...
 	 Then dar click en Continuar
    When Cargando datos espere...
@@ -118,7 +119,7 @@ Feature: Caso 1
    When esperar 10 segundos
    And Doy click en confirmar geopoint de info domiciliaria
    And Retornar al iframe por defecto
-   When esperar 5 segundos
+   When esperar 2 segundos
    And Selecciono referencia de info domiciliaria "PASANDO DEL"
    And Ingreso descripcion de info domiciliaria "Parque de la amistad"
    #Laboral
@@ -135,7 +136,7 @@ Feature: Caso 1
    When esperar 10 segundos
    And Doy click en confirmar geopoint de info laboral
    And Retornar al iframe por defecto
-   When esperar 10 segundos
+   When esperar 2 segundos
    And Selecciono referencia de info laboral "PASANDO DEL"
    And Ingreso descripcion de info laboral "Parque de la amistad"
 	 #When esperar 5 segundos 
