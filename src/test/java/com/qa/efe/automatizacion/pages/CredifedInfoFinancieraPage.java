@@ -43,9 +43,8 @@ public class CredifedInfoFinancieraPage {
 		 
 	}
 	public WebElement antiguedad_laboral_mes() {
-		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalMesesInteger"),10);
-		 
-	}
+		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalMesesInteger"),10); 
+	}	
 	
 	public WebElement bajar_deudas() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//span[text()='Detalle de Deudas']"),10);
@@ -56,7 +55,6 @@ public class CredifedInfoFinancieraPage {
 	}
 	public List<WebElement> list_detalle_deudas() {
 		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3\"]/div[2]/div[2]/div/table/tbody/tr")); 
-		 
 	}
 	
 	public WebElement click_seleccionar_Archivo() {

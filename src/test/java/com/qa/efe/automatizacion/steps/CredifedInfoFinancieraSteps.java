@@ -57,6 +57,7 @@ public class CredifedInfoFinancieraSteps {
 		credifedInfoFinancieraPage.antiguedad_laboral_mes().click();
 		credifedInfoFinancieraPage.antiguedad_laboral_mes().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoFinancieraPage.antiguedad_laboral_mes().sendKeys(opcion1);
+		credifedInfoFinancieraPage.bajar_deudas().click();
 	}
 	@When("revisar el detalle de deudas subir sustento")
 	public void detalle_deudas()
@@ -79,7 +80,7 @@ public class CredifedInfoFinancieraSteps {
 					Runtime.getRuntime().exec(commands);			
 					SeleniumWaiters.waitSeconds(10);				
 					credifedInfoFinancieraPage.click_cargar_archivoFor(ind).click();				
-					SeleniumWaiters.waitSeconds(15);
+					SeleniumWaiters.waitSeconds(10);
 					System.out.println("Archivo N°: "+i+" subido satisfactoriamente.");
 			}
 			

@@ -20,21 +20,21 @@ Feature: Caso 1
   
     Given Abrir login cretifed
     Then Validacion de conexion segura 
-    Then Ingreso usuario bpm 'ychiroque'
-		And Ingreso contraseña bpm 'Triunfos.2022'
+    Then Ingreso usuario bpm 'ext_fsosa'
+		And Ingreso contraseña bpm 'Efectiva.2022'
 		When doy click en el boton continuar
 		
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10851983"
+		When ingresar instancia de proceso "10852006"
 		And dar click en pulsar para ver instancia
 		When esperar 7 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10851983     |
+		|CHICLAYO   |04645301   |EFECTIVO      |10852006     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 10 segundos
@@ -86,7 +86,6 @@ Feature: Caso 1
 	  
 	  When esperar 7 segundos
 		Then cambio de inframe a default
-		When esperar 2 segundos
 		Then cambio de iframe a "View Instance Details"
 		Then verificar que la solicitud de credito haya sido aprobada correctamente
 	  

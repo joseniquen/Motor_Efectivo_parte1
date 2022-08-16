@@ -148,7 +148,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
 						System.out.println("antes del click");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						System.out.println("antes del click");
+						System.out.println("despues del click");
 					}
 					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
 					try { 
