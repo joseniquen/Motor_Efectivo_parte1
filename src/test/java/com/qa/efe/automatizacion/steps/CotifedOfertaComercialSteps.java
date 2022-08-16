@@ -212,9 +212,9 @@ public class CotifedOfertaComercialSteps {
 	
 	@Then("Titular fecha de pago {string}")
 	public void Titular_fecha_pago(String fechaPago) {
-		SeleniumWaiters.waitSeconds(5);
+		SeleniumWaiters.waitSeconds(3);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
-		SeleniumWaiters.waitSeconds(5);
+		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
 	}
 	@Then("Doy click en el boton simular")
