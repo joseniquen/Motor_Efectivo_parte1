@@ -66,7 +66,7 @@ Feature: Caso 1
  		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		Then cambio de iframe a "Resumen Solicitud"
-	  Then verificar que estemmos en la pantalla reusmen del credito
+	  Then verificar que estemos en la pantalla resumen del credito
 	  Then doy click en aceptar solicitud de credito
 	  
 	  When esperar 7 segundos
