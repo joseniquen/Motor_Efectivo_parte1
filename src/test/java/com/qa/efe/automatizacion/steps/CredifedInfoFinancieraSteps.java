@@ -61,26 +61,26 @@ public class CredifedInfoFinancieraSteps {
 	@When("revisar el detalle de deudas subir sustento")
 	public void detalle_deudas()
 	{
-		try {
-			System.out.println("1");
-			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.bajar_deudas());
-			System.out.println(credifedInfoFinancieraPage.detalle_deudas(0));
+		
+		try {			
+			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.bajar_deudas());			
+			List<WebElement> elemento = credifedInfoFinancieraPage.list_detalle_deudas();			
+			int fijo = -2;
 			
-			System.out.println("2");
-			List<WebElement> elemento = credifedInfoFinancieraPage.list_detalle_deudas();
-			System.out.println(elemento);
-			
-			for (int i = 0; i < elemento.size(); i++) {
-				credifedInfoFinancieraPage.detalle_deudas(i).click();
-				credifedInfoFinancieraPage.click_seleccionar_Archivo().click();
-				try { 
-					String[] commands = new String[]{}; 
-					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-					Runtime.getRuntime().exec(commands); 
-				} catch (IOException e) {}
-				SeleniumWaiters.waitSeconds(15);
-				credifedInfoFinancieraPage.click_cargar_archivo_en().click();
-				SeleniumWaiters.waitSeconds(15);
+			for (int i = 0; i < elemento.size(); i++) {	
+				 fijo = fijo + 6;
+				 String fijoString = String.valueOf(fijo);
+				 String ind = String.valueOf(i);			 
+				 
+					credifedInfoFinancieraPage.detalle_deudas(i).click();					
+					credifedInfoFinancieraPage.click_seleccionar_ArchivoFor(fijoString).click();				
+					String[] commands = new String[]{}; 					
+					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};					
+					Runtime.getRuntime().exec(commands);			
+					SeleniumWaiters.waitSeconds(10);				
+					credifedInfoFinancieraPage.click_cargar_archivoFor(ind).click();				
+					SeleniumWaiters.waitSeconds(15);
+					System.out.println("Archivo N°: "+i+" subido satisfactoriamente.");
 			}
 			
 		} catch (Exception e) {

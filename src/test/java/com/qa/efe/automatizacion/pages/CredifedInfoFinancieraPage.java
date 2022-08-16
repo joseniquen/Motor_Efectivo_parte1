@@ -52,7 +52,7 @@ public class CredifedInfoFinancieraPage {
 	}
 	
 	public WebElement detalle_deudas(int opc) {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1['"+opc+"']:AddButton"),10);	 
+		return SeleniumWaiters.findElement(driver, By.id("button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1["+opc+"]:AddButton"),10);	 
 	}
 	public List<WebElement> list_detalle_deudas() {
 		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3\"]/div[2]/div[2]/div/table/tbody/tr")); 
@@ -60,12 +60,16 @@ public class CredifedInfoFinancieraPage {
 	}
 	
 	public WebElement click_seleccionar_Archivo() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Select...']"),10);
-		 
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\\\"div_12_1_1_1_1_r4\\\"]//td/div[text()='Select...']"),10);
+	}
+	public WebElement click_seleccionar_ArchivoFor(String param) {
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r"+param+"\"]/div/table/tbody/tr[1]/td[1]/div"),10);
 	}
 	public WebElement click_cargar_archivo() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//button[text()=\"Cargar\"]"),10);
-		 
+		return SeleniumWaiters.findElement(driver, By.xpath("//button[text()=\\\"Cargar\\\"]"),10);		 
+	}
+	public WebElement click_cargar_archivoFor(String ind) {
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1["+ind+"]:UploadButton\"]"),10);
 	}
 	public WebElement click_cargar_archivo_en() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//button[text()=\"Upload\"]"),10);
