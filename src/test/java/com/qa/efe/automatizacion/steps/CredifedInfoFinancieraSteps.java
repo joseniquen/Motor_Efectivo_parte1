@@ -65,7 +65,7 @@ public class CredifedInfoFinancieraSteps {
 		try {			
 			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.bajar_deudas());			
 			List<WebElement> elemento = credifedInfoFinancieraPage.list_detalle_deudas();			
-			int fijo = -2;
+			int fijo = -2;			
 			
 			for (int i = 0; i < elemento.size(); i++) {	
 				 fijo = fijo + 6;
