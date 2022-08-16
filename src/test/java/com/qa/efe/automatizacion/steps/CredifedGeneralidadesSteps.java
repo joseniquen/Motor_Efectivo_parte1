@@ -97,7 +97,6 @@ public class CredifedGeneralidadesSteps {
 		} catch (Exception e) {
 			System.out.println("Pasa ok");
 		}
-		
 	}
 	@When("doy click en continuar")
 	public void click_btn_continuar()

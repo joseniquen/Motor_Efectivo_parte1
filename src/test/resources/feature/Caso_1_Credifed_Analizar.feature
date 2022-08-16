@@ -27,14 +27,14 @@ Feature: Caso 1
 		#dashboard
 		When dar click en procesos
 		Then cambio de iframe a "Search Results"
-		When ingresar instancia de proceso "10851950"
+		When ingresar instancia de proceso "10852006"
 		And dar click en pulsar para ver instancia
 		When esperar 10 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10851950     |
+		|CHICLAYO   |04645301   |EFECTIVO      |10852006     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
 		When esperar 10 segundos
@@ -106,7 +106,7 @@ Feature: Caso 1
 	  Then selecciono ocupacion "ABOGADO"
 		And ingreso declarado "90000"
 		And registro antiguedad laboral "30" años y "7" meses
-		When esperar 10 segundos
+		When esperar 1 segundos
 		When revisar el detalle de deudas subir sustento
 		#temporal
 	 	When verifica si existe error en filtro evaluacion financiera

@@ -118,7 +118,7 @@ Feature: Caso 1
    When esperar 10 segundos
    And Doy click en confirmar geopoint de info domiciliaria
    And Retornar al iframe por defecto
-   When esperar 5 segundos
+   When esperar 10 segundos
    And Selecciono referencia de info domiciliaria "PASANDO DEL"
    And Ingreso descripcion de info domiciliaria "Parque de la amistad"
    #Laboral

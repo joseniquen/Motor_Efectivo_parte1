@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
+import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.java.en.Then;
@@ -74,6 +75,7 @@ public class CredifedInfoLaboralSteps {
 	@When("click en ubicar mapa laboral")
 	public void click_btn_ubicar_mapa_laboral()
 	{
+		SeleniumWaiters.waitSeconds(3);
 		credifedInfoLaboralPage.click_btn_ubicar_mapa().click();
 	}
 	@When("selecciono tipo de referencia laboral {string}")
