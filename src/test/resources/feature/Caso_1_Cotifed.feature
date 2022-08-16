@@ -19,8 +19,8 @@ Feature: Caso 1
   				- Sin periodo de gracia
   				
     Given Abrir login cotifed
-    Then Ingreso el usuario 'ext_fsosa'
-		And Ingreso la contraseña 'Efectiva.2022'
+    Then Ingreso el usuario 'ychiroque'
+		And Ingreso la contraseña 'Triunfos.2022'
 		And doy click en el boton ingresar
 		When Cargando datos espere...
 		And valido que no haya sesiones abiertas
@@ -28,7 +28,7 @@ Feature: Caso 1
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "01054864"
+		And Ingreso numero de documento "44970551"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
@@ -37,9 +37,8 @@ Feature: Caso 1
 		
 	 #seccion de linea de producto
 	 And Confirmacion de alerta
-	 
-	 #seccion nbk-no-reniec
-		
+
+	 #seccion nbk-no-reniec	
 		Then Ingreso datos personales
 		 | primer_nombre  |   segundo_nombre   |   apellido_paterno  |  apellido_materno |  sexo      |  estado_civil  |  fecha_nac   |
 		 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
@@ -53,6 +52,7 @@ Feature: Caso 1
 	   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
 	 
 	 And selecciono linea de producto "EFECTIVO"
+	 And Confirmacion de alerta
 	 When Cargando datos espere...
 	 Then dar click en Continuar
    When Cargando datos espere...
@@ -118,7 +118,7 @@ Feature: Caso 1
    When esperar 10 segundos
    And Doy click en confirmar geopoint de info domiciliaria
    And Retornar al iframe por defecto
-   When esperar 2 segundos
+   When esperar 5 segundos
    And Selecciono referencia de info domiciliaria "PASANDO DEL"
    And Ingreso descripcion de info domiciliaria "Parque de la amistad"
    #Laboral
@@ -135,7 +135,7 @@ Feature: Caso 1
    When esperar 10 segundos
    And Doy click en confirmar geopoint de info laboral
    And Retornar al iframe por defecto
-   When esperar 2 segundos
+   When esperar 10 segundos
    And Selecciono referencia de info laboral "PASANDO DEL"
    And Ingreso descripcion de info laboral "Parque de la amistad"
 	 #When esperar 5 segundos 
