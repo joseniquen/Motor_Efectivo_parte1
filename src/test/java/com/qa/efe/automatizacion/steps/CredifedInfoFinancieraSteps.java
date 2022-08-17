@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoFinancieraPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
@@ -19,10 +20,12 @@ public class CredifedInfoFinancieraSteps {
 	private WebDriver driver;
 	private CredifedInfoFinancieraPage credifedInfoFinancieraPage;
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
-	public CredifedInfoFinancieraSteps( WebDriverManager driverManager,CredifedInfoFinancieraPage credifedInfoFinancieraPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
+	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
+	public CredifedInfoFinancieraSteps( WebDriverManager driverManager,CredifedInfoFinancieraPage credifedInfoFinancieraPage,CredifedGeneralidadesPage credifedGeneralidadesPage,CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage) {
 		this.driver = driverManager.getDriver();
 		this.credifedInfoFinancieraPage = credifedInfoFinancieraPage;
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+		this.cotifedConfirmacionSolicitudPage=cotifedConfirmacionSolicitudPage;
 	}
 	@When("perfil de ingreso principal {string}")
 	public void perfil_ingreso_principal(String opcion)
@@ -80,7 +83,7 @@ public class CredifedInfoFinancieraSteps {
 					Runtime.getRuntime().exec(commands);			
 					SeleniumWaiters.waitSeconds(10);				
 					credifedInfoFinancieraPage.click_cargar_archivoFor(ind).click();				
-					SeleniumWaiters.waitSeconds(10);
+					SeleniumWaiters.waitSeconds(15);
 					System.out.println("Archivo N°: "+i+" subido satisfactoriamente.");
 			}
 			

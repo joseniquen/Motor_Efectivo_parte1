@@ -73,79 +73,140 @@ public class CotifedConfirmacionSolicitudSteps {
 			System.out.println(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText());
 			if(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText().equals("DNI")) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
+					//NUEVO CODIGO
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-					try { 
-						String[] commands = new String[]{}; 
-						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-						Runtime.getRuntime().exec(commands); 
-					} catch (IOException e) {}
-					cotifedGeneralidadesSteps.pantalla_carga();
+					do {
+						if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0) {
+							System.out.println("antes del click");
+							cotifedConfirmacionSolicitudPage.getBtnOk().click();
+							System.out.println("despues del click");
+						}
+						cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+						try { 
+							String[] commands = new String[]{}; 
+							commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+							Runtime.getRuntime().exec(commands); 
+						} catch (IOException e) {
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						}
+						cotifedGeneralidadesSteps.pantalla_carga();
+						SeleniumWaiters.waitSeconds(15);	
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
 					
-					SeleniumWaiters.waitSeconds(5);	
-					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						integracionStore.carga_archivos=i;
-						Selecciono_requisito_y_cargo_archivo();
-					}
+					//FIN NUEVO CODIGO
+					
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
+					
+					//NUEVO CODIGO
+					
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-					try { 
-						String[] commands = new String[]{}; 
-						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-						Runtime.getRuntime().exec(commands); 
-					} catch (IOException e) {}
-					cotifedGeneralidadesSteps.pantalla_carga();
-					SeleniumWaiters.waitSeconds(5);	
-					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						integracionStore.carga_archivos=i;
-						Selecciono_requisito_y_cargo_archivo();
-					}				
+					do {
+						if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0) {
+							System.out.println("antes del click");
+							cotifedConfirmacionSolicitudPage.getBtnOk().click();
+							System.out.println("despues del click");
+						}
+						cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+						try { 
+							String[] commands = new String[]{}; 
+							commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+							Runtime.getRuntime().exec(commands); 
+						} catch (IOException e) {
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						}
+						cotifedGeneralidadesSteps.pantalla_carga();
+						SeleniumWaiters.waitSeconds(15);	
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
+					
+					//FIN CODIGO			
 				}
 			}
 			else if(cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).getText().equals("DNI REVERSO")) {
 				if(integracionStore.tipo_documento.equals("CARNET.EXTRANJERIA")) {
+					//CODIGO NUEVO	
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,3).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-					try { 
-						String[] commands = new String[]{}; 
-						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-						Runtime.getRuntime().exec(commands); 
-					} catch (IOException e) {}
-					cotifedGeneralidadesSteps.pantalla_carga();
-					SeleniumWaiters.waitSeconds(5);	
-					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						integracionStore.carga_archivos=i;
-						Selecciono_requisito_y_cargo_archivo();
-					}
+					do {
+						if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0) {
+							System.out.println("antes del click");
+							cotifedConfirmacionSolicitudPage.getBtnOk().click();
+							System.out.println("despues del click");
+						}
+						cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+						try { 
+							String[] commands = new String[]{}; 
+							commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+							Runtime.getRuntime().exec(commands); 
+						} catch (IOException e) {
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						}
+						cotifedGeneralidadesSteps.pantalla_carga();
+						SeleniumWaiters.waitSeconds(15);	
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
+					
+					//FIN CODIGO NUEVO
+					
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
+					
+					//NUEVO CODIGO
+					
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
-					cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
-					try { 
-						String[] commands = new String[]{}; 
-						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-						Runtime.getRuntime().exec(commands); 
-					} catch (IOException e) {}
-					cotifedGeneralidadesSteps.pantalla_carga();
-					SeleniumWaiters.waitSeconds(5);	
-					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-						cotifedConfirmacionSolicitudPage.getBtnOk().click();
-						integracionStore.carga_archivos=i;
-						Selecciono_requisito_y_cargo_archivo();
-					}
+					do {
+						if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0) {
+							System.out.println("antes del click");
+							cotifedConfirmacionSolicitudPage.getBtnOk().click();
+							System.out.println("despues del click");
+						}
+						cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
+						try { 
+							String[] commands = new String[]{}; 
+							commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+							Runtime.getRuntime().exec(commands); 
+						} catch (IOException e) {
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+							System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+							System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						}
+						cotifedGeneralidadesSteps.pantalla_carga();
+						SeleniumWaiters.waitSeconds(15);	
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+						System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
+					
+					//FIN DE NUEVO CODIGO
 				}
 			}else {
 				cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
 				cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
 				do {
-					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
+					if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0) {
 						System.out.println("antes del click");
 						cotifedConfirmacionSolicitudPage.getBtnOk().click();
 						System.out.println("despues del click");
@@ -156,26 +217,19 @@ public class CotifedConfirmacionSolicitudSteps {
 						commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
 						Runtime.getRuntime().exec(commands); 
 					} catch (IOException e) {
-						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
-						System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+						System.out.println("Errores 1 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+						System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+						System.out.println("Errores 2 dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 					}
 					cotifedGeneralidadesSteps.pantalla_carga();
-					SeleniumWaiters.waitSeconds(10);	
-					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
-					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
-				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0);
-				/*try { 
-					String[] commands = new String[]{}; 
-					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
-					Runtime.getRuntime().exec(commands); 
-				} catch (IOException e) {}
-				cotifedGeneralidadesSteps.pantalla_carga();
-				SeleniumWaiters.waitSeconds(5);	
-				if(cotifedConfirmacionSolicitudPage.getErrorSharePoint().size()!=0) {
-					cotifedConfirmacionSolicitudPage.getBtnOk().click();
-					integracionStore.carga_archivos=i;
-					Selecciono_requisito_y_cargo_archivo();
-				}*/
+					SeleniumWaiters.waitSeconds(15);	
+					System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint().size());
+					System.out.println("Errores 1:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint());
+					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
+					System.out.println("Errores 2:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
+
 			}
 		}	
 	}

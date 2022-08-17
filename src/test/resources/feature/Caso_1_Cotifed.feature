@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 1
+Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud para BPM
 
     #Modificar obligatoriamente los siguientes inputs:
         #Usuario cotifed
@@ -19,8 +19,8 @@ Feature: Caso 1
   				- Sin periodo de gracia
   				
     Given Abrir login cotifed
-    Then Ingreso el usuario 'ext_fsosa'
-		And Ingreso la contraseña 'Efectiva.2022'
+    Then Ingreso el usuario 'wpatino'
+		And Ingreso la contraseña 'TupacAmaru2789'
 		And doy click en el boton ingresar
 		When Cargando datos espere...
 		And valido que no haya sesiones abiertas
@@ -28,7 +28,7 @@ Feature: Caso 1
 		When Cargando datos espere...
 		Then Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "04645301"
+		And Ingreso numero de documento "01054864"
 		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
