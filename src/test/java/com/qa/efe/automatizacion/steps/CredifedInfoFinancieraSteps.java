@@ -27,32 +27,28 @@ public class CredifedInfoFinancieraSteps {
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
 		this.cotifedConfirmacionSolicitudPage=cotifedConfirmacionSolicitudPage;
 	}
-	@When("perfil de ingreso principal {string}")
-	public void perfil_ingreso_principal(String opcion)
+	@When("Selecciono perfil de ingreso principal {string}")
+	public void SeleccionoPerfilIngresoPrincipal(String opcion)
 	{
 		credifedInfoFinancieraPage.perfil_ingreso_principal(opcion).click();
 	}
-	@When("selecciono situacion laboral {string}")
-	public void situacion_laboral(String opcion)
+	@When("Selecciono situacion laboral {string}")
+	public void seleccionoSituacionLaboral(String opcion)
 	{
 		credifedInfoFinancieraPage.situacion_laboral(opcion).click();
-		//credifedInfoFinancieraPage.situacion_laboral().sendKeys(opcion);
 	}
-	@When("selecciono ocupacion {string}")
-	public void selecciono_ocupacion(String opcion)
+	@When("Selecciono ocupacion {string}")
+	public void seleccionoOcupacion(String opcion)
 	{
 		credifedInfoFinancieraPage.selecciono_ocupacion(opcion).click();
-		//credifedInfoFinancieraPage.selecciono_ocupacion().sendKeys(opcion);
 	}
-	@When("ingreso declarado {string}")
-	public void ingreso_declarado(String opcion)
+	@When("Ingreso declarado {string}")
+	public void ingresoDeclarado(String opcion)
 	{
-		//credifedInfoFinancieraPage.ingreso_declarado().click();
-		//credifedInfoFinancieraPage.ingreso_declarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoFinancieraPage.ingreso_declarado(opcion);
 	}
-	@When("registro antiguedad laboral {string} años y {string} meses")
-	public void antiguedad_laboral(String opcion,String opcion1)
+	@When("Registro antiguedad laboral {string} años y {string} meses")
+	public void registroAntiguedadLaboral(String opcion,String opcion1)
 	{
 		credifedInfoFinancieraPage.antiguedad_laboral_anio().click();
 		credifedInfoFinancieraPage.antiguedad_laboral_anio().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -62,8 +58,8 @@ public class CredifedInfoFinancieraSteps {
 		credifedInfoFinancieraPage.antiguedad_laboral_mes().sendKeys(opcion1);
 		credifedInfoFinancieraPage.bajar_deudas().click();
 	}
-	@When("revisar el detalle de deudas subir sustento")
-	public void detalle_deudas()
+	@When("Reviso el detalle de deudas subir sustento")
+	public void revisoDetalleDeudas()
 	{
 		
 		try {			

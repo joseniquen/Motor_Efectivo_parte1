@@ -45,10 +45,10 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("09 Información Financiera Titular"));	
+			credifedGeneralidadesPage.cambioIframe("09 Información Financiera Titular");	
 			System.out.println("cambio de inframe a 09 Información Financiera Titular");
 			
 			credifedGeneralidadesPage.pestañas_menu("Oferta Comercial").click();
@@ -57,10 +57,10 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("22 Oferta Comercial"));	
+			credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
 			System.out.println("cambio de inframe a 22 Oferta Comercial");
 			
 			credifedOfertaComercialPage.click_simular().click();
@@ -78,10 +78,10 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Resumen Solicitud"));	
+			credifedGeneralidadesPage.cambioIframe("Resumen Solicitud");	
 			System.out.println("cambio de inframe a Resumen Solicitud");
 			
 			verificar_pantalla_resumen();

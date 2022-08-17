@@ -11,6 +11,7 @@ import com.qa.efe.automatizacion.pages.CredifedValidacionRequisitosPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CredifedValidacionRequisitosSteps {
@@ -24,8 +25,8 @@ public class CredifedValidacionRequisitosSteps {
 		this.credifedValidacionRequisitosPage = credifedValidacionRequisitosPage;
 	}
 	
-	@When("continuo a aprobacion de la solicitud")
-	public void aprob_solicitud()
+	@Then("Continuo a aprobacion de la solicitud")
+	public void continuoAprobacionSolicitud()
 	{
 		credifedValidacionRequisitosPage.aprob_solicitud().click();
 	}

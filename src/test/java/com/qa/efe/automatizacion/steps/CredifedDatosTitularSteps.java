@@ -16,65 +16,63 @@ public class CredifedDatosTitularSteps {
 		this.credifedDatosTitularPage = credifedDatosTitularPage;
 	}
 	
-	@When("doy click en boton editar")
-	public void click_btn_editar()
+	@When("Doy click en boton editar")
+	public void clickBtnEditar()
 	{
 		credifedDatosTitularPage.click_btn_editar().click();
 	}
-	@When("selecciono tipo de venta {string}")
-	public void select_tipo_venta(String opcion)
+	@When("Selecciono tipo de venta {string}")
+	public void seleccionoTipoVenta(String opcion)
 	{
 		credifedDatosTitularPage.select_tipo_venta(opcion).click();
 	}
-	@When("selecciono condicion especial {string}")
-	public void select_condicion_especial(String opcion)
+	@When("Selecciono condicion especial {string}")
+	public void seleccionoCondicionEspecial(String opcion)
 	{
 		credifedDatosTitularPage.select_condicion_especial(opcion).click();
 	}
-	@When("selecciono estado civil {string}")
-	public void select_estado_civi(String opcion)
+	@When("Selecciono estado civil {string}")
+	public void seleccionoEstadoCivi(String opcion)
 	{
 		credifedDatosTitularPage.select_estado_civil(opcion).click();
 	}
-	@When("selecciono pais de nacimiento {string}")
-	public void select_pais_nacimiento(String opcion)
+	@When("Selecciono pais de nacimiento {string}")
+	public void seleccionoPaisNacimiento(String opcion)
 	{
 		credifedDatosTitularPage.select_pais_nacimiento(opcion).click();
 	}
-	@When("selecciono pais de residencia {string}")
-	public void select_pais_residencia(String opcion)
+	@When("Selecciono pais de residencia {string}")
+	public void SeleccionoPaisResidencia(String opcion)
 	{
 		credifedDatosTitularPage.select_pais_residencia(opcion).click();
 	}
-	@When("ingreso celular principal {string}")
-	public void ingreso_cel_prinicipal(String opcion)
+	@When("Ingreso celular principal {string}")
+	public void ingresoCelularPrincipal(String opcion)
 	{
 		credifedDatosTitularPage.ingreso_cel_prinicipal().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingreso_cel_prinicipal().sendKeys(opcion);
 	}
-	@When("ingreso celular secundario {string}")
-	public void ingreso_cel_secundario(String opcion)
+	@When("Ingreso celular secundario {string}")
+	public void ingresoCelularSecundario(String opcion)
 	{
 		credifedDatosTitularPage.ingreso_cel_secundario().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingreso_cel_secundario().sendKeys(opcion);
 	}
-	@When("elijo e ingreso telefono fijo {string} {string}")
-	public void select_pais_tel_fijo(String pais,String nro)
+	@When("Elijo e ingreso telefono fijo {string} {string}")
+	public void elijoIngresoTelefonoFijo(String pais,String nro)
 	{
 		credifedDatosTitularPage.select_pais_tel_fijo(pais).click();
 		if(pais.equals("LIMA")) {
-			System.out.println("aa");
 			credifedDatosTitularPage.ingreso_telefono_fijo_lima().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			credifedDatosTitularPage.ingreso_telefono_fijo_lima().sendKeys(nro);
 		}else {
-			System.out.println("bb");
 			credifedDatosTitularPage.ingreso_telefono_fijo_otros().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			credifedDatosTitularPage.ingreso_telefono_fijo_otros().sendKeys(nro);	
 		}
 		
 	}
-	@When("ingreso correo electronico {string}")
-	public void ingreso_correo(String opcion)
+	@When("Ingreso correo electronico {string}")
+	public void ingresoCorreo(String opcion)
 	{
 		credifedDatosTitularPage.ingreso_correo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingreso_correo().sendKeys(opcion);
