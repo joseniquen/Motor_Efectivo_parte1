@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
+import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -46,19 +47,22 @@ import java.util.Map;
 public class CotifedOfertaComercialSteps {
 	private CotifedOfertaComercialPage cotifedOfertaComercialPage;
 	private WebDriver driver;
+	private CotifedGeneralidadesPage generalidadesPage;
 
-	public CotifedOfertaComercialSteps( WebDriverManager driverManager, CotifedOfertaComercialPage cotifedOfertaComercialPage
+	public CotifedOfertaComercialSteps( WebDriverManager driverManager,CotifedGeneralidadesPage generalidadesPage, CotifedOfertaComercialPage cotifedOfertaComercialPage
 			 ) {
 		this.driver = driverManager.getDriver();
 		this.cotifedOfertaComercialPage = cotifedOfertaComercialPage;
+		this.generalidadesPage=generalidadesPage;
 	}
-	@Then("Validar que se recupero ingreso vigente")
-	public void validar_ingreso_vigente() {
-		System.out.println("aca1");
+	@Then("Valido que se recupero ingreso vigente")
+	public void validoIngresoVigente() {
 		if(cotifedOfertaComercialPage.getValidaIngresoVigente().size()!=0) {
-			System.out.println("aca2");
 			cotifedOfertaComercialPage.getValidaIngresoVigenteButtonOk().click();
 		}
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
 	@Then("Ingreso modelo de producto {string}")
 	public void ingreso_modelo_producto(String modelo) {
@@ -79,40 +83,39 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getTxPrecioProducto().sendKeys(precio);
 	}
 	
-	@Then("Validar seguros marcados")
-	public void Validar_seguros_marcados() {
+	@When("Valido seguros marcados")
+	public void validoSegurosMarcados() {
 		cotifedOfertaComercialPage.validarSegurosMarcados();
 	}
 	
-	@Then("Selecciono seguros")
-	public void selecciono_seguros(DataTable seguros) {
+	@When("Selecciono seguros")
+	public void seleccionoSeguros(DataTable seguros) {
 		List<Map<String, String>> items = seguros.asMaps(String.class, String.class);
 		for (int i = 0; i < items.size(); i++) {
 			Map<String, String> item = items.get(i);
-			System.out.println("item: "+item.get("seguros"));
 			cotifedOfertaComercialPage.getSeleccionTipoSeguro(item.get("seguros")).click();
 		}
 	}
 	
-	@Then("Titular selecciono estado civil {string}")
-	public void Titular_selecciono_estado_civil(String estado) {
+	@When("Titular selecciono estado civil {string}")
+	public void titularSeleccionoEstadoCivil(String estado) {
 		if (cotifedOfertaComercialPage.getCbxEstado_existe().size()!=0) {
 			cotifedOfertaComercialPage.getCbxEstado().click();
 			cotifedOfertaComercialPage.getOpcionEstado(estado).click();
 		}
 		else{
-			System.out.println("campo deshabilitado");
+			System.out.println("Campo deshabilitado");
 		}
 	}
 	
-	@Then("Titular selecciono pais {string}")
-	public void Titular_selecciono_pais(String pais) {
+	@When("Titular selecciono pais {string}")
+	public void titularSeleccionoPais(String pais) {
 		cotifedOfertaComercialPage.getCbxPais().click();
 		cotifedOfertaComercialPage.getOpcionPais(pais).click();
 	}
 	
-	@Then("Titular selecciono tipo de vivienda {string}")
-	public void Titular_seleccionar_tipoVivienda(String tipoVivienda) {
+	@When("Titular selecciono tipo de vivienda {string}")
+	public void titularSeleccionoTipoVivienda(String tipoVivienda) {
 		if (cotifedOfertaComercialPage.getCbxTipoVivienda_existe().size()!=0) {
 			cotifedOfertaComercialPage.getCbxTipoVivienda().click();
 			cotifedOfertaComercialPage.getOpcionTipoVivienda(tipoVivienda).click();
@@ -122,30 +125,33 @@ public class CotifedOfertaComercialSteps {
 		}
 	}
 	
-	@Then("Titular ingreso Ant Dom Años {string}")
-	public void Titular_ingreso_Ant_Dom_Anios(String anios) {
+	@When("Titular ingreso antiguedad domicialiaria en años {string}")
+	public void titularIngresoAntiguedadDomicialiariaAnios(String anios) {
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(anios);
 	}
 	
-	@Then("Titular ingreso Ant Dom Meses {string}")
-	public void Titular_ingreso_Ant_Dom_meses(String meses) {
+	@When("Titular ingreso antiguedad domicialiaria en meses {string}")
+	public void titularIngresoAntiguedadDomicialiariaMeses(String meses) {
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(meses);
 	}
 	
-	@Then("Titular ingreso declarado {string}")
-	public void Titular_ingreso_declarado(String ingresoDeclarado) {	
+	@When("Titular ingreso declarado {string}")
+	public void titularIngresoDeclarado(String ingresoDeclarado) {	
 		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
 			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(ingresoDeclarado);	
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 			System.out.println("EL CHECK ESTÁ MARCADO");
-		}	
+		}
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
 	
-	@Then("Titular doy check a Usar Ingreso Declarado")
-	public void Titular_doy_check_Usar_Ingreso_Declarado() {
+	@When("Titular doy check a usar ingreso declarado")
+	public void titularDoyCheckUsarIngresoDeclarado() {
 		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
 			cotifedOfertaComercialPage.getCheckIngreso().click();
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
@@ -154,8 +160,8 @@ public class CotifedOfertaComercialSteps {
 		
 	}
 	
-	@Then("Titular ingreso situacion {string}")
-	public void Titular_ingreso_situacion(String situacion) {
+	@When("Titular ingreso situacion {string}")
+	public void titularIngresoSituacion(String situacion) {
 		if(cotifedOfertaComercialPage.getSituacion_existe().size()!=0) {
 			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {
 				cotifedOfertaComercialPage.getSituacion().click();
@@ -167,11 +173,14 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 		
 	}
 	
-	@Then("Titular ingreso ocupacion {string}")
-	public void Titular_ingreso_ocupacion(String ocupacion) {
+	@When("Titular ingreso ocupacion {string}")
+	public void TitularIngresoOcupacion(String ocupacion) {
 		if(cotifedOfertaComercialPage.getOcupacion_existe().size()!=0) {
 			if (cotifedOfertaComercialPage.getOcupacion().isEnabled()) {
 				cotifedOfertaComercialPage.getOcupacion().click();
@@ -183,47 +192,56 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 		
 	}
 	
-	@Then("Titular ingreso Ant Lab Años {string}")
-	public void Titular_ingreso_Ant_Lab_Anios(String LabAnios) {
+	@When("Titular ingreso antiguedad laboral en años {string}")
+	public void titularIngresoAntiguedadLaboralAnios(String LabAnios) {
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(LabAnios);
 	}
 	
-	@Then("Titular ingreso Ant Lab Meses {string}")
-	public void Titular_ingreso_Ant_Lab_meses(String LabMeses) {
+	@When("Titular ingreso antiguedad laboral en meses {string}")
+	public void titularIngresoAntiguedadLaboralMeses(String LabMeses) {
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(LabMeses);
 	}
 	
-	@Then("Titular ingreso inicial {string}")
+	@When("Titular ingreso inicial {string}")
 	public void Titular_ingreso_inicial(String inicial) {
 		cotifedOfertaComercialPage.getTxtInicial().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtInicial().sendKeys(inicial);
 	}
 	
-	@Then("Titular ingreso cantidad a solicitar {string}")
-	public void Titular_ingreso_cantidadASolicitar(String cantidadASolicitar) {
+	@When("Titular ingreso cantidad a solicitar {string}")
+	public void titularIngresoCantidadASolicitar(String cantidadASolicitar) {
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(cantidadASolicitar);
 	}
 	
-	@Then("Titular fecha de pago {string}")
+	@When("Titular selecciono fecha de pago {string}")
 	public void Titular_fecha_pago(String fechaPago) {
 		SeleniumWaiters.waitSeconds(3);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
-	@Then("Doy click en el boton simular")
-	public void Doy_click_simular() {
+	@When("Doy click en el boton simular")
+	public void doyClickBotonSimular() {
 		cotifedOfertaComercialPage.getBtnSimular().click();
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
 	
 	@When("Elijo campaña {string} con plazo {string}")
-	public void elijo_campania(String campania,String plazo)
+	public void elijoCampaniaConPlazo(String campania,String plazo)
 	{
 		List<String> columns = cotifedOfertaComercialPage.getColumnas()
 				.stream()
@@ -234,15 +252,20 @@ public class CotifedOfertaComercialSteps {
 		List<String> palabras =	Arrays.asList(columns.get(i).split("\\s+"));
 		columnss.add(palabras.get(0));
 		}
-		
 		int columnIndex = columnss.indexOf(campania);
 		columnIndex=columnIndex+1;
 		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td['"+columnIndex+"']/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
 	
-	@Then("Doy click en el boton continuar")
-	public void Doy_click_boton_continuar() {
+	@When("Doy click en el boton continuar")
+	public void doyClickBotonContinuar() {
 		cotifedOfertaComercialPage.getBtnContinuar().click();
+		while(generalidadesPage.Pantalla_Carga().size() != 0) {
+		}
+		SeleniumWaiters.waitSeconds(2);
 	}
 }

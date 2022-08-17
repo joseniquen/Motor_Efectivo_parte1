@@ -17,84 +17,71 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
   				- Desembolso efectivo en tienda vendedor 
   				- Plan A Desgravamen SDev 
   				- Sin periodo de gracia
-  				
+  	
+  	#SECCIÓN: LOGIN			
     Given Abrir login cotifed
-    Then Ingreso el usuario 'wpatino'
-		And Ingreso la contraseña 'TupacAmaru2789'
-		And doy click en el boton ingresar
-		When Cargando datos espere...
-		And valido que no haya sesiones abiertas
-		#seccion de filtro
-		When Cargando datos espere...
-		Then Selecciono tienda "CHICLAYO" 
+    When Ingreso mi usuario 'wpatino'
+		And Ingreso mi contraseña 'TupacAmaru2789'
+		And Doy click en el boton ingresar
+		And Valido que no haya sesiones abiertas
+		
+		#SECCIÓN: FILTRO
+		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
 		And Ingreso numero de documento "01054864"
-		When Cargando datos espere...
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
-		When Cargando datos espere...
-		
-	 #seccion de linea de producto
-	 And Confirmacion de alerta
+	 	And Confirmo alerta
 	 
-	 #seccion nbk-no-reniec
-		
-		Then Ingreso datos personales
-		 | primer_nombre  |   segundo_nombre   |   apellido_paterno  |  apellido_materno |  sexo      |  estado_civil  |  fecha_nac   |
-		 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
-		
-		Then Ingreso informacion de vivienda
-	   | departamento |  provincia  |  distrito  |  tipo_vivienda  |
-	   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |
+			 	#SECCIÓN: NBK-NO-RENIEC
+				When Ingreso datos personales
+				 | primer_nombre  |   segundo_nombre   |   apellido_paterno  |  apellido_materno |  sexo      |  estado_civil  |  fecha_nac   |
+				 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
+				When Ingreso informacion de vivienda
+			   | departamento |  provincia  |  distrito  |  tipo_vivienda  |
+			   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |   
+			  When Ingreso informacion laboral
+			   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
+			   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
 	   
-	   Then Ingreso informacion laboral
-	   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
-	   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
+	 #SECCIÓN: LINEA DE PRODUCTO
+	 When Selecciono linea de producto "EFECTIVO"
+	 And Confirmo alerta
+	 When Doy click en continuar
 	 
-	 And selecciono linea de producto "EFECTIVO"
-	 And Confirmacion de alerta
-	 When Cargando datos espere...
-	 Then dar click en Continuar
-   When Cargando datos espere...
-   
-   #seccion de oferta comercial
-   When Validar que se recupero ingreso vigente
-   When Cargando datos espere...
- 	 #Seguros|#Seguro de Salud 12 Meses|#Seguro de Salud 24 Meses|#Seguro de Salud 36 Meses|#Seguro de Salud 48 Meses
-	 #Seguro de Salud 60 Meses|#Multirriesgo Electro|#Contigo Familia plan Básico|#Contigo Familia plan Plus
-	 #Accidentes Personales|#Seguro Oncológico 
- 	 And Validar seguros marcados
+   #SECCIÓN: OFERTA COMERCIAL
+   When Valido que se recupero ingreso vigente
+ 	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
 	 |Seguro de Salud 12 Meses|
+	 #|Seguro de Salud 24 Meses|
+	 #|Seguro de Salud 36 Meses|
+	 #|Seguro de Salud 48 Meses|
+	 #|Seguro de Salud 60 Meses|
+	 #|Contigo Familia plan Básico|
+	 #|Contigo Familia plan Plus|
+	 #|Accidentes Personales|
 	 |Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
-	 And Confirmacion de alerta
+	 And Confirmo alerta
 	 And Titular selecciono pais "PERU"
 	 And Titular selecciono tipo de vivienda "PROPIA"
-	 And Titular ingreso Ant Dom Años "45"
-	 And Titular ingreso Ant Dom Meses "11"
+	 And Titular ingreso antiguedad domicialiaria en años "45"
+	 And Titular ingreso antiguedad domicialiaria en meses "11"
 	 And Titular ingreso declarado "8000"
-   When Cargando datos espere...
-	 And Titular doy check a Usar Ingreso Declarado
-   When Cargando datos espere...
+	 And Titular doy check a usar ingreso declarado
    And Titular ingreso situacion "FORMAL - DEPENDIENTE"
-   When Cargando datos espere...
    And Titular ingreso ocupacion "ABOGADO"
-   When Cargando datos espere...
-	 And Titular ingreso Ant Lab Años "50"
-	 And Titular ingreso Ant Lab Meses "4"
-	 #And Titular ingreso inicial "0"
+	 And Titular ingreso antiguedad laboral en años "50"
+	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular fecha de pago "3 de cada mes"
-	 When Cargando datos espere...
+	 And Titular selecciono fecha de pago "3 de cada mes"
 	 And Doy click en el boton simular
-   When Cargando datos espere...
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
-	 When Cargando datos espere...
 	 And Doy click en el boton continuar
-	 When Cargando datos espere...
+
 	 #seccion confirmacion de solicitud
 	 #Abono en Cuenta de Ahorros titular|#Tarjeta prepagada
 	 #Desembolso de efectivo en tienda vendedor|#Desembolso en otra tienda
