@@ -19,16 +19,16 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
   				- Sin periodo de gracia
   	
   	#SECCIÓN: LOGIN			
-    Given Abrir login cotifed
-    When Ingreso mi usuario 'wpatino'
-		And Ingreso mi contraseña 'TupacAmaru2789'
+    Given Ingreso a la pagina de cotifed
+    When Ingreso mi usuario 'ext_fsosa'
+		And Ingreso mi contraseña 'Efectiva.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "01054864"
+		And Ingreso numero de documento "04645301"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -82,51 +82,47 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
 
-	 #seccion confirmacion de solicitud
-	 #Abono en Cuenta de Ahorros titular|#Tarjeta prepagada
-	 #Desembolso de efectivo en tienda vendedor|#Desembolso en otra tienda
+	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
 	 And Elijo tipo de desembolso "Desembolso de efectivo en tienda vendedor"
 	 And Selecciono requisito y cargo archivo
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
 		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
-	  #seccion datos adicionales
+		
+	 #SECCION: DATOS ADICIONALES   
    And Doy click en el boton continuar datos adicionales
    And Ingreso correo de datos principales "correo_prueba@gmail.com"
    And Ingreso numero de celular de datos principales "924695269"
    And Selecciono prefijo de datos principales "01-LIMA"
    And Ingreso numero de telefono fijo de datos principales "454787"
    #Domicilio
-   And Selecciono departamento de info domiciliaria "LIMA"
-   And Selecciono provincia de info domiciliaria "LIMA"
-   And Selecciono distrito de info domiciliaria "SANTIAGO DE SURCO"
-   And Ingreso avenida de info domiciliaria "Av. Caminos del inca 2461"
-   #When Cargando datos espere...
-   When esperar 10 segundos
-   And Doy click en confirmar geopoint de info domiciliaria
-   And Retornar al iframe por defecto
-   When esperar 2 segundos
-   And Selecciono referencia de info domiciliaria "PASANDO DEL"
-   And Ingreso descripcion de info domiciliaria "Parque de la amistad"
+   And Selecciono departamento de informacion domiciliaria "LIMA"
+   And Selecciono provincia de informacion domiciliaria "LIMA"
+   And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
+   And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
+   When Espero 10 segundos
+   And Doy click en confirmar geopoint de informacion domiciliaria
+   When Espero 2 segundos
+   And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
+   And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
    #Laboral
-   And Ingreso nombre centro de info laboral "FINANCIERA EFECTIVA S.A."
-   And Selecciono prefijo de info laboral "01-LIMA"
-   And Ingreso numero de telefono fijo de info laboral "754787"
-   And Ingreso celular de info laboral "974695869"
-   And Ingreso ruc de centro de info laboral "20605554114"
-   And Selecciono departamento de info laboral "LIMA"
-   And Selecciono provincia de info laboral "LIMA"
-   And Selecciono distrito de info laboral "SANTIAGO DE SURCO"
-   And Ingreso avenida de info laboral "Av. Caminos del inca 2461"
-   #When Cargando datos espere...
-   When esperar 10 segundos
-   And Doy click en confirmar geopoint de info laboral
-   And Retornar al iframe por defecto
-   When esperar 2 segundos
-   And Selecciono referencia de info laboral "PASANDO DEL"
-   And Ingreso descripcion de info laboral "Parque de la amistad"
-	 #When esperar 5 segundos 
-	 And Obtener numero de solicitud 
+   And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
+   And Selecciono prefijo de informacion laboral "01-LIMA"
+   And Ingreso numero de telefono fijo de informacion laboral "754787"
+   And Ingreso celular de informacion laboral "974695869"
+   And Ingreso ruc de centro de informacion laboral "20605554114"
+   And Selecciono departamento de informacion laboral "LIMA"
+   And Selecciono provincia de informacion laboral "LIMA"
+   And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
+   And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
+   When Espero 10 segundos
+   And Doy click en confirmar geopoint de informacion laboral
+   When Espero 2 segundos
+   And Selecciono referencia de informacion laboral "PASANDO DEL"
+   And Ingreso descripcion de informacion laboral "Parque de la amistad"
+	 
+	 #SECCION: OBTENER NUMERO DE SOLICITUD
+	 And Obtengo el numero de solicitud 
 	 And Doy click en el boton solicitar
-	 When Terminar solicitud
+	 Then Termino la solicitud

@@ -17,15 +17,15 @@ public class CotifedLoginSteps {
 	private WebDriver driver;
 	private PropertiesManager propertiesManager;
 	private File file;
-	private CotifedGeneralidadesPage generalidadesPage;
+	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 
-	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager,CotifedGeneralidadesPage generalidadesPage, CotifedLoginPage loginPage, File file
+	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager,CotifedGeneralidadesPage cotifedGeneralidadesPage, CotifedLoginPage loginPage, File file
 			 ) {
 		this.propertiesManager = propertiesManager;
 		this.driver = driverManager.getDriver();
 		this.loginPage = loginPage;
 		this.file=file;
-		this.generalidadesPage=generalidadesPage;
+		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
 
 	@Given("Ingreso a la pagina de cotifed")
@@ -46,9 +46,7 @@ public class CotifedLoginSteps {
 	@When("Doy click en el boton ingresar")
 	public void doyClickBotonIngresar() {
 		loginPage.getbtnIngresar().click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		cotifedGeneralidadesPage.cargarDatos();
 	}
 	@When("Valido que no haya sesiones abiertas")
 	public void validoQueNoHayaSesionesAbiertas() {
@@ -57,8 +55,6 @@ public class CotifedLoginSteps {
 			SeleniumWaiters.waitSeconds(4);
 			loginPage.getbtnIngresar().click();
 		}
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		cotifedGeneralidadesPage.cargarDatos();
 	}
 }

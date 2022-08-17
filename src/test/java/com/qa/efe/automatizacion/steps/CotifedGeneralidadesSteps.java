@@ -23,12 +23,12 @@ public class CotifedGeneralidadesSteps {
 	}
 	
 	@When("Confirmo alerta")
-	public void Confirmacion_alerta() {
+	public void confirmacionAlerta() {
 		generalidadesPage.ConfirmarAlerta();
 	}
 	
-	@When("esperar {int} segundos")
-	public void tiempoMuerto(int segundos) {
+	@When("Espero {int} segundos")
+	public void esperoTiempo(int segundos) {
 		SeleniumWaiters.waitSeconds(segundos);
 	}
 	

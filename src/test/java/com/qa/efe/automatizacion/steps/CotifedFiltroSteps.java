@@ -23,6 +23,7 @@ public class CotifedFiltroSteps {
 			PropertiesManager propertiesManager, 
 			WebDriverManager driverManager, 
 			CotifedFiltroPage filtroPage,
+			CotifedGeneralidadesPage generalidadesPage,
 			IntegracionStore integracionStore
 			 ) {
 		this.propertiesManager = propertiesManager;
@@ -48,9 +49,7 @@ public class CotifedFiltroSteps {
 	public void ingresoNumeroDocumento(String NumeroDoc) {
 		filtroPage.getTxtNumeroDoc().sendKeys(NumeroDoc);
 		integracionStore.dni=NumeroDoc;
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	@When("Ingreso correo {string}")
 	public void ingresoCorreo(String correo) {
@@ -65,9 +64,7 @@ public class CotifedFiltroSteps {
 	@When("Doy click en filtrar")
 	public void doyClickFiltrar() {
 		filtroPage.getBtnFiltrar().click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 
 	

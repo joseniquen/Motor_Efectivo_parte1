@@ -35,12 +35,9 @@ public class CotifedLineaProductoSteps {
 	}
 	@Then("Doy click en continuar")
 	public void clickContinuar() {
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
+		generalidadesPage.cargarDatos();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedLineaProductoPage.getBtnContinuar().click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 }

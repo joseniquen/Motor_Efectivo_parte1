@@ -60,9 +60,7 @@ public class CotifedOfertaComercialSteps {
 		if(cotifedOfertaComercialPage.getValidaIngresoVigente().size()!=0) {
 			cotifedOfertaComercialPage.getValidaIngresoVigenteButtonOk().click();
 		}
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	@Then("Ingreso modelo de producto {string}")
 	public void ingreso_modelo_producto(String modelo) {
@@ -145,9 +143,7 @@ public class CotifedOfertaComercialSteps {
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 			System.out.println("EL CHECK ESTÁ MARCADO");
 		}
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	
 	@When("Titular doy check a usar ingreso declarado")
@@ -173,9 +169,7 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 		
 	}
 	
@@ -192,9 +186,7 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 		
 	}
 	
@@ -228,16 +220,12 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	@When("Doy click en el boton simular")
 	public void doyClickBotonSimular() {
 		cotifedOfertaComercialPage.getBtnSimular().click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	
 	@When("Elijo campaña {string} con plazo {string}")
@@ -256,16 +244,12 @@ public class CotifedOfertaComercialSteps {
 		columnIndex=columnIndex+1;
 		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td['"+columnIndex+"']/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 	
 	@When("Doy click en el boton continuar")
 	public void doyClickBotonContinuar() {
 		cotifedOfertaComercialPage.getBtnContinuar().click();
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-		}
-		SeleniumWaiters.waitSeconds(2);
+		generalidadesPage.cargarDatos();
 	}
 }
