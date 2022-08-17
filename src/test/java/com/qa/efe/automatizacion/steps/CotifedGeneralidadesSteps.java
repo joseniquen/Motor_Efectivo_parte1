@@ -22,13 +22,13 @@ public class CotifedGeneralidadesSteps {
 		this.generalidadesPage = generalidadesPage;
 	}
 	
-	@Then("Confirmacion de alerta")
-	public void Confirmacion_alerta() {
+	@When("Confirmo alerta")
+	public void confirmacionAlerta() {
 		generalidadesPage.ConfirmarAlerta();
 	}
 	
-	@When("esperar {int} segundos")
-	public void tiempoMuerto(int segundos) {
+	@When("Espero {int} segundos")
+	public void esperoTiempo(int segundos) {
 		SeleniumWaiters.waitSeconds(segundos);
 	}
 	
@@ -36,13 +36,7 @@ public class CotifedGeneralidadesSteps {
 	public void Retornar_al_iframe_por_defecto() {
 		generalidadesPage.IrAIframePorDefecto();
 	}
-	@Then("Cargando datos espere...")
-	public void pantalla_carga() {
-		
-		while(generalidadesPage.Pantalla_Carga().size() != 0) {
-			//System.out.println("1");
-		}
-		SeleniumWaiters.waitSeconds(2);
-	}
+	
+
 	
 }

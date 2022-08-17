@@ -23,6 +23,7 @@ public class CotifedFiltroSteps {
 			PropertiesManager propertiesManager, 
 			WebDriverManager driverManager, 
 			CotifedFiltroPage filtroPage,
+			CotifedGeneralidadesPage generalidadesPage,
 			IntegracionStore integracionStore
 			 ) {
 		this.propertiesManager = propertiesManager;
@@ -32,39 +33,38 @@ public class CotifedFiltroSteps {
 		this.integracionStore=integracionStore;
 	}
 
-	@Then("Selecciono tienda {string}")
-	public void selecciono_Tienda(String tienda) {
+	@When("Selecciono tienda {string}")
+	public void seleccionoTienda(String tienda) {
 		filtroPage.getCbxTienda().click();
 		filtroPage.getOpcionTienda(tienda).click();
 	}
 
-	@Then("Selecciono Tipo de documento {string}")
-	public void selecciono_Tipo_Doc(String tipoDoc) {
+	@When("Selecciono Tipo de documento {string}")
+	public void seleccionoTipoDoc(String tipoDoc) {
 		integracionStore.tipo_documento=tipoDoc;
 		filtroPage.getCbxTipoDoc().click();
 		filtroPage.getOpcionTipoDoc(tipoDoc).click();
-		System.out.println(tipoDoc);
 	}
-	@Then("Ingreso numero de documento {string}")
-	public void ingreso_Numero_Doc(String NumeroDoc) {
+	@When("Ingreso numero de documento {string}")
+	public void ingresoNumeroDocumento(String NumeroDoc) {
 		filtroPage.getTxtNumeroDoc().sendKeys(NumeroDoc);
 		integracionStore.dni=NumeroDoc;
-		System.out.println(NumeroDoc);
-		System.out.println(integracionStore.dni);
+		generalidadesPage.cargarDatos();
 	}
-	@Then("Ingreso correo {string}")
-	public void ingreso_correo(String correo) {
+	@When("Ingreso correo {string}")
+	public void ingresoCorreo(String correo) {
 		filtroPage.getTxtEmail().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		filtroPage.getTxtEmail().sendKeys(correo);
 	}
-	@Then("Ingreso numero celular {string}")
-	public void ingreso_numero_celular(String celular) {
+	@When("Ingreso numero celular {string}")
+	public void ingresoNumeroCelular(String celular) {
 		filtroPage.getTxtNumeroCell().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		filtroPage.getTxtNumeroCell().sendKeys(celular);
 	}
-	@Then("Doy click en filtrar")
-	public void click_filtrar() {
+	@When("Doy click en filtrar")
+	public void doyClickFiltrar() {
 		filtroPage.getBtnFiltrar().click();
+		generalidadesPage.cargarDatos();
 	}
 
 	

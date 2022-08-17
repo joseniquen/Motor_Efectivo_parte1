@@ -31,16 +31,14 @@ public class CotifedNbkNoReniecSteps {
 		this.cotifedNbkNoReniecPage = cotifedNbkNoReniecPage;
 	}
 	
-	@Then("Ingreso datos personales")
-	public void Ingreso_datos_personales(DataTable datos) {
+	@When("Ingreso datos personales")
+	public void IngresoDatosPersonales(DataTable datos) {
 		boolean existePag = cotifedNbkNoReniecPage.validarLink();
 		if( existePag == true)
 		{
-			System.out.println("ESTOY EN PAGINA nbk-no-reniec");
 			List<Map<String, String>> items = datos.asMaps(String.class, String.class);
 			for (int i = 0; i < items.size(); i++) {
 				Map<String, String> item = items.get(i);
-				//cotifedNbkNoReniecPage.getAlertTmp().click();
 				cotifedNbkNoReniecPage.getTxtPrimerNombre().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				cotifedNbkNoReniecPage.getTxtPrimerNombre().sendKeys(item.get("primer_nombre"));
 				cotifedNbkNoReniecPage.getTxtSegundoNombre().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -54,23 +52,18 @@ public class CotifedNbkNoReniecSteps {
 				cotifedNbkNoReniecPage.getCbxEstadoCivil().click();
 				cotifedNbkNoReniecPage.getOpcionEstadoCivil(item.get("estado_civil")).click();
 				cotifedNbkNoReniecPage.getInputNac(item.get("fecha_nac"));
-				//cotifedNbkNoReniecPage.getInputNac2();
 				SeleniumWaiters.waitSeconds(3);
 			}
 		}else {
-			System.out.println("ESTOY EN PAGINA NORMAL");
+			System.out.println("No es una página de nbk-no-reniec");
 		}
-		
-		
-		
 	}
 	
-	@Then("Ingreso informacion de vivienda")
-	public void Ingreso_informacion_vivienda(DataTable infoVivienda) {
+	@When("Ingreso informacion de vivienda")
+	public void ingresoInformacionVivienda(DataTable infoVivienda) {
 		boolean existePag = cotifedNbkNoReniecPage.validarLink();
 		if(existePag == true)
 		{
-			System.out.println("ESTOY EN PAGINA nbk-no-reniec");
 			List<Map<String, String>> items = infoVivienda.asMaps(String.class, String.class);
 			for (int i = 0; i < items.size(); i++) {
 				Map<String, String> item = items.get(i);
@@ -86,17 +79,16 @@ public class CotifedNbkNoReniecSteps {
 			}
 		}else
 		{
-			System.out.println("ESTOY EN PAGINA NORMAL");	
+			System.out.println("No es una página de nbk-no-reniec");	
 		}
 		
 	}
 
-	@Then("Ingreso informacion laboral")
-	public void Ingreso_informacion_laboral(DataTable infoLaboral) {
+	@When("Ingreso informacion laboral")
+	public void ingresoInformacionLaboral(DataTable infoLaboral) {
 		boolean existePag = cotifedNbkNoReniecPage.validarLink();
 		if(existePag == true)
 		{
-			System.out.println("ESTOY EN PAGINA nbk-no-reniec");
 			List<Map<String, String>> items = infoLaboral.asMaps(String.class, String.class);
 			for (int i = 0; i < items.size(); i++) {
 				Map<String, String> item = items.get(i);
@@ -115,7 +107,7 @@ public class CotifedNbkNoReniecSteps {
 			cotifedNbkNoReniecPage.getBtnFiltrar().click();
 		}else
 		{
-			System.out.println("ESTOY EN PAGINA NORMAL");	
+			System.out.println("No es una página de nbk-no-reniec");	
 		}
 		
 	}

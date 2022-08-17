@@ -93,6 +93,20 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  driver.findElements(By.xpath("//h2[contains(.,'Hubo un error al consumir el servicio EnviarArchivoSharePoint')]/parent::div/parent::div[@style='display: flex;']"));	
 	}
+	public List<WebElement> getErrorSharePoint2()
+	{
+		return  driver.findElements(By.className("swal2-popup swal2-modal swal2-icon-error swal2-show"));	
+	}
+	public List<WebElement> getErrorSharePoint3()
+	{
+		return  driver.findElements(By.className("swal2-container swal2-center swal2-backdrop-show"));	
+	}
+	
+	public List<WebElement> getErrorSharePoint4()
+	{
+		return  driver.findElements(By.xpath("//h2[@id='swal2-title']"));	
+	}
+	
 	public int numRequisitos()
 	{
 		SeleniumWaiters.waitSeconds(5);
