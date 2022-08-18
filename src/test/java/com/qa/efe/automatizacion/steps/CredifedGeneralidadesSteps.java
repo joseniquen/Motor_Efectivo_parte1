@@ -28,69 +28,68 @@ public class CredifedGeneralidadesSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
 	}
-	@Then("cambio de iframe a {string}")
-	public void cambio_iframe(String titleIframe) {
-		driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe(titleIframe));	
-		System.out.println("cambio de inframe a default 2");
+	@When("Cambio de iframe a {string}")
+	public void cambioIframeNuevo(String titleIframe) {
+		SeleniumWaiters.waitSeconds(1);
+		credifedGeneralidadesPage.cambioIframe(titleIframe);
 	}
 
-	@Then("cambio de inframe a default")
-	public void cambio_iframe_Default() {
+	@When("Cambio de iframe a default")
+	public void cambioIframeDefault() {
 		driver.switchTo().defaultContent();
-		System.out.println("cambio de inframe a default");
 	}
 	
-	@When("verifica si existe error en consentimiento digital")
-	public void veriricar_consentimiento_digital()
+	@When("Verifico si existe error en consentimiento digital")
+	public void veriricarConsentimientoDigital()
 	{
 		credifedGeneralidadesPage.verificar_consentimiento_digital();
 	}
 	
-	@When("verifica si existe error en normalizar direccion")
-	public void veriricar_error_normalizar_direccion()
+	@When("Verifico si existe error en normalizar direccion")
+	public void verificoErrorNormalizarDireccion()
 	{
 		credifedGeneralidadesPage.verificar_error_normalizar_direccion();
 	}
 	
-	@When("verifica si existe error en ejecución de servicio")
-	public void veriricar_error_ejecucion_servicio()
+	@When("Verifico si existe error en ejecución de servicio")
+	public void veriricarErrorEjecucionServicio()
 	{
 		credifedGeneralidadesPage.verificar_error_ejecutar_servicio_direccion();
 	}
 	
-	@When("verifica si existe error en filtro evaluar domicilio")
-	public void veriricar_error_filtro_evaluar_domicilio()
+	@When("Verifico si existe error en filtro evaluar domicilio")
+	public void veriricarErrorFiltroEvaluarDomicilio()
 	{
 		credifedGeneralidadesPage.verificar_error_ejecutar_filtro_evaluar_domicilio();
 	}
 	
-	@When("verifica si existe error en referencias telefonicas")
-	public void veriricar_error_referencias_telefonicas()
+	@When("Verifico si existe error en referencias telefonicas")
+	public void veriricoErrorReferenciasTelefonicas()
 	{
 		credifedGeneralidadesPage.verificar_error_referencias_telefonicas();
 	}
 	
-	@When("verifica si existe error en filtro evaluacion financiera")
-	public void veriricar_error_filtro_evaluacion_financiera()
+	@When("Verifico si existe error en filtro evaluacion financiera")
+	public void verificoErrorFiltroEvaluacionFinanciera()
 	{
 		credifedGeneralidadesPage.verificar_error_filtro_informacion_financiera();
 	}
 	
-	@When("verifica si existe error en filtro evaluar personas")
-	public void veriricar_error_filtro_personas()
+	@When("Verifico si existe error en filtro evaluar personas")
+	public void verificarErrorFiltroEvaluarPersonas()
 	{
 		credifedGeneralidadesPage.verificar_error_filtro_personas();
 	}
 
 	
-	@When("doy click en guardar datos")
-	public void click_btn_guardar()
+	@When("Doy click en guardar datos")
+	public void clickBtnGuardar()
 	{
 		credifedGeneralidadesPage.click_btn_guardar().click();
 	}
 	
-	@When("acepto para sobreescribir datos originales")
-	public void click_btn_sobreescribir_datos()
+	@When("Acepto para sobreescribir datos originales")
+	public void clickBtnSobreescribirDatos()
 	{
 		try {
 			credifedGeneralidadesPage.click_btn_sobreescribir_datos().click();
@@ -98,13 +97,13 @@ public class CredifedGeneralidadesSteps {
 			System.out.println("Pasa ok");
 		}
 	}
-	@When("doy click en continuar")
-	public void click_btn_continuar()
+	@When("Doy click en boton continuar")
+	public void clickBtnContinuar()
 	{
 		credifedGeneralidadesPage.click_btn_continuar().click();
 	}
-	@When("me dirijo a la pestaña de {string}")
-	public void pestañas_menu(String opcion)
+	@When("Me dirijo a la pestaña de {string}")
+	public void dirijoPestanaMenu(String opcion)
 	{
 		credifedGeneralidadesPage.pestañas_menu(opcion).click();
 	}

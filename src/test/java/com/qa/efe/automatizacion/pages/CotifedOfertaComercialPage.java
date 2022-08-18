@@ -47,16 +47,13 @@ public class CotifedOfertaComercialPage {
 		List<WebElement> marcados = driver.findElements(By.xpath("//span[@class='active checked labelseguro']"));
 		
 		if (marcados.size()!=0) {
-			System.out.println("Se encontraron: "+marcados.size()+" seguros marcados");
-			
 			for (int i = 0; i < marcados.size(); i++) {
-				//Desmarcar todos los seguros que vienen marcados por defecto u obligatorios
 				marcados.get(i).click();
 			}
 		 }		
 		
 		else {
-			System.out.println("No se encontraron seguros");
+			System.out.println("No se encontraron seguros marcados");
 		}
 	}
 	public WebElement getSeleccionTipoSeguro(String seguro)

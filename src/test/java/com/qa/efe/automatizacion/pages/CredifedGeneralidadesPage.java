@@ -20,9 +20,13 @@ public class CredifedGeneralidadesPage {
 		this.navigationHelpers = navigationHelpers;
 	}
 	
-	public WebElement cambio_iframe(String titleIframe)
+	public void cambioIframe(String titleIframe)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),10);
+		driver.switchTo().frame(SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),15));
+	}
+	
+	public void iframeDefecto() {
+		driver.switchTo().defaultContent();
 	}
 
 	public void verificar_consentimiento_digital()

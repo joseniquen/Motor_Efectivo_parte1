@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud para BPM
+Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud para BPM
 
     #Modificar obligatoriamente los siguientes inputs:
         #Usuario cotifed
@@ -11,13 +11,13 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
         #Campaña y plazo de cliente
 
   @web
-  Scenario: Línea de producto  Efectivo
-  				- Con llenado de datos adicionales 
-  				- Con seguros optativos 
-  				- Desembolso efectivo en tienda vendedor 
-  				- Plan A Desgravamen SDev 
-  				- Sin periodo de gracia
-  	
+  Scenario: Línea de producto  Efectivo 
+  					- Sin llenado de datos adicionales  
+  					- Sin seguros optativos > a 69 años 
+  					- Desembolso efectivo en tienda vendedor 
+  					- Plan B Desgravamen CDev 
+  					- Con periodo de gracia
+  				  	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
     When Ingreso mi usuario 'ext_fsosa'

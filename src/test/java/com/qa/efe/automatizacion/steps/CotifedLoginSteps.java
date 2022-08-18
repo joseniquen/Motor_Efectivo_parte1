@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import com.qa.efe.automatizacion.config.PropertiesManager;
+import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CotifedLoginPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
@@ -16,43 +17,44 @@ public class CotifedLoginSteps {
 	private WebDriver driver;
 	private PropertiesManager propertiesManager;
 	private File file;
+	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 
-	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager, CotifedLoginPage loginPage, File file
+	public CotifedLoginSteps(PropertiesManager propertiesManager, WebDriverManager driverManager,CotifedGeneralidadesPage cotifedGeneralidadesPage, CotifedLoginPage loginPage, File file
 			 ) {
 		this.propertiesManager = propertiesManager;
 		this.driver = driverManager.getDriver();
 		this.loginPage = loginPage;
 		this.file=file;
+		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
 
 	@Given("Ingreso a la pagina de cotifed")
-	public void open_LoginCotifed() {
+	public void ingresoPaginaCotifed() {
 		driver.get(propertiesManager.getProperties().getProperty("cotifed.url"));
 	}
 	
-	@Then("Ingreso el usuario {string}")
-	public void ingreso_el_usuario(String usuario) {
+	@When("Ingreso mi usuario {string}")
+	public void ingresoUsuario(String usuario) {
 		loginPage.gettxtUsuario().sendKeys(usuario);		
 	}
 
-	@Then("Ingreso la contraseña {string}")
-	public void ingreso_la_contraseña(String contraseña) {
+	@When("Ingreso mi contraseña {string}")
+	public void ingresoContraseña(String contraseña) {
 		loginPage.gettxtContrasena().sendKeys(contraseña);	
 	}
 
-	@When("doy click en el boton ingresar")
-	public void doy_click_en_el_boton_ingresar() {
+	@When("Doy click en el boton ingresar")
+	public void doyClickBotonIngresar() {
 		loginPage.getbtnIngresar().click();
+		cotifedGeneralidadesPage.cargarDatos();
 	}
-	@When("valido que no haya sesiones abiertas")
-	public void valido_sesiones_abiertas() {
+	@When("Valido que no haya sesiones abiertas")
+	public void validoQueNoHayaSesionesAbiertas() {
 		if(loginPage.getTextSesionAbierta().size()!=0){
 			loginPage.getbtnSesionesAbiertas().click();
 			SeleniumWaiters.waitSeconds(4);
-			//loginPage.getbtnSesionesAbiertas().click();
 			loginPage.getbtnIngresar().click();
-
 		}
-		;
+		cotifedGeneralidadesPage.cargarDatos();
 	}
 }

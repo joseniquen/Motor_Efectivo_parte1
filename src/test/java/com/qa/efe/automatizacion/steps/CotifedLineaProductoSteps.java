@@ -8,6 +8,7 @@ import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class CotifedLineaProductoSteps {
 	private WebDriver driver;
@@ -28,12 +29,15 @@ public class CotifedLineaProductoSteps {
 		cotifedLineaProductoPage.getOpcionCategoriaLineaProducto(lineaProducto,opcion).click();
 	}
 	
-	@Then("selecciono linea de producto {string}")
-	public void selecciono_Linea_Producto(String lineaProducto) {
+	@When("Selecciono linea de producto {string}")
+	public void seleccionoLineaProducto(String lineaProducto) {
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
 	}
-	@Then("dar click en Continuar")
-	public void click_filtrar() {
+	@Then("Doy click en continuar")
+	public void clickContinuar() {
+		generalidadesPage.cargarDatos();
+		SeleniumWaiters.waitSeconds(2);
 		cotifedLineaProductoPage.getBtnContinuar().click();
+		generalidadesPage.cargarDatos();
 	}
 }

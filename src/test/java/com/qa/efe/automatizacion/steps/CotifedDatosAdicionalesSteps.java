@@ -34,153 +34,150 @@ public class CotifedDatosAdicionalesSteps {
 		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
 	
-	@Then("Doy click en el boton continuar datos adicionales")
-	public void Doy_click_boton_continuar_datos_adicionales() {
+	@When("Doy click en el boton continuar datos adicionales")
+	public void doyClickBotonContinuarDatosAdicionales() {
 		cotifedDatosAdicionalesPage.getBtnContinuarDatosAdicionales().click();
 	}
 	
-	@Then("Ingreso correo de datos principales {string}")
-	public void Ingreso_correo_persona(String correo) {
+	@When("Ingreso correo de datos principales {string}")
+	public void ingresoCorreoPersona(String correo) {
 		cotifedDatosAdicionalesPage.getTxtCorreoPersona().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCorreoPersona().sendKeys(correo);
 	}
 	
-	@Then("Ingreso numero de celular de datos principales {string}")
-	public void Ingreso_numero_celular_persona(String celular) {
+	@When("Ingreso numero de celular de datos principales {string}")
+	public void ingresoNumeroCelularPersona(String celular) {
 		cotifedDatosAdicionalesPage.getTxtCelularPersona().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCelularPersona().sendKeys(celular);
 	}
 	
-	@Then("Selecciono prefijo de datos principales {string}")
-	public void Selecciono_prefijo_persona(String prefijo) {
+	@When("Selecciono prefijo de datos principales {string}")
+	public void seleccionoPrefijoPersona(String prefijo) {
 		cotifedDatosAdicionalesPage.getCbxPrefijoPersona().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxPrefijoPersona(prefijo).click();
 	}
 	
-	@Then("Ingreso numero de telefono fijo de datos principales {string}")
-	public void Ingreso_numero_telefono_fijo_persona(String telefono) {
+	@When("Ingreso numero de telefono fijo de datos principales {string}")
+	public void ingresoNumeroTelefonoFijoPersona(String telefono) {
 		cotifedDatosAdicionalesPage.getTxtTelefonoPersona().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtTelefonoPersona().sendKeys(telefono);
 	}
 	
-	@Then("Selecciono departamento de info domiciliaria {string}")
-	public void Selecciono_departamento_info_domiciliaria(String departamento) {
+	@When("Selecciono departamento de informacion domiciliaria {string}")
+	public void seleccionoDepartamentoInformacionDomiciliaria(String departamento) {
 		cotifedDatosAdicionalesPage.buscar_titulo_dom();
 		cotifedDatosAdicionalesPage.getCbxDepartamentoInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDepartamentoInfoDomiciliaria(departamento).click();
 	}
 	
-	@Then("Selecciono provincia de info domiciliaria {string}")
-	public void Selecciono_provincia_info_domiciliaria(String provincia) {
+	@When("Selecciono provincia de informacion domiciliaria {string}")
+	public void seleccionoProvinciaInformacionDomiciliaria(String provincia) {
 		cotifedDatosAdicionalesPage.getCbxProvinciaInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxProvinciaInfoDomiciliaria(provincia).click();
 	}
 	
-	@Then("Selecciono distrito de info domiciliaria {string}")
-	public void Selecciono_distrito_info_domiciliaria(String distrito) {
+	@When("Selecciono distrito de informacion domiciliaria {string}")
+	public void seleccionoDistritoInformacionDomiciliaria(String distrito) {
 		cotifedDatosAdicionalesPage.getCbxDistritoInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDistritoInfoDomiciliaria(distrito).click();
 	}
 	
-	@Then("Ingreso avenida de info domiciliaria {string}")
-	public void Ingreso_avenida_info_domiciliaria(String avenida) {
+	@When("Ingreso avenida de informacion domiciliaria {string}")
+	public void ingresoAvenidaInformacionDomiciliaria(String avenida) {
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoDomiciliaria().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoDomiciliaria().sendKeys(avenida);
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoDomiciliaria().sendKeys(Keys.ENTER);
 	}
 	
-	@Then("Doy click en confirmar geopoint de info domiciliaria")
-	public void Doy_click_confirmar_geopoint_info_domiciliaria() {
+	@When("Doy click en confirmar geopoint de informacion domiciliaria")
+	public void doyClickConfirmarGeopointInformacionDomiciliaria() {
 		cotifedDatosAdicionalesPage.getBtnConfirmarInfoDomiciliaria().sendKeys(Keys.ENTER);
-		System.out.println("click en aceptar coordenadas");
+		cotifedGeneralidadesPage.IrAIframePorDefecto();
 	}
 	
-	@Then("Selecciono referencia de info domiciliaria {string}")
-	public void Selecciono_referencia_info_domiciliaria(String referencia) {
+	@When("Selecciono referencia de informacion domiciliaria {string}")
+	public void seleccionoReferenciaInformacionDomiciliaria(String referencia) {
 		cotifedDatosAdicionalesPage.getCbxReferenciaInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxReferenciaInfoDomiciliaria(referencia).click();
 	}
 	
-	@Then("Ingreso descripcion de info domiciliaria {string}")
-	public void Ingreso_descripcion_info_domiciliaria(String descripcion) {
+	@When("Ingreso descripcion de informacion domiciliaria {string}")
+	public void ingresoDescripcionInformacionDomiciliaria(String descripcion) {
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoDomiciliaria().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoDomiciliaria().sendKeys(descripcion);
 	}
 	
-	@Then("Ingreso nombre centro de info laboral {string}")
-	public void Ingreso_nombre_centro_info_laboral(String centro) {
+	@When("Ingreso nombre centro de informacion laboral {string}")
+	public void ingresoNombreCentroInformacionLaboral(String centro) {
 		cotifedDatosAdicionalesPage.buscar_titulo_lab();
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(centro);
 	}
 	
-	@Then("Selecciono prefijo de info laboral {string}")
-	public void Selecciono_prefijo_info_laboral(String prefijo) {
+	@When("Selecciono prefijo de informacion laboral {string}")
+	public void seleccionoPrefijoInformacionLaboral(String prefijo) {
 		cotifedDatosAdicionalesPage.getCbxPrefijoInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxPrefijoInfoLaboral(prefijo).click();
 	}
 	
-	@Then("Ingreso numero de telefono fijo de info laboral {string}")
-	public void Ingreso_numero_telefono_fijo_info_laboral(String telefono) {
+	@When("Ingreso numero de telefono fijo de informacion laboral {string}")
+	public void ingresoNumeroTelefonoFijoInformacionLaboral(String telefono) {
 		cotifedDatosAdicionalesPage.getTxtTelefonoInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtTelefonoInfoLaboral().sendKeys(telefono);
 	}
 	
-	@Then("Ingreso celular de info laboral {string}")
-	public void Ingreso_celular_info_laboral(String celular) {
+	@When("Ingreso celular de informacion laboral {string}")
+	public void ingresoCelularInformacionLaboral(String celular) {
 		cotifedDatosAdicionalesPage.getTxtCelularInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCelularInfoLaboral().sendKeys(celular);
 	}
 	
-	@Then("Ingreso ruc de centro de info laboral {string}")
-	public void Ingreso_ruc_centro_info_laboral(String ruc) {
+	@When("Ingreso ruc de centro de informacion laboral {string}")
+	public void ingresoRucCentroInformacionLaboral(String ruc) {
 		cotifedDatosAdicionalesPage.getTxtRucInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtRucInfoLaboral().sendKeys(ruc);
 	}
 	
-	@Then("Selecciono departamento de info laboral {string}")
-	public void Selecciono_departamento_info_laboral(String departamento) {
+	@When("Selecciono departamento de informacion laboral {string}")
+	public void seleccionoDepartamentoInformacionLaboral(String departamento) {
 		cotifedDatosAdicionalesPage.getCbxDepartamentoInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDepartamentoInfoLaboral(departamento).click();
 	}
 	
-	@Then("Selecciono provincia de info laboral {string}")
-	public void Selecciono_provincia_info_laboral(String provincia) {
+	@When("Selecciono provincia de informacion laboral {string}")
+	public void seleccionoProvinciaInformacionLaboral(String provincia) {
 		cotifedDatosAdicionalesPage.getCbxProvinciaInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxProvinciaInfoLaboral(provincia).click();
 	}
 	
-	@Then("Selecciono distrito de info laboral {string}")
-	public void Selecciono_distrito_info_laboral(String distrito) {
+	@When("Selecciono distrito de informacion laboral {string}")
+	public void seleccionoDistritoInformacionLaboral(String distrito) {
 		cotifedDatosAdicionalesPage.getCbxDistritoInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDistritoInfoLaboral(distrito).click();
 	}
 	
-	@Then("Ingreso avenida de info laboral {string}")
-	public void Ingreso_avenida_info_laboral(String avenida) {
+	@When("Ingreso avenida de informacion laboral {string}")
+	public void ingresoAvenidaInformacionLaboral(String avenida) {
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(avenida);
 		cotifedDatosAdicionalesPage.getTxtCalleAvenida().click();
 		cotifedDatosAdicionalesPage.buscar_referencia();
-		//cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.ENTER);
 	}
 	
-	@Then("Doy click en confirmar geopoint de info laboral")
-	public void Doy_click_confirmar_geopoint_info_laboral() {
+	@When("Doy click en confirmar geopoint de informacion laboral")
+	public void doyClickConfirmarGeopointInformacionLaboral() {
 		cotifedDatosAdicionalesPage.getBtnConfirmarInfoLaboral().click();
-		System.out.println("click en aceptar coordenadas");
+		cotifedGeneralidadesPage.IrAIframePorDefecto();
 	}
 	
-	@Then("Selecciono referencia de info laboral {string}")
-	public void Selecciono_referencia_info_laboral(String referencia) {
-		System.out.println(referencia);
+	@When("Selecciono referencia de informacion laboral {string}")
+	public void seleccionoReferenciaInformacionLaboral(String referencia) {
 		cotifedDatosAdicionalesPage.getCbxReferenciaInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxReferenciaInfoLaboral(referencia).click();
 	}                                 
 	
-	@Then("Ingreso descripcion de info laboral {string}")
-	public void Ingreso_descripcion_info_laboral(String descripcion) {
-		System.out.println(descripcion);
+	@When("Ingreso descripcion de informacion laboral {string}")
+	public void ingresoDescripcionInformacionLaboral(String descripcion) {
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoLaboral().sendKeys(descripcion);
 	}

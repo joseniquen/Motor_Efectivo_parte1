@@ -17,20 +17,20 @@ public class CredifedInfoLaboralSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedInfoLaboralPage = credifedInfoLaboralPage;
 	}
-	@Then("ingreso centro de trabajo {string}")
-	public void ingreso_centro_trabajo(String opcion) {
+	@When("Ingreso centro de trabajo {string}")
+	public void ingresoCentroTrabajo(String opcion) {
 		credifedInfoLaboralPage.getCentroTrabajo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getCentroTrabajo().sendKeys(opcion);
 
 	}
-	@Then("ingreso ruc de centro de trabajo {string}")
-	public void ingreso_ruc_centro_trabajo(String opcion) {
+	@When("Ingreso ruc de centro de trabajo {string}")
+	public void ingresoRucCentroTrabajo(String opcion) {
 		credifedInfoLaboralPage.getRucCentroTrabajo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getRucCentroTrabajo().sendKeys(opcion);
 
 	}
-	@When("elijo e ingreso telefono fijo info laboral {string} {string}")
-	public void select_pais_tel__fijo(String pais,String nro)
+	@When("Elijo e ingreso telefono fijo informacion laboral {string} {string}")
+	public void elijoIngresoTelefonoFijoInformacionLaboral(String pais,String nro)
 	{
 		credifedInfoLaboralPage.getTipoTelefonoFijo(pais).click();
 		if(pais.equals("LIMA")) {
@@ -44,52 +44,52 @@ public class CredifedInfoLaboralSteps {
 		}
 		
 	}
-	@Then("ingreso celular {string}")
-	public void ingreso_celular(String opcion) {
+	@When("Ingreso celular {string}")
+	public void ingresoCelular(String opcion) {
 		credifedInfoLaboralPage.getCelular().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getCelular().sendKeys(opcion);
 
 	}
 	
-	@When("selecciono departamento laboral {string}")
-	public void select_departamento_laboral(String opcion)
+	@When("Selecciono departamento laboral {string}")
+	public void seleccionoDepartamentoLaboral(String opcion)
 	{
 		credifedInfoLaboralPage.select_departamento(opcion).click();
 	}
-	@When("selecciono provincia laboral {string}")
-	public void select_provincia_laboral(String opcion)
+	@When("Selecciono provincia laboral {string}")
+	public void seleccionoProvincia_laboral(String opcion)
 	{
 		credifedInfoLaboralPage.select_provincia(opcion).click();
 	}
-	@When("selecciono distrito laboral {string}")
-	public void select_distrito_laboral(String opcion)
+	@When("Selecciono distrito laboral {string}")
+	public void seleccionoDistrito_laboral(String opcion)
 	{
 		credifedInfoLaboralPage.select_distrito(opcion).click();
 	}
-	@When("ingreso direccion domiciliaria laboral {string}")
-	public void ingreso_direccion_domiciliaria_laboral(String opcion)
+	@When("Ingreso direccion domiciliaria laboral {string}")
+	public void ingresoDireccionDomiciliariaLaboral(String opcion)
 	{
 		credifedInfoLaboralPage.ingreso_direccion_domiciliaria().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingreso_direccion_domiciliaria().sendKeys(opcion);
 	}
-	@When("click en ubicar mapa laboral")
-	public void click_btn_ubicar_mapa_laboral()
+	@When("Doy click en ubicar mapa laboral")
+	public void clickBtnUbicarMapaLaboral()
 	{
 		SeleniumWaiters.waitSeconds(3);
 		credifedInfoLaboralPage.click_btn_ubicar_mapa().click();
 	}
-	@When("selecciono tipo de referencia laboral {string}")
-	public void select_referencia_laboral(String opcion)
+	@When("Selecciono tipo de referencia laboral {string}")
+	public void seleccionoReferenciaLaboral(String opcion)
 	{
 		credifedInfoLaboralPage.select_referencia(opcion).click();
 	}
-	@When("ingreso la referencia laboral {string}")
-	public void ingresar_referencia_laboral(String opcion)
+	@When("Ingreso la referencia laboral {string}")
+	public void ingresoReferenciaLaboral(String opcion)
 	{
 		credifedInfoLaboralPage.ingresar_referencia().sendKeys(opcion);
 	}
-	@When("doy click en aceptar la ubicacion correcta en el mapa laboral")
-	public void click_aceptar_ubicar_mapa_laboral()
+	@When("Doy click en aceptar la ubicacion correcta en el mapa laboral")
+	public void clickAceptarUbicarMapaLaboral()
 	{
 		credifedInfoLaboralPage.click_aceptar_ubicar_mapa().click();
 	}

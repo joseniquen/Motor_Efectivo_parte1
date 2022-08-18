@@ -54,4 +54,15 @@ public class CotifedGeneralidadesPage {
 		NavigationHelpers.scrollToElement(driver, element);
 	}
 	
+	public void cargarDatos() {
+		try {
+			while(Pantalla_Carga().size() != 0) {
+			}
+			SeleniumWaiters.waitSeconds(1);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
 }

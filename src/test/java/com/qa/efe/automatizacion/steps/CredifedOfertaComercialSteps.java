@@ -21,18 +21,18 @@ public class CredifedOfertaComercialSteps {
 		this.credifedOfertaComercialPage = credifedOfertaComercialPage;
 		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
-	@When("doy click en simular")
-	public void click_simular()
+	@When("Doy click en simular")
+	public void clickBtnSimular()
 	{
 		credifedOfertaComercialPage.click_simular().click();
 	}
-	@When("doy click en aprobar")
-	public void click_aprobar()
+	@When("Doy click en el boton aprobar")
+	public void clickBtnAprobar()
 	{
 		credifedOfertaComercialPage.click_aprobar().click();
 	}
-	@When("doy click en aceptar solicitud de credito")
-	public void click_aceptar()
+	@When("Doy click en aceptar solicitud de credito")
+	public void clickAceptarSolicitudCredito()
 	{
 		
 		credifedOfertaComercialPage.click_aceptar().click();
@@ -45,10 +45,10 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("09 Información Financiera Titular"));	
+			credifedGeneralidadesPage.cambioIframe("09 Información Financiera Titular");	
 			System.out.println("cambio de inframe a 09 Información Financiera Titular");
 			
 			credifedGeneralidadesPage.pestañas_menu("Oferta Comercial").click();
@@ -57,10 +57,10 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("22 Oferta Comercial"));	
+			credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
 			System.out.println("cambio de inframe a 22 Oferta Comercial");
 			
 			credifedOfertaComercialPage.click_simular().click();
@@ -78,32 +78,30 @@ public class CredifedOfertaComercialSteps {
 			driver.switchTo().defaultContent();
 			System.out.println("cambio de inframe a default");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Paso: Aprobar Solicitud de Crédito"));	
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
 			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
 			
-			driver.switchTo().frame(credifedGeneralidadesPage.cambio_iframe("Resumen Solicitud"));	
+			credifedGeneralidadesPage.cambioIframe("Resumen Solicitud");	
 			System.out.println("cambio de inframe a Resumen Solicitud");
 			
-			verificar_pantalla_resumen();
+			verificoPantallaResumenCredito();
 			credifedOfertaComercialPage.click_aceptar().click();
 			SeleniumWaiters.waitSeconds(10);
 			
 			credifedOfertaComercialPage.click_confirmar().click();
 			
 		}else {
-			System.out.println("antes 1");
 			credifedOfertaComercialPage.click_confirmar().click();
-			System.out.println("despues 1");
 		}
 		
 	}
-	@When("verificar que estemos en la pantalla resumen del credito")
-	public void verificar_pantalla_resumen()
+	@When("Verifico que estemos en la pantalla resumen del credito")
+	public void verificoPantallaResumenCredito()
 	{
 		credifedOfertaComercialPage.verificar_resumen_sol();
 	}
-	@When("verificar que la solicitud de credito haya sido aprobada correctamente")
-	public void verificar_sol_aprobada()
+	@When("Verifico que la solicitud de credito haya sido aprobada correctamente")
+	public void verificarSolicitudAprobada()
 	{
 		SeleniumWaiters.waitSeconds(30);
 		List<WebElement> element = credifedOfertaComercialPage.verificar_sol_aprobada();
