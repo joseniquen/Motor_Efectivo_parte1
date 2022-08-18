@@ -30,8 +30,8 @@ public class CredifedValidacionRequisitosSteps {
 	{
 		credifedValidacionRequisitosPage.aprob_solicitud().click();
 	}
-	@When("check list de documentos")
-	public void ckeck_list_doc()
+	@When("Doy check a la lista de documentos")
+	public void ckeckListaDocumentos()
 	{
 		List<WebElement> elements = credifedValidacionRequisitosPage.nro_list_doc();
 		System.out.println("aa "+elements.size());

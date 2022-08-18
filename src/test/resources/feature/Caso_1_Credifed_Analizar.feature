@@ -27,12 +27,12 @@ Feature: Caso 1 - xxxxxx
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10852393"
+		When Ingreso instancia de proceso "10852564"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10852393     |
+		|CHICLAYO   |04645301   |EFECTIVO      |10852564     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos

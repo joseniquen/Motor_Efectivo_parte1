@@ -22,7 +22,7 @@ public class CredifedGeneralidadesPage {
 	
 	public void cambioIframe(String titleIframe)
 	{
-		driver.switchTo().frame(SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),10));
+		driver.switchTo().frame(SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),15));
 	}
 	
 	public void iframeDefecto() {

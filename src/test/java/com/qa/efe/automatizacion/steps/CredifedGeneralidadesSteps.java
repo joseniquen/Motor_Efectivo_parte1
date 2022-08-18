@@ -30,6 +30,7 @@ public class CredifedGeneralidadesSteps {
 	}
 	@When("Cambio de iframe a {string}")
 	public void cambioIframeNuevo(String titleIframe) {
+		SeleniumWaiters.waitSeconds(1);
 		credifedGeneralidadesPage.cambioIframe(titleIframe);
 	}
 
@@ -101,8 +102,8 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.click_btn_continuar().click();
 	}
-	@When("me dirijo a la pestaña de {string}")
-	public void pestañas_menu(String opcion)
+	@When("Me dirijo a la pestaña de {string}")
+	public void dirijoPestanaMenu(String opcion)
 	{
 		credifedGeneralidadesPage.pestañas_menu(opcion).click();
 	}
