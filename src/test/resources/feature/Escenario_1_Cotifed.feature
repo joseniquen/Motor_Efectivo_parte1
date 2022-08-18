@@ -20,15 +20,15 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Setiembre.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "44970551"
+		And Ingreso numero de documento "04055004"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -55,7 +55,7 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
  	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 #|Seguro de Salud 12 Meses|
+	 |Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
@@ -77,7 +77,7 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular selecciono fecha de pago "6 de cada mes"
+	 And Titular selecciono fecha de pago "10 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar

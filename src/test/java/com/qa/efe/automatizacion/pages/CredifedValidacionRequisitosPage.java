@@ -41,8 +41,10 @@ public class CredifedValidacionRequisitosPage {
 	}
 	
 	public List<WebElement> click_seleccionar_Archivo() {
-		return driver.findElements( By.xpath("//div[text()='Select...']"));
-		 
+		return driver.findElements( By.xpath("//div[text()='Select...']"));		 
+	}
+	public List<WebElement> click_seleccionar_Archivo_esp() {
+		return driver.findElements( By.xpath("//div[text()='Seleccionar...']"));		 
 	}
 	public WebElement click_cargar_archivo(int opcion) {
 		System.out.println("numero de boton "+opcion);
