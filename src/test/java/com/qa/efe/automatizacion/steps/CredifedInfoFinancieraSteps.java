@@ -72,7 +72,8 @@ public class CredifedInfoFinancieraSteps {
 				 String fijoString = String.valueOf(fijo);
 				 String ind = String.valueOf(i);			 
 				 
-					credifedInfoFinancieraPage.detalle_deudas(i).click();					
+					try {
+				    credifedInfoFinancieraPage.detalle_deudas(i).click();					
 					credifedInfoFinancieraPage.click_seleccionar_ArchivoFor(fijoString).click();				
 					String[] commands = new String[]{}; 					
 					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};					
@@ -81,6 +82,10 @@ public class CredifedInfoFinancieraSteps {
 					credifedInfoFinancieraPage.click_cargar_archivoFor(ind).click();				
 					SeleniumWaiters.waitSeconds(15);
 					System.out.println("Archivo N°: "+i+" subido satisfactoriamente.");
+					}
+					catch(Exception e) {
+						System.out.println("Error en la subida de archivo");
+					}
 			}
 			
 		} catch (Exception e) {
