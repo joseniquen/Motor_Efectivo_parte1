@@ -27,12 +27,20 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
+<<<<<<< HEAD
 		When Ingreso instancia de proceso "10852768"
+=======
+		When Ingreso instancia de proceso "10852781"
+>>>>>>> main
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
+<<<<<<< HEAD
 		|CHICLAYO   |04055004   |EFECTIVO      |10852768     |
+=======
+		|CHICLAYO   |04055004   |EFECTIVO      |10852781     |
+>>>>>>> main
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -158,11 +166,6 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Espero 10 segundos
 	  And Verifico si existe error en referencias telefonicas
 	  And Doy click en agregar nueva referencia
-	  And Creo referencia telefonica
-		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
-		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
-		And Doy click en agregar nueva referencia
-		And Espero 5 segundos
 	  And Creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
 		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
