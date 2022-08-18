@@ -19,13 +19,13 @@ public class CredifedReferenciaTelfSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedReferenciaTelfPage = credifedReferenciaTelfPage;
 	}
-	@When("click en agregar nueva referencia")
-	public void click_nueva_referencia()
+	@When("Doy click en agregar nueva referencia")
+	public void clickNuevaReferencia()
 	{
 		credifedReferenciaTelfPage.click_nueva_referencia().click();
 	}
-	@When("creo referencia telefonica")
-	public void click_nueva_referencia(DataTable referencia)
+	@When("Creo referencia telefonica")
+	public void clickNuevaReferencia(DataTable referencia)
 	{
 		List<Map<String, String>> items = referencia.asMaps(String.class, String.class);
 		Map<String, String> item = items.get(0);

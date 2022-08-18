@@ -11,6 +11,7 @@ import com.qa.efe.automatizacion.pages.CredifedValidacionRequisitosPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CredifedValidacionRequisitosSteps {
@@ -24,13 +25,13 @@ public class CredifedValidacionRequisitosSteps {
 		this.credifedValidacionRequisitosPage = credifedValidacionRequisitosPage;
 	}
 	
-	@When("continuo a aprobacion de la solicitud")
-	public void aprob_solicitud()
+	@Then("Continuo a aprobacion de la solicitud")
+	public void continuoAprobacionSolicitud()
 	{
 		credifedValidacionRequisitosPage.aprob_solicitud().click();
 	}
-	@When("check list de documentos")
-	public void ckeck_list_doc()
+	@When("Doy check a la lista de documentos")
+	public void ckeckListaDocumentos()
 	{
 		List<WebElement> elements = credifedValidacionRequisitosPage.nro_list_doc();
 		System.out.println("aa "+elements.size());

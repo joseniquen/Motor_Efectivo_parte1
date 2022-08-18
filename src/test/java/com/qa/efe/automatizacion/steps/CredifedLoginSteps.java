@@ -22,30 +22,30 @@ public class CredifedLoginSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedLoginPage = credifedLoginPage;
 	}
-	@Given("Abro login cretifed")
+	@Given("Ingreso a la pagina de credifed")
 	public void open_LoginCotifed() {
 		driver.get(propertiesManager.getProperties().getProperty("cretifed.url"));
 	}
-	@When("Validacion de conexion segura")
-	public void conexion_segura_bpm()
+	@When("Doy click en conexion segura")
+	public void doyClickConexionSegura()
 	{
 		credifedLoginPage.conexion_segura_bpm();
 		
 	}
-	@Then("Ingreso usuario bpm {string}")
-	public void ingreso_usuario_bpm(String usuario) {
+	@When("Ingreso mi usuario bpm {string}")
+	public void ingresoUsuarioBpm(String usuario) {
 		credifedLoginPage.getUsuarioBpm().sendKeys(usuario);
 		
 	}
 
-	@Then("Ingreso contraseña bpm {string}")
-	public void ingreso_contraseña_bpm(String contraseña) {
+	@When("Ingreso mi contraseña bpm {string}")
+	public void ingresoContraseñaBpm(String contraseña) {
 		credifedLoginPage.gettxtContrasenaBpm().sendKeys(contraseña);
 			
 	}
 
-	@When("doy click en el boton continuar")
-	public void doy_click_en_el_boton_ingresar() {
+	@When("Doy click en boton continuar de bpm")
+	public void doyClickBotonContinuarBpm() {
 		credifedLoginPage.getbtnContinuar().click();
 		
 	}
