@@ -25,7 +25,7 @@ public class CotifedLoginSteps {
 		this.file=file;
 	}
 
-	@Given("Abrir login cotifed")
+	@Given("Ingreso a la pagina de cotifed")
 	public void open_LoginCotifed() {
 		driver.get(propertiesManager.getProperties().getProperty("cotifed.url"));
 	}
