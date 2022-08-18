@@ -36,6 +36,11 @@ public class CredifedOfertaComercialPage {
 	public WebElement verificar_resumen_sol() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10);
 	}
+	
+	public List<WebElement> solicitudAprobadaCorrectamente() {
+		return driver.findElements(By.xpath("//p[contains(.,'Solicitud aprobada exitosamente.')]"));
+	}
+	
 	public List<WebElement> verificar_sol_aprobada() {
 		return driver.findElements(By.xpath("//a[@title='Pulse para trabajar en la tarea']"));
 	}

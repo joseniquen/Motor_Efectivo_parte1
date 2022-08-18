@@ -37,8 +37,10 @@ public class CredifedOfertaComercialSteps {
 		
 		credifedOfertaComercialPage.click_aceptar().click();
 		SeleniumWaiters.waitSeconds(10);
-		List<WebElement> element = credifedOfertaComercialPage.ventana_validar_aprobacion();
+		List<WebElement> element = credifedOfertaComercialPage.solicitudAprobadaCorrectamente();
 		if(element.size()!=0) {
+			credifedOfertaComercialPage.click_confirmar().click();
+		}else {
 			credifedOfertaComercialPage.click_validar_aprobacion().click();	
 			SeleniumWaiters.waitSeconds(10);
 			
@@ -88,9 +90,6 @@ public class CredifedOfertaComercialSteps {
 			credifedOfertaComercialPage.click_aceptar().click();
 			SeleniumWaiters.waitSeconds(10);
 			
-			credifedOfertaComercialPage.click_confirmar().click();
-			
-		}else {
 			credifedOfertaComercialPage.click_confirmar().click();
 		}
 		

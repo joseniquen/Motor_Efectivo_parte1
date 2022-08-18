@@ -88,7 +88,6 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
-		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
 		
 	 #SECCION: DATOS ADICIONALES   
    And Doy click en el boton continuar datos adicionales
