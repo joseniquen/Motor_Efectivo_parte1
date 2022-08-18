@@ -22,7 +22,7 @@ public class CredifedLoginSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedLoginPage = credifedLoginPage;
 	}
-	@Given("Abrir login cretifed")
+	@Given("Abro login cretifed")
 	public void open_LoginCotifed() {
 		driver.get(propertiesManager.getProperties().getProperty("cretifed.url"));
 	}

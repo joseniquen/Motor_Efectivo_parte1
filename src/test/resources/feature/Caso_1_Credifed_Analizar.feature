@@ -18,7 +18,7 @@ Feature: Caso 1
   				- Plan A Desgravamen SDev 
   				- Sin periodo de gracia
 
-    Given Abrir login cretifed
+    Given Abro login cretifed
     Then Validacion de conexion segura 
     Then Ingreso usuario bpm 'ext_fsosa'
 		And Ingreso contraseña bpm 'Efectiva.2022'
@@ -29,7 +29,7 @@ Feature: Caso 1
 		Then cambio de iframe a "Search Results"
 		When ingresar instancia de proceso "10852006"
 		And dar click en pulsar para ver instancia
-		When esperar 10 segundos
+		When Espero 10 segundos
 		Then cambio de inframe a default
 		Then cambio de iframe a "View Instance Details"
 		When validar datos de la solicitud de credito
@@ -37,13 +37,13 @@ Feature: Caso 1
 		|CHICLAYO   |04645301   |EFECTIVO      |10852006     |
 		Then doy click en analizar solicitud de credito
 		When doy click en reclamar tarea
-		When esperar 10 segundos
+		When Espero 10 segundos
 		
 		#datos de titular
 		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "07 Datos del Titular"
-	  When esperar 15 segundos
+	  When Espero 15 segundos
 	  #temporal
 		When verifica si existe error en filtro evaluar personas
 		#temporal
@@ -60,7 +60,7 @@ Feature: Caso 1
 		And ingreso correo electronico "example_1@gmail.com"
 		Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 10 segundos
+		When Espero 10 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		#datos de titular
@@ -78,12 +78,12 @@ Feature: Caso 1
 	 	When selecciono distrito "SANTIAGO DE SURCO"
 	 	And ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
 	 	Then click en ubicar mapa
-	 	When esperar 15 segundos
+	 	When Espero 15 segundos
 	 	#temporal
 	 	When verifica si existe error en ejecución de servicio
 	 	#temporal
 	 	Then doy click en aceptar la ubicacion correcta en el mapa
-	 	When esperar 10 segundos
+	 	When Espero 10 segundos
 	  Then cambio de inframe a default
 	 	Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "08 Información Domiciliaria Titular"
@@ -91,7 +91,7 @@ Feature: Caso 1
 	 	And ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 10 segundos
+		When Espero 10 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		
@@ -106,14 +106,14 @@ Feature: Caso 1
 	  Then selecciono ocupacion "ABOGADO"
 		And ingreso declarado "90000"
 		And registro antiguedad laboral "30" años y "7" meses
-		When esperar 1 segundos
+		When Espero 1 segundos
 		When revisar el detalle de deudas subir sustento
 		#temporal
 	 	When verifica si existe error en filtro evaluacion financiera
 	 	#temporal
 		Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 10 segundos
+		When Espero 10 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		
@@ -131,12 +131,12 @@ Feature: Caso 1
 	 	When selecciono distrito laboral "SANTIAGO DE SURCO"
 	 	And ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	Then click en ubicar mapa laboral
-	 	When esperar 15 segundos
+	 	When Espero 15 segundos
 	 	#temporal
 	 	When verifica si existe error en normalizar direccion
 	 	#temporal
 	 	Then doy click en aceptar la ubicacion correcta en el mapa laboral
-	 	When esperar 10 segundos
+	 	When Espero 10 segundos
 	 	Then cambio de inframe a default
 	 	Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  Then cambio de iframe a "10 Información Laboral Titular"
@@ -144,7 +144,7 @@ Feature: Caso 1
 	 	And ingreso la referencia laboral "PARQUE DE LA AMISTAD"
 	 	Then doy click en guardar datos
 		Then acepto para sobreescribir datos originales
-		When esperar 10 segundos
+		When Espero 10 segundos
 		When verifica si existe error en consentimiento digital
 		Then doy click en continuar
 		
@@ -153,18 +153,18 @@ Feature: Caso 1
 	  Then cambio de iframe a "19 Referencias Telefónicas"
 	  #When doy click en boton editar
 	  #informacion referencias telefonicas
-	  When esperar 10 segundos
+	  When Espero 10 segundos
 	  When verifica si existe error en referencias telefonicas
 	  Then click en agregar nueva referencia
 	  When creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
 		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
 		Then click en agregar nueva referencia
-		When esperar 5 segundos
+		When Espero 5 segundos
 	  When creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
 		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
-		When esperar 5 segundos
+		When Espero 5 segundos
 		Then doy click en continuar
 		Then cambio de inframe a default
 		Then cambio de iframe a "Paso: Analizar Solicitud de Crédito"
