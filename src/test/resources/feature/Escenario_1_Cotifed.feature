@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud para BPM
+Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
     #Modificar obligatoriamente los siguientes inputs:
         #Usuario cotifed
@@ -11,13 +11,13 @@ Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar un
         #Campaña y plazo de cliente
 
   @web
-  Scenario: Línea de producto  Efectivo 
-  					- Sin llenado de datos adicionales  
-  					- Sin seguros optativos > a 69 años 
-  					- Desembolso efectivo en tienda vendedor 
-  					- Plan B Desgravamen CDev 
-  					- Con periodo de gracia
-  				  	
+  Scenario: Línea de producto  Efectivo
+  				- Con llenado de datos adicionales 
+  				- Con seguros optativos 
+  				- Desembolso efectivo en tienda vendedor 
+  				- Plan A Desgravamen SDev 
+  				- Sin periodo de gracia
+  	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
     When Ingreso mi usuario 'ext_fsosa'
@@ -28,7 +28,7 @@ Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar un
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "04645301"
+		And Ingreso numero de documento "44970551"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -55,12 +55,12 @@ Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar un
  	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 |Seguro de Salud 12 Meses|
+	 #|Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
-	 #|Contigo Familia plan Básico|
+	 |Contigo Familia plan Básico|
 	 #|Contigo Familia plan Plus|
 	 #|Accidentes Personales|
 	 |Seguro Oncológico|
@@ -77,7 +77,7 @@ Feature: Caso 2 - Como usuario quiero ingresar un DNI de un cliente y generar un
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular selecciono fecha de pago "3 de cada mes"
+	 And Titular selecciono fecha de pago "6 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar

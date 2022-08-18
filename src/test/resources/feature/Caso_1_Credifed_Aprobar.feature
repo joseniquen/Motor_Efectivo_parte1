@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 1 - xxxxxx
+Feature: Escenario 1 - xxxxxx
 
 #Modificar obligatoriamente los siguientes inputs:
       #Usuario credifed

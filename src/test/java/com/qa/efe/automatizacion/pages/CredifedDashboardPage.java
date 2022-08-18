@@ -46,6 +46,14 @@ public class CredifedDashboardPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
 	}
+	public WebElement click_aprobar_sol_credito()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
+	}
+	public WebElement click_aprobar_sol_credito_en()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
+	}
 	public WebElement click_reclamar_tarea()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("ClaimDialog_0_claim"),10);

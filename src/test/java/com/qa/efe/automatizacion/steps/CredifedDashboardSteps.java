@@ -86,9 +86,20 @@ public class CredifedDashboardSteps {
 	public void doyClickAnalizarSolicitudCredito()
 	{
 		try {
-			credifedDashboardPage.click_analizar_sol_credito().click();
-		}catch (Exception e) {
 			credifedDashboardPage.click_analizar_sol_credito_en().click();
+		}catch (Exception e) {
+			credifedDashboardPage.click_analizar_sol_credito().click();
+		}
+	}
+	@When("Doy click en aprobar solicitud de credito")
+	public void doyClickAprobarSolicitudCredito()
+	{
+		credifedGeneralidadesPage.iframeDefecto();
+        credifedGeneralidadesPage.cambioIframe("View Instance Details");
+		try {
+			credifedDashboardPage.click_aprobar_sol_credito_en().click();
+		}catch (Exception e) {
+			credifedDashboardPage.click_aprobar_sol_credito().click();
 		}
 	}
 	@When("doy click en aprobar solicitud de credito")
