@@ -20,7 +20,7 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
+    When Ingreso mi usuario 'EXT_JNIQUEN'
 		And Ingreso mi contraseña 'Efectiva.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas

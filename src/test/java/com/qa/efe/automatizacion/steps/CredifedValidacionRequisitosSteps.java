@@ -41,7 +41,7 @@ public class CredifedValidacionRequisitosSteps {
 			}else {
 				credifedValidacionRequisitosPage.cargar_archivo(i).click();
 				SeleniumWaiters.waitSeconds(5);
-				credifedValidacionRequisitosPage.click_seleccionar_Archivo().get(i).click();
+				credifedValidacionRequisitosPage.click_seleccionar_Archivo_esp().get(i).click();
 				SeleniumWaiters.waitSeconds(5);
 				try { 
 					String[] commands = new String[]{}; 
