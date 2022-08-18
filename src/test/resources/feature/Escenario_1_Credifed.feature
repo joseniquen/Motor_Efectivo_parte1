@@ -28,7 +28,11 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		#SECCION: DASHBOARD
 		When Doy click en procesos
 <<<<<<< HEAD
+<<<<<<< HEAD
 		When Ingreso instancia de proceso "10852768"
+=======
+		When Ingreso instancia de proceso "10852781"
+>>>>>>> main
 =======
 		When Ingreso instancia de proceso "10852781"
 >>>>>>> main
@@ -37,7 +41,11 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
 <<<<<<< HEAD
+<<<<<<< HEAD
 		|CHICLAYO   |04055004   |EFECTIVO      |10852768     |
+=======
+		|CHICLAYO   |04055004   |EFECTIVO      |10852781     |
+>>>>>>> main
 =======
 		|CHICLAYO   |04055004   |EFECTIVO      |10852781     |
 >>>>>>> main
