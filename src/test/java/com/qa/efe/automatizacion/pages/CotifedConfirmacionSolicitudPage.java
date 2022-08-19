@@ -74,15 +74,24 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getBtnSolicitar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10);	
+		try {
+			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10);
+		} catch (Exception e) {
+			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10);	
+		}	
 	}
 	public void getTextSolicitar()
 	{
-		WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'Solicitar')]"));
-		cotifedGeneralidadesPage.scrollTo(element);
+		try {
+			WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'SOLICITAR')]"));
+			cotifedGeneralidadesPage.scrollTo(element);
+		} catch (Exception e) {
+			WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'Solicitar')]"));
+			cotifedGeneralidadesPage.scrollTo(element);
+		}
 	}
 	public WebElement getNroSolicitud() {
-		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body/app-root/app-modules/app-aditional-data-main/div[3]/div/div/label[1]"), 10);
+		return SeleniumWaiters.findClickableElement(driver,By.xpath("//div[3]/div/div/label[1]"), 10);
 	}
 	public WebElement getBtnOk()
 	{

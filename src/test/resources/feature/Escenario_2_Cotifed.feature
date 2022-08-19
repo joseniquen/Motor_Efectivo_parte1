@@ -1,34 +1,34 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud para BPM
+Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
-    #Modificar obligatoriamente los siguientes inputs:
-        #Usuario cotifed
-        #Contraseña cotifed
-        #Documento del cliente
-        #Seguros del cliente
-        #Importe a solicitar
-        #Dia de pago
-        #Campaña y plazo de cliente
+    		 #Modificar obligatoriamente los siguientes inputs:
+	       #Usuario cotifed
+	       #Contraseña cotifed
+	       #Documento del cliente
+	       #Seguros del cliente
+	       #Importe a solicitar
+	       #Dia de pago
+	       #Campaña y plazo de cliente
 
   @web
-  Scenario: Línea de producto  Efectivo 
-  					- Sin llenado de datos adicionales  
-  					- Sin seguros optativos > a 69 años 
-  					- Desembolso efectivo en tienda vendedor 
-  					- Plan B Desgravamen CDev 
-  					- Con periodo de gracia
-  				  	
+  Scenario: EP002: Línea de producto  Efectivo
+									- Sin llenado de datos adicionales 
+									- Sin seguros optativos > a 69 años 
+									- Desembolso efectivo en tienda vendedor 
+									- Plan B Desgravamen CDev 
+									- Con periodo de gracia
+  	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Setiembre.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "04645301"
+		And Ingreso numero de documento "77236471"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -52,18 +52,6 @@ Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 
    #SECCIÓN: OFERTA COMERCIAL
    When Valido que se recupero ingreso vigente
- 	 And Valido seguros marcados
- 	 And Selecciono seguros
-	 |seguros|
-	 |Seguro de Salud 12 Meses|
-	 #|Seguro de Salud 24 Meses|
-	 #|Seguro de Salud 36 Meses|
-	 #|Seguro de Salud 48 Meses|
-	 #|Seguro de Salud 60 Meses|
-	 #|Contigo Familia plan Básico|
-	 #|Contigo Familia plan Plus|
-	 #|Accidentes Personales|
-	 |Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmo alerta
 	 And Titular selecciono pais "PERU"
@@ -79,7 +67,7 @@ Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular selecciono fecha de pago "3 de cada mes"
 	 And Doy click en el boton simular
-	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
+	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "36 meses"
 	 And Doy click en el boton continuar
 
 	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
@@ -87,40 +75,7 @@ Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono requisito y cargo archivo
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
-		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
-		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
-		
-	 #SECCION: DATOS ADICIONALES   
-   And Doy click en el boton continuar datos adicionales
-   And Ingreso correo de datos principales "correo_prueba@gmail.com"
-   And Ingreso numero de celular de datos principales "924695269"
-   And Selecciono prefijo de datos principales "01-LIMA"
-   And Ingreso numero de telefono fijo de datos principales "454787"
-   #Domicilio
-   And Selecciono departamento de informacion domiciliaria "LIMA"
-   And Selecciono provincia de informacion domiciliaria "LIMA"
-   And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   When Espero 10 segundos
-   And Doy click en confirmar geopoint de informacion domiciliaria
-   When Espero 2 segundos
-   And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
-   And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
-   #Laboral
-   And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
-   And Selecciono prefijo de informacion laboral "01-LIMA"
-   And Ingreso numero de telefono fijo de informacion laboral "754787"
-   And Ingreso celular de informacion laboral "974695869"
-   And Ingreso ruc de centro de informacion laboral "20605554114"
-   And Selecciono departamento de informacion laboral "LIMA"
-   And Selecciono provincia de informacion laboral "LIMA"
-   And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   When Espero 10 segundos
-   And Doy click en confirmar geopoint de informacion laboral
-   When Espero 2 segundos
-   And Selecciono referencia de informacion laboral "PASANDO DEL"
-   And Ingreso descripcion de informacion laboral "Parque de la amistad"
+		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
 	 
 	 #SECCION: OBTENER NUMERO DE SOLICITUD
 	 And Obtengo el numero de solicitud 
