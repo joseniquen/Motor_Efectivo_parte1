@@ -4,25 +4,21 @@ import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.pages.CredifedReferenciaTelfPage;
-import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 
 public class CredifedReferenciaTelfSteps {
-	private WebDriver driver;
 	private CredifedReferenciaTelfPage credifedReferenciaTelfPage;
-	public CredifedReferenciaTelfSteps( WebDriverManager driverManager,CredifedReferenciaTelfPage credifedReferenciaTelfPage) {
-		this.driver = driverManager.getDriver();
+	public CredifedReferenciaTelfSteps(CredifedReferenciaTelfPage credifedReferenciaTelfPage) {
 		this.credifedReferenciaTelfPage = credifedReferenciaTelfPage;
 	}
 	@When("Doy click en agregar nueva referencia")
 	public void clickNuevaReferencia()
 	{
-		credifedReferenciaTelfPage.click_nueva_referencia().click();
+		credifedReferenciaTelfPage.clickNuevaReferencia().click();
 	}
 	@When("Creo referencia telefonica")
 	public void clickNuevaReferencia(DataTable referencia)
@@ -36,14 +32,14 @@ public class CredifedReferenciaTelfSteps {
 		String nombres = item.get("nombres");
 		String apellidos = item.get("apellidos");
 		credifedReferenciaTelfPage.getParentesco(parentesco).click();
-		credifedReferenciaTelfPage.getLugar_telf(lugar_telf).click();
+		credifedReferenciaTelfPage.getLugarTelf(lugar_telf).click();
 		credifedReferenciaTelfPage.getTelefono().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedReferenciaTelfPage.getTelefono().sendKeys(telefono);
 		credifedReferenciaTelfPage.getCelular().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedReferenciaTelfPage.getCelular().sendKeys(celular);
 		credifedReferenciaTelfPage.getNombres().sendKeys(nombres);
 		credifedReferenciaTelfPage.getApellidos().sendKeys(apellidos);
-		credifedReferenciaTelfPage.click_aceptar_referencia().click();
+		credifedReferenciaTelfPage.clickAceptarReferencia().click();
 
 	}
 }

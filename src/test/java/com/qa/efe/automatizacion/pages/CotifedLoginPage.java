@@ -16,24 +16,24 @@ public class CotifedLoginPage {
 		this.driver = driverManager.getDriver();
 	}
 
-	public WebElement gettxtUsuario()
+	public WebElement getTxtUsuario()
 	{
 		return driver.findElement(By.id("email"));
 	}
 	
-	public WebElement gettxtContrasena ()
+	public WebElement getTxtContrasena ()
 	{
 		return driver.findElement(By.id("password"));
 	}
 	
-	public WebElement getbtnIngresar ()
+	public WebElement getBtnIngresar ()
 	{
 		return driver.findElement(By.xpath("//button[@type='submit']"));
 	}
 	public List<WebElement> getTextSesionAbierta() {
 		return driver.findElements(By.xpath("//h2[contains(.,'EXCEDIO CANTIDAD SESIONES ACTIVAS')]/parent::div/parent::div[@style='display: flex;']"));
 	}
-	public WebElement getbtnSesionesAbiertas()
+	public WebElement getBtnSesionesAbiertas()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='ACEPTAR']"),10);
 	}

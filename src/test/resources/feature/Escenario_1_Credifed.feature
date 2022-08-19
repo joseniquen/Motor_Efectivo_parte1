@@ -1,38 +1,37 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
 Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de crédito
 
-	#Modificar obligatoriamente los siguientes inputs:
-      #Usuario credifed
-      #Contraseña credifed
-      #Numero de cotizacion
-      #Agencia
-      #Documento del cliente
-      #Linea de producto
-      #Numero de solicitud
+				 #Modificar obligatoriamente los siguientes inputs:
+		     #Usuario credifed
+		     #Contraseña credifed
+		     #instancia de proceso = Numero de solicitud
+		     #Agencia
+		     #Documento del titular
+		     #Numero de solicitud
       
   @web
-  Scenario: Línea de producto  Efectivo
-  				- Con llenado de datos adicionales 
-  				- Con seguros optativos 
-  				- Desembolso efectivo en tienda vendedor 
-  				- Plan A Desgravamen SDev 
-  				- Sin periodo de gracia
+  Scenario: EP001: Línea de producto  Efectivo
+				  				- Con llenado de datos adicionales 
+				  				- Con seguros optativos 
+				  				- Desembolso efectivo en tienda vendedor 
+				  				- Plan A Desgravamen SDev 
+				  				- Sin periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Setiembre.2022'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10852810"
+		When Ingreso instancia de proceso "10852934"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04055004   |EFECTIVO      |10852810     |
+		|CHICLAYO   |44970551   |EFECTIVO      |10852934     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -160,7 +159,7 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Doy click en agregar nueva referencia
 	  And Creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
-		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
+		|AMIGO      |LIMA      |1236547  |654987312|Juan    |Perez|
 		And Espero 5 segundos
 		Then Doy click en boton continuar
 		When Cambio de iframe a default

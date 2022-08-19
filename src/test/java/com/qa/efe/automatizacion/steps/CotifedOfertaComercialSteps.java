@@ -3,29 +3,8 @@ package com.qa.efe.automatizacion.steps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
-import com.qa.efe.automatizacion.config.PropertiesManager;
-import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-
-import com.qa.efe.automatizacion.config.PropertiesManager;
-import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-
-
 
 import com.qa.efe.automatizacion.pages.CotifedOfertaComercialPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
@@ -40,9 +19,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import java.util.List;
-import java.util.Map;
 
 public class CotifedOfertaComercialSteps {
 	private CotifedOfertaComercialPage cotifedOfertaComercialPage;
@@ -97,7 +73,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@When("Titular selecciono estado civil {string}")
 	public void titularSeleccionoEstadoCivil(String estado) {
-		if (cotifedOfertaComercialPage.getCbxEstado_existe().size()!=0) {
+		if (cotifedOfertaComercialPage.getCbxEstadoExiste().size()!=0) {
 			cotifedOfertaComercialPage.getCbxEstado().click();
 			cotifedOfertaComercialPage.getOpcionEstado(estado).click();
 		}
@@ -114,7 +90,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@When("Titular selecciono tipo de vivienda {string}")
 	public void titularSeleccionoTipoVivienda(String tipoVivienda) {
-		if (cotifedOfertaComercialPage.getCbxTipoVivienda_existe().size()!=0) {
+		if (cotifedOfertaComercialPage.getCbxTipoViviendaExiste().size()!=0) {
 			cotifedOfertaComercialPage.getCbxTipoVivienda().click();
 			cotifedOfertaComercialPage.getOpcionTipoVivienda(tipoVivienda).click();
 		}
@@ -152,13 +128,12 @@ public class CotifedOfertaComercialSteps {
 			cotifedOfertaComercialPage.getCheckIngreso().click();
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 				System.out.println("EL CHECK ESTÁ SELECCIONADO");	
-		}
-		
+		}	
 	}
 	
 	@When("Titular ingreso situacion {string}")
 	public void titularIngresoSituacion(String situacion) {
-		if(cotifedOfertaComercialPage.getSituacion_existe().size()!=0) {
+		if(cotifedOfertaComercialPage.getSituacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {
 				cotifedOfertaComercialPage.getSituacion().click();
 				cotifedOfertaComercialPage.getOpcionSituacion(situacion).click();
@@ -169,13 +144,12 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
-		generalidadesPage.cargarDatos();
-		
+		generalidadesPage.cargarDatos();	
 	}
 	
 	@When("Titular ingreso ocupacion {string}")
 	public void TitularIngresoOcupacion(String ocupacion) {
-		if(cotifedOfertaComercialPage.getOcupacion_existe().size()!=0) {
+		if(cotifedOfertaComercialPage.getOcupacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getOcupacion().isEnabled()) {
 				cotifedOfertaComercialPage.getOcupacion().click();
 				cotifedOfertaComercialPage.getOpcionOcupacion(ocupacion).click();
@@ -186,8 +160,7 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
-		generalidadesPage.cargarDatos();
-		
+		generalidadesPage.cargarDatos();	
 	}
 	
 	@When("Titular ingreso antiguedad laboral en años {string}")

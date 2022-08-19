@@ -24,7 +24,6 @@ public class CotifedConfirmacionSolicitudPage {
 	public WebElement getSelectTipoRequisitos(int i,int opcion)
 	{ 	
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']"),10).click();
-		//return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),10);
 		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option["+opcion+"]"),10);
 	}
 	public WebElement getClickSeleccionar(int opcion)
@@ -89,19 +88,6 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10);	
 	}
-	public List<WebElement> getErrorSharePoint()
-	{
-		return  driver.findElements(By.xpath("//h2[contains(.,'Hubo un error al consumir el servicio EnviarArchivoSharePoint')]/parent::div/parent::div[@style='display: flex;']"));	
-	}
-	public List<WebElement> getErrorSharePoint2()
-	{
-		return  driver.findElements(By.className("swal2-popup swal2-modal swal2-icon-error swal2-show"));	
-	}
-	public List<WebElement> getErrorSharePoint3()
-	{
-		return  driver.findElements(By.className("swal2-container swal2-center swal2-backdrop-show"));	
-	}
-	
 	public List<WebElement> getErrorSharePoint4()
 	{
 		return  driver.findElements(By.xpath("//h2[@id='swal2-title']"));	

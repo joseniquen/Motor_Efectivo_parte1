@@ -1,33 +1,24 @@
 package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+
 import io.cucumber.java.en.When;
 
-import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
-import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 public class CotifedFiltroSteps {
 	private CotifedFiltroPage filtroPage;
-	private WebDriver driver;
-	private PropertiesManager propertiesManager;
 	private IntegracionStore integracionStore;
 	private CotifedGeneralidadesPage generalidadesPage;
 	public CotifedFiltroSteps(
-			PropertiesManager propertiesManager, 
 			WebDriverManager driverManager, 
 			CotifedFiltroPage filtroPage,
 			CotifedGeneralidadesPage generalidadesPage,
 			IntegracionStore integracionStore
 			 ) {
-		this.propertiesManager = propertiesManager;
-		this.driver = driverManager.getDriver();
 		this.filtroPage = filtroPage;
 		this.generalidadesPage = generalidadesPage;
 		this.integracionStore=integracionStore;

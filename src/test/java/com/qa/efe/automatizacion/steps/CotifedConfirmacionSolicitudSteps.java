@@ -1,15 +1,10 @@
 package com.qa.efe.automatizacion.steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
-import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 import com.qa.efe.automatizacion.stores.File;
 import com.qa.efe.automatizacion.stores.IntegracionStore;
 
@@ -18,33 +13,23 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class CotifedConfirmacionSolicitudSteps {
 	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
-	private WebDriver driver;
-	private CotifedGeneralidadesPage generalidadesPage;
-	private CotifedGeneralidadesSteps cotifedGeneralidadesSteps;
 	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 	private IntegracionStore integracionStore;
 	private File file;
 
-	public CotifedConfirmacionSolicitudSteps( 
-			WebDriverManager driverManager, 
+	public CotifedConfirmacionSolicitudSteps(  
 			CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage,
 			IntegracionStore integracionStore,
 			CotifedGeneralidadesPage cotifedGeneralidadesPage,
-			CotifedGeneralidadesSteps cotifedGeneralidadesSteps,
 			File file
 			 ) {
-		this.driver = driverManager.getDriver();
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
 		this.integracionStore=integracionStore;
-		this.cotifedGeneralidadesSteps=cotifedGeneralidadesSteps;
 		this.file=file;
 		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}

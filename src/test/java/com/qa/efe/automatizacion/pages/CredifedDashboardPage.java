@@ -17,61 +17,61 @@ public class CredifedDashboardPage {
 		this.driver = driverManager.getDriver();
 	}
 	
-	public WebElement click_procesos()
+	public WebElement clickProcesos()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='dashboard-menu-item-2015.27']/div/div[2]/a"),10);
 	}
-	public WebElement ingresar_proceso()
+	public WebElement ingresarProceso()
 	{
 		SeleniumWaiters.findElement(driver,By.id("editor_BaseTextDirectionMixin_0"),10).click();
 		return SeleniumWaiters.findElement(driver,By.id("frag0_BaseTextDirectionMixin_0"),10);
 	}
-	public WebElement ver_instancia()
+	public WebElement verInstancia()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para ver la instancia.']"),10);
 	}
-	public WebElement ver_instancia_en()
+	public WebElement verInstanciaEn()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to view instance.']"),10);
 	}
-	public WebElement mostrar_mas()
+	public WebElement mostrarMas()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl']/div[3]"),10);
 	}
-	public WebElement click_analizar_sol_credito()
+	public WebElement clickAnalizarSolCredito()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
 	}
-	public WebElement click_analizar_sol_credito_en()
+	public WebElement clickAnalizarSolCreditoEn()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
 	}
-	public WebElement click_aprobar_sol_credito()
+	public WebElement clickAprobarSolCredito()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
 	}
-	public WebElement click_aprobar_sol_credito_en()
+	public WebElement clickAprobarSolCreditoEn()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
 	}
-	public WebElement click_reclamar_tarea()
+	public WebElement clickReclamarTarea()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("ClaimDialog_0_claim"),10);
 	}
-	public List<WebElement> valida_existe_reclamar_tarea()
+	public List<WebElement> validaExisteReclamarTarea()
 	{
 		return driver.findElements(By.xpath("//*[@id='dijit_Dialog_0']"));
 	}
-	public WebElement compruebo_agencia() {
+	public WebElement comprueboAgencia() {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_0']/span[2]"),10);
 	}
-	public WebElement compruebo_nroDoc() {
+	public WebElement comprueboNroDoc() {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_2']/span[2]"),10);
 	}
-	public WebElement compruebo_linea_producto() {
+	public WebElement comprueboLineaProducto() {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_6']/span[2]"),10);
 	}
-	public WebElement compruebo_nro_sol() {
+	public WebElement comprueboNroSol() {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_12']/span[2]"),10);
 	}
 }

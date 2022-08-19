@@ -13,7 +13,7 @@ public class CredifedReferenciaTelfPage {
 	public CredifedReferenciaTelfPage( WebDriverManager driverManager) {
 		this.driver = driverManager.getDriver();
 	}
-	public WebElement click_nueva_referencia() {
+	public WebElement clickNuevaReferencia() {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-RegistroReferenciasCV1:Button1"),10);
 	}
 	public WebElement getTelefono()
@@ -25,7 +25,7 @@ public class CredifedReferenciaTelfPage {
 		SeleniumWaiters.findElement(driver,By.id("singleselect-RegistroReferenciasCV1:CrearReferencia1:parentesco1"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-RegistroReferenciasCV1:CrearReferencia1:parentesco1']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement getLugar_telf(String opcion)
+	public WebElement getLugarTelf(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.id("singleselect-RegistroReferenciasCV1:CrearReferencia1:codigoTelefonoFijo1"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-RegistroReferenciasCV1:CrearReferencia1:codigoTelefonoFijo1']/option[text()='"+opcion+"']"),10);
@@ -42,7 +42,7 @@ public class CredifedReferenciaTelfPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-RegistroReferenciasCV1:CrearReferencia1:apellidos1"),10);
 	}
-	public WebElement click_aceptar_referencia()
+	public WebElement clickAceptarReferencia()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:aceptarNuevoRefButton"),10);
 	}
