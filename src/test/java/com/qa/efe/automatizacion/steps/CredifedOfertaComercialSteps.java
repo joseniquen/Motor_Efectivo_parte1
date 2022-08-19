@@ -114,4 +114,17 @@ public class CredifedOfertaComercialSteps {
 			System.out.println("Su solicitud ah sido registrada y aprobada correctamente ");
 		}
 	}
+	
+	@When("Doy click en seguro desgravamen con devolucion")
+	public void DoyclickSeguroDesgravamenConDevolucion()
+	{
+		credifedGeneralidadesPage.scrollTo(credifedOfertaComercialPage.getRbtConDevolucion());
+		credifedOfertaComercialPage.getRbtConDevolucion().click();
+	}
+	
+	@When("Acepto seguro desgravamen con devolucion")
+	public void AceptoSeguroDesgravamenConDevolucion()
+	{
+		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
+	}
 }

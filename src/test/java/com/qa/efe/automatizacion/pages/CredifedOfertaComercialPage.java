@@ -45,4 +45,10 @@ public class CredifedOfertaComercialPage {
 	public List<WebElement> verificarExcepciones() {
 		return driver.findElements(By.xpath("//*[@id=\"TaskRow_0\"]/div/div[2]"));
 	}
+	public WebElement getRbtConDevolucion() {
+		return SeleniumWaiters.findElement(driver, By.id("radiogroup-item-input-AprobacionCreditoCV1:segDesgravamenRadio[1]"),10);
+	}
+	public WebElement getBtnAceptoDesgravamenConDevolucion() {
+		return SeleniumWaiters.findElement(driver, By.id("modalalert-button-AprobacionCreditoCV1:mallaCrediticiaModal_Alert"),10);
+	}
 }
