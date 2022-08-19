@@ -118,7 +118,8 @@ public class CredifedOfertaComercialSteps {
 	@When("Doy click en seguro desgravamen con devolucion")
 	public void DoyclickSeguroDesgravamenConDevolucion()
 	{
-		credifedGeneralidadesPage.scrollTo(credifedOfertaComercialPage.getRbtConDevolucion());
+		credifedOfertaComercialPage.scrollAval();
+		System.out.println(credifedOfertaComercialPage.getRbtConDevolucion());
 		credifedOfertaComercialPage.getRbtConDevolucion().click();
 	}
 	

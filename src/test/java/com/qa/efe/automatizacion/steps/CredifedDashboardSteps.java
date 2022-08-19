@@ -45,9 +45,9 @@ public class CredifedDashboardSteps {
 	public void doyClickPulsarParaVerInstancia()
 	{
 		try {
-			credifedDashboardPage.verInstancia().click();
-		}catch (Exception e) {
 			credifedDashboardPage.verInstanciaEn().click();
+		}catch (Exception e) {
+			credifedDashboardPage.verInstancia().click();
 		}
 		
 	}
@@ -108,7 +108,7 @@ public class CredifedDashboardSteps {
 	@When("Doy click en reclamar tarea")
 	public void doyClickEnReclamarTarea()
 	{
-		SeleniumWaiters.waitSeconds(8);
+		SeleniumWaiters.waitSeconds(5);
 		if (credifedDashboardPage.validaExisteReclamarTarea().size()!=0) {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	

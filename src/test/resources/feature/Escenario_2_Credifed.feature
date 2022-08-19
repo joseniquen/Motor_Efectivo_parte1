@@ -26,12 +26,12 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10852990"
+		When Ingreso instancia de proceso "10853033"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |77236471   |EFECTIVO      |10852990     |
+		|CHICLAYO   |77236471   |EFECTIVO      |10853033     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -192,14 +192,14 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
-	  When Espero 10 segundos
+	  When Espero 5 segundos
 	  When Doy click en boton continuar
 	  
 	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "23 Datos de Referidos"
-	  When Espero 10 segundos
+	  When Espero 5 segundos
 	  When Doy click en boton continuar
 
 	  When Espero 7 segundos
