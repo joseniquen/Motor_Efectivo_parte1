@@ -192,14 +192,14 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
-	  When Espero 10 segundos
+	  When Espero 5 segundos
 	  When Doy click en boton continuar
 	  
 	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "23 Datos de Referidos"
-	  When Espero 10 segundos
+	  When Espero 5 segundos
 	  When Doy click en boton continuar
 
 	  When Espero 7 segundos
