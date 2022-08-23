@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 import com.qa.efe.automatizacion.pages.CotifedConfirmacionSolicitudPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
@@ -58,10 +59,16 @@ public class CotifedConfirmacionSolicitudSteps {
 		cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys(integracionStore.dni);
 	}
 	
-	@When ("Ingreso numero de cuenta {string}")
-	public void ingresoNumeroCuenta(String cuenta) {
+	@When ("Ingreso numero de cuenta {string} y CCI {string}")
+	public void ingresoNumeroCuenta(String cuenta, String cci) {
+		String valor = cotifedConfirmacionSolicitudPage.obtenerValorSelectEntidad().getText();	
 		cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolso().sendKeys(cuenta);
+		if(valor.equals("OTRO")) {
+			cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolsoCci().sendKeys(cci);
+		}else {}
 	}
+		
+		
 
 	@When("Selecciono requisito y cargo archivo")
 	public void seleccionoRequisitoCargoArchivo ()

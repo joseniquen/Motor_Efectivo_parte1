@@ -19,8 +19,8 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Setiembre.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
@@ -74,7 +74,7 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Elijo tipo de desembolso "Abono en Cuenta de Ahorros titular"
 	 And Selecciono la entidad tipo "EFECTIVA"
 	 And Ingreso numero titular
-	 And Ingreso numero de cuenta "123456789321"
+	 And Ingreso numero de cuenta "19496386122018" y CCI "00219419638612201795"
 	 And Valido la observación de la edad del titular
 	 And Selecciono requisito y cargo archivo
 	 And Ingreso referencias telefonicas
