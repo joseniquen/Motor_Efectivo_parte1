@@ -27,7 +27,7 @@ public class CredifedObservacionesSteps {
 		credifedObservacionesPage.scrollObservaciones();
 		int observaciones=	credifedObservacionesPage.listaObservaciones().size();
 		for (int i = 0; i < observaciones; i++) {
-			System.out.println("Observación "+(i+1)+" Mensaje: "+credifedObservacionesPage.getListaObservacion(i).getText());
+			System.out.println("Observación "+(i+1));
 		}
 	}
 	@When("Doy click en el boton habilitar aprobacion por excepcion")
@@ -37,14 +37,18 @@ public class CredifedObservacionesSteps {
 	}
 	@When("Selecciono estado {string} e ingreso comentario {string}")
 	public void seleccionoEstadoIngresoComentario(String estado, String comentario) {
+		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.scrollAprobacionExcepcion();
+		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.estadoExcepcion(estado).click();
 		credifedObservacionesPage.ingresoComentario().sendKeys(comentario);
 	}
 	
 	@When("Selecciono estado {string} e ingreso comentario aprobador {string}")
 	public void seleccionoEstadoIngresoComentarioAprobador(String estado, String comentario) {
+		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.scrollAprobacionExcepcion();
+		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.estadoExcepcion(estado).click();
 		credifedObservacionesPage.ingresoComentarioMesa().sendKeys(comentario);
 	}
@@ -63,6 +67,12 @@ public class CredifedObservacionesSteps {
 	public void doyClickAceptarAprobacionExcepcion() {
 		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.doyClickAceptarAprobacionExcepcion().click();
+	}
+	@When ("Doy click en boton actualizar")
+	public void doyClickBotonActualizar() {
+		credifedObservacionesPage.scrollObservaciones();
+		credifedObservacionesPage.doyClickBtnActualizar().click();
+		SeleniumWaiters.waitSeconds(10);
 	}
 
 	

@@ -27,6 +27,12 @@ public class CredifedObservacionesPage {
 		WebElement element = driver.findElement(By.xpath("//div/span[text()='Observaciones']"));
 		credifedGeneralidadesPage.scrollTo(element);
 	}
+	
+	public WebElement doyClickBtnActualizar() {
+		return driver.findElement(By.id("button-button-ObservacionesCV1:actualizarObservacioesButton"));
+	}
+	
+	
 	public WebElement doyClickHabilitarAprobacionExcepcion() {
 		return driver.findElement(By.id("checkbox-input-ObservacionesCV1:permitirAprobacionPorExcepcionCheck"));
 	}
