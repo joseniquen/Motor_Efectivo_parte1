@@ -25,12 +25,12 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10853292"
+		When Ingreso instancia de proceso "10853410"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |92635372   |EFECTIVO      |10853292     |
+		|CHICLAYO   |92635372   |EFECTIVO      |10853410     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -125,8 +125,11 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Elijo e ingreso telefono fijo informacion laboral "LIMA" "7894652"
 	  And Ingreso celular "987654321"
 	  And Selecciono departamento laboral "LIMA"
+	  When Espero 2 segundos
 	 	And Selecciono provincia laboral "LIMA"
+	 	When Espero 2 segundos
 	 	And Selecciono distrito laboral "SANTIAGO DE SURCO"
+	 	When Espero 2 segundos
 	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	And Doy click en ubicar mapa laboral
 	 	And Espero 15 segundos
@@ -177,8 +180,11 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Ingreso antiguedad domiciliaria "30" años y "7" meses
 	  #Informacion domiciliaria de titular
 	 	When Selecciono departamento aval "LIMA"
+	 	When Espero 2 segundos
 	 	And Selecciono provincia aval "LIMA"
+	 	When Espero 2 segundos
 	 	And Selecciono distrito aval "SANTIAGO DE SURCO"
+	 	When Espero 2 segundos
 	 	And Ingreso direccion domiciliaria aval "AV CAMINOS DEL INCA 2412"
 	 	And Doy click en ubicar mapa aval
 	 	And Espero 15 segundos
@@ -221,8 +227,11 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Elijo e ingreso telefono fijo informacion laboral aval "LIMA" "7894652"
 	  And Ingreso celular aval "987654321"
 	  And Selecciono departamento laboral aval "LIMA"
+	  When Espero 2 segundos
 	 	And Selecciono provincia laboral aval "LIMA"
+	 	When Espero 2 segundos
 	 	And Selecciono distrito laboral aval "SANTIAGO DE SURCO"
+	 	When Espero 2 segundos
 	 	And Ingreso direccion domiciliaria laboral aval "AV CAMINOS DEL INCA 2461"
 	 	And Doy click en ubicar mapa laboral aval
 	 	And Espero 15 segundos
@@ -257,115 +266,4 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  Then Continuo a aprobacion de la solicitud
 	  
-	  #PROCESO: APROBAR SOLICITUD
-	  When Doy click en aprobar solicitud de credito
-		When Doy click en reclamar tarea
-		When Espero 10 segundos
-		
-		#SECCION: VALIDACION REQUISITOS
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Espero 15 segundos
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
-
-	  When Espero 7 segundos
-	 	When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "20 Validación Requisitos"
-	  When Espero 10 segundos
-	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar
 	  
-	  #SECCION: OBSERVACIONES
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "21 Observaciones"
-	  When Verifico que haya observaciones por edad del cliente
-	  When Doy click en el boton habilitar aprobacion por excepcion
-	  When Selecciono estado "RESUELTA" e ingreso comentario "TODO OK"
-	  When Doy click en el boton enviar aprobacion por excepcion
-	  When Doy click en aceptar aprobacion por excepcion
-	  
-	  #SECCION: APROBACION POR EXCEPCION
-	  When Cambio de iframe a default
-	  When Cierro sesion de credifed
-	  And Ingreso mi usuario bpm 'useradmision'
-		And Ingreso mi contraseña bpm 'Efectiva2021'
-	  And Doy click en boton continuar de bpm
-	  When Doy click en procesos
-		When Ingreso instancia de proceso anterior
-		And Doy click en aprobar observaciones
-		When Espero 10 segundos
-		When Doy click en aprobacion por excepcion
-		When Espero 10 segundos
-		
-		#SECCION: APROBACION POR EXCEPCION
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Espero 15 segundos
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Observaciones"
-	  
-	  #SECCION: APROBAR OBSERVACIONES
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "21 Observaciones"
-	  When Verifico que haya observaciones por edad del cliente
-	  When Selecciono estado "CONFORME" e ingreso comentario aprobador "TODO OK"
-	  When Doy click en el boton responder aprobacion por excepcion
-	  When Cambio de iframe a default
-	  When Cierro sesion de credifed
-	  
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
-		And Doy click en boton continuar de bpm
-		
-	  When Doy click en procesos
-	  When Ingreso instancia de proceso anterior
-		And Doy click en pulsar para ver instancia
-		When Espero 10 segundos
-		When Valido datos de la solicitud de credito
-		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |77236471   |EFECTIVO      |10853033     |
-		When Doy click en aprobar solicitud de credito
-		When Espero 10 segundos
-	  
-	  
-	  When Espero 5 segundos
-	  When Doy click en boton continuar
-	  
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "23 Datos de Referidos"
-	  When Espero 5 segundos
-	  When Doy click en boton continuar
-
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "22 Oferta Comercial"
-	  When Espero 10 segundos
-	  When Doy click en seguro desgravamen con devolucion
-	  When Acepto seguro desgravamen con devolucion
-	  
-	  When Doy click en simular
-	  When Espero 10 segundos
-	  When Doy click en el boton aprobar
-	  
-	  When Espero 7 segundos
- 		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-		When Cambio de iframe a "Resumen Solicitud"
-	  When Verifico que estemos en la pantalla resumen del credito
-	  When Doy click en aceptar solicitud de credito
-	  
-	  When Espero 7 segundos
-		When Cambio de iframe a default
-		When Cambio de iframe a "View Instance Details"
-		Then Verifico que la solicitud de credito haya sido aprobada correctamente

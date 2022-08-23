@@ -31,7 +31,13 @@ public class CredifedOfertaComercialSteps {
 	@When("Doy click en el boton aprobar")
 	public void clickBtnAprobar()
 	{
-		credifedOfertaComercialPage.clickAprobar().click();
+		try {
+			credifedOfertaComercialPage.clickAprobar().click();
+		} catch (Exception e) {
+			clickBtnSimular();
+			credifedOfertaComercialPage.clickAprobar().click();
+		}
+		
 	}
 	
 	@When("Doy click en aceptar solicitud de credito")

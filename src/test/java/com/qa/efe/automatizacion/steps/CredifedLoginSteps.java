@@ -3,6 +3,7 @@ package com.qa.efe.automatizacion.steps;
 import org.openqa.selenium.WebDriver;
 import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CredifedLoginPage;
+import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.java.en.Given;
@@ -50,6 +51,7 @@ public class CredifedLoginSteps {
 		System.out.println("1");
 		credifedLoginPage.cerrarSesion().click();
 		System.out.println("2");
+		SeleniumWaiters.waitSeconds(5);
 		credifedLoginPage.clickBtnCerrarSesion().click();
 		System.out.println("3");
 	}
