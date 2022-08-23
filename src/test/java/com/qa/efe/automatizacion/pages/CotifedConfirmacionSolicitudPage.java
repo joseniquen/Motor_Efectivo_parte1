@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
@@ -121,6 +122,17 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Cuenta']/parent::div/input"),10);	
 	}
+	public WebElement getCuentaTipoDesembolsoCci()
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='CCI']/parent::div/input"),10);	
+	}
+	public WebElement obtenerValorSelectEntidad()
+	{
+		Select select = new Select(driver.findElement(By.xpath("/html/body/app-root/app-modules/app-confirmation-request/div[2]/app-summary-credit/div[2]/div[2]/div/div[2]/form/div/div[1]/select")));
+		return select.getFirstSelectedOption();
+		
+		//return  SeleniumWaiters.findClickableElement(driver,By.xpath(""),10);	
+	}	
 	public WebElement getDepartamentoTipoDesembolso(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento']/parent::div/select"),10).click();
