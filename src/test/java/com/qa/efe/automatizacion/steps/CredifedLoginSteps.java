@@ -45,4 +45,12 @@ public class CredifedLoginSteps {
 	public void doyClickBotonContinuarBpm() {
 		credifedLoginPage.getbtnContinuar().click();	
 	}
+	@When("Cierro sesion de credifed")
+	public void cierroSesionCredifed() {
+		System.out.println("1");
+		credifedLoginPage.cerrarSesion().click();
+		System.out.println("2");
+		credifedLoginPage.clickBtnCerrarSesion().click();
+		System.out.println("3");
+	}
 }

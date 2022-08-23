@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de crédito
+Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de crédito
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -10,12 +10,11 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 		     #Numero de solicitud
       
   @web
-  Scenario: EP002: Línea de producto  Efectivo
-									- Sin llenado de datos adicionales 
-									- Sin seguros optativos > a 69 años 
-									- Desembolso efectivo en tienda vendedor 
-									- Plan B Desgravamen CDev 
-									- Con periodo de gracia
+  Scenario: EP004: Línea de producto  Efectivo 
+  								 - Sin llenado de datos adicionales 
+  								 -  Sin seguros > a 78 años 
+  								 - Abono en cuentas de ahorro titular 
+  								 - Sin periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
@@ -26,12 +25,12 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10853209"
+		When Ingreso instancia de proceso "10853292"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |77236471   |EFECTIVO      |10853209     |
+		|CHICLAYO   |92635372   |EFECTIVO      |10853292     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -149,6 +148,97 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
 		
+		#SECCION: DATOS AVAL
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "15 Datos Aval"
+	  When Doy click en boton editar
+	  When Selecciono tipo de documento aval "D.N.I."
+	  And Ingreso numero de documento aval "75739934"
+	  And Espero 5 segundos
+	  And Selecciono condicion especial aval "SIN TESTIGO A RUEGO"
+		And Selecciono estado civil aval "SOLTERO(A)"
+		And Selecciono pais de nacimiento aval "PERU"
+		And Selecciono pais de residencia aval "PERU"
+		And Ingreso celular principal aval "580458721"
+		And Ingreso celular secundario aval "423114987"
+		And Elijo e ingreso telefono fijo aval "LIMA" "1894651"
+		And Ingreso correo electronico aval "example_1@gmail.com"
+		And Doy click en guardar datos
+		And Acepto para sobreescribir datos originales
+		And Doy click en boton continuar
+	  
+	  #SECCION: INFORMACION DOMICILIARIA AVAL
+	  When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "16 Información Domiciliaria Aval"
+	  When Doy click en boton editar
+	  And Selecciono el tipo de propiedad "PROPIA"
+	  And Ingreso antiguedad domiciliaria "30" años y "7" meses
+	  #Informacion domiciliaria de titular
+	 	When Selecciono departamento aval "LIMA"
+	 	And Selecciono provincia aval "LIMA"
+	 	And Selecciono distrito aval "SANTIAGO DE SURCO"
+	 	And Ingreso direccion domiciliaria aval "AV CAMINOS DEL INCA 2412"
+	 	And Doy click en ubicar mapa aval
+	 	And Espero 15 segundos
+	 	When Doy click en aceptar la ubicacion correcta en el mapa aval
+	 	When Espero 10 segundos
+	  And Cambio de iframe a default
+	 	And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  And Cambio de iframe a "16 Información Domiciliaria Aval"
+	 	And Selecciono tipo de referencia aval "FRENTE A"
+	 	And Ingreso la referencia aval "PARQUE DE LA AMISTAD"
+	 	And Doy click en guardar datos
+		And Acepto para sobreescribir datos originales
+		And Doy click en boton continuar
+		
+		#SECCION: INFORMACION FINANCIERA AVAL
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "17 Información Financiera Aval"
+	  When Doy click en boton editar
+	  #Informacion financiera de titular
+		When Selecciono perfil de ingreso principal aval "FORMAL"
+		And Selecciono situacion laboral aval "DEPENDIENTE"
+	  And Selecciono ocupacion aval "ABOGADO"
+		And Ingreso declarado aval "90000"
+		And Registro antiguedad laboral aval "30" años y "7" meses
+		And Espero 1 segundos
+		And Reviso el detalle de deudas subir sustento aval
+		When Doy click en guardar datos
+		And Acepto para sobreescribir datos originales
+		And Doy click en boton continuar
+	  
+	  #SECCION: INFORMACION LABORAL AVAL
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "18 Información Laboral Aval"
+	  When Doy click en boton editar
+	  #Informacion laboral de titular
+	  When Ingreso centro de trabajo aval "IDE SOLUTION"
+	  When Ingreso ruc de centro de trabajo aval "12345689745"
+	  And Elijo e ingreso telefono fijo informacion laboral aval "LIMA" "7894652"
+	  And Ingreso celular aval "987654321"
+	  And Selecciono departamento laboral aval "LIMA"
+	 	And Selecciono provincia laboral aval "LIMA"
+	 	And Selecciono distrito laboral aval "SANTIAGO DE SURCO"
+	 	And Ingreso direccion domiciliaria laboral aval "AV CAMINOS DEL INCA 2461"
+	 	And Doy click en ubicar mapa laboral aval
+	 	And Espero 15 segundos
+	 	Then Doy click en aceptar la ubicacion correcta en el mapa laboral aval
+	 	When Espero 10 segundos
+	 	
+	 	#SECCION: INFORMACION LABORAL AVAL
+	 	When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "18 Información Laboral Aval"
+	 	And Selecciono tipo de referencia laboral aval "FRENTE A"
+	 	And Ingreso la referencia laboral aval "PARQUE DE LA AMISTAD"
+	 	And Doy click en guardar datos
+		And Acepto para sobreescribir datos originales
+		And Doy click en boton continuar
+		
 		#SECCION: REFERENCIAS TELEFONICAS
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
@@ -188,10 +278,64 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Doy check a la lista de documentos
 	  When Doy click en boton continuar
 	  
+	  #SECCION: OBSERVACIONES
 	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
+	  When Verifico que haya observaciones por edad del cliente
+	  When Doy click en el boton habilitar aprobacion por excepcion
+	  When Selecciono estado "RESUELTA" e ingreso comentario "TODO OK"
+	  When Doy click en el boton enviar aprobacion por excepcion
+	  When Doy click en aceptar aprobacion por excepcion
+	  
+	  #SECCION: APROBACION POR EXCEPCION
+	  When Cambio de iframe a default
+	  When Cierro sesion de credifed
+	  And Ingreso mi usuario bpm 'useradmision'
+		And Ingreso mi contraseña bpm 'Efectiva2021'
+	  And Doy click en boton continuar de bpm
+	  When Doy click en procesos
+		When Ingreso instancia de proceso anterior
+		And Doy click en aprobar observaciones
+		When Espero 10 segundos
+		When Doy click en aprobacion por excepcion
+		When Espero 10 segundos
+		
+		#SECCION: APROBACION POR EXCEPCION
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "07 Datos del Titular"
+	  When Espero 15 segundos
+	  When Verifico si existe error en consentimiento digital
+	  When Me dirijo a la pestaña de "Observaciones"
+	  
+	  #SECCION: APROBAR OBSERVACIONES
+	  When Espero 7 segundos
+	  When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "21 Observaciones"
+	  When Verifico que haya observaciones por edad del cliente
+	  When Selecciono estado "CONFORME" e ingreso comentario aprobador "TODO OK"
+	  When Doy click en el boton responder aprobacion por excepcion
+	  When Cambio de iframe a default
+	  When Cierro sesion de credifed
+	  
+    And Ingreso mi usuario bpm 'ext_fsosa'
+		And Ingreso mi contraseña bpm 'Efectiva.2022'
+		And Doy click en boton continuar de bpm
+		
+	  When Doy click en procesos
+	  When Ingreso instancia de proceso anterior
+		And Doy click en pulsar para ver instancia
+		When Espero 10 segundos
+		When Valido datos de la solicitud de credito
+		|agencia 		|doc_titular|linea_producto|nro_solicitud|
+		|CHICLAYO   |77236471   |EFECTIVO      |10853033     |
+		When Doy click en aprobar solicitud de credito
+		When Espero 10 segundos
+	  
+	  
 	  When Espero 5 segundos
 	  When Doy click en boton continuar
 	  

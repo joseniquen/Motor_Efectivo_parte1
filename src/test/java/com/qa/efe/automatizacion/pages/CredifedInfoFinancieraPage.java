@@ -48,7 +48,7 @@ public class CredifedInfoFinancieraPage {
 		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3\"]/div[2]/div[2]/div/table/tbody/tr")); 
 	}
 	public WebElement clickSeleccionarArchivo() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\\\"div_12_1_1_1_1_r4\\\"]//td/div[text()='Select...']"),10);
+		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r4\"]//td/div[text()='Select...']"),10);
 	}
 	public WebElement clickSeleccionarArchivoFor(String param) {
 		return SeleniumWaiters.findElement(driver, By.xpath("//*[@id=\"div_12_1_1_1_1_r"+param+"\"]/div/table/tbody/tr[1]/td[1]/div"),10);

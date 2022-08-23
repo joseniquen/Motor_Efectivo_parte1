@@ -31,14 +31,14 @@ public class CredifedValidacionRequisitosSteps {
 	public void ckeckListaDocumentos()
 	{
 		List<WebElement> elements = credifedValidacionRequisitosPage.nroListDoc();
-		System.out.println("aa "+elements.size());
+		System.out.println("Archivos a cargar"+elements.size());
 		for (int i = 0; i < elements.size(); i++) {
 			if(credifedValidacionRequisitosPage.ckeckListDocExists(i+1).size()!=0) {
 				System.out.println("el doc adjunto si existe");
 			}else {
 				credifedValidacionRequisitosPage.cargarArchivo(i).click();
 				SeleniumWaiters.waitSeconds(5);
-				credifedValidacionRequisitosPage.clickSeleccionarArchivoEsp().get(i).click();
+				credifedValidacionRequisitosPage.clickSeleccionarArchivo().get(i).click();
 				SeleniumWaiters.waitSeconds(5);
 				try { 
 					String[] commands = new String[]{}; 
@@ -47,7 +47,7 @@ public class CredifedValidacionRequisitosSteps {
 				} catch (IOException e) {}
 				SeleniumWaiters.waitSeconds(15);
 				credifedValidacionRequisitosPage.clickCargarArchivo(i).click();
-				System.out.println("numero de botonddd "+i);
+				System.out.println("numero de boton "+i);
 				SeleniumWaiters.waitSeconds(15);
 
 			}
