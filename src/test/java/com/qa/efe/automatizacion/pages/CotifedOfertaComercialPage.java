@@ -134,6 +134,14 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Fecha de pago*']/parent::div/select/option[contains(.,'"+fechaPago+"')]"),10);	
 	}
+	public WebElement getRequiereAval()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Requiere']/parent::div/select"),10);
+	}
+	public WebElement getOpcionRequiereAval(String fechaPago)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Requiere']/parent::div/select/option[contains(.,'"+fechaPago+"')]"),10);	
+	}
 	public WebElement getBtnSimular()
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SIMULAR')]"),10);	

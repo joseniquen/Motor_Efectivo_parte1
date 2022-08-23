@@ -141,4 +141,11 @@ public class CotifedConfirmacionSolicitudPage {
 		SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select"),10).click();
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tienda']/parent::div/select/option[contains(.,'"+opcion+"')]"),10);
 	}
+	public WebElement getObservacionesTitular() {
+		return driver.findElement(By.xpath("//div/p[contains(.,'55: Cliente no cumple con edad mínima / máxima')]"));	
+	}
+	public void scrollReferencias() {
+		WebElement element=driver.findElement(By.xpath("//h3[contains(.,'Referencias Telefónicas')]"));
+		cotifedGeneralidadesPage.scrollTo(element);
+	}
 }

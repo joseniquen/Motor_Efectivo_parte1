@@ -188,13 +188,23 @@ public class CotifedOfertaComercialSteps {
 	}
 	
 	@When("Titular selecciono fecha de pago {string}")
-	public void Titular_fecha_pago(String fechaPago) {
+	public void titularFechaPago(String fechaPago) {
 		SeleniumWaiters.waitSeconds(3);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
 		generalidadesPage.cargarDatos();
 	}
+	
+	@When("Titular selecciono requisito {string}")
+	public void titularSeleccionoRequisito(String requisito) {
+		SeleniumWaiters.waitSeconds(3);
+		cotifedOfertaComercialPage.getRequiereAval().click();
+		SeleniumWaiters.waitSeconds(2);
+		cotifedOfertaComercialPage.getOpcionRequiereAval(requisito).click();
+		generalidadesPage.cargarDatos();
+	}
+	
 	@When("Doy click en el boton simular")
 	public void doyClickBotonSimular() {
 		cotifedOfertaComercialPage.getBtnSimular().click();
