@@ -69,13 +69,13 @@ public class CredifedInfoFinancieraSteps {
 				 String ind = String.valueOf(i);			 
 				 
 					try {
-				    credifedInfoFinancieraPage.detalleDeudas(i).click();					
-					credifedInfoFinancieraPage.clickSeleccionarArchivoFor(fijoString).click();				
-					String[] commands = new String[]{}; 					
-					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};					
-					Runtime.getRuntime().exec(commands);			
-					SeleniumWaiters.waitSeconds(10);				
-					credifedInfoFinancieraPage.clickCargarArchivoFor(ind).click();				
+				    credifedInfoFinancieraPage.detalleDeudas(i).click();		
+					credifedInfoFinancieraPage.clickSeleccionarArchivoFor(fijoString).click();
+					String[] commands = new String[]{};
+					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
+					Runtime.getRuntime().exec(commands);
+					SeleniumWaiters.waitSeconds(10);
+					credifedInfoFinancieraPage.clickCargarArchivoFor(ind).click();
 					SeleniumWaiters.waitSeconds(15);
 					System.out.println("Archivo N°: "+i+" subido satisfactoriamente.");
 					}

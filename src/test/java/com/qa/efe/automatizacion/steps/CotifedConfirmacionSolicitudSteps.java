@@ -37,17 +37,30 @@ public class CotifedConfirmacionSolicitudSteps {
 	@When("Elijo tipo de desembolso {string}")
 	public void elijoTipoDesembolso(String tipoDesembolso)
 	{
+		cotifedGeneralidadesPage.cargarDatos();
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
-		if(tipoDesembolso.equals("Abono en Cuenta de Ahorros titular")) {
-			cotifedConfirmacionSolicitudPage.getEntidadTipoDesembolso("EFECTIVA").click();
-			cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys("TITULAR CUENTA");
-			cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolso().sendKeys("123456789321");
-		}else if(tipoDesembolso.equals("Desembolso en otra tienda")) {
+		if(tipoDesembolso.equals("Desembolso en otra tienda")) {
 			cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso("LIMA").click();
 			cotifedConfirmacionSolicitudPage.getProvinciaTipoDesembolso("LIMA").click();
 			cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso("SANTIAGO DE SURCO").click();
 			cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso("OFICINA PRINCIPAL").click();
 		}
+	}
+	
+	@When ("Selecciono la entidad tipo {string}")
+	public void seleccionoEntidadTipoEfectiva(String entidad) {
+		cotifedGeneralidadesPage.cargarDatos();
+		cotifedConfirmacionSolicitudPage.getEntidadTipoDesembolso(entidad).click();
+	}
+	
+	@When ("Ingreso numero titular")
+	public void ingresoNumTitular() {
+		cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys(integracionStore.dni);
+	}
+	
+	@When ("Ingreso numero de cuenta {string}")
+	public void ingresoNumeroCuenta(String cuenta) {
+		cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolso().sendKeys(cuenta);
 	}
 
 	@When("Selecciono requisito y cargo archivo")
@@ -76,6 +89,7 @@ public class CotifedConfirmacionSolicitudSteps {
 						SeleniumWaiters.waitSeconds(15);	
 						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size());
 						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						cotifedGeneralidadesPage.cargarDatos();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4().size()!=0);
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
@@ -174,6 +188,7 @@ public class CotifedConfirmacionSolicitudSteps {
 	@When("Ingreso referencias telefonicas")
 	public void ingresoReferenciasTelefonicas(DataTable referencias) {
 		List<Map<String, String>> items = referencias.asMaps(String.class, String.class);
+		cotifedConfirmacionSolicitudPage.scrollReferencias();
 		for (int i = 0; i < items.size(); i++) {
 			Map<String, String> item = items.get(i);
 			cotifedConfirmacionSolicitudPage.getCbxParentesco().click();
@@ -206,6 +221,12 @@ public class CotifedConfirmacionSolicitudSteps {
 		System.out.println(nroSolicitud);
 		System.out.println("Dni: "+integracionStore.dni);
 	}
+	
+	@When("Valido la observación de la edad del titular")
+	public void observacionesTitular() {
+		System.out.println(cotifedConfirmacionSolicitudPage.getObservacionesTitular().getText());
+	}
+	
 	@Then("Termino la solicitud")
 	public void terminarSolicitud() {	
 		SeleniumWaiters.waitSeconds(7);

@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import com.qa.efe.automatizacion.pages.CredifedDashboardPage;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
+import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
@@ -18,11 +19,14 @@ public class CredifedDashboardSteps {
 
 	private CredifedDashboardPage credifedDashboardPage;
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	private IntegracionStore integracionStore;
 	
-	public CredifedDashboardSteps(CredifedGeneralidadesPage credifedGeneralidadesPage,CredifedDashboardPage credifedDashboardPage
+	public CredifedDashboardSteps(CredifedGeneralidadesPage credifedGeneralidadesPage,
+			CredifedDashboardPage credifedDashboardPage,IntegracionStore integracionStore
 			 ) {
 		this.credifedDashboardPage = credifedDashboardPage;
 		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
+		this.integracionStore=integracionStore;
 	}
 	
 	@When("Doy click en procesos")
@@ -36,6 +40,7 @@ public class CredifedDashboardSteps {
 	public void ingresoInstanciaProceso(String instancia)
 	{
 		credifedGeneralidadesPage.cambioIframe("Search Results");
+		integracionStore.cuenta=instancia;
 		credifedDashboardPage.ingresarProceso().sendKeys(instancia);
 		credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
 
@@ -50,6 +55,16 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.verInstancia().click();
 		}
 		
+	}
+	
+	@When("Doy click en aprobar observaciones")
+	public void doyClickAprobarObservaciones() {
+		//credifedDashboardPage.listVerInstancia().get(0).click();
+		try {
+			credifedDashboardPage.verInstanciaEn().click();
+		}catch (Exception e) {
+			credifedDashboardPage.verInstancia().click();
+		}
 	}
 	
 	@When("Valido datos de la solicitud de credito")
@@ -87,6 +102,13 @@ public class CredifedDashboardSteps {
 		}
 	}
 	
+	@When("Doy click en aprobacion por excepcion")
+	public void doyClickAprobacionExcepcion() {
+		credifedGeneralidadesPage.iframeDefecto();
+		credifedGeneralidadesPage.cambioIframe("View Instance Details");
+		credifedDashboardPage.aprobacionExcepcion().click();
+	}
+	
 	@When("Doy click en aprobar solicitud de credito")
 	public void doyClickAprobarSolicitudCredito()
 	{
@@ -103,6 +125,13 @@ public class CredifedDashboardSteps {
 	public void click_aprobar_sol_credito()
 	{
 		credifedDashboardPage.clickAnalizarSolCredito().click();
+	}
+	
+	@When ("Ingreso instancia de proceso anterior")
+	public void ingresoInstanciaProcesoAnterior() {
+		credifedGeneralidadesPage.cambioIframe("Search Results");
+		credifedDashboardPage.ingresarProceso().sendKeys(integracionStore.cuenta);
+		credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
 	}
 	
 	@When("Doy click en reclamar tarea")

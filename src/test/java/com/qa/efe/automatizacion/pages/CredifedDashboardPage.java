@@ -34,25 +34,36 @@ public class CredifedDashboardPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to view instance.']"),10);
 	}
+	public List<WebElement> listVerInstancia()
+	{
+		try {
+			return driver.findElements(By.xpath("//a[@title='Click to view instance.']"));
+		} catch (Exception e) {
+			return driver.findElements(By.xpath("//a[@title='Pulse para ver la instancia.']"));
+		}
+	}
+	public WebElement aprobacionExcepcion() {
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id=\"TaskRow_0\"]/div/div[2]/div/div[1]/div[1]/span/a/span[2]"),10);
+	}
 	public WebElement mostrarMas()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl']/div[3]"),10);
 	}
 	public WebElement clickAnalizarSolCredito()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para trabajar en la tarea']"),10);
 	}
 	public WebElement clickAnalizarSolCreditoEn()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to work on the task']"),10);
 	}
 	public WebElement clickAprobarSolCredito()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Pulse para trabajar en la tarea']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para trabajar en la tarea']"),10);
 	}
 	public WebElement clickAprobarSolCreditoEn()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskRow_0']//a[@title='Click to work on the task']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to work on the task']"),10);
 	}
 	public WebElement clickReclamarTarea()
 	{
