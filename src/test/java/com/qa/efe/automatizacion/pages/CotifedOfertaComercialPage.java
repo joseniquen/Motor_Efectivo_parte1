@@ -1,9 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
-import java.util.Iterator;
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -64,7 +62,7 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"),10);
 	}
-	public List<WebElement> getCbxEstado_existe()
+	public List<WebElement> getCbxEstadoExiste()
 	{
 		return  driver.findElements(By.xpath("//div/label[text()='Estado Civil*']/parent::div//select"));
 	}
@@ -88,7 +86,7 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select/option[contains(.,'"+TipoVivienda+"')]"),10);	
 	}
-	public List<WebElement> getCbxTipoVivienda_existe()
+	public List<WebElement> getCbxTipoViviendaExiste()
 	{
 		return  driver.findElements(By.xpath("//div/label[text()='Tipo de Vivienda*']/parent::div//select"));
 	}
@@ -152,7 +150,7 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"),5);
 	}	
-	public List<WebElement> getSituacion_existe()
+	public List<WebElement> getSituacionExiste()
 	{
 		return  driver.findElements(By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"));
 	}	
@@ -165,7 +163,7 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select"),5);
 	}	
-	public List<WebElement> getOcupacion_existe()
+	public List<WebElement> getOcupacionExiste()
 	{
 		return  driver.findElements(By.xpath("//div/label[text()='Ocupación*']/parent::div//select"));
 	}	

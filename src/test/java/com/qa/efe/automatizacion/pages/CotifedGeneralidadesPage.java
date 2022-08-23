@@ -19,8 +19,7 @@ public class CotifedGeneralidadesPage {
 	public void ConfirmarAlerta()
 	{
 		try {
-			WebElement Alerta = SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),5);
-			//WebElement eleSelected= driver.findElement(By.xpath("//*[@id='swal2-title']"));
+			SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),5);
 			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),10).click();
 			
 		} catch (Exception e) {
@@ -32,8 +31,7 @@ public class CotifedGeneralidadesPage {
 	public void ConfirmarAlertaSharepoint()
 	{
 		try {
-			WebElement Alerta = SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),5);
-			//WebElement eleSelected= driver.findElement(By.xpath("//*[@id='swal2-title']"));
+			SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),5);
 			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),10).click();
 			
 		} catch (Exception e) {

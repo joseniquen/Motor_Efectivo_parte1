@@ -1,24 +1,23 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 1 - xxxxxx
+Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de crédito
 
-	#Modificar obligatoriamente los siguientes inputs:
-      #Usuario credifed
-      #Contraseña credifed
-      #Numero de cotizacion
-      #Agencia
-      #Documento del cliente
-      #Linea de producto
-      #Numero de solicitud
+				 #Modificar obligatoriamente los siguientes inputs:
+		     #Usuario credifed
+		     #Contraseña credifed
+		     #instancia de proceso = Numero de solicitud
+		     #Agencia
+		     #Documento del titular
+		     #Numero de solicitud
       
   @web
-  Scenario: Línea de producto  Efectivo
-  				- Con llenado de datos adicionales 
-  				- Con seguros optativos 
-  				- Desembolso efectivo en tienda vendedor 
-  				- Plan A Desgravamen SDev 
-  				- Sin periodo de gracia
+  Scenario: EP002: Línea de producto  Efectivo
+									- Sin llenado de datos adicionales 
+									- Sin seguros optativos > a 69 años 
+									- Desembolso efectivo en tienda vendedor 
+									- Plan B Desgravamen CDev 
+									- Con periodo de gracia
 
-    #SECCIÓN: LOGIN		
+    #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'ext_fsosa'
@@ -27,24 +26,25 @@ Feature: Caso 1 - xxxxxx
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10852600"
+		When Ingreso instancia de proceso "10853033"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10852600     |
+		|CHICLAYO   |77236471   |EFECTIVO      |10853033     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
 		
+		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
 	  When Espero 15 segundos
-	  #temporal
+	  #Temporal
 		When Verifico si existe error en filtro evaluar personas
-		#temporal
+		#Temporal
 	  When Verifico si existe error en consentimiento digital
 		When Doy click en boton editar
 		When Selecciono tipo de venta "RECEPTIVA"
@@ -66,20 +66,20 @@ Feature: Caso 1 - xxxxxx
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "08 Información Domiciliaria Titular"
-	  #temporal
+	  #Temporal
 	  When Verifico si existe error en filtro evaluar domicilio
-	  #temporal
+	  #Temporal
 	  When Doy click en boton editar
-	  #informacion domiciliaria de titular
+	  #Informacion domiciliaria de titular
 	 	When Selecciono departamento "LIMA"
 	 	And Selecciono provincia "LIMA"
 	 	And Selecciono distrito "SANTIAGO DE SURCO"
 	 	And Ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
 	 	And Doy click en ubicar mapa
 	 	And Espero 15 segundos
-	 	#temporal
+	 	#Temporal
 	 	When Verifico si existe error en ejecución de servicio
-	 	#temporal
+	 	#Temporal
 	 	When Doy click en aceptar la ubicacion correcta en el mapa
 	 	When Espero 10 segundos
 	  And Cambio de iframe a default
@@ -98,7 +98,7 @@ Feature: Caso 1 - xxxxxx
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "09 Información Financiera Titular"
 	  When Doy click en boton editar
-	  #informacion financiera de titular
+	  #Informacion financiera de titular
 		When Selecciono perfil de ingreso principal "FORMAL"
 		And Selecciono situacion laboral "DEPENDIENTE"
 	  And Selecciono ocupacion "ABOGADO"
@@ -106,9 +106,9 @@ Feature: Caso 1 - xxxxxx
 		And Registro antiguedad laboral "30" años y "7" meses
 		And Espero 1 segundos
 		And Reviso el detalle de deudas subir sustento
-		#temporal
+		#Temporal
 	 	When Verifico si existe error en filtro evaluacion financiera
-	 	#temporal
+	 	#Temporal
 		When Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
 		And Espero 10 segundos
@@ -120,7 +120,7 @@ Feature: Caso 1 - xxxxxx
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "10 Información Laboral Titular"
 	  When Doy click en boton editar
-	  #informacion laboral de titular
+	  #Informacion laboral de titular
 	  When Ingreso centro de trabajo "IDE SOLUTION"
 	  When Ingreso ruc de centro de trabajo "12345689745"
 	  And Elijo e ingreso telefono fijo informacion laboral "LIMA" "7894652"
@@ -131,9 +131,9 @@ Feature: Caso 1 - xxxxxx
 	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	And Doy click en ubicar mapa laboral
 	 	And Espero 15 segundos
-	 	#temporal
+	 	#Temporal
 	 	When Verifico si existe error en normalizar direccion
-	 	#temporal
+	 	#Temporal
 	 	Then Doy click en aceptar la ubicacion correcta en el mapa laboral
 	 	When Espero 10 segundos
 	 	
@@ -153,21 +153,75 @@ Feature: Caso 1 - xxxxxx
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "19 Referencias Telefónicas"
-	  #informacion referencias telefonicas
+	  #Informacion referencias telefonicas
 	  And Espero 10 segundos
 	  And Verifico si existe error en referencias telefonicas
 	  And Doy click en agregar nueva referencia
 	  And Creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
-		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
-		And Doy click en agregar nueva referencia
-		And Espero 5 segundos
-	  And Creo referencia telefonica
-		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
-		|AMIGO      |LIMA      |1236547  |654987312|aaaa aaa|bbbb bbbb|
+		|AMIGO      |LIMA      |1236547  |654987312|Juan    |Perez|
 		And Espero 5 segundos
 		Then Doy click en boton continuar
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  Then Continuo a aprobacion de la solicitud
+	  
+	  #PROCESO: APROBAR SOLICITUD
+	  When Doy click en aprobar solicitud de credito
+		When Doy click en reclamar tarea
+		When Espero 10 segundos
+		
+		#SECCION: VALIDACION REQUISITOS
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "07 Datos del Titular"
+	  When Espero 15 segundos
+	  When Verifico si existe error en consentimiento digital
+	  When Me dirijo a la pestaña de "Validar Requisitos"
+
+	  When Espero 7 segundos
+	 	When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "20 Validación Requisitos"
+	  When Espero 10 segundos
+	  When Doy check a la lista de documentos
+	  When Doy click en boton continuar
+	  
+	  When Espero 7 segundos
+	  When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "21 Observaciones"
+	  When Espero 5 segundos
+	  When Doy click en boton continuar
+	  
+	  When Espero 7 segundos
+	  When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "23 Datos de Referidos"
+	  When Espero 5 segundos
+	  When Doy click en boton continuar
+
+	  When Espero 7 segundos
+	  When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "22 Oferta Comercial"
+	  When Espero 10 segundos
+	  When Doy click en seguro desgravamen con devolucion
+	  When Acepto seguro desgravamen con devolucion
+	  
+	  When Doy click en simular
+	  When Espero 10 segundos
+	  When Doy click en el boton aprobar
+	  
+	  When Espero 7 segundos
+ 		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+		When Cambio de iframe a "Resumen Solicitud"
+	  When Verifico que estemos en la pantalla resumen del credito
+	  When Doy click en aceptar solicitud de credito
+	  
+	  When Espero 7 segundos
+		When Cambio de iframe a default
+		When Cambio de iframe a "View Instance Details"
+		Then Verifico que la solicitud de credito haya sido aprobada correctamente

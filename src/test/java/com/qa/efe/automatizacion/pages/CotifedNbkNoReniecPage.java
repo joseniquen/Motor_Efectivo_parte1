@@ -1,7 +1,5 @@
 package com.qa.efe.automatizacion.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -53,14 +51,8 @@ private WebDriver driver;
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("document.getElementById('dateOfBirth').removeAttribute('readonly')");	
 		driver.findElement(By.id("dateOfBirth")).click();
-		//js.executeScript("document.getElementById('dateOfBirth').value='"+fecha+"'");
 		driver.findElement(By.id("dateOfBirth")).sendKeys(fecha);
 		
-	}
-	public void getInputNac2()
-	{
-		WebElement dateBox = driver.findElement(By.xpath("//form//input[@name='dateOfBirth']"));
-		dateBox.sendKeys("12121990");
 	}
 	public WebElement getCbxDepartamento()
 	{

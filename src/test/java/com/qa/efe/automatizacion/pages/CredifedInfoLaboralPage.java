@@ -1,7 +1,6 @@
 package com.qa.efe.automatizacion.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +15,6 @@ public class CredifedInfoLaboralPage {
 		this.driver = driverManager.getDriver();
 		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
-	
 	public WebElement getCentroTrabajo() {
 		return SeleniumWaiters.findElement(driver, By.id("text-input-UbicacionGeograficaCV1:centroTrabajoText"),10);
 	}
@@ -27,53 +25,51 @@ public class CredifedInfoLaboralPage {
 		SeleniumWaiters.findElement(driver, By.id("singleselect-UbicacionGeograficaCV1:telefonoFijoSelect"),10).click();
 		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:telefonoFijoSelect']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement getTelefonoFijo_lima() {
+	public WebElement getTelefonoFijoLima() {
 		return SeleniumWaiters.findElement(driver, By.id("maskedtext-input-UbicacionGeograficaCV1:telefonoLima"),10);
 	}
-	public WebElement getTelefonoFijo_otros() {
+	public WebElement getTelefonoFijoOtros() {
 		return SeleniumWaiters.findElement(driver, By.id("maskedtext-input-UbicacionGeograficaCV1:telefonoOtros"),10);
 	}
 	public WebElement getCelular() {
 		return SeleniumWaiters.findElement(driver, By.id("maskedtext-input-UbicacionGeograficaCV1:celularTrabajoText"),10);
 	}
-	
-	public WebElement select_departamento(String opcion)
+	public WebElement selectDepartamento(String opcion)
 	{
 		WebElement longitud = driver.findElement(By.id("div_5_1_1_1")); 
-		//SeleniumWaiters.findElement(driver,By.id("lbl_10_682230"),10);
 		System.out.println(longitud);
 		credifedGeneralidadesPage.scrollTo(longitud);
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:departamentoSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:departamentoSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement select_provincia(String opcion)
+	public WebElement selectProvincia(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:provinciaSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:provinciaSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement select_distrito(String opcion)
+	public WebElement selectDistrito(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:distritoSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:distritoSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement ingreso_direccion_domiciliaria()
+	public WebElement ingresoDireccionDomiciliaria()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:direccionPrincipalCompleta"),10);
 	}
-	public WebElement click_btn_ubicar_mapa()
+	public WebElement clickBtnUbicarMapa()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-UbicacionGeograficaCV1:ubicarMapaButton"),10);
 	}
-	public WebElement select_referencia(String opcion)
+	public WebElement selectReferencia(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoReferenciaSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoReferenciaSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	public WebElement ingresar_referencia()
+	public WebElement ingresarReferencia()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:referenciaText"),10);
 	}
-	public WebElement click_aceptar_ubicar_mapa()
+	public WebElement clickAceptarUbicarMapa()
 	{
 		driver.switchTo().frame(driver.findElement(By.id("framegeo")));	
 		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 20);

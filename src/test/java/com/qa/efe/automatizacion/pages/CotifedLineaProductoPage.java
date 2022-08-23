@@ -15,17 +15,6 @@ public class CotifedLineaProductoPage {
 	public CotifedLineaProductoPage(WebDriverManager driverManager) {
 		this.driver = driverManager.getDriver();
 	}
-	public void ConfirmarSolicitudesPendientes()
-	{
-		List<WebElement> solicitudes = driver.findElements(By.xpath("//*[@id='swal2-title']"));	
-		if (solicitudes.size()!=0) {
-			
-			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK']"),10).click();
-		}
-		else {
-			System.out.println("No se encontraron encontraron solicitudes pendientes");
-		}	
-	}
 	public WebElement getCategoriaLineaProducto(String lineaProducto)
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td/select"),10);

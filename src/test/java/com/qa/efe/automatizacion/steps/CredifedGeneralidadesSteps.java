@@ -1,21 +1,12 @@
 package com.qa.efe.automatizacion.steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
-import io.cucumber.java.en.Then;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
-import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
@@ -28,6 +19,7 @@ public class CredifedGeneralidadesSteps {
 		this.driver = driverManager.getDriver();
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
 	}
+	
 	@When("Cambio de iframe a {string}")
 	public void cambioIframeNuevo(String titleIframe) {
 		SeleniumWaiters.waitSeconds(1);
@@ -42,69 +34,71 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en consentimiento digital")
 	public void veriricarConsentimientoDigital()
 	{
-		credifedGeneralidadesPage.verificar_consentimiento_digital();
+		credifedGeneralidadesPage.verificarConsentimientoDigital();
 	}
 	
 	@When("Verifico si existe error en normalizar direccion")
 	public void verificoErrorNormalizarDireccion()
 	{
-		credifedGeneralidadesPage.verificar_error_normalizar_direccion();
+		credifedGeneralidadesPage.verificarErrorNormalizarDireccion();
 	}
 	
 	@When("Verifico si existe error en ejecución de servicio")
 	public void veriricarErrorEjecucionServicio()
 	{
-		credifedGeneralidadesPage.verificar_error_ejecutar_servicio_direccion();
+		credifedGeneralidadesPage.verificarErrorEjecutarServicioDireccion();
 	}
 	
 	@When("Verifico si existe error en filtro evaluar domicilio")
 	public void veriricarErrorFiltroEvaluarDomicilio()
 	{
-		credifedGeneralidadesPage.verificar_error_ejecutar_filtro_evaluar_domicilio();
+		credifedGeneralidadesPage.verificarErrorEjecutarFiltroEvaluarDomicilio();
 	}
 	
 	@When("Verifico si existe error en referencias telefonicas")
 	public void veriricoErrorReferenciasTelefonicas()
 	{
-		credifedGeneralidadesPage.verificar_error_referencias_telefonicas();
+		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
 	}
 	
 	@When("Verifico si existe error en filtro evaluacion financiera")
 	public void verificoErrorFiltroEvaluacionFinanciera()
 	{
-		credifedGeneralidadesPage.verificar_error_filtro_informacion_financiera();
+		credifedGeneralidadesPage.verificarErrorFiltroInformacionFinanciera();
 	}
 	
 	@When("Verifico si existe error en filtro evaluar personas")
 	public void verificarErrorFiltroEvaluarPersonas()
 	{
-		credifedGeneralidadesPage.verificar_error_filtro_personas();
+		credifedGeneralidadesPage.verificarErrorFiltroPersonas();
 	}
 
 	
 	@When("Doy click en guardar datos")
 	public void clickBtnGuardar()
 	{
-		credifedGeneralidadesPage.click_btn_guardar().click();
+		credifedGeneralidadesPage.clickBtnGuardar().click();
 	}
 	
 	@When("Acepto para sobreescribir datos originales")
 	public void clickBtnSobreescribirDatos()
 	{
 		try {
-			credifedGeneralidadesPage.click_btn_sobreescribir_datos().click();
+			credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
 		} catch (Exception e) {
 			System.out.println("Pasa ok");
 		}
 	}
+	
 	@When("Doy click en boton continuar")
 	public void clickBtnContinuar()
 	{
-		credifedGeneralidadesPage.click_btn_continuar().click();
+		credifedGeneralidadesPage.clickBtnContinuar().click();
 	}
+	
 	@When("Me dirijo a la pestaña de {string}")
 	public void dirijoPestanaMenu(String opcion)
 	{
-		credifedGeneralidadesPage.pestañas_menu(opcion).click();
+		credifedGeneralidadesPage.pestañasMenu(opcion).click();
 	}
 }

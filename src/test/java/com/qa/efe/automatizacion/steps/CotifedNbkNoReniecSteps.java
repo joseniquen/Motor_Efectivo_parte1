@@ -1,33 +1,21 @@
 package com.qa.efe.automatizacion.steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedNbkNoReniecPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
-import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class CotifedNbkNoReniecSteps {
 	private CotifedNbkNoReniecPage cotifedNbkNoReniecPage;
-	private WebDriver driver;
 
-	public CotifedNbkNoReniecSteps( WebDriverManager driverManager, CotifedNbkNoReniecPage cotifedNbkNoReniecPage
+	public CotifedNbkNoReniecSteps(CotifedNbkNoReniecPage cotifedNbkNoReniecPage
 			 ) {
-		this.driver = driverManager.getDriver();
 		this.cotifedNbkNoReniecPage = cotifedNbkNoReniecPage;
 	}
 	
@@ -108,10 +96,8 @@ public class CotifedNbkNoReniecSteps {
 		}else
 		{
 			System.out.println("No es una página de nbk-no-reniec");	
-		}
-		
-	}
-	
+		}	
+	}	
 }
 
 

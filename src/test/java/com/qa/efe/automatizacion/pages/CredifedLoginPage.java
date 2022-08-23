@@ -29,7 +29,7 @@ public class CredifedLoginPage {
 	{
 		return driver.findElement(By.xpath("//span[text()='Continuar']"));
 	}
-	public void conexion_segura_bpm ()
+	public void conexionSeguraBpm ()
 	{
 		driver.findElement(By.id("details-button")).click();
 		SeleniumWaiters.findElement(driver, By.id("proceed-link"), 10).click();

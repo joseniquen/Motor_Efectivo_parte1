@@ -21,25 +21,29 @@ public class CredifedOfertaComercialSteps {
 		this.credifedOfertaComercialPage = credifedOfertaComercialPage;
 		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
+	
 	@When("Doy click en simular")
 	public void clickBtnSimular()
 	{
-		credifedOfertaComercialPage.click_simular().click();
+		credifedOfertaComercialPage.clickSimular().click();
 	}
+	
 	@When("Doy click en el boton aprobar")
 	public void clickBtnAprobar()
 	{
-		credifedOfertaComercialPage.click_aprobar().click();
+		credifedOfertaComercialPage.clickAprobar().click();
 	}
+	
 	@When("Doy click en aceptar solicitud de credito")
 	public void clickAceptarSolicitudCredito()
 	{
-		
-		credifedOfertaComercialPage.click_aceptar().click();
+		credifedOfertaComercialPage.clickAceptar().click();
 		SeleniumWaiters.waitSeconds(10);
-		List<WebElement> element = credifedOfertaComercialPage.ventana_validar_aprobacion();
+		List<WebElement> element = credifedOfertaComercialPage.solicitudAprobadaCorrectamente();
 		if(element.size()!=0) {
-			credifedOfertaComercialPage.click_validar_aprobacion().click();	
+			credifedOfertaComercialPage.clickConfirmar().click();
+		}else {
+			credifedOfertaComercialPage.clickValidarAprobacion().click();	
 			SeleniumWaiters.waitSeconds(10);
 			
 			driver.switchTo().defaultContent();
@@ -51,7 +55,7 @@ public class CredifedOfertaComercialSteps {
 			credifedGeneralidadesPage.cambioIframe("09 Información Financiera Titular");	
 			System.out.println("cambio de inframe a 09 Información Financiera Titular");
 			
-			credifedGeneralidadesPage.pestañas_menu("Oferta Comercial").click();
+			credifedGeneralidadesPage.pestañasMenu("Oferta Comercial").click();
 			SeleniumWaiters.waitSeconds(10);
 			
 			driver.switchTo().defaultContent();
@@ -63,14 +67,14 @@ public class CredifedOfertaComercialSteps {
 			credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
 			System.out.println("cambio de inframe a 22 Oferta Comercial");
 			
-			credifedOfertaComercialPage.click_simular().click();
+			credifedOfertaComercialPage.clickSimular().click();
 			SeleniumWaiters.waitSeconds(5);
 			try {
-				credifedOfertaComercialPage.click_aprobar().click();
+				credifedOfertaComercialPage.clickAprobar().click();
 			} catch (Exception e) {
-				credifedOfertaComercialPage.click_simular().click();
+				credifedOfertaComercialPage.clickSimular().click();
 				SeleniumWaiters.waitSeconds(5);
-				credifedOfertaComercialPage.click_aprobar().click();
+				credifedOfertaComercialPage.clickAprobar().click();
 			}
 			
 			SeleniumWaiters.waitSeconds(7);
@@ -85,31 +89,43 @@ public class CredifedOfertaComercialSteps {
 			System.out.println("cambio de inframe a Resumen Solicitud");
 			
 			verificoPantallaResumenCredito();
-			credifedOfertaComercialPage.click_aceptar().click();
+			credifedOfertaComercialPage.clickAceptar().click();
 			SeleniumWaiters.waitSeconds(10);
 			
-			credifedOfertaComercialPage.click_confirmar().click();
-			
-		}else {
-			credifedOfertaComercialPage.click_confirmar().click();
+			credifedOfertaComercialPage.clickConfirmar().click();
 		}
-		
 	}
+	
 	@When("Verifico que estemos en la pantalla resumen del credito")
 	public void verificoPantallaResumenCredito()
 	{
-		credifedOfertaComercialPage.verificar_resumen_sol();
+		credifedOfertaComercialPage.verificarResumenSol();
 	}
+	
 	@When("Verifico que la solicitud de credito haya sido aprobada correctamente")
 	public void verificarSolicitudAprobada()
 	{
 		SeleniumWaiters.waitSeconds(30);
-		List<WebElement> element = credifedOfertaComercialPage.verificar_sol_aprobada();
-		List<WebElement> element1 = credifedOfertaComercialPage.verificar_excepciones();
+		List<WebElement> element = credifedOfertaComercialPage.verificarSolAprobada();
+		List<WebElement> element1 = credifedOfertaComercialPage.verificarExcepciones();
 		if (element1.size()!=0) {
 			System.out.println("La solicitud de credito contiene una excepcion");
 		} else {
 			System.out.println("Su solicitud ah sido registrada y aprobada correctamente ");
 		}
+	}
+	
+	@When("Doy click en seguro desgravamen con devolucion")
+	public void DoyclickSeguroDesgravamenConDevolucion()
+	{
+		credifedOfertaComercialPage.scrollAval();
+		System.out.println(credifedOfertaComercialPage.getRbtConDevolucion());
+		credifedOfertaComercialPage.getRbtConDevolucion().click();
+	}
+	
+	@When("Acepto seguro desgravamen con devolucion")
+	public void AceptoSeguroDesgravamenConDevolucion()
+	{
+		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
 	}
 }

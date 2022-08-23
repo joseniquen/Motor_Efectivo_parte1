@@ -24,7 +24,6 @@ public class CotifedConfirmacionSolicitudPage {
 	public WebElement getSelectTipoRequisitos(int i,int opcion)
 	{ 	
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']"),10).click();
-		//return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option[contains(.,'"+opcion+"')]"),10);
 		return  SeleniumWaiters.findElement(driver,By.xpath("//select[@id='select_"+i+"']/option["+opcion+"]"),10);
 	}
 	public WebElement getClickSeleccionar(int opcion)
@@ -75,33 +74,29 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getBtnSolicitar()
 	{
-		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10);	
+		try {
+			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'SOLICITAR')]"),10);
+		} catch (Exception e) {
+			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Solicitar')]"),10);	
+		}	
 	}
 	public void getTextSolicitar()
 	{
-		WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'Solicitar')]"));
-		cotifedGeneralidadesPage.scrollTo(element);
+		try {
+			WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'SOLICITAR')]"));
+			cotifedGeneralidadesPage.scrollTo(element);
+		} catch (Exception e) {
+			WebElement element = driver.findElement(By.xpath("//div/button[contains(.,'Solicitar')]"));
+			cotifedGeneralidadesPage.scrollTo(element);
+		}
 	}
 	public WebElement getNroSolicitud() {
-		return SeleniumWaiters.findClickableElement(driver,By.xpath("/html/body/app-root/app-modules/app-aditional-data-main/div[3]/div/div/label[1]"), 10);
+		return SeleniumWaiters.findClickableElement(driver,By.xpath("//div[3]/div/div/label[1]"), 10);
 	}
 	public WebElement getBtnOk()
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10);	
 	}
-	public List<WebElement> getErrorSharePoint()
-	{
-		return  driver.findElements(By.xpath("//h2[contains(.,'Hubo un error al consumir el servicio EnviarArchivoSharePoint')]/parent::div/parent::div[@style='display: flex;']"));	
-	}
-	public List<WebElement> getErrorSharePoint2()
-	{
-		return  driver.findElements(By.className("swal2-popup swal2-modal swal2-icon-error swal2-show"));	
-	}
-	public List<WebElement> getErrorSharePoint3()
-	{
-		return  driver.findElements(By.className("swal2-container swal2-center swal2-backdrop-show"));	
-	}
-	
 	public List<WebElement> getErrorSharePoint4()
 	{
 		return  driver.findElements(By.xpath("//h2[@id='swal2-title']"));	

@@ -1,7 +1,5 @@
 package com.qa.efe.automatizacion.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,11 +39,11 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("nroTelefonoPersona"));
 	}
-	public void buscar_titulo_dom() {
+	public void buscarTituloDom() {
 		WebElement element = driver.findElement(By.xpath("//div/p[text()='Informacion Domiciliaria']"));
 		cotifedGeneralidadesPage.scrollTo(element);
 	}
-	public void buscar_titulo_lab() {
+	public void buscarTituloLab() {
 		WebElement element = driver.findElement(By.xpath("//div/p[text()='Informacion Laboral']"));
 		cotifedGeneralidadesPage.scrollTo(element);
 	}
@@ -77,7 +75,7 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("nombreVia"));
 	}
-	public void buscar_referencia() {
+	public void buscarReferencia() {
 		WebElement element = driver.findElement(By.xpath("//div/label[text()='Referencia']"));
 		cotifedGeneralidadesPage.scrollTo(element);
 	}
@@ -123,7 +121,6 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("rucCentroTrabajo"));
 	}
-	//***************
 	public WebElement getCbxDepartamentoInfoLaboral()
 	{
 		 return driver.findElement(By.id("codDepartamentoWork"));
@@ -174,7 +171,4 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("nombreReferenciaWork"));
 	}
-	//***************
-
-
 }

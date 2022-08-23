@@ -1,35 +1,18 @@
 package com.qa.efe.automatizacion.steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import com.qa.efe.automatizacion.config.PropertiesManager;
 import com.qa.efe.automatizacion.pages.CotifedDatosAdicionalesPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
-import com.qa.efe.automatizacion.shared.SeleniumWaiters;
-import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class CotifedDatosAdicionalesSteps {
 	private CotifedDatosAdicionalesPage cotifedDatosAdicionalesPage;
 	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
-	private WebDriver driver;
 
-	public CotifedDatosAdicionalesSteps( WebDriverManager driverManager, CotifedDatosAdicionalesPage cotifedDatosAdicionalesPage, CotifedGeneralidadesPage cotifedGeneralidadesPage
+	public CotifedDatosAdicionalesSteps(CotifedDatosAdicionalesPage cotifedDatosAdicionalesPage, CotifedGeneralidadesPage cotifedGeneralidadesPage
 			 ) {
-		this.driver = driverManager.getDriver();
 		this.cotifedDatosAdicionalesPage = cotifedDatosAdicionalesPage;
 		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
 	}
@@ -65,7 +48,7 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@When("Selecciono departamento de informacion domiciliaria {string}")
 	public void seleccionoDepartamentoInformacionDomiciliaria(String departamento) {
-		cotifedDatosAdicionalesPage.buscar_titulo_dom();
+		cotifedDatosAdicionalesPage.buscarTituloDom();
 		cotifedDatosAdicionalesPage.getCbxDepartamentoInfoDomiciliaria().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxDepartamentoInfoDomiciliaria(departamento).click();
 	}
@@ -109,7 +92,7 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@When("Ingreso nombre centro de informacion laboral {string}")
 	public void ingresoNombreCentroInformacionLaboral(String centro) {
-		cotifedDatosAdicionalesPage.buscar_titulo_lab();
+		cotifedDatosAdicionalesPage.buscarTituloLab();
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(centro);
 	}
@@ -161,7 +144,7 @@ public class CotifedDatosAdicionalesSteps {
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtAvenidaInfoLaboral().sendKeys(avenida);
 		cotifedDatosAdicionalesPage.getTxtCalleAvenida().click();
-		cotifedDatosAdicionalesPage.buscar_referencia();
+		cotifedDatosAdicionalesPage.buscarReferencia();
 	}
 	
 	@When("Doy click en confirmar geopoint de informacion laboral")
