@@ -1,27 +1,27 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
+Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
-    #Modificar obligatoriamente los siguientes inputs:
-        #Usuario cotifed
-        #Contraseña cotifed
-        #Documento del cliente
-        #Seguros del cliente
-        #Importe a solicitar
-        #Dia de pago
-        #Campaña y plazo de cliente
+    		 #Modificar obligatoriamente los siguientes inputs:
+	       #Usuario cotifed
+	       #Contraseña cotifed
+	       #Documento del cliente
+	       #Seguros del cliente
+	       #Importe a solicitar
+	       #Dia de pago
+	       #Campaña y plazo de cliente
 
   @web
-  Scenario: Línea de producto  Efectivo
-  				- Con llenado de datos adicionales 
-  				- Con seguros optativos 
-  				- Desembolso efectivo en tienda vendedor 
-  				- Plan A Desgravamen SDev 
-  				- Sin periodo de gracia
+  Scenario: EP001: Línea de producto  Efectivo
+				  				- Con llenado de datos adicionales 
+				  				- Con seguros optativos 
+				  				- Desembolso efectivo en tienda vendedor 
+				  				- Plan A Desgravamen SDev 
+				  				- Sin periodo de gracia
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Setiembre.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
@@ -87,8 +87,7 @@ Feature: Caso 1 - Como usuario quiero ingresar un DNI de un cliente y generar un
 	 And Selecciono requisito y cargo archivo
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
-		   | AMIGO     | Juan    | Perez     |  01-LIMA   | 454545        | 924695269|
-		   | HERMANO   | Carlos  | Peralta   |  01-LIMA   | 464646        | 984695268|
+		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
 		
 	 #SECCION: DATOS ADICIONALES   
    And Doy click en el boton continuar datos adicionales
