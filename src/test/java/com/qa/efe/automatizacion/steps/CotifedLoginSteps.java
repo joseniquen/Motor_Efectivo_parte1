@@ -1,6 +1,8 @@
 package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
@@ -34,18 +36,18 @@ public class CotifedLoginSteps {
 		loginPage.getTxtUsuario().sendKeys(usuario);		
 	}
 
-	@When("Ingreso mi contraseña {string}")
+	@And("Ingreso mi contraseña {string}")
 	public void ingresoContraseña(String contraseña) {
 		loginPage.getTxtContrasena().sendKeys(contraseña);	
 	}
 
-	@When("Doy click en el boton ingresar")
+	@And("Doy click en el boton ingresar")
 	public void doyClickBotonIngresar() {
 		loginPage.getBtnIngresar().click();
 		cotifedGeneralidadesPage.cargarDatos();
 	}
 	
-	@When("Valido que no haya sesiones abiertas")
+	@And("Valido que no haya sesiones abiertas")
 	public void validoQueNoHayaSesionesAbiertas() {
 		if(loginPage.getTextSesionAbierta().size()!=0){
 			loginPage.getBtnSesionesAbiertas().click();

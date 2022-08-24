@@ -11,6 +11,7 @@ import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -31,7 +32,7 @@ public class CotifedOfertaComercialSteps {
 		this.cotifedOfertaComercialPage = cotifedOfertaComercialPage;
 		this.generalidadesPage=generalidadesPage;
 	}
-	@Then("Valido que se recupero ingreso vigente")
+	@When("Valido que se recupero ingreso vigente")
 	public void validoIngresoVigente() {
 		if(cotifedOfertaComercialPage.getValidaIngresoVigente().size()!=0) {
 			cotifedOfertaComercialPage.getValidaIngresoVigenteButtonOk().click();
@@ -57,12 +58,12 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getTxPrecioProducto().sendKeys(precio);
 	}
 	
-	@When("Valido seguros marcados")
+	@And("Valido seguros marcados")
 	public void validoSegurosMarcados() {
 		cotifedOfertaComercialPage.validarSegurosMarcados();
 	}
 	
-	@When("Selecciono seguros")
+	@And("Selecciono seguros")
 	public void seleccionoSeguros(DataTable seguros) {
 		List<Map<String, String>> items = seguros.asMaps(String.class, String.class);
 		for (int i = 0; i < items.size(); i++) {
@@ -71,7 +72,7 @@ public class CotifedOfertaComercialSteps {
 		}
 	}
 	
-	@When("Titular selecciono estado civil {string}")
+	@And("Titular selecciono estado civil {string}")
 	public void titularSeleccionoEstadoCivil(String estado) {
 		if (cotifedOfertaComercialPage.getCbxEstadoExiste().size()!=0) {
 			cotifedOfertaComercialPage.getCbxEstado().click();
@@ -82,13 +83,13 @@ public class CotifedOfertaComercialSteps {
 		}
 	}
 	
-	@When("Titular selecciono pais {string}")
+	@And("Titular selecciono pais {string}")
 	public void titularSeleccionoPais(String pais) {
 		cotifedOfertaComercialPage.getCbxPais().click();
 		cotifedOfertaComercialPage.getOpcionPais(pais).click();
 	}
 	
-	@When("Titular selecciono tipo de vivienda {string}")
+	@And("Titular selecciono tipo de vivienda {string}")
 	public void titularSeleccionoTipoVivienda(String tipoVivienda) {
 		if (cotifedOfertaComercialPage.getCbxTipoViviendaExiste().size()!=0) {
 			cotifedOfertaComercialPage.getCbxTipoVivienda().click();
@@ -99,19 +100,19 @@ public class CotifedOfertaComercialSteps {
 		}
 	}
 	
-	@When("Titular ingreso antiguedad domicialiaria en años {string}")
+	@And("Titular ingreso antiguedad domicialiaria en años {string}")
 	public void titularIngresoAntiguedadDomicialiariaAnios(String anios) {
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(anios);
 	}
 	
-	@When("Titular ingreso antiguedad domicialiaria en meses {string}")
+	@And("Titular ingreso antiguedad domicialiaria en meses {string}")
 	public void titularIngresoAntiguedadDomicialiariaMeses(String meses) {
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(meses);
 	}
 	
-	@When("Titular ingreso declarado {string}")
+	@And("Titular ingreso declarado {string}")
 	public void titularIngresoDeclarado(String ingresoDeclarado) {	
 		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
 			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -122,7 +123,7 @@ public class CotifedOfertaComercialSteps {
 		generalidadesPage.cargarDatos();
 	}
 	
-	@When("Titular doy check a usar ingreso declarado")
+	@And("Titular doy check a usar ingreso declarado")
 	public void titularDoyCheckUsarIngresoDeclarado() {
 		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
 			cotifedOfertaComercialPage.getCheckIngreso().click();
@@ -131,7 +132,7 @@ public class CotifedOfertaComercialSteps {
 		}	
 	}
 	
-	@When("Titular ingreso situacion {string}")
+	@And("Titular ingreso situacion {string}")
 	public void titularIngresoSituacion(String situacion) {
 		if(cotifedOfertaComercialPage.getSituacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {
@@ -147,7 +148,7 @@ public class CotifedOfertaComercialSteps {
 		generalidadesPage.cargarDatos();	
 	}
 	
-	@When("Titular ingreso ocupacion {string}")
+	@And("Titular ingreso ocupacion {string}")
 	public void TitularIngresoOcupacion(String ocupacion) {
 		if(cotifedOfertaComercialPage.getOcupacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getOcupacion().isEnabled()) {
@@ -163,13 +164,13 @@ public class CotifedOfertaComercialSteps {
 		generalidadesPage.cargarDatos();	
 	}
 	
-	@When("Titular ingreso antiguedad laboral en años {string}")
+	@And("Titular ingreso antiguedad laboral en años {string}")
 	public void titularIngresoAntiguedadLaboralAnios(String LabAnios) {
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(LabAnios);
 	}
 	
-	@When("Titular ingreso antiguedad laboral en meses {string}")
+	@And("Titular ingreso antiguedad laboral en meses {string}")
 	public void titularIngresoAntiguedadLaboralMeses(String LabMeses) {
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(LabMeses);
@@ -181,13 +182,13 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getTxtInicial().sendKeys(inicial);
 	}
 	
-	@When("Titular ingreso cantidad a solicitar {string}")
+	@And("Titular ingreso cantidad a solicitar {string}")
 	public void titularIngresoCantidadASolicitar(String cantidadASolicitar) {
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(cantidadASolicitar);
 	}
 	
-	@When("Titular selecciono fecha de pago {string}")
+	@And("Titular selecciono fecha de pago {string}")
 	public void titularFechaPago(String fechaPago) {
 		SeleniumWaiters.waitSeconds(3);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
@@ -236,21 +237,91 @@ public class CotifedOfertaComercialSteps {
 		generalidadesPage.cargarDatos();
 	}
 	
-	@When("Conyuge selecciono tipo de documento {string}")
-	public void ConyugeSeleccionoTipoDocumento(String conyugeTipoDocumento) {
+	@And("Conyuge selecciono tipo de documento {string}")
+	public void conyugeSeleccionoTipoDocumento(String conyugeTipoDocumento) {
 		cotifedOfertaComercialPage.getCbxConyugeTipoDoc().click();
 		cotifedOfertaComercialPage.getOpcionConyugeTipoDoc(conyugeTipoDocumento).click();
 	}
 	
-	@When("Conyuge ingreso numero de documento {string}")
-	public void ConyugeIngresoNumeroDocumento(String conyugeNumeroDocumento) {
+	@And("Conyuge ingreso numero de documento {string}")
+	public void conyugeIngresoNumeroDocumento(String conyugeNumeroDocumento) {
 		cotifedOfertaComercialPage.getTxtConyugeNumeroDocumento().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtConyugeNumeroDocumento().sendKeys(conyugeNumeroDocumento);
 	}
-	@When("Conyuge doy click en filtrar")
-	public void ConyugeDoyClickFiltrar() {
+	@And("Conyuge doy click en filtrar")
+	public void conyugeDoyClickFiltrar() {
 		cotifedOfertaComercialPage.getBtnConyugeFiltrar().click();
 	}
 	
+	@And("Conyuge selecciono estado civil {string}")
+	public void conyugeSeleccionoEstadoCivil(String conyugeEstadoCivil) {
+		cotifedOfertaComercialPage.getCbxConyugeEstadoCivil().click();
+		cotifedOfertaComercialPage.getOpcionConyugeEstadoCivil(conyugeEstadoCivil).click();
+	}
 	
+	@And("Conyuge selecciono departamento {string}")
+	public void conyugeSeleccionoDepartamento(String conyugeDepartamento) {
+		cotifedOfertaComercialPage.getCbxConyugeDepartamento().click();
+		cotifedOfertaComercialPage.getOpcionConyugeDepartamento(conyugeDepartamento).click();
+	}
+	
+	@And("Conyuge selecciono provincia {string}")
+	public void conyugeSeleccionoProvincia(String conyugeProvincia) {
+		cotifedOfertaComercialPage.getCbxConyugeProvincia().click();
+		cotifedOfertaComercialPage.getOpcionConyugeProvincia(conyugeProvincia).click();
+	}
+	
+	@And("Conyuge selecciono distrito {string}")
+	public void conyugeSeleccionoDistrito(String conyugeDistrito) {
+		cotifedOfertaComercialPage.getCbxConyugeDistrito().click();
+		cotifedOfertaComercialPage.getOpcionConyugeDistrito(conyugeDistrito).click();
+	}
+	
+	@And("Conyuge selecciono tipo de vivienda {string}")
+	public void conyugeSeleccionoTipoVivienda(String conyugeTipoVivienda) {
+		cotifedOfertaComercialPage.getCbxConyugeTipoVivienda().click();
+		cotifedOfertaComercialPage.getOpcionConyugeTipoVivienda(conyugeTipoVivienda).click();
+	}
+	
+	@And("Conyuge ingreso antiguedad domiciliaria en años {string}")
+	public void conyugeIngresoAntiguedadDomiciliariaAnios(String conyugeAntDomAnios) {
+		cotifedOfertaComercialPage.getTxtConyugeAntDomAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeAntDomAnios().sendKeys(conyugeAntDomAnios);
+	}
+	
+	@And("Conyuge ingreso antiguedad domiciliaria en meses {string}")
+	public void conyugeIngresoAntiguedadDomiciliariaMeses(String conyugeAntDomMeses) {
+		cotifedOfertaComercialPage.getTxtConyugeAntDomMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeAntDomMeses().sendKeys(conyugeAntDomMeses);
+	}
+	
+	@And("Conyuge selecciono perfil situacion {string}")
+	public void conyugeSeleccionoPerfilSituacion(String conyugePerfilSituacion) {
+		cotifedOfertaComercialPage.getCbxConyugePerfilSituacion().click();
+		cotifedOfertaComercialPage.getOpcionConyugePerfilSituacion(conyugePerfilSituacion).click();
+	}
+	
+	@And("Conyuge selecciono ocupacion {string}")
+	public void conyugeSeleccionoOcupacion(String conyugeOcupacion) {
+		cotifedOfertaComercialPage.getCbxConyugeOcupacion().click();
+		cotifedOfertaComercialPage.getOpcionConyugeOcupacion(conyugeOcupacion).click();
+	}
+	
+	@And("Conyuge ingreso ingreso {string}")
+	public void conyugeIngresoIngreso(String conyugeIngreso) {
+		cotifedOfertaComercialPage.getTxtConyugeIngreso().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeIngreso().sendKeys(conyugeIngreso);
+	}
+	
+	@And("Conyuge ingreso antiguedad laboral en años {string}")
+	public void conyugeIngresoAntiguedadLaboralAnios(String conyugeAntLabAnios) {
+		cotifedOfertaComercialPage.getTxtConyugeAntLabAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeAntLabAnios().sendKeys(conyugeAntLabAnios);
+	}
+	
+	@And("Conyuge ingreso antiguedad laboral en meses {string}")
+	public void conyugeIngresoAntiguedadLaboralMeses(String conyugeAntLabMeses) {
+		cotifedOfertaComercialPage.getTxtConyugeAntLabMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeAntLabMeses().sendKeys(conyugeAntLabMeses);
+	}
 }

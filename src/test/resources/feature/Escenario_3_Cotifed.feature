@@ -6,6 +6,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Contraseña cotifed
 	       #Documento del cliente
 	       #Seguros del cliente
+	       #Documento del cónyuge
 	       #Importe a solicitar
 	       #Dia de pago
 	       #Campaña y plazo de cliente
@@ -28,7 +29,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
-		When Selecciono tienda "CHICLAYO" 
+		When Selecciono tienda "CACERES" 
 		And Selecciono Tipo de documento "D.N.I."
 		And Ingreso numero de documento "00246824"
 		And Ingreso correo "correo_prueba@gmail.com"
@@ -83,67 +84,19 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Conyuge selecciono tipo de documento "D.N.I."
 	 And Conyuge ingreso numero de documento "75252602"
 	 And Conyuge doy click en filtrar
-	 And Conyuge ingreso departamento
-	 And Conyuge ingreso provincia
-	 And Conyuge ingreso distrito
+	 And Conyuge selecciono estado civil "CASADO(A)"
+	 And Conyuge selecciono departamento "LIMA"
+	 And Conyuge selecciono provincia "LIMA"
+	 And Conyuge selecciono distrito "SANTIAGO DE SURCO"
 	 And Conyuge selecciono tipo de vivienda "PROPIA"
 	 And Conyuge ingreso antiguedad domiciliaria en años "45"
 	 And Conyuge ingreso antiguedad domiciliaria en meses "11"
-	 And Conyuge selecciono perfil situacion "FORMAL - DEPENDIENTE"
-	 
-	 
+	 And Conyuge selecciono perfil situacion "FORMAL - DEPENDIENTE" 
+	 And Conyuge selecciono ocupacion "ABOGADO"
+	 And Conyuge ingreso ingreso "8000"
+	 And Conyuge ingreso antiguedad laboral en años "25"
+	 And Conyuge ingreso antiguedad laboral en meses "11"
 	 #Titular
 	 And Titular ingreso cantidad a solicitar "5000"
 	 And Titular selecciono fecha de pago "3 de cada mes"
-	 And Doy click en el boton simular
-	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "24 meses"
-	 And Doy click en el boton continuar
-
-	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
-	 And Elijo tipo de desembolso "Abono en Cuenta de Ahorros titular"
-	 And Selecciono la entidad tipo "OTRO"
-	 And Ingreso numero titular
-	 And Ingreso numero de cuenta "19496386122018" y CCI "00219419638612201795"
-	 And Selecciono requisito y cargo archivo
-	 And Ingreso referencias telefonicas
-	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
-		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
-		
-	 #SECCION: DATOS ADICIONALES   
-   And Doy click en el boton continuar datos adicionales
-   And Ingreso correo de datos principales "correo_prueba@gmail.com"
-   And Ingreso numero de celular de datos principales "924695269"
-   And Selecciono prefijo de datos principales "01-LIMA"
-   And Ingreso numero de telefono fijo de datos principales "454787"
-   #Domicilio
-   And Selecciono departamento de informacion domiciliaria "LIMA"
-   And Selecciono provincia de informacion domiciliaria "LIMA"
-   And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   When Espero 10 segundos
-   And Doy click en confirmar geopoint de informacion domiciliaria
-   When Espero 2 segundos
-   And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
-   And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
-   #Laboral
-   And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
-   And Selecciono prefijo de informacion laboral "01-LIMA"
-   And Ingreso numero de telefono fijo de informacion laboral "754787"
-   And Ingreso celular de informacion laboral "974695869"
-   And Ingreso ruc de centro de informacion laboral "20605554114"
-   And Selecciono departamento de informacion laboral "LIMA"
-   And Selecciono provincia de informacion laboral "LIMA"
-   And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   When Espero 10 segundos
-   And Doy click en confirmar geopoint de informacion laboral
-   When Espero 2 segundos
-   And Selecciono referencia de informacion laboral "PASANDO DEL"
-   And Ingreso descripcion de informacion laboral "Parque de la amistad"
-   
-   #SECCION: CONYUGE DATOS CONYUGE
 	 
-	#SECCION: OBTENER NUMERO DE SOLICITUD
-	 #And Obtengo el numero de solicitud 
-	 #And Doy click en el boton solicitar
-	 #Then Termino la solicitud

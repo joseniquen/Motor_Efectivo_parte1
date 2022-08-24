@@ -28,7 +28,7 @@ public class CotifedLineaProductoSteps {
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
 	}
 	
-	@Then("Doy click en continuar")
+	@When("Doy click en continuar")
 	public void clickContinuar() {
 		generalidadesPage.cargarDatos();
 		SeleniumWaiters.waitSeconds(2);

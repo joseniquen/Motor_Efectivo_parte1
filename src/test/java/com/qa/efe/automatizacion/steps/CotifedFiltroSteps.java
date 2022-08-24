@@ -2,6 +2,7 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
@@ -30,24 +31,24 @@ public class CotifedFiltroSteps {
 		filtroPage.getOpcionTienda(tienda).click();
 	}
 
-	@When("Selecciono Tipo de documento {string}")
+	@And("Selecciono Tipo de documento {string}")
 	public void seleccionoTipoDoc(String tipoDoc) {
 		integracionStore.tipo_documento=tipoDoc;
 		filtroPage.getCbxTipoDoc().click();
 		filtroPage.getOpcionTipoDoc(tipoDoc).click();
 	}
-	@When("Ingreso numero de documento {string}")
+	@And("Ingreso numero de documento {string}")
 	public void ingresoNumeroDocumento(String NumeroDoc) {
 		filtroPage.getTxtNumeroDoc().sendKeys(NumeroDoc);
 		integracionStore.dni=NumeroDoc;
 		generalidadesPage.cargarDatos();
 	}
-	@When("Ingreso correo {string}")
+	@And("Ingreso correo {string}")
 	public void ingresoCorreo(String correo) {
 		filtroPage.getTxtEmail().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		filtroPage.getTxtEmail().sendKeys(correo);
 	}
-	@When("Ingreso numero celular {string}")
+	@And("Ingreso numero celular {string}")
 	public void ingresoNumeroCelular(String celular) {
 		filtroPage.getTxtNumeroCell().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		filtroPage.getTxtNumeroCell().sendKeys(celular);

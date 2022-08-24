@@ -195,6 +195,14 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='FILTRAR']"),10);
 	}
+	public WebElement getCbxConyugeEstadoCivil()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/form/div/div[7]/app-catalog-combo/select"),5);
+	}	
+	public WebElement getOpcionConyugeEstadoCivil(String conyugeEstadoCivil)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/div/div[3]/form/div/div[7]/app-catalog-combo/select/option[contains(.,'"+conyugeEstadoCivil+"')]"),5);	
+	}
 	public WebElement getCbxConyugeDepartamento()
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select"),5);
@@ -242,6 +250,26 @@ public class CotifedOfertaComercialPage {
 	public WebElement getOpcionConyugePerfilSituacion(String situacion)
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[1]/select/option[text()='"+situacion+"']"),5);	
+	}
+	public WebElement getCbxConyugeOcupacion()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[2]/app-catalog-combo/select"),5);
+	}	
+	public WebElement getOpcionConyugeOcupacion(String conyugeOcupacion)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[2]/app-catalog-combo/select/option[text()='"+conyugeOcupacion+"']"),5);	
+	}
+	public WebElement getTxtConyugeIngreso()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[3]/input"),5);
+	}
+	public WebElement getTxtConyugeAntLabAnios()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[3]/div[1]/input"),5);
+	}
+	public WebElement getTxtConyugeAntLabMeses()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[3]/div[2]/input"),5);
 	}
 	
 }

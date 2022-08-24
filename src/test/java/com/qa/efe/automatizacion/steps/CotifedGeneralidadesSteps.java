@@ -1,5 +1,6 @@
 package com.qa.efe.automatizacion.steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -14,7 +15,7 @@ public class CotifedGeneralidadesSteps {
 		this.generalidadesPage = generalidadesPage;
 	}
 	
-	@When("Confirmo alerta")
+	@And("Confirmo alerta")
 	public void confirmacionAlerta() {
 		generalidadesPage.ConfirmarAlerta();
 	}
