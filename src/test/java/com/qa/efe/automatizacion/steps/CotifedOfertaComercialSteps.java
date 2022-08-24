@@ -206,7 +206,7 @@ public class CotifedOfertaComercialSteps {
 		generalidadesPage.cargarDatos();
 	}
 	
-	@When("Doy click en el boton simular")
+	@And("Doy click en el boton simular")
 	public void doyClickBotonSimular() {
 		cotifedOfertaComercialPage.getBtnSimular().click();
 		generalidadesPage.cargarDatos();
@@ -222,7 +222,6 @@ public class CotifedOfertaComercialSteps {
 		List<String> columnss =new ArrayList<String>();
 		for (int i = 0; i < columns.size(); i++) {
 		List<String> palabras =	Arrays.asList(columns.get(i));
-		//List<String> palabras =	Arrays.asList(columns.get(i).split("\\s+"));
 		columnss.add(palabras.get(0));
 		}
 		int columnIndex = columnss.indexOf(campania);

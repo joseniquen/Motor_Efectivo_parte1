@@ -55,9 +55,9 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 
    #SECCIÓN: OFERTA COMERCIAL
    #Titular
-   When Valido que se recupero ingreso vigente
- 	 And Valido seguros marcados
- 	 And Selecciono seguros
+	 When Valido que se recupero ingreso vigente
+	 And Valido seguros marcados
+	 And Selecciono seguros
 	 |seguros|
 	 #|Seguro de Salud 12 Meses|
 	 |Seguro de Salud 24 Meses|
@@ -76,8 +76,8 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad domicialiaria en meses "11"
 	 And Titular ingreso declarado "8000"
 	 And Titular doy check a usar ingreso declarado
-   And Titular ingreso situacion "FORMAL - DEPENDIENTE"
-   And Titular ingreso ocupacion "ABOGADO"
+	 And Titular ingreso situacion "FORMAL - DEPENDIENTE"
+	 And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 #Conyuge
@@ -95,8 +95,74 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Conyuge selecciono ocupacion "ABOGADO"
 	 And Conyuge ingreso ingreso "8000"
 	 And Conyuge ingreso antiguedad laboral en años "25"
-	 And Conyuge ingreso antiguedad laboral en meses "11"
+	 And Conyuge ingreso antiguedad laboral en meses "11"	
 	 #Titular
 	 And Titular ingreso cantidad a solicitar "5000"
 	 And Titular selecciono fecha de pago "3 de cada mes"
+	 And Doy click en el boton simular
+	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "24 meses"
+	 And Doy click en el boton continuar
+
+	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
+	 And Elijo tipo de desembolso "Abono en Cuenta de Ahorros titular"
+	 And Selecciono la entidad tipo "OTRO"
+	 And Ingreso numero titular
+	 And Ingreso numero de cuenta "19496386122018" y CCI "00219419638612201795"
+	 And Selecciono requisito y cargo archivo
+	 And Ingreso referencias telefonicas
+	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
+		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
+		
+	 #SECCION: DATOS ADICIONALES
+	 #Titular   
+	 And Doy click en el boton continuar datos adicionales
+	 And Ingreso correo de datos principales "correo_prueba@gmail.com"
+	 And Ingreso numero de celular de datos principales "924695269"
+	 And Selecciono prefijo de datos principales "01-LIMA"
+	 And Ingreso numero de telefono fijo de datos principales "454787"
+	 #Titular Domicilio
+	 And Selecciono departamento de informacion domiciliaria "LIMA"
+	 And Selecciono provincia de informacion domiciliaria "LIMA"
+	 And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
+	 And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
+	 When Espero 10 segundos
+	 And Doy click en confirmar geopoint de informacion domiciliaria
+	 When Espero 2 segundos
+	 And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
+	 And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
+	 #Titular Laboral
+	 And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
+	 And Selecciono prefijo de informacion laboral "01-LIMA"
+	 And Ingreso numero de telefono fijo de informacion laboral "754787"
+	 And Ingreso celular de informacion laboral "974695869"
+	 And Ingreso ruc de centro de informacion laboral "20605554114"
+	 And Selecciono departamento de informacion laboral "LIMA"
+	 And Selecciono provincia de informacion laboral "LIMA"
+	 And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
+	 And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
+	 When Espero 10 segundos
+	 And Doy click en confirmar geopoint de informacion laboral
+	 When Espero 2 segundos
+	 And Selecciono referencia de informacion laboral "PASANDO DEL"
+	 And Ingreso descripcion de informacion laboral "Parque de la amistad"
+   #Conyuge
+   And Doy click en el boton conyuge continuar
+	 And Ingreso correo de datos principales "correo_conyugeprueba@gmail.com"
+	 And Ingreso numero de celular de datos principales "998989871"
+	 And Selecciono prefijo de datos principales "01-LIMA"
+	 And Ingreso numero de telefono fijo de datos principales "454787"
+	 #Conyuge Domicilio
+	 And Doy check en vive en la misma casa del titular
+	 #Conyuge Laboral
+	 And Ingreso nombre centro de informacion laboral "BATAVIA SAC"
+	 And Selecciono conyuge prefijo de informacion laboral "01-LIMA"
+	 And Ingreso numero de telefono fijo de informacion laboral "565656"
+	 And Ingreso celular de informacion laboral "987874512"
+	 And Ingreso ruc de centro de informacion laboral "20785554113"
+	 And Doy check en trabaja en la misma casa del domicilio
+	 
+	 #SECCION: OBTENER NUMERO DE SOLICITUD
+	 And Obtengo el numero de solicitud 
+	 And Doy click en el boton solicitar
+	 Then Termino la solicitud
 	 

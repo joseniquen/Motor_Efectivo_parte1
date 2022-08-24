@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import com.qa.efe.automatizacion.pages.CotifedDatosAdicionalesPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class CotifedDatosAdicionalesSteps {
@@ -90,32 +91,32 @@ public class CotifedDatosAdicionalesSteps {
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoDomiciliaria().sendKeys(descripcion);
 	}
 	
-	@When("Ingreso nombre centro de informacion laboral {string}")
+	@And("Ingreso nombre centro de informacion laboral {string}")
 	public void ingresoNombreCentroInformacionLaboral(String centro) {
 		cotifedDatosAdicionalesPage.buscarTituloLab();
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCentroInfoLaboral().sendKeys(centro);
 	}
 	
-	@When("Selecciono prefijo de informacion laboral {string}")
+	@And("Selecciono prefijo de informacion laboral {string}")
 	public void seleccionoPrefijoInformacionLaboral(String prefijo) {
 		cotifedDatosAdicionalesPage.getCbxPrefijoInfoLaboral().click();
 		cotifedDatosAdicionalesPage.getOpcionCbxPrefijoInfoLaboral(prefijo).click();
 	}
 	
-	@When("Ingreso numero de telefono fijo de informacion laboral {string}")
+	@And("Ingreso numero de telefono fijo de informacion laboral {string}")
 	public void ingresoNumeroTelefonoFijoInformacionLaboral(String telefono) {
 		cotifedDatosAdicionalesPage.getTxtTelefonoInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtTelefonoInfoLaboral().sendKeys(telefono);
 	}
 	
-	@When("Ingreso celular de informacion laboral {string}")
+	@And("Ingreso celular de informacion laboral {string}")
 	public void ingresoCelularInformacionLaboral(String celular) {
 		cotifedDatosAdicionalesPage.getTxtCelularInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtCelularInfoLaboral().sendKeys(celular);
 	}
 	
-	@When("Ingreso ruc de centro de informacion laboral {string}")
+	@And("Ingreso ruc de centro de informacion laboral {string}")
 	public void ingresoRucCentroInformacionLaboral(String ruc) {
 		cotifedDatosAdicionalesPage.getTxtRucInfoLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedDatosAdicionalesPage.getTxtRucInfoLaboral().sendKeys(ruc);
@@ -165,6 +166,24 @@ public class CotifedDatosAdicionalesSteps {
 		cotifedDatosAdicionalesPage.getTxtDescripcionInfoLaboral().sendKeys(descripcion);
 	}
 	
+	@When("Doy click en el boton conyuge continuar")
+	public void doyClickBotonConyugeContinuar() {
+		cotifedDatosAdicionalesPage.getBtnConyugeContinuar().click();
+	}
 	
+	@When("Doy check en vive en la misma casa del titular")
+	public void doyCheckViveMismaCasaTitular() {
+		cotifedDatosAdicionalesPage.getChkVive().click();
+	}
 	
+	@When("Selecciono conyuge prefijo de informacion laboral {string}")
+	public void SeleccionoConyugePrefijoInformacionLaboral(String conyugePrefijo) {
+		cotifedDatosAdicionalesPage.getCbxConyugePrefijo().click();
+		cotifedDatosAdicionalesPage.getOpcionConyugePrefijo(conyugePrefijo).click();
+	}
+	
+	@And("Doy check en trabaja en la misma casa del domicilio")
+	public void doyCheckTrabajaMismaCasaDomicilio() {
+		cotifedDatosAdicionalesPage.getChkTrabaja().click();
+	}
 }

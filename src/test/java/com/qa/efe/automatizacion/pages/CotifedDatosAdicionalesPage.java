@@ -103,7 +103,7 @@ public class CotifedDatosAdicionalesPage {
 	}
 	public WebElement getCbxPrefijoInfoLaboral()
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("/html/body//div/div/form/div[4]/div/div[2]/div/div[2]/select"),10);
+		return  SeleniumWaiters.findElement(driver,By.xpath("/html/body//div/div/form/div[4]/div/div[2]/div/div[2]/select"),5);
 	}	
 	public WebElement getOpcionCbxPrefijoInfoLaboral(String prefijo)
 	{
@@ -171,4 +171,25 @@ public class CotifedDatosAdicionalesPage {
 	{
 		return driver.findElement(By.id("nombreReferenciaWork"));
 	}
+	public WebElement getBtnConyugeContinuar()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//button[contains(.,'Continuar')]"),10);	
+	}
+	public WebElement getChkVive()
+	{
+		return driver.findElement(By.xpath("//label/span[text()='Vive en la misma casa del Titular']"));
+	}
+	public WebElement getCbxConyugePrefijo()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/form/div[3]/div/div[2]/div/div[2]/select"),5);
+	}	
+	public WebElement getOpcionConyugePrefijo(String conyugePrefijo)
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/form/div[3]/div/div[2]/div/div[2]/select/option[contains(.,'"+conyugePrefijo+"')]"),5);	
+	}
+	public WebElement getChkTrabaja()
+	{
+		return driver.findElement(By.xpath("//label/span[text()='Trabaja en la misma casa del domicilio']"));
+	}
+	
 }

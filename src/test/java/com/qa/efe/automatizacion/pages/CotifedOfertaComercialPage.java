@@ -271,5 +271,9 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[3]/div[2]/input"),5);
 	}
+	public WebElement getBtnConyugeContinuar()
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'Continuar')]"),5);	
+	}
 	
 }
