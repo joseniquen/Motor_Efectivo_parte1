@@ -179,5 +179,69 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ocupación*']/parent::div//select/option[contains(.,'"+ocupacion+"')]"),5);	
 	}
+	public WebElement getCbxConyugeTipoDoc()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div//select"),10);
+	}	
+	public WebElement getOpcionConyugeTipoDoc(String tipoDocumento)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div//select/option[contains(.,'"+tipoDocumento+"')]"),5);	
+	}
+	public WebElement getTxtConyugeNumeroDocumento()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//input[@id='numberDoc']"),5);
+	}
+	public WebElement getBtnConyugeFiltrar()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='FILTRAR']"),10);
+	}
+	public WebElement getCbxConyugeDepartamento()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select"),5);
+	}	
+	public WebElement getOpcionConyugeDepartamento(String departamento)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Departamento*']/parent::div//select/option[contains(.,'"+departamento+"')]"),5);	
+	}
+	public WebElement getCbxConyugeProvincia()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select"),5);
+	}	
+	public WebElement getOpcionConyugeProvincia(String provincia)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Provincia*']/parent::div//select/option[contains(.,'"+provincia+"')]"),5);	
+	}
+	public WebElement getCbxConyugeDistrito()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select"),5);
+	}	
+	public WebElement getOpcionConyugeDistrito(String distrito)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Distrito*']/parent::div//select/option[contains(.,'"+distrito+"')]"),5);	
+	}
+	public WebElement getCbxConyugeTipoVivienda()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/div/form/div/div[4]/app-catalog-combo/select"),5);
+	}	
+	public WebElement getOpcionConyugeTipoVivienda(String tipoVivienda)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/div/div[3]/div/form/div/div[4]/app-catalog-combo/select/option[contains(.,'"+tipoVivienda+"')]"),5);	
+	}
+	public WebElement getTxtConyugeAntDomAnios()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/div/form/div/div[5]/div[1]/input"),5);
+	}
+	public WebElement getTxtConyugeAntDomMeses()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/div/form/div/div[5]/div[2]/input"),5);
+	}
+	public WebElement getCbxConyugePerfilSituacion()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[1]/select"),5);
+	}	
+	public WebElement getOpcionConyugePerfilSituacion(String situacion)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/div/div[3]/app-spouse-higher-income/div/form/div/div[2]/div[1]/select/option[text()='"+situacion+"']"),5);	
+	}
 	
 }

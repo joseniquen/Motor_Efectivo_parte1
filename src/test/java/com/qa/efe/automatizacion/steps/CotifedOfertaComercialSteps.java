@@ -235,4 +235,22 @@ public class CotifedOfertaComercialSteps {
 		cotifedOfertaComercialPage.getBtnContinuar().click();
 		generalidadesPage.cargarDatos();
 	}
+	
+	@When("Conyuge selecciono tipo de documento {string}")
+	public void ConyugeSeleccionoTipoDocumento(String conyugeTipoDocumento) {
+		cotifedOfertaComercialPage.getCbxConyugeTipoDoc().click();
+		cotifedOfertaComercialPage.getOpcionConyugeTipoDoc(conyugeTipoDocumento).click();
+	}
+	
+	@When("Conyuge ingreso numero de documento {string}")
+	public void ConyugeIngresoNumeroDocumento(String conyugeNumeroDocumento) {
+		cotifedOfertaComercialPage.getTxtConyugeNumeroDocumento().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		cotifedOfertaComercialPage.getTxtConyugeNumeroDocumento().sendKeys(conyugeNumeroDocumento);
+	}
+	@When("Conyuge doy click en filtrar")
+	public void ConyugeDoyClickFiltrar() {
+		cotifedOfertaComercialPage.getBtnConyugeFiltrar().click();
+	}
+	
+	
 }
