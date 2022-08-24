@@ -220,12 +220,13 @@ public class CotifedOfertaComercialSteps {
 				.collect(Collectors.toList());
 		List<String> columnss =new ArrayList<String>();
 		for (int i = 0; i < columns.size(); i++) {
-		List<String> palabras =	Arrays.asList(columns.get(i).split("\\s+"));
+		List<String> palabras =	Arrays.asList(columns.get(i));
+		//List<String> palabras =	Arrays.asList(columns.get(i).split("\\s+"));
 		columnss.add(palabras.get(0));
 		}
 		int columnIndex = columnss.indexOf(campania);
 		columnIndex=columnIndex+1;
-		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td['"+columnIndex+"']/div";
+		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td["+columnIndex+"]/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
 		generalidadesPage.cargarDatos();
 	}
