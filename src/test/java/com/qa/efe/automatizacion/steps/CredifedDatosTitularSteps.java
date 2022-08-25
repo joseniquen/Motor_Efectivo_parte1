@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedDatosTitularPage;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class CredifedDatosTitularSteps {
@@ -80,5 +81,11 @@ public class CredifedDatosTitularSteps {
 	{
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(opcion);
+	}
+	
+	@And("Doy click en check delivery")
+	public void doyClickCheckDelivery()
+	{
+		credifedDatosTitularPage.clickBtnDelivery().click();
 	}
 }

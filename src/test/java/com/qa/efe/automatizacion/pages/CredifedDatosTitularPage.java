@@ -42,7 +42,6 @@ public class CredifedDatosTitularPage {
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-informacionPersonalTitularCV:paisResidenciaSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-informacionPersonalTitularCV:paisResidenciaSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	
 	public WebElement ingresoCelPrincipal()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("maskedtext-input-informacionPersonalTitularCV:celularPrincipalText"),10);
@@ -67,6 +66,10 @@ public class CredifedDatosTitularPage {
 	public WebElement ingresoCorreo()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-informacionPersonalTitularCV:correoElectronicoText"),10);
+	}
+	public WebElement clickBtnDelivery()
+	{
+		return driver.findElement(By.id("checkbox-input-informacionPersonalTitularCV:deliveryCheck"));
 	}
 	
 }
