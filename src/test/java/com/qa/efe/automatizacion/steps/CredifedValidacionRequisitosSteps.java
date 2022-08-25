@@ -37,9 +37,11 @@ public class CredifedValidacionRequisitosSteps {
 				System.out.println("el doc adjunto si existe");
 			}else {
 				credifedValidacionRequisitosPage.cargarArchivo(i).click();
+				System.out.println("Está en la posición:");
 				SeleniumWaiters.waitSeconds(10);
 				credifedValidacionRequisitosPage.clickSeleccionarArchivo().get(i).click();
 				SeleniumWaiters.waitSeconds(5);
+				
 				try { 
 					String[] commands = new String[]{}; 
 					commands = new String[]{"src\\test\\resources\\autoit\\PhotoUploadSharepoint.exe"};
