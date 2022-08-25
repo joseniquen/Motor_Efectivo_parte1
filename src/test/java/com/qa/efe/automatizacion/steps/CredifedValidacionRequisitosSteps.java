@@ -37,7 +37,7 @@ public class CredifedValidacionRequisitosSteps {
 				System.out.println("el doc adjunto si existe");
 			}else {
 				credifedValidacionRequisitosPage.cargarArchivo(i).click();
-				System.out.println("Está en la posición:");
+				System.out.println("Está en la posición:"+elements.get(i));
 				SeleniumWaiters.waitSeconds(10);
 				credifedValidacionRequisitosPage.clickSeleccionarArchivo().get(i).click();
 				SeleniumWaiters.waitSeconds(5);
