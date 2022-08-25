@@ -42,9 +42,11 @@ public class CredifedValidacionRequisitosPage {
 	
 	public List<WebElement> clickSeleccionarArchivo() {
 		try {
+			System.out.println("Selectttttttt");
 			return driver.findElements( By.xpath("//div[text()='Select...']"));	
 		} catch (Exception e) {
-			return driver.findElements( By.xpath("//div[text()='Seleccionar...']"));		
+			System.out.println("Seleccionarrrrr");
+			return driver.findElements( By.xpath("//div[text()='Seleccionar...']"));
 		}
 			 
 	}
