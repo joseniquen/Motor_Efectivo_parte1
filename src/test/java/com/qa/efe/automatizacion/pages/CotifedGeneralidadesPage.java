@@ -48,8 +48,24 @@ public class CotifedGeneralidadesPage {
 	{
 		return  driver.findElements(By.xpath("//app-loading-cot/div"));
 	}
+	public WebElement Pantalla_Carga2()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='loading'][@style='display: block;']"),10);
+	}
+	
 	public void scrollTo(WebElement element) {
 		NavigationHelpers.scrollToElement(driver, element);
+	}
+	
+	public void cargarDatos2() {
+		try {
+			while(Pantalla_Carga2().isDisplayed()) {
+			}
+			SeleniumWaiters.waitSeconds(1);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 	
 	public void cargarDatos() {

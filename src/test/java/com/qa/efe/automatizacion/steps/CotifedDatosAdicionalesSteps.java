@@ -75,7 +75,8 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@When("Doy click en confirmar geopoint de informacion domiciliaria")
 	public void doyClickConfirmarGeopointInformacionDomiciliaria() {
-		cotifedDatosAdicionalesPage.getBtnConfirmarInfoDomiciliaria().sendKeys(Keys.ENTER);
+		cotifedGeneralidadesPage.cargarDatos2();
+		cotifedDatosAdicionalesPage.getBtnConfirmarInfoDomiciliaria().click();
 		cotifedGeneralidadesPage.IrAIframePorDefecto();
 	}
 	
@@ -150,6 +151,7 @@ public class CotifedDatosAdicionalesSteps {
 	
 	@When("Doy click en confirmar geopoint de informacion laboral")
 	public void doyClickConfirmarGeopointInformacionLaboral() {
+		cotifedGeneralidadesPage.cargarDatos2();
 		cotifedDatosAdicionalesPage.getBtnConfirmarInfoLaboral().click();
 		cotifedGeneralidadesPage.IrAIframePorDefecto();
 	}
