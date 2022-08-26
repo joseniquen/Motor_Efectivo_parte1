@@ -20,13 +20,7 @@ public class CotifedFiltroPage {
 	}
 	public WebElement getOpcionTienda(String tienda)
 	{
-		try {
-			System.out.print("tiendasssss");
-			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tiendasssss*']/parent::div/select/option[contains(.,'"+tienda+"')]"),10);
-		} catch (Exception e) {
-			System.out.print("tiendas");
-			return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select/option[contains(.,'"+tienda+"')]"),10);
-		}
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tiendas*']/parent::div/select/option[contains(.,'"+tienda+"')]"),10);
 	}
 	public WebElement getCbxTipoDoc()
 	{
