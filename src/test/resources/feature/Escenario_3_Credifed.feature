@@ -189,7 +189,6 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 10 segundos
 	  When Doy check a la lista de documentos
-	  When Espero 1000 segundos
 	  When Doy click en boton continuar
 	  
 	  When Espero 7 segundos
