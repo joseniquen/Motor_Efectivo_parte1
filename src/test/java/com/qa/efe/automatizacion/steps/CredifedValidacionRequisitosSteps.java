@@ -38,7 +38,7 @@ public class CredifedValidacionRequisitosSteps {
 			}else {
 				credifedValidacionRequisitosPage.cargarArchivo(i).click();
 				System.out.println("Está en la posición:"+elements.get(i));
-				SeleniumWaiters.waitSeconds(10);
+				SeleniumWaiters.waitSeconds(5);
 				credifedValidacionRequisitosPage.clickSeleccionarArchivo().get(i).click();
 				SeleniumWaiters.waitSeconds(5);
 				

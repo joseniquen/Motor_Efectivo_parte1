@@ -17,7 +17,7 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
   								 - DELIVERY 
   								 - Con cónyuge 
   								 - Plan B Desgravamen CDev 
-  								 - Con periodo de graciaa
+  								 - Con periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
