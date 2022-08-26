@@ -39,7 +39,7 @@ public class CredifedInfoFinancieraPage {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalMesesInteger"),10); 
 	}	
 	public WebElement bajarDeudas() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//span[text()='Detalle de Deudas']"),10);
+		return SeleniumWaiters.findElement(driver, By.xpath("//span[text()='Total Ingresos:']"),10);
 	}
 	public WebElement detalleDeudas(int opc) {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-InformacionAdicionalLaboralCV2:listaDeudasTable:sustento1["+opc+"]:AddButton"),10);	 

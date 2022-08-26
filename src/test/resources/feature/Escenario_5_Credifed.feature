@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de crédito
+Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de crédito
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -10,14 +10,14 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 		     #Numero de solicitud
       
   @web
-  Scenario: EP003: Línea de producto  Efectivo 
-  								 - Con llenado de datos adicionales 
-  								 - Con seguros optativos 
-  								 - Abono en cuentas de ahorro titular 
-  								 - DELIVERY 
-  								 - Con cónyuge 
-  								 - Plan B Desgravamen CDev 
-  								 - Con periodo de gracia
+  Scenario: EP005: Línea de producto  Efectivo 
+   								 - Con llenado de datos adicionales 
+   								 - Con seguros optativos 
+   								 - Abono en cuentas de ahorro titular 
+   								 - DELIVERY 
+   								 - Con cónyuge 
+   								 - Plan A Desgravamen SDev 
+   								 - Sin periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
@@ -28,12 +28,12 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10853994"
+		When Ingreso instancia de proceso "10854126"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CACERES    |00246824   |EFECTIVO      |10853994     |
+		|CACERES    |00246824   |EFECTIVO      |10854126     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		When Espero 10 segundos
@@ -107,6 +107,7 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Selecciono ocupacion "ABOGADO"
 		And Ingreso declarado "90000"
 		And Registro antiguedad laboral "30" años y "7" meses
+		And Espero 1 segundos
 		And Reviso el detalle de deudas subir sustento
 		#Temporal
 	 	When Verifico si existe error en filtro evaluacion financiera
@@ -209,8 +210,6 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "22 Oferta Comercial"
 	  When Espero 10 segundos
-	  When Doy click en seguro desgravamen con devolucion
-	  When Acepto seguro desgravamen con devolucion
 	  
 	  When Doy click en simular
 	  When Espero 10 segundos
