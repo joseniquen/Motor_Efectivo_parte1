@@ -236,7 +236,6 @@ public class CotifedConfirmacionSolicitudSteps {
 	
 	@Then("Termino la solicitud")
 	public void terminarSolicitud() {	
-		SeleniumWaiters.waitSeconds(7);
 		cotifedConfirmacionSolicitudPage.getBtnOk().click();
 	}
 	

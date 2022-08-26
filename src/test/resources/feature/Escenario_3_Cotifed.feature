@@ -125,9 +125,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono provincia de informacion domiciliaria "LIMA"
 	 And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
 	 And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-	 When Espero 10 segundos
 	 And Doy click en confirmar geopoint de informacion domiciliaria
-	 When Espero 2 segundos
 	 And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
 	 And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
 	 #Titular Laboral
@@ -140,9 +138,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono provincia de informacion laboral "LIMA"
 	 And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
 	 And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-	 When Espero 10 segundos
 	 And Doy click en confirmar geopoint de informacion laboral
-	 When Espero 2 segundos
 	 And Selecciono referencia de informacion laboral "PASANDO DEL"
 	 And Ingreso descripcion de informacion laboral "Parque de la amistad"
    #Conyuge

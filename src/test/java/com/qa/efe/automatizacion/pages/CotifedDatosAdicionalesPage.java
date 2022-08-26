@@ -82,8 +82,7 @@ public class CotifedDatosAdicionalesPage {
 	public WebElement getBtnConfirmarInfoDomiciliaria()
 	{
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='framegeo']")));
-		SeleniumWaiters.waitSeconds(4);
-		return  SeleniumWaiters.findElement(driver,By.xpath("//*[@id='u-accept']"),10);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//*[@id='u-accept']"),15);
 	}
 	public WebElement getCbxReferenciaInfoDomiciliaria()
 	{
@@ -156,8 +155,7 @@ public class CotifedDatosAdicionalesPage {
 	public WebElement getBtnConfirmarInfoLaboral()
 	{
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='framegeoWork']")));
-		SeleniumWaiters.waitSeconds(7);
-		return  SeleniumWaiters.findElement(driver,By.xpath("//*[@id='u-accept']"),10);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//*[@id='u-accept']"),15);
 	}
 	public WebElement getCbxReferenciaInfoLaboral()
 	{
