@@ -41,14 +41,18 @@ public class CredifedValidacionRequisitosPage {
 	}
 	
 	public List<WebElement> clickSeleccionarArchivo() {
+		List<WebElement> MiListaEsp;
+		List<WebElement> MiListaEng;
 		List<WebElement> MiLista;
-		try {
-			MiLista=driver.findElements( By.xpath("//div[text()='Seleccionar...']"));
-		} catch (Exception e) {
-			MiLista=driver.findElements( By.xpath("//div[text()='Select...']"));
+		MiListaEsp=driver.findElements( By.xpath("//div[text()='Select...']"));
+		MiListaEng=driver.findElements( By.xpath("//div[text()='Seleccionar...']"));
+		if(MiListaEsp.size()!=0) {
+			MiLista=MiListaEsp;
+			return MiLista;	 
+		}else {
+			MiLista=MiListaEng;
+			return MiLista;	 
 		}
-		System.out.println("Mi Lista:"+MiLista);
-		return MiLista;	 
 	}
 	public List<WebElement> clickSeleccionarArchivoEsp() {
 		return driver.findElements( By.xpath("//div[text()='Seleccionar...']"));		 
