@@ -20,8 +20,8 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'Setiembre.2022'
+    When Ingreso mi usuario 'ext_fsosa'
+		And Ingreso mi contraseña 'Efectiva.2022'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
@@ -63,7 +63,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 |Contigo Familia plan Básico|
 	 #|Contigo Familia plan Plus|
 	 #|Accidentes Personales|
-	 |Seguro Oncológico|
+	 #|Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmo alerta
 	 And Titular selecciono pais "PERU"

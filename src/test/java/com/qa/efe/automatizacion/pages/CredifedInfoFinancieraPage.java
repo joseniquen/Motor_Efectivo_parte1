@@ -35,6 +35,9 @@ public class CredifedInfoFinancieraPage {
 	public WebElement antiguedadLaboralAnio() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalAniosInteger"),10);	 
 	}
+	public WebElement ingresoDeclaradoText() {
+		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:nuevoIngresoPrincipalDecimal"),10);
+	}
 	public WebElement antiguedadLaboralMes() {
 		return SeleniumWaiters.findElement(driver, By.id("decimal-input-InformacionAdicionalLaboralCV2:antiguedadPrincipalMesesInteger"),10); 
 	}	

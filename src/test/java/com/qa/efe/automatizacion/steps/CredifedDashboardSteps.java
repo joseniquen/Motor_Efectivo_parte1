@@ -137,7 +137,6 @@ public class CredifedDashboardSteps {
 	@When("Doy click en reclamar tarea")
 	public void doyClickEnReclamarTarea()
 	{
-		SeleniumWaiters.waitSeconds(5);
 		if (credifedDashboardPage.validaExisteReclamarTarea().size()!=0) {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	
