@@ -28,11 +28,13 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Doy click en procesos
 		When Ingreso instancia de proceso "10854292"
 		And Doy click en pulsar para ver instancia
+		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
 		|CHICLAYO   |44970551   |EFECTIVO      |10854292     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
+		When Espero 10 segundos
 		
 		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
@@ -153,56 +155,3 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  Then Continuo a aprobacion de la solicitud
-	  
-	  #PROCESO: APROBAR SOLICITUD
-	  When Doy click en aprobar solicitud de credito
-		When Doy click en reclamar tarea
-		
-		#SECCION: VALIDACION REQUISITOS
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
-
-	 	When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "20 Validación Requisitos"
-	  When Espero 5 segundos
-	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar
-	  
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "21 Observaciones"
-	  When Espero 5 segundos
-	  When Doy click en boton continuar
-	  
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "23 Datos de Referidos"
-	  When Espero 5 segundos
-	  When Doy click en boton continuar
-
-	  When Espero 7 segundos
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "22 Oferta Comercial"
-	  When Espero 10 segundos
-	  When Doy click en simular
-	  When Doy click en el boton aprobar
-	  
- 		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-		When Cambio de iframe a "Resumen Solicitud"
-	  When Verifico que estemos en la pantalla resumen del credito
-	  When Doy click en aceptar solicitud de credito
-	  
-		When Cambio de iframe a default
-		When Cambio de iframe a "View Instance Details"
-		Then Verifico que la solicitud de credito haya sido aprobada correctamente
-	  
-	  
-	  
