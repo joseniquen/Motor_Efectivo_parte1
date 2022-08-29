@@ -40,6 +40,9 @@ Feature: Escenario 2 - Como usuario quiero analizar y aprobar una solicitud de c
 		#SECCION: DATOS DEL TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+		When Validar que el menu de analizar sea el inicial
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
 	  When Espero 15 segundos
 	  #Temporal

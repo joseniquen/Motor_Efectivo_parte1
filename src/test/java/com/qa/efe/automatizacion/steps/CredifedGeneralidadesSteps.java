@@ -101,4 +101,26 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.pestañasMenu(opcion).click();
 	}
+	@When("Validar que el menu de aprobar sea el inicial")
+	public void validarMenuInicialAprobar() {
+		if(credifedGeneralidadesPage.validarMenuInicial("07 Datos del Titular").size()==0) {
+			driver.switchTo().defaultContent();
+			SeleniumWaiters.waitSeconds(1);
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
+			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+			credifedGeneralidadesPage.clickMenuInicial().click();
+		}
+	}
+	@When("Validar que el menu de analizar sea el inicial")
+	public void validarMenuInicialAnalizar() {
+		if(credifedGeneralidadesPage.validarMenuInicial("07 Datos del Titular").size()==0) {
+			driver.switchTo().defaultContent();
+			SeleniumWaiters.waitSeconds(1);
+			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+			credifedGeneralidadesPage.clickMenuInicial().click();
+		}
+	}
 }

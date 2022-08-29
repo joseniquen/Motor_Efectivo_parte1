@@ -124,4 +124,16 @@ public class CredifedGeneralidadesPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='"+opcion+"']"),10);
 	}	
+	public List<WebElement> validarMenuInicial(String titleIframe)
+	{
+		return driver.findElements(By.xpath("//iframe[@title='"+titleIframe+"']"));
+	}
+	public List<WebElement> validarMenuInicialIframe()
+	{
+		return driver.findElements(By.xpath("//iframe[@style='border: 0px; height: 100%; width: 100%; display: block']"));
+	}
+	public WebElement clickMenuInicial()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//button[@id='button-button-PrincipalTemplate1:BarraNavegacionCV1:datosTitularButton']"),10);
+	}	
 }
