@@ -101,7 +101,7 @@ public class CotifedConfirmacionSolicitudPage {
 	public WebElement getErrorSharePoint4()
 	{
 		try {
-			return SeleniumWaiters.findElement(driver,By.xpath("//h2[@id='swal2-title']"),10);
+			return SeleniumWaiters.findElement(driver,By.xpath("//h2[@id='swal2-title']"),5);
 		} catch (Exception e) {
 			return null;
 		}
