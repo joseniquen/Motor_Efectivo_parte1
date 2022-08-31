@@ -48,7 +48,7 @@ public class CredifedInfoDomiciliariaAvalPage {
 	public WebElement clickAceptarUbicarMapa()
 	{
 		driver.switchTo().frame(driver.findElement(By.id("framegeo")));
-		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 10);
+		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 20);
 	}
 	
 	public WebElement tipoPropiedad(String opcion)
