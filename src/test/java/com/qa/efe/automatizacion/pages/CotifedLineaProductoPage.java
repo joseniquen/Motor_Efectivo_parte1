@@ -25,7 +25,7 @@ public class CotifedLineaProductoPage {
 	}
 	public WebElement getLineaProducto(String lineaProducto)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td[2]/div/p/parent::div"),10);
+		return  SeleniumWaiters.findElement(driver,By.xpath("//app-product-line//table/tbody/tr/div/td[contains(.,'"+lineaProducto+"')]/parent::div/parent::tr/td[2]/div/p/parent::div"),20);
 	}
 	public WebElement getBtnContinuar()
 	{
