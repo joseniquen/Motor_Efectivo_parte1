@@ -70,7 +70,7 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
-	 And Titular ingreso cantidad a solicitar "2000"
+	 And Titular ingreso cantidad a solicitar "2500"
 	 And Titular selecciono fecha de pago "15 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "6 meses"
