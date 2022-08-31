@@ -2,6 +2,7 @@ package com.qa.efe.automatizacion.steps;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -9,6 +10,7 @@ import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedOfertaComercialPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import io.cucumber.java.en.When;
 
@@ -97,8 +99,11 @@ public class CredifedOfertaComercialSteps {
 			verificoPantallaResumenCredito();
 			credifedOfertaComercialPage.clickAceptar().click();
 			SeleniumWaiters.waitSeconds(10);
-			
-			credifedOfertaComercialPage.clickConfirmar().click();
+			if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null) {
+				credifedOfertaComercialPage.clickConfirmar().click();
+			}else {
+				credifedOfertaComercialPage.clickConfirmar().click();
+			}
 		}
 	}
 	
@@ -134,4 +139,5 @@ public class CredifedOfertaComercialSteps {
 	{
 		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
 	}
+	
 }

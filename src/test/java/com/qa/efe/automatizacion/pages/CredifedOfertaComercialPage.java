@@ -57,4 +57,13 @@ public class CredifedOfertaComercialPage {
 	public WebElement getBtnAceptoDesgravamenConDevolucion() {
 		return SeleniumWaiters.findElement(driver, By.id("modalalert-button-AprobacionCreditoCV1:mallaCrediticiaModal_Alert"),10);
 	}
+	public WebElement getValidaSolicitudPendientes()
+	{
+		try {
+			return SeleniumWaiters.findElement(driver,By.xpath("//p[contains(.,'Cliente cuenta con una solicitud Efectivo')]"),5);
+		} catch (Exception e) {
+			return null;
+		}
+		
+	}
 }
