@@ -43,7 +43,14 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 			  When Ingreso informacion laboral
 			   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
 			   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
-	   
+	   	  #SECCIÓN: NBK-RENIEC
+			   When Ingreso informacion de vivienda nbk
+			   	|  departamento  |  provincia  |  distrito  |  tipo_de_vivienda |
+			   	|  LIMA          |  LIMA       |  BARRANCO  |  PROPIA           |
+			   	
+			   When Ingreso informacion laboral nbk
+			   	|       perfil            |  ocupacion  | ingreso | anti_anios | anti_mese |
+			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 3000    |     10     |    11     |
 	 #SECCIÓN: LINEA DE PRODUCTO
 	 When Selecciono linea de producto "EFECTIVO"
 	 And Confirmo alerta
