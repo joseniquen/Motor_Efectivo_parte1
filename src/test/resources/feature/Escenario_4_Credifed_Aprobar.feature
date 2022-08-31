@@ -30,7 +30,6 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Espero 10 segundos
 		When Doy click en aprobar solicitud de credito
 		When Doy click en reclamar tarea
-		When Espero 10 segundos
 		
 		#SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
@@ -39,20 +38,17 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
-	  When Espero 15 segundos
 	  When Verifico si existe error en consentimiento digital
 	  When Me dirijo a la pestaña de "Validar Requisitos"
 
-	  When Espero 7 segundos
 	 	When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "20 Validación Requisitos"
-	  When Espero 10 segundos
+	  When Espero 5 segundos
 	  When Doy check a la lista de documentos
 	  When Doy click en boton continuar
 	  
 	  #SECCION: OBSERVACIONES
-	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
@@ -71,9 +67,7 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Doy click en procesos
 		When Ingreso instancia de proceso anterior
 		And Doy click en aprobar observaciones
-		When Espero 10 segundos
 		When Doy click en aprobacion por excepcion
-		When Espero 10 segundos
 		
 		#SECCION: APROBACION POR EXCEPCION
 	  When Cambio de iframe a default
@@ -83,7 +77,6 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Me dirijo a la pestaña de "Observaciones"
 	  
 	  #SECCION: APROBAR OBSERVACIONES
-	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Aprobación por Excepción"
 	  When Cambio de iframe a "21 Observaciones"
@@ -99,13 +92,10 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
     And Ingreso mi usuario bpm 'ext_fsosa'
 		And Ingreso mi contraseña bpm 'Efectiva.2022'
 		And Doy click en boton continuar de bpm
-		When Espero 10 segundos
 	  When Doy click en procesos
 	  When Ingreso instancia de proceso anterior
 		And Doy click en pulsar para ver instancia
-		When Espero 10 segundos
 		When Doy click en aprobar solicitud de credito
-		When Espero 10 segundos
 
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
@@ -119,24 +109,21 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Espero 5 segundos
 	  When Doy click en boton continuar
 
-	  When Espero 7 segundos
+	  When Espero 10 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "22 Oferta Comercial"
 	  When Espero 10 segundos
 	  
 	  When Doy click en simular
-	  When Espero 10 segundos
 	  When Doy click en el boton aprobar
 	  
-	  When Espero 7 segundos
  		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Cambio de iframe a "Resumen Solicitud"
 	  When Verifico que estemos en la pantalla resumen del credito
 	  When Doy click en aceptar solicitud de credito
 	  
-	  When Espero 7 segundos
 		When Cambio de iframe a default
 		When Cambio de iframe a "View Instance Details"
 		Then Verifico que la solicitud de credito haya sido aprobada correctamente

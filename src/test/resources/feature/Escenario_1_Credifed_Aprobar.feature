@@ -32,7 +32,6 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 	  #PROCESO: APROBAR SOLICITUD
 	  When Doy click en aprobar solicitud de credito
 		When Doy click en reclamar tarea
-		When Espero 10 segundos
 		
 		#SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
@@ -51,21 +50,19 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Doy check a la lista de documentos
 	  When Doy click en boton continuar
 	  
-	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
 	  When Espero 5 segundos
 	  When Doy click en boton continuar
 	  
-	  When Espero 7 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "23 Datos de Referidos"
 	  When Espero 5 segundos
 	  When Doy click en boton continuar
 
-	  When Espero 7 segundos
+	  When Espero 10 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "22 Oferta Comercial"
@@ -82,6 +79,3 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a default
 		When Cambio de iframe a "View Instance Details"
 		Then Verifico que la solicitud de credito haya sido aprobada correctamente
-	  
-	  
-	  

@@ -30,13 +30,11 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Doy click en procesos
 		When Ingreso instancia de proceso "10854126"
 		And Doy click en pulsar para ver instancia
-		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
 		|CACERES    |00246824   |EFECTIVO      |10854126     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
-		When Espero 10 segundos
 		
 		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
@@ -46,7 +44,6 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
-	  When Espero 15 segundos
 	  #Temporal
 		When Verifico si existe error en filtro evaluar personas
 		#Temporal
@@ -64,7 +61,6 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 		And Ingreso correo electronico "example_1@gmail.com"
 		And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Espero 10 segundos
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
 		
@@ -82,12 +78,10 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 	 	And Selecciono distrito "SANTIAGO DE SURCO"
 	 	And Ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
 	 	And Doy click en ubicar mapa
-	 	And Espero 15 segundos
 	 	#Temporal
 	 	When Verifico si existe error en ejecución de servicio
 	 	#Temporal
 	 	When Doy click en aceptar la ubicacion correcta en el mapa
-	 	When Espero 10 segundos
 	  And Cambio de iframe a default
 	 	And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  And Cambio de iframe a "08 Información Domiciliaria Titular"
@@ -95,7 +89,6 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 	 	And Ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Espero 10 segundos
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
 		
@@ -117,7 +110,6 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 	 	#Temporal
 		When Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Espero 10 segundos
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
 		
@@ -136,12 +128,10 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 	 	And Selecciono distrito laboral "SANTIAGO DE SURCO"
 	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	And Doy click en ubicar mapa laboral
-	 	And Espero 15 segundos
 	 	#Temporal
 	 	When Verifico si existe error en normalizar direccion
 	 	#Temporal
 	 	Then Doy click en aceptar la ubicacion correcta en el mapa laboral
-	 	When Espero 10 segundos
 	 	
 	 	#SECCION: INFORMACION LABORAL TITULAR
 	 	When Cambio de iframe a default
@@ -151,7 +141,6 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 	 	And Ingreso la referencia laboral "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Espero 10 segundos
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
 		
@@ -160,13 +149,11 @@ Feature: Escenario 5 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "19 Referencias Telefónicas"
 	  #Informacion referencias telefonicas
-	  And Espero 10 segundos
 	  And Verifico si existe error en referencias telefonicas
 	  And Doy click en agregar nueva referencia
 	  And Creo referencia telefonica
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
 		|AMIGO      |LIMA      |1236547  |654987312|Juan    |Perez|
-		And Espero 5 segundos
 		Then Doy click en boton continuar
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"

@@ -34,7 +34,6 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		|CHICLAYO   |44970551   |EFECTIVO      |10854292     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
-		When Espero 10 segundos
 		
 		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
