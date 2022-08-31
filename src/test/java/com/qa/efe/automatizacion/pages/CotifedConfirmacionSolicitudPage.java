@@ -98,14 +98,18 @@ public class CotifedConfirmacionSolicitudPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'OK.')]"),10);	
 	}
-	public List<WebElement> getErrorSharePoint4()
+	public WebElement getErrorSharePoint4()
 	{
-		return  driver.findElements(By.xpath("//h2[@id='swal2-title']"));	
+		try {
+			return SeleniumWaiters.findElement(driver,By.xpath("//h2[@id='swal2-title']"),10);
+		} catch (Exception e) {
+			return null;
+		}
+		
 	}
-	
 	public int numRequisitos()
 	{
-		SeleniumWaiters.waitSeconds(5);
+		SeleniumWaiters.waitSeconds(2);
 		return  driver.findElements(By.xpath("//div[@class='m12 row']")).size();
 	}
 	
