@@ -48,7 +48,7 @@ public class CredifedGeneralidadesPage {
 	public void verificarErrorNormalizarDireccion()
 	{
 		try {
-			WebElement verificar =SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_5_1_3_2_1']"),10); 
+			WebElement verificar =SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_5_1_3_2_1']"),15); 
 			if (verificar.isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-UbicacionGeograficaCV1:direccionPrincipalDisplay:Button1"),10).click();
 			} 
@@ -145,10 +145,10 @@ public class CredifedGeneralidadesPage {
 	}
 	public WebElement clickMenuInicialAnalizar()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Datos Titular']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Datos Titular']"),10);
 	}	
 	public WebElement clickMenuInicialAprobar()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Datos Titular']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Validar Requisitos']"),10);
 	}	
 }
