@@ -19,7 +19,7 @@ public class CredifedDashboardPage {
 	
 	public WebElement clickProcesos()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='dashboard-menu-item-2015.27']/div/div[2]/a"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//div/div[2]/a[@title='Procesos']"),10);
 	}
 	public WebElement ingresarProceso()
 	{
