@@ -60,7 +60,7 @@ public class CredifedOfertaComercialPage {
 	public WebElement getValidaSolicitudPendientes()
 	{
 		try {
-			return SeleniumWaiters.findElement(driver,By.xpath("//p[contains(.,'Cliente cuenta con una solicitud Efectivo')]"),5);
+			return SeleniumWaiters.findElement(driver,By.xpath("//p[contains(.,'Cliente cuenta con una solicitud Efectivo')]"),10);
 		} catch (Exception e) {
 			return null;
 		}

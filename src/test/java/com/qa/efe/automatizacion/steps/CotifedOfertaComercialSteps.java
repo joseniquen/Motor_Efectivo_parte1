@@ -251,6 +251,8 @@ public class CotifedOfertaComercialSteps {
 	@And("Conyuge doy click en filtrar")
 	public void conyugeDoyClickFiltrar() {
 		cotifedOfertaComercialPage.getBtnConyugeFiltrar().click();
+		generalidadesPage.cargarDatos();
+
 	}
 	
 	@And("Conyuge selecciono estado civil {string}")

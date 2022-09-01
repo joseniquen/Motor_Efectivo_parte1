@@ -98,7 +98,7 @@ public class CredifedOfertaComercialSteps {
 			
 			verificoPantallaResumenCredito();
 			credifedOfertaComercialPage.clickAceptar().click();
-			SeleniumWaiters.waitSeconds(10);
+			SeleniumWaiters.waitSeconds(5);
 			if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null) {
 				credifedOfertaComercialPage.clickConfirmar().click();
 			}else {
