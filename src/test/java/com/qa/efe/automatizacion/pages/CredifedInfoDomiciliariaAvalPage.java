@@ -9,9 +9,11 @@ import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
 
 public class CredifedInfoDomiciliariaAvalPage {
 	private WebDriver driver;
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
 
-	public CredifedInfoDomiciliariaAvalPage( WebDriverManager driverManager) {
+	public CredifedInfoDomiciliariaAvalPage( WebDriverManager driverManager,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.driver = driverManager.getDriver();
+		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
 	public WebElement selectDepartamento(String opcion)
 	{
@@ -32,6 +34,11 @@ public class CredifedInfoDomiciliariaAvalPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:direccionCompleta"),10);
 	}
+	public void scrollReferencia() {
+		WebElement element = SeleniumWaiters.findElement(driver,By.xpath("//span[text()='Referencia']"),10);
+		credifedGeneralidadesPage.scrollTo(element);
+	}
+	
 	public WebElement clickBtnUbicarMapa()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-UbicacionGeograficaCV1:ubicarMapaButton"),10);

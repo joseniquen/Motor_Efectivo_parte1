@@ -91,6 +91,8 @@ public class CredifedInfoLaboralSteps {
 	@When("Doy click en aceptar la ubicacion correcta en el mapa laboral")
 	public void clickAceptarUbicarMapaLaboral()
 	{
+		do {
+		} while (credifedInfoLaboralPage.loadingPage()!=null);
 		credifedInfoLaboralPage.clickAceptarUbicarMapa().click();
 	}
 }

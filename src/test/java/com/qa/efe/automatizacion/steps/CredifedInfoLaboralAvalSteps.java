@@ -3,14 +3,17 @@ package com.qa.efe.automatizacion.steps;
 import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralAvalPage;
+import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
 import io.cucumber.java.en.When;
 
 public class CredifedInfoLaboralAvalSteps {
 	private CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage;
-	public CredifedInfoLaboralAvalSteps(CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage) {
+	private CredifedInfoLaboralPage credifedInfoLaboralPage;
+	public CredifedInfoLaboralAvalSteps(CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage,CredifedInfoLaboralPage credifedInfoLaboralPage) {
 		this.credifedInfoLaboralAvalPage = credifedInfoLaboralAvalPage;
+		this.credifedInfoLaboralPage=credifedInfoLaboralPage;
 	}
 	@When("Ingreso centro de trabajo aval {string}")
 	public void ingresoCentroTrabajo(String opcion) {
@@ -90,6 +93,8 @@ public class CredifedInfoLaboralAvalSteps {
 	@When("Doy click en aceptar la ubicacion correcta en el mapa laboral aval")
 	public void clickAceptarUbicarMapaLaboral()
 	{
+		do {
+		} while (credifedInfoLaboralPage.loadingPage()!=null);
 		credifedInfoLaboralAvalPage.clickAceptarUbicarMapa().click();
 	}
 }

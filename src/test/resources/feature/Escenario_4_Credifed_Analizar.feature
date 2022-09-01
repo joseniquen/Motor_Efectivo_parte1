@@ -25,11 +25,11 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854556"
+		When Ingreso instancia de proceso "10854633"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |92635372   |EFECTIVO      |10854556     |
+		|CHICLAYO   |92635372   |EFECTIVO      |10854633     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
@@ -81,6 +81,9 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  And Cambio de iframe a default
 	 	And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  And Cambio de iframe a "08 Información Domiciliaria Titular"
+	  #Temporal
+	 	When Verifico si existe error en ejecución de servicio
+	 	#Temporal
 	 	And Selecciono tipo de referencia "FRENTE A"
 	 	And Ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos

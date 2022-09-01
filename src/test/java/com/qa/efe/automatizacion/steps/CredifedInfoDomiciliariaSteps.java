@@ -3,13 +3,16 @@ package com.qa.efe.automatizacion.steps;
 import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedInfoDomiciliariaPage;
+import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 
 import io.cucumber.java.en.When;
 
 public class CredifedInfoDomiciliariaSteps {
 	private CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage;
-	public CredifedInfoDomiciliariaSteps(CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage) {
+	private CredifedInfoLaboralPage credifedInfoLaboralPage;
+	public CredifedInfoDomiciliariaSteps(CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage,CredifedInfoLaboralPage credifedInfoLaboralPage) {
 		this.credifedInfoDomiciliariaPage = credifedInfoDomiciliariaPage;
+		this.credifedInfoLaboralPage=credifedInfoLaboralPage;
 	}
 	
 	@When("Selecciono departamento {string}")
@@ -58,6 +61,8 @@ public class CredifedInfoDomiciliariaSteps {
 	@When("Doy click en aceptar la ubicacion correcta en el mapa")
 	public void clickAceptarUbicarMapa()
 	{
+		do {
+		} while (credifedInfoLaboralPage.loadingPage()!=null);
 		credifedInfoDomiciliariaPage.clickAceptarUbicarMapa().click();
 	}
 }

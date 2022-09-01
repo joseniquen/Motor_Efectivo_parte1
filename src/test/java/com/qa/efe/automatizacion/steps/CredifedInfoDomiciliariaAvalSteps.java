@@ -5,18 +5,22 @@ import org.openqa.selenium.Keys;
 import com.qa.efe.automatizacion.pages.CredifedDatosAvalPage;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoDomiciliariaAvalPage;
+import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 
 import io.cucumber.java.en.When;
 
 public class CredifedInfoDomiciliariaAvalSteps {
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
 	private CredifedInfoDomiciliariaAvalPage credifedInfoDomiciliariaAvalPage;
+	private CredifedInfoLaboralPage credifedInfoLaboralPage;
 		
 		public CredifedInfoDomiciliariaAvalSteps(CredifedGeneralidadesPage credifedGeneralidadesPage, 
-				CredifedInfoDomiciliariaAvalPage credifedInfoDomiciliariaAvalPage
+				CredifedInfoDomiciliariaAvalPage credifedInfoDomiciliariaAvalPage,
+				CredifedInfoLaboralPage credifedInfoLaboralPage
 				 ) {
 			this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 			this.credifedInfoDomiciliariaAvalPage=credifedInfoDomiciliariaAvalPage;
+			this.credifedInfoLaboralPage=credifedInfoLaboralPage;
 		}
 		
 		@When("Selecciono el tipo de propiedad {string}")
@@ -61,12 +65,15 @@ public class CredifedInfoDomiciliariaAvalSteps {
 		@When("Doy click en ubicar mapa aval")
 		public void clickBtnUbicarMapa()
 		{
+			credifedInfoDomiciliariaAvalPage.scrollReferencia();
 			credifedInfoDomiciliariaAvalPage.clickBtnUbicarMapa().click();
 		}
 		
 		@When("Doy click en aceptar la ubicacion correcta en el mapa aval")
 		public void clickAceptarUbicarMapa()
 		{
+			do {
+			} while (credifedInfoLaboralPage.loadingPage()!=null);
 			credifedInfoDomiciliariaAvalPage.clickAceptarUbicarMapa().click();
 		}
 		
