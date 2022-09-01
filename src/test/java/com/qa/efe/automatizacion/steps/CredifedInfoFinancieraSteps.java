@@ -40,12 +40,17 @@ public class CredifedInfoFinancieraSteps {
 	@When("Ingreso declarado {string}")
 	public void ingresoDeclarado(String opcion)
 	{
+		System.out.println("1"+credifedInfoFinancieraPage.ingresoDeclaradoText().getText());
+		System.out.println("2"+credifedInfoFinancieraPage.ingresoDeclaradoText().getAttribute("textContent"));
+		System.out.println("3"+credifedInfoFinancieraPage.ingresoDeclaradoText().getAttribute("value"));
+		System.out.println("3"+credifedInfoFinancieraPage.ingresoDeclaradoText().getAttribute("innerText"));
 		do {
 			credifedInfoFinancieraPage.ingresoDeclaradoText().click();
 			credifedInfoFinancieraPage.ingresoDeclaradoText().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			credifedInfoFinancieraPage.ingresoDeclaradoText().sendKeys(opcion);
 			SeleniumWaiters.waitSeconds(4);
-		} while (credifedInfoFinancieraPage.ingresoDeclaradoText().getText().equals("0.0"));
+			System.out.println(credifedInfoFinancieraPage.ingresoDeclaradoText().getText());
+		} while (credifedInfoFinancieraPage.ingresoDeclaradoText().getAttribute("value").equals("0.00"));
 	}
 	
 	@When("Registro antiguedad laboral {string} años y {string} meses")

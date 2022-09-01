@@ -69,6 +69,15 @@ public class CredifedInfoLaboralPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:referenciaText"),10);
 	}
+	
+	public WebElement loadingPage() {
+		try {
+			return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='loadingPage'][@style='display: none;']"),10);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
 	public WebElement clickAceptarUbicarMapa()
 	{
 		driver.switchTo().frame(driver.findElement(By.id("framegeo")));	
