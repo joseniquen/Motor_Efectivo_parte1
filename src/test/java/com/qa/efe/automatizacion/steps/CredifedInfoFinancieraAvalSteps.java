@@ -41,7 +41,17 @@ public class CredifedInfoFinancieraAvalSteps {
 	@When("Ingreso declarado aval {string}")
 	public void ingresoDeclarado(String opcion)
 	{
-		credifedInfoFinancieraAvalPage.ingresoDeclarado(opcion);
+		System.out.println("1"+credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getText());
+		System.out.println("2"+credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getAttribute("textContent"));
+		System.out.println("3"+credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getAttribute("value"));
+		System.out.println("3"+credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getAttribute("innerText"));
+		do {
+			credifedInfoFinancieraAvalPage.ingresoDeclaradoText().click();
+			credifedInfoFinancieraAvalPage.ingresoDeclaradoText().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			credifedInfoFinancieraAvalPage.ingresoDeclaradoText().sendKeys(opcion);
+			SeleniumWaiters.waitSeconds(4);
+			System.out.println(credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getText());
+		} while (credifedInfoFinancieraAvalPage.ingresoDeclaradoText().getAttribute("value").equals("0.00"));
 	}
 	
 	@When("Registro antiguedad laboral aval {string} años y {string} meses")
