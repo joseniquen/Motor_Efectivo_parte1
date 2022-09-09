@@ -20,8 +20,7 @@ public class CredifedValidacionRequisitosPage {
   
 	}
 	public List<WebElement> nroListDoc() {
-		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3_1_4_1_3\"]/div[2]/div[2]/div/table/tbody/tr"));
-  
+		return driver.findElements(By.xpath("//*[@id='div_13_1_3_1_4_1_3']/div[3]/div[3]/div/table/tbody/tr"));
 	}
 	public WebElement ckeckListDoc(int opcion) {
 		return SeleniumWaiters.findElement(driver,By.id("switch-toggler-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]"),10);
@@ -37,7 +36,6 @@ public class CredifedValidacionRequisitosPage {
 	}
 	public WebElement cargarArchivo(int opcion) {
 		return SeleniumWaiters.findElement(driver,By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:AddButton"),10);
-  
 	}
 	
 	public List<WebElement> clickSeleccionarArchivo() {

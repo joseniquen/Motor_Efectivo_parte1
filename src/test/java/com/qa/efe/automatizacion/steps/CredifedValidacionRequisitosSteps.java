@@ -31,7 +31,7 @@ public class CredifedValidacionRequisitosSteps {
 	public void ckeckListaDocumentos()
 	{
 		List<WebElement> elements = credifedValidacionRequisitosPage.nroListDoc();
-		System.out.println("Archivos a cargar"+elements.size());
+		System.out.println("Archivos a cargar: "+elements.size());
 		for (int i = 0; i < elements.size(); i++) {
 			if(credifedValidacionRequisitosPage.ckeckListDocExists(i+1).size()!=0) {
 				System.out.println("el doc adjunto si existe");

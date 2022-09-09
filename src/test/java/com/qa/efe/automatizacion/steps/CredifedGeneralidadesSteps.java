@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.util.Iterator;
+
 import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
@@ -115,7 +117,6 @@ public class CredifedGeneralidadesSteps {
 	}
 	@When("Validar que el menu de analizar sea el inicial")
 	public void validarMenuInicialAnalizar() {
-		System.out.println(credifedGeneralidadesPage.validarMenuInicial("07 Datos del Titular").size());
 		if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
 			driver.switchTo().defaultContent();
 			SeleniumWaiters.waitSeconds(1);

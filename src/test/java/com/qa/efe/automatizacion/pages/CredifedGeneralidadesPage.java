@@ -129,6 +129,11 @@ public class CredifedGeneralidadesPage {
 		return driver.findElements(By.xpath("//iframe[@title='"+titleIframe+"']"));
 	}
 	
+	public List<WebElement> listaIframe()
+	{
+		return driver.findElements(By.tagName("iframe"));
+	}
+	
 	public WebElement validarMenuInicialCambiar(String titleIframe)
 	{
 		try {
