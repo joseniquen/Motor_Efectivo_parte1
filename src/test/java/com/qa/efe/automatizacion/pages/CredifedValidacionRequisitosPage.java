@@ -23,19 +23,30 @@ public class CredifedValidacionRequisitosPage {
 		return driver.findElements(By.xpath("//*[@id='div_13_1_3_1_4_1_3']/div[3]/div[3]/div/table/tbody/tr"));
 	}
 	public WebElement ckeckListDoc(int opcion) {
-		return SeleniumWaiters.findElement(driver,By.id("switch-toggler-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]"),10);
+		return SeleniumWaiters.findElement(driver,By.id("switch-off-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]"),10);
   
 	}
 	public List<WebElement> ckeckListDocIsChecked(int opcion) {
-		return driver.findElements(By.xpath("//*[@id='switch-toggler-CheckListRequisitosCV:listaDocumentosTable:correcto1["+opcion+"]']/parent::div/input[@checked='checked']"));
-  
+		return driver.findElements(By.xpath("//*[@id='div_13_1_3_1_4_1_3_1_4_r"+opcion+"']/div/input[@checked='checked']"));
+		
 	}
 	public List<WebElement> ckeckListDocExists(int opcion) {
-		return driver.findElements(By.xpath("//*[@id=\"div_13_1_3_1_4_1_3\"]/div[2]/div[2]/div/table/tbody/tr["+opcion+"]/td[3]//table/tbody/tr/td[3]/div/div/i"));
-  
+		return driver.findElements(By.xpath("//*[@id='div_13_1_3_1_4_1_3']/div[3]/div[3]/div/table/tbody/tr["+opcion+"]/td[3]//table/tbody/tr/td[3]/div/div[3]/i"));
 	}
+	
+	
+	
+	public WebElement ckeckListDocExists2(int opcion) {
+		try {
+			return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_8_1_2_r"+opcion+"']/div[3]/div[3]/div/table/tbody/tr/td[1]/div/div/a"),1);
+		} catch (Exception e) {
+			return null;
+		}
+		
+	}
+	
 	public WebElement cargarArchivo(int opcion) {
-		return SeleniumWaiters.findElement(driver,By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:AddButton"),10);
+		return SeleniumWaiters.findElement(driver,By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:Panel1:Panel_Header1:Horizontal_Layout1:AddButton"),10);
 	}
 	
 	public List<WebElement> clickSeleccionarArchivo() {
@@ -57,7 +68,7 @@ public class CredifedValidacionRequisitosPage {
 	}
 	public WebElement clickCargarArchivo(int opcion) {
 		System.out.println("numero de boton "+opcion);
-		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:UploadButton"),10);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-CheckListRequisitosCV:listaDocumentosTable:documentosSustento["+opcion+"]:Horizontal_Layout4:DocPropertiesModal:DocPropertiesPanel:Vertical_Layout3:UploadButton"),10);
 		 
 	}
 }

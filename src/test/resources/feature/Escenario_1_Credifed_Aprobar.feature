@@ -26,7 +26,7 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854475"
+		When Ingreso instancia de proceso "10857257"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD
@@ -38,12 +38,13 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Validar que el menu de aprobar sea el inicial
 		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
+		
+		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  #When Cambio de iframe a "07 Datos del Titular"
+	  #When Verifico si existe error en consentimiento digital
+	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
-	 	When Cambio de iframe a default
+	 	#When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 5 segundos

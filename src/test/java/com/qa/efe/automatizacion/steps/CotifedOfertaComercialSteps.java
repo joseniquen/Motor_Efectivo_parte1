@@ -190,7 +190,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Titular selecciono fecha de pago {string}")
 	public void titularFechaPago(String fechaPago) {
-		SeleniumWaiters.waitSeconds(3);
+		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
@@ -199,7 +199,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@When("Titular selecciono requisito {string}")
 	public void titularSeleccionoRequisito(String requisito) {
-		SeleniumWaiters.waitSeconds(3);
+		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getRequiereAval().click();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getOpcionRequiereAval(requisito).click();
@@ -215,6 +215,7 @@ public class CotifedOfertaComercialSteps {
 	@When("Elijo campaña {string} con plazo {string}")
 	public void elijoCampaniaConPlazo(String campania,String plazo)
 	{
+		generalidadesPage.cargarDatos();
 		List<String> columns = cotifedOfertaComercialPage.getColumnas()
 				.stream()
 				.map(we -> we.getText())

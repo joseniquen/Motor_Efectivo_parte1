@@ -36,7 +36,7 @@ public class CredifedOfertaComercialPage {
 		return driver.findElements(By.id("div_23_1_1_12_1"));
 	}
 	public WebElement verificarResumenSol() {
-		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10);
+		return SeleniumWaiters.findElement(driver, By.xpath("//p[contains(.,'La CME de la solicitud ha sido aprobada con éxito.')]"),10);
 	}
 	public void scrollAval() {
 		WebElement element= driver.findElement(By.xpath("//div/span[contains(.,'Producto Financiero')]"));
