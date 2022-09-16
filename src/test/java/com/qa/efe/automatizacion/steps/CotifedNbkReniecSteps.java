@@ -34,6 +34,7 @@ public class CotifedNbkReniecSteps {
 	
 	@When("Ingreso informacion de vivienda nbk")
 	public void ingresoInformacionViviendaNbk(DataTable infoVivienda) {
+		cotifedNbkReniecPage.confirmarAlertaIngresoVigente();
 		boolean existePag =  cotifedNbkReniecPage.validarLinkNbkReniec();
 		if(existePag == true) {
 			List<Map<String, String>> items = infoVivienda.asMaps(String.class, String.class);

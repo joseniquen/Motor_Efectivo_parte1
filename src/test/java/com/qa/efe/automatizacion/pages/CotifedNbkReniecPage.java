@@ -17,7 +17,17 @@ public class CotifedNbkReniecPage {
 		this.driver = driverManager.getDriver();
 	}
 	
-	
+	public void confirmarAlertaIngresoVigente()
+	{
+		try {
+			SeleniumWaiters.findElement(driver,By.xpath("//*[@id='swal2-title']"),5);
+			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='OK.']"),10).click();
+			
+		} catch (Exception e) {
+			System.out.println("No se mostró alerta de ingreso vigente");
+		}
+		
+	}
 
 	public boolean validarLinkNbkReniec()
 	{

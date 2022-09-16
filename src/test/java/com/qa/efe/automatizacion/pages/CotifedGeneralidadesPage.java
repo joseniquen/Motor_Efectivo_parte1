@@ -92,7 +92,6 @@ public class CotifedGeneralidadesPage {
 	}
 	
 	public void cargarDatos3() {
-		System.out.println(Pantalla_Carga3());
 		//int j=1;
 		while(Pantalla_Carga3()!=null) {
 			//System.out.println("cargarDatos3: "+j);
