@@ -91,17 +91,15 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						cotifedGeneralidadesPage.cargarDatos();
-						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						SeleniumWaiters.waitSeconds(5);
+						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
 					cotifedConfirmacionSolicitudPage.getClickSeleccionar(i).click();
 					do {
 						if(cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null) {
-							System.out.println("antes del click");
 							cotifedConfirmacionSolicitudPage.getBtnOk().click();
-							System.out.println("despues del click");
 						}
 						cotifedConfirmacionSolicitudPage.getClickInsertar(i).click();
 						try { 
@@ -111,8 +109,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						cotifedGeneralidadesPage.cargarDatos();
-						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						SeleniumWaiters.waitSeconds(5);
+						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);		
 				}
 			}
@@ -132,8 +130,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						cotifedGeneralidadesPage.cargarDatos();
-						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						SeleniumWaiters.waitSeconds(5);
+						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
 					cotifedConfirmacionSolicitudPage.getSelectTipoRequisitos(i,2).click();
@@ -150,8 +148,8 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						cotifedGeneralidadesPage.cargarDatos();
-						System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+						SeleniumWaiters.waitSeconds(5);
+						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}
 			}else {
@@ -169,8 +167,8 @@ public class CotifedConfirmacionSolicitudSteps {
 					} catch (IOException e) {
 						System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 					}
-					cotifedGeneralidadesPage.cargarDatos();
-					System.out.println("Error:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
+					SeleniumWaiters.waitSeconds(5);
+					cotifedGeneralidadesPage.cargarDatos3();
 				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 			}
 		}	
