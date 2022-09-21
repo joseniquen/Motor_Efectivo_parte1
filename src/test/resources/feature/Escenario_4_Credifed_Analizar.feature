@@ -19,17 +19,17 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Efectiva.2022@'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10856579"
+		When Ingreso instancia de proceso "10857717"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |00052000   |EFECTIVO      |10856579     |
+		|CHICLAYO   |00052000   |EFECTIVO      |10857717     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
