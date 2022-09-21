@@ -38,7 +38,7 @@ public class CredifedLoginPage {
 		return driver.findElement(By.xpath("//*[@id=\"div_1_2_1_1\"]/div/div/div/div[1]/a"));
 	}
 	public WebElement clickBtnCerrarSesion() {
-		return driver.findElement(By.xpath("//a[contains(.,'Log Out')]"));
+		return driver.findElement(By.xpath("//a[@ng-click='logOut()']"));
 	}
 
 	

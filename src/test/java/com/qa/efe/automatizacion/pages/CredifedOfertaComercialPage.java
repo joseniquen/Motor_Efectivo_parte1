@@ -24,7 +24,7 @@ public class CredifedOfertaComercialPage {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:AprobarButton"),10);
 	}
 	public WebElement clickAceptar() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:Button1"),10);
+		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:Button1"),20);
 	}
 	public WebElement clickConfirmar() {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-ResumenSolicitudCV1:confirmarButton"),10);

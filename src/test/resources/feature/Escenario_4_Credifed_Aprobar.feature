@@ -19,13 +19,13 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		#SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Efectiva.2022@'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10856556"
+		When Ingreso instancia de proceso "10857717"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Doy click en aprobar solicitud de credito
@@ -36,10 +36,10 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Validar que el menu de aprobar sea el inicial
 		When Cambio de iframe a default
-		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  #When Cambio de iframe a "07 Datos del Titular"
-	  #When Verifico si existe error en consentimiento digital
-	  #When Me dirijo a la pestaña de "Validar Requisitos"
+		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  When Cambio de iframe a "07 Datos del Titular"
+	  When Verifico si existe error en consentimiento digital
+	  When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	#When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
@@ -89,13 +89,14 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Cierro sesion de credifed
 	  When Espero 5 segundos
 	  
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Efectiva.2022@'
 		And Doy click en boton continuar de bpm
 	  When Doy click en procesos
 	  When Ingreso instancia de proceso anterior
 		And Doy click en pulsar para ver instancia
 		When Doy click en aprobar solicitud de credito
+		When Doy click en reclamar tarea
 
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"

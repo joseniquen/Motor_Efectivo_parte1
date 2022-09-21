@@ -16,10 +16,13 @@ public class CredifedGeneralidadesSteps {
 	
 	private WebDriver driver;
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	private CredifedOfertaComercialSteps credifedOfertaComercialSteps;
 	
-	public CredifedGeneralidadesSteps( WebDriverManager driverManager,CredifedGeneralidadesPage credifedGeneralidadesPage) {
+	public CredifedGeneralidadesSteps( WebDriverManager driverManager,CredifedGeneralidadesPage credifedGeneralidadesPage,
+			CredifedOfertaComercialSteps credifedOfertaComercialSteps) {
 		this.driver = driverManager.getDriver();
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+		this.credifedOfertaComercialSteps = credifedOfertaComercialSteps;
 	}
 	
 	@When("Cambio de iframe a {string}")
@@ -105,14 +108,26 @@ public class CredifedGeneralidadesSteps {
 	}
 	@When("Validar que el menu de aprobar sea el inicial")
 	public void validarMenuInicialAprobar() {
-		if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
-			driver.switchTo().defaultContent();
-			SeleniumWaiters.waitSeconds(1);
-			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
-			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
-			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
-			veriricarConsentimientoDigital();
-			credifedGeneralidadesPage.clickMenuInicialAprobar().click();
+		 if(credifedGeneralidadesPage.validarMenuInicialCambiar("Resumen Solicitud")!=null) {
+			 	System.out.println("Resumen Solicitud");
+			 	cambioIframeDefault();
+				cambioIframeNuevo("Paso: Aprobar Solicitud de Crédito");
+				cambioIframeNuevo("Resumen Solicitud");
+				credifedOfertaComercialSteps.clickAceptarSolicitudCredito();
+				cambioIframeDefault();
+				cambioIframeNuevo("View Instance Details");
+				credifedOfertaComercialSteps.verificarSolicitudAprobada();
+				driver.close();
+			}else if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
+			 	System.out.println("validarMenuInicialCambiar");
+				driver.switchTo().defaultContent();
+				SeleniumWaiters.waitSeconds(1);
+				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
+				int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+				driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+				veriricarConsentimientoDigital();
+				SeleniumWaiters.waitSeconds(2);
+				credifedGeneralidadesPage.clickMenuInicialAprobar().click();
 		}
 	}
 	@When("Validar que el menu de analizar sea el inicial")

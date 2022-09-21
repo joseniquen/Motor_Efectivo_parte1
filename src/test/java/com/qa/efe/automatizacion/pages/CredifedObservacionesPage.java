@@ -37,7 +37,7 @@ public class CredifedObservacionesPage {
 		return driver.findElement(By.id("checkbox-input-ObservacionesCV1:permitirAprobacionPorExcepcionCheck"));
 	}
 	public void scrollAprobacionExcepcion() {
-		WebElement element = driver.findElement(By.xpath("//div/button[text()='Aprobación por Excepción']"));
+		WebElement element = driver.findElement(By.xpath("//div/button[text()='Continuar >>']"));
 		credifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement estadoExcepcion(String opcion) {
@@ -45,29 +45,29 @@ public class CredifedObservacionesPage {
 		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-ObservacionesCV1:AprobacionExepcionCV1:estado_SingleSelect']/option[contains(.,'"+opcion+"')]"),10);
 	}
 	public WebElement ingresoComentario() {
-		return driver.findElement(By.id("textarea-textarea-ObservacionesCV1:AprobacionExepcionCV1:comentarioFuncionarioText"));
+		return SeleniumWaiters.findElement(driver,By.id("textarea-textarea-ObservacionesCV1:AprobacionExepcionCV1:comentarioFuncionarioText"),10);
 	}
 	public WebElement ingresoComentarioMesa() {
-		return driver.findElement(By.id("textarea-textarea-ObservacionesCV1:AprobacionExepcionCV1:comentarioAprobadorText"));
+		return SeleniumWaiters.findElement(driver,By.id("textarea-textarea-ObservacionesCV1:AprobacionExepcionCV1:comentarioAprobadorText"),10);
 	}	
 	public void scrollBtnAprobacion() {
 		WebElement element = driver.findElement(By.xpath("//div/button[text()='Enviar Aprobación por Excepción']"));
 		credifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement enviarAprobacionExcepcion() {
-		return driver.findElement(By.id("button-button-ObservacionesCV1:enviarAprobacionExcepcionButton"));
+		return SeleniumWaiters.findElement(driver,By.id("button-button-ObservacionesCV1:enviarAprobacionExcepcionButton"),10);
 	}
 	public WebElement doyClickAceptarAprobacionExcepcion() {
-		return driver.findElement(By.id("modalalert-button-Modal_Alert1"));
+		return SeleniumWaiters.findElement(driver,By.id("modalalert-button-Modal_Alert1"),10);
 	}
 	public void scrollBtnResponderAprobacion() {
 		WebElement element = driver.findElement(By.xpath("//div/button[text()='Responder Aprobación por Excepción']"));
 		credifedGeneralidadesPage.scrollTo(element);
 	}
 	public WebElement responderAprobacionExcepcion() {
-		return driver.findElement(By.id("button-button-Button3"));
+		return SeleniumWaiters.findElement(driver,By.id("button-button-Button3"),10);
 	}
 	public WebElement doyClickResponderAprobacionExcepcion() {
-		return driver.findElement(By.id("modalalert-button-Modal_Alert1"));
+		return SeleniumWaiters.findElement(driver,By.id("modalalert-button-Modal_Alert1"),10);
 	}
 }
