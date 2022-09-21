@@ -31,4 +31,8 @@ public class CotifedLineaProductoPage {
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//button[text()='CONTINUAR']"),10);
 	}
+	public WebElement getCheckOption(String opcion)
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//span[text()='"+opcion+"']"),10);
+	}
 }

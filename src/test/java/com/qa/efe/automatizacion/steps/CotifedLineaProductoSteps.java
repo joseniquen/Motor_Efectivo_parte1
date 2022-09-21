@@ -28,6 +28,13 @@ public class CotifedLineaProductoSteps {
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
 	}
 	
+	@When("Selecciono check {string}")
+	public void seleccionoCheck(String opcion) {
+		generalidadesPage.cargarDatos();
+		cotifedLineaProductoPage.getCheckOption(opcion).click();
+		generalidadesPage.cargarDatos();
+	}
+	
 	@When("Doy click en continuar")
 	public void clickContinuar() {
 		generalidadesPage.cargarDatos();

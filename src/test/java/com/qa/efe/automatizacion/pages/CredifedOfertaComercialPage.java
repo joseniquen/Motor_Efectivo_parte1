@@ -66,4 +66,11 @@ public class CredifedOfertaComercialPage {
 		}
 		
 	}
+	public WebElement getRbtSinDevolucion() {
+		return driver.findElement(By.xpath("//*[@id=\"radiogroup-item-input-AprobacionCreditoCV1:segDesgravamenRadio[0]\"]"));
+	}
+	
+	public WebElement getBtnCmeCliente() {
+		return SeleniumWaiters.findElement(driver, By.xpath("//button[@id='modalalert-button-AprobacionCreditoCV1:mallaCrediticiaModal_Alert']"),15);
+	}
 }

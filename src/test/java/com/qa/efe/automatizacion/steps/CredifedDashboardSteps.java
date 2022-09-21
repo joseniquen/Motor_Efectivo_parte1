@@ -141,4 +141,15 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	
 	}
+	
+	@When ("Ingreso instancia de proceso anterior sin observaciones")
+	public void ingresoInstanciaProcesoAnteriorSinObservaciones() {
+		credifedGeneralidadesPage.cambioIframe("Search Results");
+		credifedDashboardPage.ingresarProceso().sendKeys(integracionStore.cuenta);
+		do {
+			SeleniumWaiters.waitSeconds(5);
+			credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
+		} while (credifedDashboardPage.listVerInstancia().size()!=1);
+		
+	}
 }

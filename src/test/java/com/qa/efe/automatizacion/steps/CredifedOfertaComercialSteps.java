@@ -140,4 +140,23 @@ public class CredifedOfertaComercialSteps {
 		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
 	}
 	
+	@When("Doy click en seguro desgravamen sin devolucion")
+	public void DoyclickSeguroDesgravamenSinnDevolucion()
+	{
+		credifedOfertaComercialPage.scrollAval();
+		System.out.println(credifedOfertaComercialPage.getRbtSinDevolucion());
+		credifedOfertaComercialPage.getRbtSinDevolucion().click();
+	}
+	
+	@When("Verifico CME del cliente")
+	public void verificoCmeCliente()
+	{
+		try {
+			credifedOfertaComercialPage.getBtnCmeCliente().click();
+		} catch (Exception e) {
+			System.out.print("No salió alerta CME");
+		}
+		
+	}
+	
 }
