@@ -47,8 +47,9 @@ public class CredifedOfertaComercialSteps {
 	{
 		credifedOfertaComercialPage.clickAceptar().click();
 		SeleniumWaiters.waitSeconds(10);
+		List<WebElement> element1 = credifedOfertaComercialPage.cuentaConsolicitud();
 		List<WebElement> element = credifedOfertaComercialPage.solicitudAprobadaCorrectamente();
-		if(element.size()!=0) {
+		if(element.size()!=0 || element1.size()!=0) {
 			credifedOfertaComercialPage.clickConfirmar().click();
 		}else {
 			credifedOfertaComercialPage.clickValidarAprobacion().click();	
