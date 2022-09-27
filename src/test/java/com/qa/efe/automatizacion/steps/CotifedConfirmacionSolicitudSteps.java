@@ -48,6 +48,14 @@ public class CotifedConfirmacionSolicitudSteps {
 		}
 	}
 	
+	@When("Elijo departamento {string} provincia {string} distrito {string} y tienda {string}")
+	public void elijoDepartamentoProvinciaDistritoTienda(String departamento,String provincia,String distrito,String tienda) {
+		cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso(departamento).click();
+		cotifedConfirmacionSolicitudPage.getProvinciaTipoDesembolso(provincia).click();
+		cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso(distrito).click();
+		cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso(tienda).click();
+	}
+	
 	@When ("Selecciono la entidad tipo {string}")
 	public void seleccionoEntidadTipoEfectiva(String entidad) {
 		cotifedGeneralidadesPage.cargarDatos();

@@ -35,7 +35,7 @@ public class CotifedNbkReniecSteps {
 	@When("Ingreso informacion de vivienda nbk")
 	public void ingresoInformacionViviendaNbk(DataTable infoVivienda) {
 		cotifedNbkReniecPage.confirmarAlertaIngresoVigente();
-		SeleniumWaiters.waitSeconds(2);
+		SeleniumWaiters.waitSeconds(5);
 		cotifedNbkReniecPage.confirmarAlertaIngresoVigente();
 		boolean existePag =  cotifedNbkReniecPage.validarLinkNbkReniec();
 		if(existePag == true) {
