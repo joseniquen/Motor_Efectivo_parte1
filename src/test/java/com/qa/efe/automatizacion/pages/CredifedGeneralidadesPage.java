@@ -25,7 +25,7 @@ public class CredifedGeneralidadesPage {
 	public void verificarConsentimientoDigital()
 	{
 		try {
-			WebElement verificar =SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_19_1_5_2_2_1']"),10); 
+			WebElement verificar =SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_19_1_5_2_2_1']"),15); 
 			if (verificar.isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
 			} 
