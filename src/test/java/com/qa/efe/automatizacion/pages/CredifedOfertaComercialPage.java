@@ -45,6 +45,9 @@ public class CredifedOfertaComercialPage {
 	public List<WebElement> solicitudAprobadaCorrectamente() {
 		return driver.findElements(By.xpath("//p[contains(.,'Solicitud aprobada exitosamente.')]"));
 	}
+	public List<WebElement> cuentaConsolicitud() {
+		return driver.findElements(By.xpath("//p[contains(.,'Cliente cuenta con una solicitud')]"));
+	}
 	public List<WebElement> verificarSolAprobada() {
 		return driver.findElements(By.xpath("//a[@title='Pulse para trabajar en la tarea']"));
 	}
