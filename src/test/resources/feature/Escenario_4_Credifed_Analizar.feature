@@ -25,11 +25,11 @@ Feature: Escenario 4 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10857717"
+		When Ingreso instancia de proceso "10859319"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |00052000   |EFECTIVO      |10857717     |
+		|CHICLAYO   |00052000   |EFECTIVO      |10859319     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		

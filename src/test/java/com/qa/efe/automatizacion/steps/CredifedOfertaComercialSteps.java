@@ -49,6 +49,9 @@ public class CredifedOfertaComercialSteps {
 		SeleniumWaiters.waitSeconds(10);
 		List<WebElement> element1 = credifedOfertaComercialPage.cuentaConsolicitud();
 		List<WebElement> element = credifedOfertaComercialPage.solicitudAprobadaCorrectamente();
+		System.out.println("element1"+element1.size());
+		System.out.println("element"+element.size());
+
 		if(element.size()!=0 || element1.size()!=0) {
 			credifedOfertaComercialPage.clickConfirmar().click();
 		}
@@ -85,6 +88,8 @@ public class CredifedOfertaComercialSteps {
 			try {
 				credifedOfertaComercialPage.clickAprobar().click();
 			} catch (Exception e) {
+				credifedOfertaComercialPage.clickSimular().click();
+				SeleniumWaiters.waitSeconds(2);
 				credifedOfertaComercialPage.clickSimular().click();
 				SeleniumWaiters.waitSeconds(8);
 				credifedOfertaComercialPage.clickAprobar().click();
