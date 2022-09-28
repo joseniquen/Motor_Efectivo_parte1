@@ -81,12 +81,12 @@ public class CredifedOfertaComercialSteps {
 			System.out.println("cambio de inframe a 22 Oferta Comercial");
 			
 			credifedOfertaComercialPage.clickSimular().click();
-			SeleniumWaiters.waitSeconds(5);
+			SeleniumWaiters.waitSeconds(8);
 			try {
 				credifedOfertaComercialPage.clickAprobar().click();
 			} catch (Exception e) {
 				credifedOfertaComercialPage.clickSimular().click();
-				SeleniumWaiters.waitSeconds(5);
+				SeleniumWaiters.waitSeconds(8);
 				credifedOfertaComercialPage.clickAprobar().click();
 			}
 			
@@ -142,7 +142,11 @@ public class CredifedOfertaComercialSteps {
 	@When("Acepto seguro desgravamen con devolucion")
 	public void AceptoSeguroDesgravamenConDevolucion()
 	{
+		try {
 		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
+		}catch(Exception e){
+			
+		}		
 	}
 	
 	@When("Doy click en seguro desgravamen sin devolucion")
