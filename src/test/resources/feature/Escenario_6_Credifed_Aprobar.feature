@@ -26,7 +26,7 @@ Feature: Escenario 6 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854382"
+		When Ingreso instancia de proceso "10859285"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD
@@ -85,6 +85,7 @@ Feature: Escenario 6 - Como usuario quiero analizar y aprobar una solicitud de c
 	  When Verifico que haya observaciones por edad del cliente
 	  When Selecciono estado "CONFORME" e ingreso comentario aprobador "TODO OK"
 	  When Doy click en el boton responder aprobacion por excepcion
+	  When Espero 10 segundos
 	  When Cambio de iframe a default
 	  When Cierro sesion de credifed
 	  When Espero 5 segundos

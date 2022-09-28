@@ -48,11 +48,8 @@ public class CredifedLoginSteps {
 	}
 	@When("Cierro sesion de credifed")
 	public void cierroSesionCredifed() {
-		System.out.println("1");
 		credifedLoginPage.cerrarSesion().click();
-		System.out.println("2");
 		SeleniumWaiters.waitSeconds(5);
 		credifedLoginPage.clickBtnCerrarSesion().click();
-		System.out.println("3");
 	}
 }

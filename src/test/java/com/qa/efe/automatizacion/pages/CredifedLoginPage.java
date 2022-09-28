@@ -35,7 +35,7 @@ public class CredifedLoginPage {
 		SeleniumWaiters.findElement(driver, By.id("proceed-link"), 10).click();
 	}
 	public WebElement cerrarSesion() {
-		return driver.findElement(By.xpath("//*[@id=\"div_1_2_1_1\"]/div/div/div/div[1]/a"));
+		return driver.findElement(By.xpath("//*[@id='div_1_2_1_1']/div/div/div/div[1]/a"));
 	}
 	public WebElement clickBtnCerrarSesion() {
 		return driver.findElement(By.xpath("//a[@ng-click='logOut()']"));
