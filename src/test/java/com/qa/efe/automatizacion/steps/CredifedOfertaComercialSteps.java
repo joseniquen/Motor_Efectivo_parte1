@@ -27,7 +27,14 @@ public class CredifedOfertaComercialSteps {
 	@When("Doy click en simular")
 	public void clickBtnSimular()
 	{
-		credifedOfertaComercialPage.clickSimular().click();
+		try {
+			credifedOfertaComercialPage.clickSimular().click();
+			credifedOfertaComercialPage.clickSimular().click();
+
+		} catch (Exception e) {
+			credifedOfertaComercialPage.clickSimular().click();
+			credifedOfertaComercialPage.clickSimular().click();
+		}
 	}
 	
 	@When("Doy click en el boton aprobar")

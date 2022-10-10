@@ -25,6 +25,7 @@ public class CotifedLineaProductoSteps {
 	
 	@When("Selecciono linea de producto {string}")
 	public void seleccionoLineaProducto(String lineaProducto) {
+		generalidadesPage.cargarDatos();
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
 	}
 	

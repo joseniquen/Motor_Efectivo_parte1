@@ -39,6 +39,7 @@ public class CotifedConfirmacionSolicitudSteps {
 	public void elijoTipoDesembolso(String tipoDesembolso)
 	{
 		cotifedGeneralidadesPage.cargarDatos();
+		SeleniumWaiters.waitSeconds(5);
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
 		if(tipoDesembolso.equals("Desembolso en otra tienda")) {
 			cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso("LIMA").click();
