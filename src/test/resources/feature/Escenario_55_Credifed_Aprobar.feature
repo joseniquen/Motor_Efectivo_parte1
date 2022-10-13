@@ -1,13 +1,11 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
 Feature: Escenario 55 - Como usuario quiero analizar y aprobar una solicitud de crédito
 
-				 #Modificar obligatoriamente los siguientes inputs:
+    		 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
 		     #Contraseña credifed
 		     #instancia de proceso = Numero de solicitud
-		     #Agencia
-		     #Documento del titular
-		     #Numero de solicitud
+		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
       
   @web
   Scenario: EP055: Línea de producto  Efectivo 

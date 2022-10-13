@@ -70,7 +70,7 @@ public class CotifedNbkReniecSteps {
 				cotifedNbkReniecPage.getAntAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				cotifedNbkReniecPage.getAntAnios().sendKeys(item.get("anti_anios"));
 				cotifedNbkReniecPage.getAntMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-				cotifedNbkReniecPage.getAntMeses().sendKeys(item.get("anti_anios"));
+				cotifedNbkReniecPage.getAntMeses().sendKeys(item.get("anti_mese"));
 			}
 			cotifedNbkReniecPage.getBtnFiltrar().click();
 		}

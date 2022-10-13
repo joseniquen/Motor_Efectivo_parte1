@@ -5,6 +5,7 @@ Feature: Escenario 3 - Como usuario quiero analizar y aprobar una solicitud de c
 		     #Usuario credifed
 		     #Contraseña credifed
 		     #instancia de proceso = Numero de solicitud
+         #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
 		     #Agencia
 		     #Documento del titular
 		     #Numero de solicitud
