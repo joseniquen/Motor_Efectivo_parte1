@@ -186,13 +186,14 @@ public class CotifedOfertaComercialSteps {
 	public void titularIngresoCantidadASolicitar(String cantidadASolicitar) {
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(cantidadASolicitar);
+		generalidadesPage.cargarDatos();
+
 	}
 	
 	@And("Titular selecciono fecha de pago {string}")
 	public void titularFechaPago(String fechaPago) {
-		SeleniumWaiters.waitSeconds(2);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
-		SeleniumWaiters.waitSeconds(2);
+		SeleniumWaiters.waitSeconds(4);
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
 		generalidadesPage.cargarDatos();
 	}
@@ -240,6 +241,7 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Conyuge selecciono tipo de documento {string}")
 	public void conyugeSeleccionoTipoDocumento(String conyugeTipoDocumento) {
+		generalidadesPage.cargarDatos();
 		cotifedOfertaComercialPage.getCbxConyugeTipoDoc().click();
 		cotifedOfertaComercialPage.getOpcionConyugeTipoDoc(conyugeTipoDocumento).click();
 	}

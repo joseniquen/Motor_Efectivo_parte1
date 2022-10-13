@@ -23,8 +23,8 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'Setiembre.2022'
+    When Ingreso mi usuario 'EXT_JNIQUEN'
+		And Ingreso mi contraseña 'Efectiva.2022@'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
@@ -105,7 +105,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Conyuge ingreso antiguedad laboral en meses "11"	
 	 #Titular
 	 And Titular ingreso cantidad a solicitar "5000"
-	 And Titular selecciono fecha de pago "3 de cada mes"
+	 And Titular selecciono fecha de pago "15 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "24 meses"
 	 And Doy click en el boton continuar

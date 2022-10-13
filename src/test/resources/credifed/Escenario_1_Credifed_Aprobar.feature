@@ -24,7 +24,7 @@ Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de c
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10857465"
+		When Ingreso instancia de proceso "10859195"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD

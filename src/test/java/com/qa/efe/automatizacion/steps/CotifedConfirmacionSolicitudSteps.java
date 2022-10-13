@@ -39,6 +39,7 @@ public class CotifedConfirmacionSolicitudSteps {
 	public void elijoTipoDesembolso(String tipoDesembolso)
 	{
 		cotifedGeneralidadesPage.cargarDatos();
+		SeleniumWaiters.waitSeconds(5);
 		cotifedConfirmacionSolicitudPage.getRdbtipoDesembolso(tipoDesembolso).click();
 		if(tipoDesembolso.equals("Desembolso en otra tienda")) {
 			cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso("LIMA").click();
@@ -46,6 +47,14 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso("SANTIAGO DE SURCO").click();
 			cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso("OFICINA PRINCIPAL").click();
 		}
+	}
+	
+	@When("Elijo departamento {string} provincia {string} distrito {string} y tienda {string}")
+	public void elijoDepartamentoProvinciaDistritoTienda(String departamento,String provincia,String distrito,String tienda) {
+		cotifedConfirmacionSolicitudPage.getDepartamentoTipoDesembolso(departamento).click();
+		cotifedConfirmacionSolicitudPage.getProvinciaTipoDesembolso(provincia).click();
+		cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso(distrito).click();
+		cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso(tienda).click();
 	}
 	
 	@When ("Selecciono la entidad tipo {string}")

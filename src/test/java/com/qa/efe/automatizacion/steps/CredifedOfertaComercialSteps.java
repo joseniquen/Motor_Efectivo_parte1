@@ -27,7 +27,14 @@ public class CredifedOfertaComercialSteps {
 	@When("Doy click en simular")
 	public void clickBtnSimular()
 	{
-		credifedOfertaComercialPage.clickSimular().click();
+		try {
+			credifedOfertaComercialPage.clickSimular().click();
+			credifedOfertaComercialPage.clickSimular().click();
+
+		} catch (Exception e) {
+			credifedOfertaComercialPage.clickSimular().click();
+			credifedOfertaComercialPage.clickSimular().click();
+		}
 	}
 	
 	@When("Doy click en el boton aprobar")
@@ -47,10 +54,18 @@ public class CredifedOfertaComercialSteps {
 	{
 		credifedOfertaComercialPage.clickAceptar().click();
 		SeleniumWaiters.waitSeconds(10);
+		List<WebElement> element1 = credifedOfertaComercialPage.cuentaConsolicitud();
 		List<WebElement> element = credifedOfertaComercialPage.solicitudAprobadaCorrectamente();
-		if(element.size()!=0) {
+		System.out.println("element1"+element1.size());
+		System.out.println("element"+element.size());
+
+		if(element.size()!=0 || element1.size()!=0) {
 			credifedOfertaComercialPage.clickConfirmar().click();
-		}else {
+		}
+		if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null){
+			credifedOfertaComercialPage.clickConfirmar().click();
+		}
+		else {
 			credifedOfertaComercialPage.clickValidarAprobacion().click();	
 			SeleniumWaiters.waitSeconds(10);
 			
@@ -76,12 +91,14 @@ public class CredifedOfertaComercialSteps {
 			System.out.println("cambio de inframe a 22 Oferta Comercial");
 			
 			credifedOfertaComercialPage.clickSimular().click();
-			SeleniumWaiters.waitSeconds(5);
+			SeleniumWaiters.waitSeconds(8);
 			try {
 				credifedOfertaComercialPage.clickAprobar().click();
 			} catch (Exception e) {
 				credifedOfertaComercialPage.clickSimular().click();
-				SeleniumWaiters.waitSeconds(5);
+				SeleniumWaiters.waitSeconds(2);
+				credifedOfertaComercialPage.clickSimular().click();
+				SeleniumWaiters.waitSeconds(8);
 				credifedOfertaComercialPage.clickAprobar().click();
 			}
 			
@@ -137,7 +154,11 @@ public class CredifedOfertaComercialSteps {
 	@When("Acepto seguro desgravamen con devolucion")
 	public void AceptoSeguroDesgravamenConDevolucion()
 	{
+		try {
 		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
+		}catch(Exception e){
+			
+		}		
 	}
 	
 	@When("Doy click en seguro desgravamen sin devolucion")

@@ -70,6 +70,7 @@ public class CredifedDashboardSteps {
 	@When("Valido datos de la solicitud de credito")
 	public void validoDatosSolicitudCredito(DataTable seguros) {
 		credifedGeneralidadesPage.iframeDefecto();
+		SeleniumWaiters.waitSeconds(1);
 		credifedGeneralidadesPage.cambioIframe("View Instance Details");
 		List<Map<String, String>> items = seguros.asMaps(String.class, String.class);
 			Map<String, String> item = items.get(0);

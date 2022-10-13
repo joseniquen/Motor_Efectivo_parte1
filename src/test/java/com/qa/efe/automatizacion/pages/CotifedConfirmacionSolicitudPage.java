@@ -20,7 +20,7 @@ public class CotifedConfirmacionSolicitudPage {
 	}
 	public WebElement getRdbtipoDesembolso(String tipoDesembolso)
 	{
-		return  SeleniumWaiters.findElement(driver,By.xpath("//div//label/span[contains(.,'"+tipoDesembolso+"')]"),10);
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div//label/span[contains(.,'"+tipoDesembolso+"')]"),10);
 	}
 	public WebElement getSelectTipoRequisitos(int i,int opcion)
 	{ 	
