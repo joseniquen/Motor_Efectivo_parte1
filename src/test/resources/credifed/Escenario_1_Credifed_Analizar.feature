@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 1 - Como usuario quiero analizar y aprobar una solicitud de crédito
+Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
