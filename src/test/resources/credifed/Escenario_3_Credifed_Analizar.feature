@@ -24,16 +24,16 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2022@'
+		And Ingreso mi contraseña bpm 'Efectiva.2023@'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10859303"
+		When Ingreso instancia de proceso "10867933"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CACERES    |00246824   |EFECTIVO      |10859303     |
+		|CACERES    |00246824   |EFECTIVO      |10867933     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
