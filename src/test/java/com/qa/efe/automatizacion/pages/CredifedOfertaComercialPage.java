@@ -18,7 +18,7 @@ public class CredifedOfertaComercialPage {
 		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
 	}
 	public WebElement clickSimular() {
-		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:btnSimunar"),10);
+		return SeleniumWaiters.findClickableElement(driver, By.id("button-button-AprobacionCreditoCV1:btnSimunar"),10);
 	}
 	public WebElement clickAprobar() {
 		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:AprobarButton"),10);

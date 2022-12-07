@@ -130,6 +130,7 @@ public class CotifedOfertaComercialSteps {
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 				System.out.println("EL CHECK ESTÁ SELECCIONADO");	
 		}	
+		generalidadesPage.cargarDatos();	
 	}
 	
 	@And("Titular ingreso situacion {string}")

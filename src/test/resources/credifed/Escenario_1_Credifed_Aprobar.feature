@@ -24,7 +24,7 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10859195"
+		When Ingreso instancia de proceso "10867918"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD
@@ -35,11 +35,11 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Validar que el menu de aprobar sea el inicial
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
+		#When Cambio de iframe a default
+		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  #When Cambio de iframe a "07 Datos del Titular"
 	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
+	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"

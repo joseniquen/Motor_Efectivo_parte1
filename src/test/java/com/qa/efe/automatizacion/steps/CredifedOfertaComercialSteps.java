@@ -29,10 +29,12 @@ public class CredifedOfertaComercialSteps {
 	{
 		try {
 			credifedOfertaComercialPage.clickSimular().click();
+			SeleniumWaiters.waitSeconds(3);
 			credifedOfertaComercialPage.clickSimular().click();
 
 		} catch (Exception e) {
 			credifedOfertaComercialPage.clickSimular().click();
+			SeleniumWaiters.waitSeconds(3);
 			credifedOfertaComercialPage.clickSimular().click();
 		}
 	}
@@ -61,65 +63,66 @@ public class CredifedOfertaComercialSteps {
 
 		if(element.size()!=0 || element1.size()!=0) {
 			credifedOfertaComercialPage.clickConfirmar().click();
-		}
-		if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null){
-			credifedOfertaComercialPage.clickConfirmar().click();
-		}
-		else {
-			credifedOfertaComercialPage.clickValidarAprobacion().click();	
-			SeleniumWaiters.waitSeconds(10);
-			
-			driver.switchTo().defaultContent();
-			System.out.println("cambio de inframe a default");
-			
-			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
-			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
-			
-			credifedGeneralidadesPage.cambioIframe("09 Información Financiera Titular");	
-			System.out.println("cambio de inframe a 09 Información Financiera Titular");
-			
-			credifedGeneralidadesPage.pestañasMenu("Oferta Comercial").click();
-			SeleniumWaiters.waitSeconds(10);
-			
-			driver.switchTo().defaultContent();
-			System.out.println("cambio de inframe a default");
-			
-			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
-			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
-			
-			credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
-			System.out.println("cambio de inframe a 22 Oferta Comercial");
-			
-			credifedOfertaComercialPage.clickSimular().click();
-			SeleniumWaiters.waitSeconds(8);
-			try {
-				credifedOfertaComercialPage.clickAprobar().click();
-			} catch (Exception e) {
-				credifedOfertaComercialPage.clickSimular().click();
-				SeleniumWaiters.waitSeconds(2);
+		}else {
+			if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null){
+				credifedOfertaComercialPage.clickConfirmar().click();
+			}
+			else {
+				credifedOfertaComercialPage.clickValidarAprobacion().click();	
+				SeleniumWaiters.waitSeconds(10);
+				
+				driver.switchTo().defaultContent();
+				System.out.println("cambio de inframe a default");
+				
+				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
+				System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+				
+				credifedGeneralidadesPage.cambioIframe("09 Información Financiera Titular");	
+				System.out.println("cambio de inframe a 09 Información Financiera Titular");
+				
+				credifedGeneralidadesPage.pestañasMenu("Oferta Comercial").click();
+				SeleniumWaiters.waitSeconds(10);
+				
+				driver.switchTo().defaultContent();
+				System.out.println("cambio de inframe a default");
+				
+				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
+				System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+				
+				credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
+				System.out.println("cambio de inframe a 22 Oferta Comercial");
+				
 				credifedOfertaComercialPage.clickSimular().click();
 				SeleniumWaiters.waitSeconds(8);
-				credifedOfertaComercialPage.clickAprobar().click();
-			}
-			
-			SeleniumWaiters.waitSeconds(7);
-			
-			driver.switchTo().defaultContent();
-			System.out.println("cambio de inframe a default");
-			
-			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
-			System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
-			
-			credifedGeneralidadesPage.cambioIframe("Resumen Solicitud");	
-			System.out.println("cambio de inframe a Resumen Solicitud");
-			
-			verificoPantallaResumenCredito();
-			credifedOfertaComercialPage.clickAceptar().click();
-			SeleniumWaiters.waitSeconds(5);
-			if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null) {
-				credifedOfertaComercialPage.clickConfirmar().click();
-			}else {
-				credifedOfertaComercialPage.clickConfirmar().click();
+				try {
+					credifedOfertaComercialPage.clickAprobar().click();
+				} catch (Exception e) {
+					credifedOfertaComercialPage.clickSimular().click();
+					SeleniumWaiters.waitSeconds(2);
+					credifedOfertaComercialPage.clickSimular().click();
+					SeleniumWaiters.waitSeconds(8);
+					credifedOfertaComercialPage.clickAprobar().click();
+				}
+				
+				SeleniumWaiters.waitSeconds(7);
+				
+				driver.switchTo().defaultContent();
+				System.out.println("cambio de inframe a default");
+				
+				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");	
+				System.out.println("cambio de inframe a Paso: Aprobar Solicitud de Crédito");
+				
+				credifedGeneralidadesPage.cambioIframe("Resumen Solicitud");	
+				System.out.println("cambio de inframe a Resumen Solicitud");
+				
+				verificoPantallaResumenCredito();
+				credifedOfertaComercialPage.clickAceptar().click();
+				SeleniumWaiters.waitSeconds(5);
+				if(credifedOfertaComercialPage.getValidaSolicitudPendientes()!=null) {
+					credifedOfertaComercialPage.clickConfirmar().click();
+				}else {
+					credifedOfertaComercialPage.clickConfirmar().click();
+				}
 			}
 		}
 	}
