@@ -21,8 +21,8 @@ Feature: Escenario 56 - Como usuario quiero analizar una solicitud de crédito e
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Chau2022'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
