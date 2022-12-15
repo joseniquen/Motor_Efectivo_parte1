@@ -118,7 +118,7 @@ public class CredifedGeneralidadesSteps {
 				cambioIframeNuevo("View Instance Details");
 				credifedOfertaComercialSteps.verificarSolicitudAprobada();
 				driver.close();
-			}else if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
+			}else if(credifedGeneralidadesPage.validarMenuInicialCambiar("20 Validación Requisitos")==null) {
 			 	System.out.println("validarMenuInicialCambiar");
 				driver.switchTo().defaultContent();
 				SeleniumWaiters.waitSeconds(1);
