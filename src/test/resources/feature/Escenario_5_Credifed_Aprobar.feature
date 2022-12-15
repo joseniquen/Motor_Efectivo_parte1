@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 56 - Como usuario quiero aprobar una solicitud de crédito en BPM
+Feature: Escenario 5 - Como usuario quiero aprobar una solicitud de crédito en BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -8,39 +8,40 @@ Feature: Escenario 56 - Como usuario quiero aprobar una solicitud de crédito en
 		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
       
   @web
-  Scenario: EP056: Línea de producto  Efectivo 
-  								 - Con llenado de datos adicionales 
-  								 - Con seguros optativos 
-  								 - Desembolso en otra tienda 
-  								 - REENGANCHE 
-  								 - Plan A Desgravamen SDev
+  Scenario: EP005: Línea de producto  Efectivo 
+   								 - Con llenado de datos adicionales 
+   								 - Con seguros optativos 
+   								 - Abono en cuentas de ahorro titular 
+   								 - DELIVERY 
+   								 - Con cónyuge 
+   								 - Plan A Desgravamen SDev 
+   								 - Sin periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Chau2022'
+		And Ingreso mi contraseña bpm 'Efectiva.2022@'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854441"
+		When Ingreso instancia de proceso "10859324"
 		And Doy click en pulsar para ver instancia
-		When Espero 10 segundos  
+		When Espero 10 segundos		
 	  #PROCESO: APROBAR SOLICITUD
 	  When Doy click en aprobar solicitud de credito
 		When Doy click en reclamar tarea
-		When Espero 10 segundos
 		
 		#SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Validar que el menu de aprobar sea el inicial
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
+		When Validar que el menu de aprobar sea el inicial
+		#When Cambio de iframe a default
+		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
+	  #When Cambio de iframe a "07 Datos del Titular"
+	  #When Verifico si existe error en consentimiento digital
+	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
@@ -61,12 +62,12 @@ Feature: Escenario 56 - Como usuario quiero aprobar una solicitud de crédito en
 	  When Espero 5 segundos
 	  When Doy click en boton continuar
 
- 		When Espero 10 segundos
+	  When Espero 10 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "22 Oferta Comercial"
 	  When Espero 10 segundos
-	  When Doy click en seguro desgravamen sin devolucion
+	  
 	  When Doy click en simular
 	  When Doy click en el boton aprobar
 	  
@@ -79,6 +80,3 @@ Feature: Escenario 56 - Como usuario quiero aprobar una solicitud de crédito en
 		When Cambio de iframe a default
 		When Cambio de iframe a "View Instance Details"
 		Then Verifico que la solicitud de credito haya sido aprobada correctamente
-	  
-	  
-	  

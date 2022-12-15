@@ -193,8 +193,8 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Titular selecciono fecha de pago {string}")
 	public void titularFechaPago(String fechaPago) {
-		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		SeleniumWaiters.waitSeconds(4);
+		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
 		generalidadesPage.cargarDatos();
 	}
