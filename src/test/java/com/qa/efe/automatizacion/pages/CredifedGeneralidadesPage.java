@@ -17,7 +17,7 @@ public class CredifedGeneralidadesPage {
 	}
 	public void cambioIframe(String titleIframe)
 	{
-		driver.switchTo().frame(SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),25));
+		driver.switchTo().frame(SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),50));
 	}
 	public void iframeDefecto() {
 		driver.switchTo().defaultContent();

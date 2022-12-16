@@ -23,6 +23,8 @@ Feature: Escenario 2 - Como usuario quiero analizar una solicitud de crédito en
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'ychiroque'
 		And Ingreso mi contraseña bpm 'Metas.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Chau2022'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
@@ -32,6 +34,11 @@ Feature: Escenario 2 - Como usuario quiero analizar una solicitud de crédito en
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
 		|CHICLAYO   |80457804   |EFECTIVO      |10868724     |
+		When Ingreso instancia de proceso "10868796"
+		And Doy click en pulsar para ver instancia
+		When Valido datos de la solicitud de credito
+		|agencia 		|doc_titular|linea_producto|nro_solicitud|
+		|CHICLAYO   |80457804   |EFECTIVO      |10868796     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
