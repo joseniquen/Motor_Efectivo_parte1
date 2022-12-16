@@ -127,7 +127,10 @@ public class CredifedGeneralidadesSteps {
 				driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
 				veriricarConsentimientoDigital();
 				SeleniumWaiters.waitSeconds(2);
+			 	System.out.println("antes del click de requisitos");
 				credifedGeneralidadesPage.clickMenuInicialAprobar().click();
+			 	System.out.println("despues del click de requisitos");
+
 		}
 	}
 	@When("Validar que el menu de analizar sea el inicial")

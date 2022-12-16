@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 5 - Como usuario quiero analizar una solicitud de crédito en BPM
+Feature: Escenario 2 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -11,29 +11,27 @@ Feature: Escenario 5 - Como usuario quiero analizar una solicitud de crédito en
 		     #Numero de solicitud
       
   @web
-  Scenario: EP005: Línea de producto  Efectivo 
-   								 - Con llenado de datos adicionales 
-   								 - Con seguros optativos 
-   								 - Abono en cuentas de ahorro titular 
-   								 - DELIVERY 
-   								 - Con cónyuge 
-   								 - Plan A Desgravamen SDev 
-   								 - Sin periodo de gracia
+  Scenario: EP002: Línea de producto  Efectivo
+									- Sin llenado de datos adicionales 
+									- Sin seguros optativos > a 69 años 
+									- Desembolso efectivo en tienda vendedor 
+									- Plan B Desgravamen CDev 
+									- Con periodo de gracia
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2022@'
+		And Ingreso mi contraseña bpm 'Chau2022'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10859324"
+		When Ingreso instancia de proceso "10868796"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CACERES    |00246824   |EFECTIVO      |10859324     |
+		|CHICLAYO   |80457804   |EFECTIVO      |10868796     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
@@ -52,19 +50,18 @@ Feature: Escenario 5 - Como usuario quiero analizar una solicitud de crédito en
 		When Doy click en boton editar
 		When Selecciono tipo de venta "RECEPTIVA"
 		And Selecciono condicion especial "SIN TESTIGO A RUEGO"
-		And Selecciono estado civil "CASADO(A)"
+		And Selecciono estado civil "SOLTERO(A)"
 		And Selecciono pais de nacimiento "PERU"
 		And Selecciono pais de residencia "PERU"
-		And Doy click en check delivery
 		And Ingreso celular principal "580458721"
-	  And Ingreso celular secundario "423114987"
+		And Ingreso celular secundario "423114987"
 		And Elijo e ingreso telefono fijo "LIMA" "1894651"
 		And Ingreso correo electronico "example_1@gmail.com"
 		And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
 		And Verifico si existe error en consentimiento digital
 		And Doy click en boton continuar
-		
+
 		#SECCION: INFORMACION DOMICILIARIA TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
