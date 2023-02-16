@@ -156,4 +156,8 @@ public class CredifedGeneralidadesPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Validar Requisitos']"),15);
 	}	
+	public WebElement clickMenuInicialExepcion()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Observaciones']"),15);
+	}
 }

@@ -18,13 +18,13 @@ Feature: Escenario 6 - Como usuario quiero aprobar una solicitud de crédito en 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Metas.2024'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854382"
+		When Ingreso instancia de proceso "20554331"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD
@@ -35,11 +35,6 @@ Feature: Escenario 6 - Como usuario quiero aprobar una solicitud de crédito en 
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Validar que el menu de aprobar sea el inicial
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital
-	  When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
@@ -50,52 +45,6 @@ Feature: Escenario 6 - Como usuario quiero aprobar una solicitud de crédito en 
 	  
 	  #SECCION: OBSERVACIONES
 	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-	  When Cambio de iframe a "21 Observaciones"
-	  When Verifico que haya observaciones por edad del cliente
-	  When Doy click en el boton habilitar aprobacion por excepcion
-	  When Selecciono estado "RESUELTA" e ingreso comentario "TODO OK"
-	  When Doy click en el boton enviar aprobacion por excepcion
-	  When Doy click en aceptar aprobacion por excepcion
-	  
-	  #SECCION: APROBACION POR EXCEPCION
-	  When Cambio de iframe a default
-	  When Cierro sesion de credifed
-	  When Espero 10 segundos
-	  And Ingreso mi usuario bpm 'useradmision'
-		And Ingreso mi contraseña bpm 'Efectiva2021'
-	  And Doy click en boton continuar de bpm
-	  When Doy click en procesos
-		When Ingreso instancia de proceso anterior
-		And Doy click en aprobar observaciones
-		When Doy click en aprobacion por excepcion
-		
-		#SECCION: APROBACION POR EXCEPCION
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Aprobación por Excepción"
-	  When Cambio de iframe a "22 Oferta Comercial"
-	  When Me dirijo a la pestaña de "Observaciones"
-	  
-	  #SECCION: APROBAR OBSERVACIONES
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Aprobación por Excepción"
-	  When Cambio de iframe a "21 Observaciones"
-	  When Verifico que haya observaciones por edad del cliente
-	  When Selecciono estado "CONFORME" e ingreso comentario aprobador "TODO OK"
-	  When Doy click en el boton responder aprobacion por excepcion
-	  When Cambio de iframe a default
-	  When Cierro sesion de credifed
-	  When Espero 5 segundos
-	  
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
-		And Doy click en boton continuar de bpm
-	  When Doy click en procesos
-	  When Ingreso instancia de proceso anterior sin observaciones
-		And Doy click en pulsar para ver instancia
-		When Doy click en aprobar solicitud de credito
-
-		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
 	  When Doy click en boton actualizar

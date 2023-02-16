@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -106,13 +108,25 @@ private WebDriver driver;
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ingreso*']/parent::div//input"),10);	
 	}
+	public List<WebElement> getTxtIngresoValida()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Ingreso*']/parent::div//input[@disabled]"));	
+	}
 	public WebElement getTxtAntLabAnios()
 	{
-		return driver.findElement(By.id("yearOfEmployment"));
+		return SeleniumWaiters.findClickableElement(driver,By.id("yearOfEmployment"),10);
+	}
+	public List<WebElement> getTxtAntLabAniosValida()
+	{
+		return  driver.findElements(By.xpath("//*[@id='yearOfEmployment'and @disabled]"));	
 	}
 	public WebElement getTxtAntLabMeses()
 	{
-		return driver.findElement(By.id("monthOfEmployment"));
+		return SeleniumWaiters.findClickableElement(driver,By.id("monthOfEmployment"),10);
+	}
+	public List<WebElement> getTxtAntLabMesesValida()
+	{
+		return  driver.findElements(By.xpath("//*[@id='monthOfEmployment' and  @disabled]"));	
 	}
 	public boolean validarLink()
 	{

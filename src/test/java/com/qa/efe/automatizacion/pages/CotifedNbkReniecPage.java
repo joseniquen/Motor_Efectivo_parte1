@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
 import java.net.URL;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -81,6 +82,10 @@ public class CotifedNbkReniecPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ingreso*']/parent::div//input"),10);	
 	}
+	public List<WebElement> getTxtIngresoValida()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Ingreso*']/parent::div//input[@disabled]"));	
+	}
 	public WebElement getAntAnios()
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ant.Lab.Años*']/parent::div//input"),10);	
@@ -88,6 +93,14 @@ public class CotifedNbkReniecPage {
 	public WebElement getAntMeses()
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Ant.Lab.Meses*']/parent::div//input"),10);	
+	}
+	public List<WebElement> getAntAniosValida()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Ant.Lab.Años*']/parent::div//input[@disabled]"));	
+	}
+	public List<WebElement> getAntMesesValida()
+	{
+		return  driver.findElements(By.xpath("//div/label[text()='Ant.Lab.Meses*']/parent::div//input[@disabled]"));	
 	}
 	public WebElement getBtnFiltrar() 
 	{

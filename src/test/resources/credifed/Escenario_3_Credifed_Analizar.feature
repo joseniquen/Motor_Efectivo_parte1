@@ -77,15 +77,21 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	 	When Selecciono departamento "LIMA"
 	 	And Selecciono provincia "LIMA"
 	 	And Selecciono distrito "SANTIAGO DE SURCO"
-	 	And Ingreso direccion domiciliaria "AV CAMINOS DEL INCA 2412"
-	 	And Doy click en ubicar mapa
+	 	And selecciono via "AVENIDA"
+	 	And Ingreso direccion domiciliaria "AV CAMINOS DEL INCA"
+	 	And Ingreso numero de direccion domiciliaria "2412"	 	
+	 	And Ingreso agrupacion "Sin agrupacion"
+	 	And Ingreso division "Sin division"
+	 	And Ingreso sub division "Sin sub division"
+	 	And Ingreso interior "Sin interior"
+	 	#And Doy click en ubicar mapa
 	 	#Temporal
-	 	When Verifico si existe error en ejecución de servicio
+	 	#When Verifico si existe error en ejecución de servicio
 	 	#Temporal
-	 	When Doy click en aceptar la ubicacion correcta en el mapa
-	  And Cambio de iframe a default
-	 	And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  And Cambio de iframe a "08 Información Domiciliaria Titular"
+	  #When Doy click en aceptar la ubicacion correcta en el mapa
+	  #And Cambio de iframe a default
+	 	#And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  #And Cambio de iframe a "08 Información Domiciliaria Titular"
 	 	And Selecciono tipo de referencia "FRENTE A"
 	 	And Ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
@@ -127,7 +133,13 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	  And Selecciono departamento laboral "LIMA"
 	 	And Selecciono provincia laboral "LIMA"
 	 	And Selecciono distrito laboral "SANTIAGO DE SURCO"
-	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
+	 	And selecciono via laboral "AVENIDA"
+	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA"
+	 	And Ingreso numero de direccion domiciliaria laboral "2412"	 	
+	 	And Ingreso agrupacion laboral "Sin agrupacion"
+	 	And Ingreso division laboral "Sin division"
+	 	And Ingreso sub division laboral "Sin sub division"
+	 	And Ingreso interior laboral "Sin interior"
 	 	And Doy click en ubicar mapa laboral
 	 	#Temporal
 	 	When Verifico si existe error en normalizar direccion

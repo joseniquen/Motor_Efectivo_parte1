@@ -20,15 +20,15 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Metas.2024'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "30387891"
+		And Ingreso numero de documento "43226359"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -40,7 +40,7 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
 				 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
 				When Ingreso informacion de vivienda
 			   | departamento |  provincia  |  distrito  |  tipo_vivienda  |
-			   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |   
+			   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  PROPIA       |   
 			  When Ingreso informacion laboral
 			   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
 			   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
@@ -102,7 +102,7 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion domiciliaria "LIMA"
    And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion domiciliaria
+   #And Doy click en confirmar geopoint de informacion domiciliaria
    And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
    And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
    #Laboral
@@ -115,7 +115,7 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion laboral "LIMA"
    And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion laboral
+   #And Doy click en confirmar geopoint de informacion laboral
    And Selecciono referencia de informacion laboral "PASANDO DEL"
    And Ingreso descripcion de informacion laboral "Parque de la amistad"
 	 

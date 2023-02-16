@@ -18,13 +18,13 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Metas.2024'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10867918"
+		When Ingreso instancia de proceso "20553928"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD

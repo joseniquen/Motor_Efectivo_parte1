@@ -35,6 +35,7 @@ public class CredifedValidacionRequisitosSteps {
 		System.out.println("Archivos a cargar: "+elements.size());
 		int j=2;
 		int k=3;
+		SeleniumWaiters.waitSeconds(5);
 		for (int i = 0; i < elements.size(); i++) {
 			if(credifedValidacionRequisitosPage.ckeckListDocExists2(j)!=null) {
 				System.out.println("el doc adjunto si existe");

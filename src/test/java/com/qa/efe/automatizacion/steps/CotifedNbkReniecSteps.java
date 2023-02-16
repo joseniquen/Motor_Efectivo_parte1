@@ -67,12 +67,30 @@ public class CotifedNbkReniecSteps {
 				cotifedNbkReniecPage.getOpcionPerfil(item.get("perfil")).click();
 				cotifedNbkReniecPage.getCbxOcupacion().click();
 				cotifedNbkReniecPage.getOpcionOcupacion(item.get("ocupacion")).click();
-				cotifedNbkReniecPage.getTxtIngreso().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-				cotifedNbkReniecPage.getTxtIngreso().sendKeys(item.get("ingreso"));
-				cotifedNbkReniecPage.getAntAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-				cotifedNbkReniecPage.getAntAnios().sendKeys(item.get("anti_anios"));
-				cotifedNbkReniecPage.getAntMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-				cotifedNbkReniecPage.getAntMeses().sendKeys(item.get("anti_mese"));
+				System.out.println("1");
+				SeleniumWaiters.waitSeconds(2);
+				if (cotifedNbkReniecPage.getTxtIngresoValida().size()!=0) {
+					System.out.println("CAMPO NO EXISTE");
+				}
+				else{
+					System.out.println("2");
+					cotifedNbkReniecPage.getTxtIngreso().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+					cotifedNbkReniecPage.getTxtIngreso().sendKeys(item.get("ingreso"));
+				}				
+				if (cotifedNbkReniecPage.getAntAniosValida().size()!=0) {
+					System.out.println("CAMPO NO EXISTE");
+				}
+				else{
+					cotifedNbkReniecPage.getAntAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+					cotifedNbkReniecPage.getAntAnios().sendKeys(item.get("ant_laboral_anios"));
+				}
+				if (cotifedNbkReniecPage.getAntMesesValida().size()!=0) {
+					System.out.println("CAMPO NO EXISTE");
+				}
+				else{
+					cotifedNbkReniecPage.getAntMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+					cotifedNbkReniecPage.getAntMeses().sendKeys(item.get("ant_laboral_meses"));
+				}
 			}
 			cotifedNbkReniecPage.getBtnFiltrar().click();
 		}

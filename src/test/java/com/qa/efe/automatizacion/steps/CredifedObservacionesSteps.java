@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
@@ -75,5 +77,10 @@ public class CredifedObservacionesSteps {
 		SeleniumWaiters.waitSeconds(10);
 	}
 
+	@When("Tomo captura de la pagina de Obs {string}")
+	public void extraerAreaAprobadora(String opcion) throws IOException {
+		SeleniumWaiters.waitSeconds(3);
+		credifedObservacionesPage.captura_pantalla("target", "Obs caso "+opcion);
+	}
 	
 }

@@ -133,6 +133,27 @@ public class CredifedGeneralidadesSteps {
 
 		}
 	}
+	@When("Validar que el menu de exepciones sea el inicial")
+	public void validarMenuInicialExepcion() {
+		if(credifedGeneralidadesPage.validarMenuInicialCambiar("21 Observaciones")==null) {
+		 	System.out.println("validarMenuInicialCambiar");
+			driver.switchTo().defaultContent();
+			SeleniumWaiters.waitSeconds(1);
+			credifedGeneralidadesPage.cambioIframe("Aprobación por Excepción");
+			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+			SeleniumWaiters.waitSeconds(2);
+		 	System.out.println("antes del click de requisitos");
+			credifedGeneralidadesPage.clickMenuInicialExepcion().click();
+		 	System.out.println("despues del click de requisitos");
+
+		}else {
+			driver.switchTo().defaultContent();
+			credifedGeneralidadesPage.cambioIframe("Aprobación por Excepción");
+			credifedGeneralidadesPage.cambioIframe("21 Observaciones");
+
+		}
+	}
 	@When("Validar que el menu de analizar sea el inicial")
 	public void validarMenuInicialAnalizar() {
 		if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {

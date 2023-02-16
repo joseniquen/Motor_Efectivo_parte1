@@ -100,7 +100,7 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						SeleniumWaiters.waitSeconds(5);
+						SeleniumWaiters.waitSeconds(7);
 						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
@@ -118,7 +118,7 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						SeleniumWaiters.waitSeconds(5);
+						SeleniumWaiters.waitSeconds(7);
 						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);		
 				}
@@ -139,7 +139,7 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						SeleniumWaiters.waitSeconds(5);
+						SeleniumWaiters.waitSeconds(7);
 						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}else if(integracionStore.tipo_documento.equals("D.N.I.")){
@@ -157,7 +157,7 @@ public class CotifedConfirmacionSolicitudSteps {
 						} catch (IOException e) {
 							System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 						}
-						SeleniumWaiters.waitSeconds(5);
+						SeleniumWaiters.waitSeconds(7);
 						cotifedGeneralidadesPage.cargarDatos3();
 					} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 				}

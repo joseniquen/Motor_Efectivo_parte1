@@ -66,7 +66,16 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.verInstancia().click();
 		}
 	}
-	
+	@When("Doy click en pulsar para ver obs")
+	public void doyClickPulsarParaVerObs()
+	{
+		try {
+			credifedDashboardPage.verObsEn().click();
+		}catch (Exception e) {
+			credifedDashboardPage.verObs().click();
+		}
+		
+	}
 	@When("Valido datos de la solicitud de credito")
 	public void validoDatosSolicitudCredito(DataTable seguros) {
 		credifedGeneralidadesPage.iframeDefecto();
@@ -121,7 +130,17 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickAprobarSolCredito().click();
 		}
 	}
-	
+	@When("Doy click en aprobar excepcion de credito")
+	public void doyClickAprobarExcepcion()
+	{
+		credifedGeneralidadesPage.iframeDefecto();
+        credifedGeneralidadesPage.cambioIframe("View Instance Details");
+		try {
+			credifedDashboardPage.clickAprobarSolCreditoEn().click();
+		}catch (Exception e) {
+			credifedDashboardPage.clickAprobarSolCredito().click();
+		}
+	}
 	@When("doy click en aprobar solicitud de credito")
 	public void click_aprobar_sol_credito()
 	{

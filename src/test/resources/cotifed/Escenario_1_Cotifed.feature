@@ -20,15 +20,15 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Metas.2024'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "44970551"
+		And Ingreso numero de documento "50897630"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -83,8 +83,8 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
-	 And Titular ingreso cantidad a solicitar "2000"
-	 And Titular selecciono fecha de pago "7 de cada mes"
+	 And Titular ingreso cantidad a solicitar "5000"
+	 And Titular selecciono fecha de pago "5 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
@@ -107,7 +107,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion domiciliaria "LIMA"
    And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion domiciliaria
+   #And Doy click en confirmar geopoint de informacion domiciliaria
    And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
    And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
    #Laboral
@@ -120,7 +120,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion laboral "LIMA"
    And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion laboral
+   #And Doy click en confirmar geopoint de informacion laboral
    And Selecciono referencia de informacion laboral "PASANDO DEL"
    And Ingreso descripcion de informacion laboral "Parque de la amistad"
 	 

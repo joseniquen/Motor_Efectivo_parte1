@@ -85,6 +85,7 @@ public class CredifedInfoLaboralSteps {
 	@When("Ingreso la referencia laboral {string}")
 	public void ingresoReferenciaLaboral(String opcion)
 	{
+		credifedInfoLaboralPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresarReferencia().sendKeys(opcion);
 	}
 	
@@ -94,5 +95,42 @@ public class CredifedInfoLaboralSteps {
 		do {
 		} while (credifedInfoLaboralPage.loadingPage()!=null);
 		credifedInfoLaboralPage.clickAceptarUbicarMapa().click();
+	}
+	
+	@When("selecciono via laboral {string}")
+	public void selectVia(String opcion)
+	{
+		credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+	}
+	@When("Ingreso numero de direccion domiciliaria laboral {string}")
+	public void ingresoNumeroDireccionDomiciliaria(String opcion)
+	{
+		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(opcion);
+	}
+	
+	@When("Ingreso agrupacion laboral {string}")
+	public void ingresoAgrupacion(String opcion)
+	{
+		credifedInfoLaboralPage.ingresoAgrupacionLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoLaboralPage.ingresoAgrupacionLaboral().sendKeys(opcion);
+	}
+	@When("Ingreso division laboral {string}")
+	public void ingresoDivision(String opcion)
+	{
+		credifedInfoLaboralPage.ingresoDivisionLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoLaboralPage.ingresoDivisionLaboral().sendKeys(opcion);
+	}
+	@When("Ingreso sub division laboral {string}")
+	public void ingresoSubdivision(String opcion)
+	{
+		credifedInfoLaboralPage.ingresoSubdivisionLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoLaboralPage.ingresoSubdivisionLaboral().sendKeys(opcion);
+	}
+	@When("Ingreso interior laboral {string}")
+	public void ingresoInterior(String opcion)
+	{
+		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(opcion);
 	}
 }

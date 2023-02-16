@@ -30,7 +30,7 @@ public class CredifedInfoDomiciliariaPage {
 	}
 	public WebElement ingresoDireccionDomiciliaria()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:direccionCompleta"),10);
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreViaText"),10);
 	}
 	public WebElement clickBtnUbicarMapa()
 	{
@@ -50,4 +50,31 @@ public class CredifedInfoDomiciliariaPage {
 		driver.switchTo().frame(driver.findElement(By.id("framegeo")));
 		return SeleniumWaiters.findElement(driver, By.xpath("//a[@id='u-accept']"), 20);
 	}
+	public WebElement selectVia(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-InformacionDomiciliariaCV:tipoViaSingle_Select']"),10).click();
+		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-InformacionDomiciliariaCV:tipoViaSingle_Select']/option[text()='"+opcion+"']"),10);
+	}
+	public WebElement ingresoNumeroDireccionDomiciliaria()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:numeroViaText"),10);
+	}
+	public WebElement ingresoAgrupacion()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreAgrupacionText"),10);
+	}
+	public WebElement ingresoDivision()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreDivisionText"),10);
+	}
+	public WebElement ingresoSubdivision()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreSubdivisionText"),10);
+	}
+	public WebElement ingresoInterior()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreInteriorText"),10);
+	}
+
+	
 }

@@ -34,6 +34,14 @@ public class CredifedDashboardPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to view instance.']"),10);
 	}
+	public WebElement verObs()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Pulse para ver la instancia.' and contains(.,'Aprobar Observaciones')]"),10);
+	}
+	public WebElement verObsEn()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Click to view instance.' and contains(.,'Aprobar Observaciones')] "),10);
+	}
 	public List<WebElement> listVerInstancia()
 	{
 		try {
@@ -77,12 +85,12 @@ public class CredifedDashboardPage {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_0']/span[2]"),10);
 	}
 	public WebElement comprueboNroDoc() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_2']/span[2]"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_5']/span[2]"),10);
 	}
 	public WebElement comprueboLineaProducto() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_6']/span[2]"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_9']/span[2]"),10);
 	}
 	public WebElement comprueboNroSol() {
-		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_12']/span[2]"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_15']/span[2]"),10);
 	}
 }

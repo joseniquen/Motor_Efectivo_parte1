@@ -91,9 +91,9 @@ public class CredifedOfertaComercialSteps {
 				
 				credifedGeneralidadesPage.cambioIframe("22 Oferta Comercial");	
 				System.out.println("cambio de inframe a 22 Oferta Comercial");
-				
-				credifedOfertaComercialPage.clickSimular().click();
 				SeleniumWaiters.waitSeconds(8);
+				credifedOfertaComercialPage.clickSimular().click();
+				SeleniumWaiters.waitSeconds(2);
 				try {
 					credifedOfertaComercialPage.clickAprobar().click();
 				} catch (Exception e) {

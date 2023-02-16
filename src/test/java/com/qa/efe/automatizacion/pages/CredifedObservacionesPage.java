@@ -1,8 +1,13 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -69,5 +74,12 @@ public class CredifedObservacionesPage {
 	}
 	public WebElement doyClickResponderAprobacionExcepcion() {
 		return SeleniumWaiters.findElement(driver,By.id("modalalert-button-Modal_Alert1"),10);
+	}
+	public void captura_pantalla(String ruta, String nombre) throws IOException {
+		SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\asientos_caso_n_"+nombre+".png"));
 	}
 }
