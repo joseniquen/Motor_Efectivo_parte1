@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Escenario 2 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
@@ -11,13 +11,13 @@ Feature: Escenario 2 - Como usuario quiero analizar una solicitud de crédito en
 		     #Numero de solicitud
       
   @web
-  Scenario: EP002: Línea de producto  Efectivo
-									- Sin llenado de datos adicionales 
-									- Sin seguros optativos > a 69 años 
-									- Desembolso efectivo en tienda vendedor 
-									- Plan B Desgravamen CDev 
-									- Con periodo de gracia
-
+  Scenario: CP002: Generar solicitud en Motor para Línea de producto  Efectivo
+  								 - Sin llenado de datos adicionales 
+  								 - Sin seguros optativos > a 69 años 
+  								 - Desembolso efectivo en tienda vendedor 
+  								 - Plan B Desgravamen CDev 
+  								 - Con periodo de gracia y Desembolsar en BT
+  								 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 

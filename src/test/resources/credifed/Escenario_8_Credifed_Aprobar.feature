@@ -1,5 +1,5 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 55 - Como usuario quiero aprobar una solicitud de crédito en BPM
+#Author: ychiroque - jniquen
+Feature: Escenario 8 - Como usuario quiero aprobar una solicitud de crédito en BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -8,7 +8,7 @@ Feature: Escenario 55 - Como usuario quiero aprobar una solicitud de crédito en
 		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
       
   @web
-  Scenario: EP055: Línea de producto  Efectivo 
+  Scenario: CP008: Línea de producto  Efectivo 
   								 - Con llenado de datos adicionales 
   								 - Con seguros optativos 
   								 - Desembolso efectivo en tienda vendedor 

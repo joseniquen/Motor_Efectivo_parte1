@@ -1,5 +1,5 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 55 - Como usuario quiero analizar una solicitud de crédito en BPM
+#Author: ychiroque - jniquen
+Feature: Escenario 9 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -11,35 +11,32 @@ Feature: Escenario 55 - Como usuario quiero analizar una solicitud de crédito e
 		     #Numero de solicitud
       
   @web
-  Scenario: EP055: Línea de producto  Efectivo 
+  Scenario: EP009: Generar solicitud en Motor para Línea de producto Efectivo 
   								 - Con llenado de datos adicionales 
   								 - Con seguros optativos 
-  								 - Desembolso efectivo en tienda vendedor 
+  								 - Desembolso en otra tienda 
   								 - REENGANCHE 
-  								 - Plan B Desgravamen CDev
+  								 - Plan A Desgravamen SDev y Desembolsar en BT
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
+		And Ingreso mi contraseña bpm 'Chau2022'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854261"
+		When Ingreso instancia de proceso "10854441"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10854261     |
+		|CHICLAYO   |04645301   |EFECTIVO      |10854441     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
 		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-		When Validar que el menu de analizar sea el inicial
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
@@ -131,7 +128,7 @@ Feature: Escenario 55 - Como usuario quiero analizar una solicitud de crédito e
 	 	And Selecciono provincia laboral "LIMA"
 	 	And Selecciono distrito laboral "SANTIAGO DE SURCO"
 	 	And selecciono via laboral "AVENIDA"
-	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA"
+	 	And Ingreso direccion domiciliaria laboral "AV CAMINOS DEL INCA 2461"
 	 	And Ingreso numero de direccion domiciliaria laboral "2412"	 	
 	 	And Ingreso agrupacion laboral "Sin agrupacion"
 	 	And Ingreso division laboral "Sin division"

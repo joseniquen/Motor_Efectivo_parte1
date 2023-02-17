@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
@@ -11,12 +11,12 @@ Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en
 		     #Numero de solicitud
       
   @web
-  Scenario: EP001: Línea de producto  Efectivo
+  Scenario: CP001: Generar solicitud en Motor para Línea de producto  Efectivo 
 				  				- Con llenado de datos adicionales 
 				  				- Con seguros optativos 
 				  				- Desembolso efectivo en tienda vendedor 
 				  				- Plan A Desgravamen SDev 
-				  				- Sin periodo de gracia
+				  				- Sin periodo de gracia y Desembolsar en BT
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
@@ -27,12 +27,12 @@ Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20553928"
+		When Ingreso instancia de proceso "20554743"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |50897630   |EFECTIVO      |20553928     |
+		|CHICLAYO   |14906044   |EFECTIVO      |20554743     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		

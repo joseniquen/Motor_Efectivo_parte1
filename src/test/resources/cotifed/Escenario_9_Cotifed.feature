@@ -1,5 +1,5 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
-Feature: Escenario 56 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
+#Author: ychiroque - jniquen
+Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
 	       #Usuario cotifed
@@ -11,12 +11,12 @@ Feature: Escenario 56 - Como usuario quiero ingresar un DNI de un cliente y gene
 	       #Campaña y plazo de cliente
 
   @web
-  Scenario: EP056: Línea de producto  Efectivo 
+  Scenario: EP009: Generar solicitud en Motor para Línea de producto Efectivo 
   								 - Con llenado de datos adicionales 
   								 - Con seguros optativos 
   								 - Desembolso en otra tienda 
   								 - REENGANCHE 
-  								 - Plan A Desgravamen SDev
+  								 - Plan A Desgravamen SDev y Desembolsar en BT
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed

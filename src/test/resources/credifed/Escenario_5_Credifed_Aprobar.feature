@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Escenario 5 - Como usuario quiero aprobar una solicitud de crédito en BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
@@ -8,15 +8,15 @@ Feature: Escenario 5 - Como usuario quiero aprobar una solicitud de crédito en 
 		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
       
   @web
-  Scenario: EP005: Línea de producto  Efectivo 
-   								 - Con llenado de datos adicionales 
-   								 - Con seguros optativos 
-   								 - Abono en cuentas de ahorro titular 
-   								 - DELIVERY 
-   								 - Con cónyuge 
-   								 - Plan A Desgravamen SDev 
-   								 - Sin periodo de gracia
-
+  Scenario: CP005: Generar solicitud en Motor para Línea de producto Efectivo 
+  								 - Con llenado de datos adicionales 
+  								 - Con seguros optativos 
+  								 - Abono en cuentas de ahorro titular 
+  								 - DELIVERY 
+  								 - Con cónyuge 
+  								 - Plan A Desgravamen SDev 
+  								 - Sin periodo de gracia y Desembolsar en BT
+  								 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 

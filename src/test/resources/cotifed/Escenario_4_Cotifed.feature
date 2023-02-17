@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
@@ -11,11 +11,11 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Campaña y plazo de cliente
 
   @web
-  Scenario: EP004: Línea de producto  Efectivo 
-  								 - Sin llenado de datos adicionales 
-  								 -  Sin seguros > a 78 años 
-  								 - Abono en cuentas de ahorro titular 
-  								 - Sin periodo de gracia
+  Scenario: CP004: Generar solicitud en Motor para Línea de producto  Efectivo
+                   - Sin llenado de datos adicionales 
+                   - Sin seguros > a 78 años 
+                   - Abono en cuentas de ahorro titular 
+                   - Sin periodo de gracia y Desembolsar en BT
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed

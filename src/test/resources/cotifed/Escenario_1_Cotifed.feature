@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y generar una solicitud de crédito para BPM
 
     		 #Modificar obligatoriamente los siguientes inputs:
@@ -11,12 +11,12 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Campaña y plazo de cliente
 
   @web
-  Scenario: EP001: Línea de producto  Efectivo
+  Scenario: CP001: Generar solicitud en Motor para Línea de producto  Efectivo 
 				  				- Con llenado de datos adicionales 
 				  				- Con seguros optativos 
 				  				- Desembolso efectivo en tienda vendedor 
 				  				- Plan A Desgravamen SDev 
-				  				- Sin periodo de gracia
+				  				- Sin periodo de gracia y Desembolsar en BT
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
@@ -28,7 +28,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "50897630"
+		And Ingreso numero de documento "14906044"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -43,7 +43,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 			   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |   
 			  When Ingreso informacion laboral
 			   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
-			   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
+			   | FORMAL - DEPENDIENTE | ABOGADO   |  20000     |  20                | 11                |
 	      #SECCIÓN: NBK-RENIEC
 			   When Ingreso informacion de vivienda nbk
 			   	|  departamento  |  provincia  |  distrito  |  tipo_de_vivienda |
@@ -51,7 +51,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 			   	
 			   When Ingreso informacion laboral nbk
 			   	|       perfil            |  ocupacion  | ingreso | anti_anios | anti_mese |
-			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 3000    |     10     |    11     |
+			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 20000    |     10     |    11     |
 	 #SECCIÓN: LINEA DE PRODUCTO
 	 When Selecciono linea de producto "EFECTIVO"
 	 And Confirmo alerta
@@ -62,12 +62,12 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
  	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 #|Seguro de Salud 12 Meses|
+	 |Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
-	 |Contigo Familia plan Básico|
+	 #|Contigo Familia plan Básico|
 	 #|Contigo Familia plan Plus|
 	 #|Accidentes Personales|
 	 #|Seguro Oncológico|
@@ -83,7 +83,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
-	 And Titular ingreso cantidad a solicitar "5000"
+	 And Titular ingreso cantidad a solicitar "2500"
 	 And Titular selecciono fecha de pago "5 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
