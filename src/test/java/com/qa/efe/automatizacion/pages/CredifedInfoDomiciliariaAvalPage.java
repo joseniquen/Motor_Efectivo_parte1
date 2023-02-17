@@ -32,7 +32,7 @@ public class CredifedInfoDomiciliariaAvalPage {
 	}
 	public WebElement ingresoDireccionDomiciliaria()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:direccionCompleta"),10);
+		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:nombreViaText"),10);
 	}
 	public void scrollReferencia() {
 		WebElement element = SeleniumWaiters.findElement(driver,By.xpath("//span[text()='Referencia']"),10);

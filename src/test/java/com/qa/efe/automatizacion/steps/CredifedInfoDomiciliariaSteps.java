@@ -2,17 +2,26 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CredifedDatosTitularPage;
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoDomiciliariaPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
+import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
 import io.cucumber.java.en.When;
 
 public class CredifedInfoDomiciliariaSteps {
 	private CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage;
 	private CredifedInfoLaboralPage credifedInfoLaboralPage;
-	public CredifedInfoDomiciliariaSteps(CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage,CredifedInfoLaboralPage credifedInfoLaboralPage) {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	private CredifedDatosTitularPage credifedDatosTitularPage;
+
+	public CredifedInfoDomiciliariaSteps(CredifedInfoDomiciliariaPage credifedInfoDomiciliariaPage,CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage,CredifedDatosTitularPage credifedDatosTitularPage) {
 		this.credifedInfoDomiciliariaPage = credifedInfoDomiciliariaPage;
 		this.credifedInfoLaboralPage=credifedInfoLaboralPage;
+		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
+		this.credifedDatosTitularPage=credifedDatosTitularPage;
+
 	}
 	
 	@When("Selecciono departamento {string}")
@@ -69,7 +78,23 @@ public class CredifedInfoDomiciliariaSteps {
 	@When("selecciono via {string}")
 	public void selectVia(String opcion)
 	{
-		credifedInfoDomiciliariaPage.selectVia(opcion).click();
+		try {
+			credifedInfoDomiciliariaPage.selectVia(opcion).click();
+		} catch (Exception e) {
+			credifedGeneralidadesPage.clickBtnGuardar();
+			try {
+				credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
+			} catch (Exception a) {
+				System.out.println("Pasa ok");
+			}
+			credifedInfoDomiciliariaPage.refreshPage();
+			SeleniumWaiters.waitSeconds(6);
+			credifedGeneralidadesPage.iframeDefecto();
+			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+			credifedGeneralidadesPage.cambioIframe("08 Información Domiciliaria Titular");
+			credifedDatosTitularPage.clickBtnEditar().click();
+			credifedInfoDomiciliariaPage.selectVia(opcion).click();
+		}
 	}
 	@When("Ingreso numero de direccion domiciliaria {string}")
 	public void ingresoNumeroDireccionDomiciliaria(String opcion)

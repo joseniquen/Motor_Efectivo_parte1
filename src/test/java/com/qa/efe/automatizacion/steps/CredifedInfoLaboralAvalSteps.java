@@ -2,6 +2,7 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralAvalPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
@@ -9,11 +10,14 @@ import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import io.cucumber.java.en.When;
 
 public class CredifedInfoLaboralAvalSteps {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
 	private CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage;
 	private CredifedInfoLaboralPage credifedInfoLaboralPage;
-	public CredifedInfoLaboralAvalSteps(CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage,CredifedInfoLaboralPage credifedInfoLaboralPage) {
+	public CredifedInfoLaboralAvalSteps(CredifedInfoLaboralAvalPage credifedInfoLaboralAvalPage,CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.credifedInfoLaboralAvalPage = credifedInfoLaboralAvalPage;
 		this.credifedInfoLaboralPage=credifedInfoLaboralPage;
+		this.credifedGeneralidadesPage=credifedGeneralidadesPage;
+
 	}
 	@When("Ingreso centro de trabajo aval {string}")
 	public void ingresoCentroTrabajo(String opcion) {
@@ -96,5 +100,25 @@ public class CredifedInfoLaboralAvalSteps {
 		do {
 		} while (credifedInfoLaboralPage.loadingPage()!=null);
 		credifedInfoLaboralAvalPage.clickAceptarUbicarMapa().click();
+	}
+	@When("selecciono via laboral laboral aval {string}")
+	public void selectVia(String opcion)
+	{
+		try {
+			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+		} catch (Exception e) {
+			credifedGeneralidadesPage.clickBtnGuardar();
+			try {
+				credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
+			} catch (Exception a) {
+				System.out.println("Pasa ok");
+			}
+			credifedInfoLaboralPage.refreshPage();
+			SeleniumWaiters.waitSeconds(6);
+			credifedGeneralidadesPage.iframeDefecto();
+			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+			credifedGeneralidadesPage.cambioIframe("18 Información Laboral Aval");
+			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+		}
 	}
 }

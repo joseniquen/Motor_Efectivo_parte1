@@ -75,6 +75,9 @@ public class CredifedInfoDomiciliariaPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-InformacionDomiciliariaCV:nombreInteriorText"),10);
 	}
+	public void refreshPage()
+	{
+		driver.navigate().refresh();
+	}
 
-	
 }

@@ -176,7 +176,7 @@ public class CotifedConfirmacionSolicitudSteps {
 					} catch (IOException e) {
 						System.out.println("Error dentro del catch:" +cotifedConfirmacionSolicitudPage.getErrorSharePoint4());
 					}
-					SeleniumWaiters.waitSeconds(5);
+					SeleniumWaiters.waitSeconds(6);
 					cotifedGeneralidadesPage.cargarDatos3();
 				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 			}

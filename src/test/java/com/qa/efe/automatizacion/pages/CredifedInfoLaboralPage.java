@@ -109,4 +109,8 @@ public class CredifedInfoLaboralPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:nombreInteriorText"),10);
 	}
+	public void refreshPage()
+	{
+		driver.navigate().refresh();
+	}
 }

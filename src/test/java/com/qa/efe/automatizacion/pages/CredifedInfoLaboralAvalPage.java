@@ -54,7 +54,7 @@ public class CredifedInfoLaboralAvalPage {
 	}
 	public WebElement ingresoDireccionDomiciliaria()
 	{
-		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:direccionPrincipalCompleta"),10);
+		return SeleniumWaiters.findElement(driver,By.id("text-input-UbicacionGeograficaCV1:nombreViaText"),10);
 	}
 	public WebElement clickBtnUbicarMapa()
 	{

@@ -27,12 +27,12 @@ Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20554743"
+		When Ingreso instancia de proceso "20554824"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |14906044   |EFECTIVO      |20554743     |
+		|CHICLAYO   |14906044   |EFECTIVO      |20554824     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		

@@ -2,6 +2,7 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
@@ -9,8 +10,12 @@ import io.cucumber.java.en.When;
 
 public class CredifedInfoLaboralSteps {
 	private CredifedInfoLaboralPage credifedInfoLaboralPage;
-	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage) {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+
+	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.credifedInfoLaboralPage = credifedInfoLaboralPage;
+		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+
 	}
 	
 	@When("Ingreso centro de trabajo {string}")
@@ -100,7 +105,22 @@ public class CredifedInfoLaboralSteps {
 	@When("selecciono via laboral {string}")
 	public void selectVia(String opcion)
 	{
-		credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+		try {
+			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+		} catch (Exception e) {
+			credifedGeneralidadesPage.clickBtnGuardar();
+			try {
+				credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
+			} catch (Exception a) {
+				System.out.println("Pasa ok");
+			}			
+			credifedInfoLaboralPage.refreshPage();
+			SeleniumWaiters.waitSeconds(6);
+			credifedGeneralidadesPage.iframeDefecto();
+			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+			credifedGeneralidadesPage.cambioIframe("10 Información Laboral Titular");
+			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+		}
 	}
 	@When("Ingreso numero de direccion domiciliaria laboral {string}")
 	public void ingresoNumeroDireccionDomiciliaria(String opcion)

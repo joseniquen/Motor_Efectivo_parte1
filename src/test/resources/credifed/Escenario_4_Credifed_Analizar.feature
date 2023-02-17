@@ -20,17 +20,17 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2022@'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Metas.2024'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10859319"
+		When Ingreso instancia de proceso "20554823"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |00052000   |EFECTIVO      |10859319     |
+		|CHICLAYO   |50897630   |EFECTIVO      |20554823     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
@@ -38,6 +38,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		#SECCION: DATOS DEL TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+		When Verifico si existe error en consentimiento digital
 		When Validar que el menu de analizar sea el inicial
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
@@ -187,12 +188,18 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	 	When Selecciono departamento aval "LIMA"
 	 	And Selecciono provincia aval "LIMA"
 	 	And Selecciono distrito aval "SANTIAGO DE SURCO"
-	 	And Ingreso direccion domiciliaria aval "AV CAMINOS DEL INCA 2412"
-	 	And Doy click en ubicar mapa aval
-	 	When Doy click en aceptar la ubicacion correcta en el mapa aval
-	  And Cambio de iframe a default
-	 	And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  And Cambio de iframe a "16 Información Domiciliaria Aval"
+	 	And selecciono via laboral aval "AVENIDA"
+	 	And Ingreso direccion domiciliaria aval "AV CAMINOS DEL INCA"
+	 	And Ingreso numero de direccion domiciliaria laboral "2412"	 	
+	 	And Ingreso agrupacion laboral "Sin agrupacion"
+	 	And Ingreso division laboral "Sin division"
+	 	And Ingreso sub division laboral "Sin sub division"
+	 	And Ingreso interior laboral "Sin interior"
+	 	#And Doy click en ubicar mapa aval
+	 	#When Doy click en aceptar la ubicacion correcta en el mapa aval
+	  #And Cambio de iframe a default
+	 	#And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  #And Cambio de iframe a "16 Información Domiciliaria Aval"
 	 	And Selecciono tipo de referencia aval "FRENTE A"
 	 	And Ingreso la referencia aval "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
@@ -229,14 +236,20 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	  And Selecciono departamento laboral aval "LIMA"
 	 	And Selecciono provincia laboral aval "LIMA"
 	 	And Selecciono distrito laboral aval "SANTIAGO DE SURCO"
-	 	And Ingreso direccion domiciliaria laboral aval "AV CAMINOS DEL INCA 2461"
-	 	And Doy click en ubicar mapa laboral aval
-	 	Then Doy click en aceptar la ubicacion correcta en el mapa laboral aval
+	 	And selecciono via laboral laboral aval "AVENIDA"
+	 	And Ingreso direccion domiciliaria laboral aval "AV CAMINOS DEL INCA"
+	 	And Ingreso numero de direccion domiciliaria laboral "2412"	 	
+	 	And Ingreso agrupacion laboral "Sin agrupacion"
+	 	And Ingreso division laboral "Sin division"
+	 	And Ingreso sub division laboral "Sin sub division"
+	 	And Ingreso interior laboral "Sin interior"
+	 	#And Doy click en ubicar mapa laboral aval
+	 	#Then Doy click en aceptar la ubicacion correcta en el mapa laboral aval
 	 	
 	 	#SECCION: INFORMACION LABORAL AVAL
-	 	When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "18 Información Laboral Aval"
+	 	#When Cambio de iframe a default
+		#When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  #When Cambio de iframe a "18 Información Laboral Aval"
 	 	And Selecciono tipo de referencia laboral aval "FRENTE A"
 	 	And Ingreso la referencia laboral aval "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos

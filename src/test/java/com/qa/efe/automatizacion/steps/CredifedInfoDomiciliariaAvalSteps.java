@@ -6,6 +6,7 @@ import com.qa.efe.automatizacion.pages.CredifedDatosAvalPage;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoDomiciliariaAvalPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
+import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
 import io.cucumber.java.en.When;
 
@@ -88,6 +89,25 @@ public class CredifedInfoDomiciliariaAvalSteps {
 		{
 			credifedInfoDomiciliariaAvalPage.ingresarReferencia().sendKeys(opcion);
 		}
-		
+		@When("selecciono via laboral aval {string}")
+		public void selectVia(String opcion)
+		{
+			try {
+				credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+			} catch (Exception e) {
+				credifedGeneralidadesPage.clickBtnGuardar();
+				try {
+					credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
+				} catch (Exception a) {
+					System.out.println("Pasa ok");
+				}
+				credifedInfoLaboralPage.refreshPage();
+				SeleniumWaiters.waitSeconds(6);
+				credifedGeneralidadesPage.iframeDefecto();
+				credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+				credifedGeneralidadesPage.cambioIframe("16 Información Domiciliaria Aval");
+				credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+			}
+		}
 		
 }
