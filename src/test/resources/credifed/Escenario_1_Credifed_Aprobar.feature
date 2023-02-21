@@ -24,7 +24,7 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20553928"
+		When Ingreso instancia de proceso "20554895"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD
