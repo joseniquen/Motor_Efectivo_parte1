@@ -11,12 +11,12 @@ Feature: Escenario 8 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Campaña y plazo de cliente
 
   @web
-  Scenario: CP008: Línea de producto  Efectivo 
-  								 - Con llenado de datos adicionales 
-  								 - Con seguros optativos 
-  								 - Desembolso efectivo en tienda vendedor 
-  								 - REENGANCHE 
-  								 - Plan B Desgravamen CDev
+  Scenario: CP008: Generar solicitud en Motor para Línea de producto Efectivo
+                   - Con llenado de datos adicionales 
+                   - Con seguros optativos 
+                   - Desembolso efectivo en tienda vendedor 
+                   - REENGANCHE 
+                   - Plan B Desgravamen CDev y Desembolsar en BT
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
