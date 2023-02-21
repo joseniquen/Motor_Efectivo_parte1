@@ -12,8 +12,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Campaña y plazo de cliente
 
   @web
-  Scenario: CP003: Línea de producto  Efectivo 
-									 Generar solicitud en Motor para Línea de producto  Efectivo 
+  Scenario: CP003: Generar solicitud en Motor para Línea de producto Efectivo 
 									 - Con llenado de datos adicionales 
 									 - Con seguros optativos 
 									 - Abono en cuentas de ahorro titular 
