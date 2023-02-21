@@ -5,7 +5,6 @@ Feature: Escenario 2 - Como usuario quiero ingresar un DNI de un cliente y gener
 	       #Usuario cotifed
 	       #Contraseña cotifed
 	       #Documento del cliente
-	       #Seguros del cliente
 	       #Importe a solicitar
 	       #Dia de pago
 	       #Campaña y plazo de cliente
