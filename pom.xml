@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qa.automatizacion</groupId>
+  <groupId>com.qa.efe.automatizacion</groupId>
   <artifactId>Motor_Efectivo_parte1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-	<properties>
+
+  	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -21,14 +21,22 @@
 			<version>${io.cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- <dependency>
+			<groupId>io.github.sukgu</groupId>
+		  <artifactId>automation</artifactId>
+		  <version>0.0.4</version>
+		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>${io.cucumber.version}</version>
 		</dependency>
-
+		<dependency>
+		   <groupId>commons-io</groupId>
+		   <artifactId>commons-io</artifactId>
+		   <version>2.6</version>
+		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
@@ -79,11 +87,6 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
-        </dependency>
-        <dependency>
-        	<groupId>com.qa.efe.automatizacion</groupId>
-        	<artifactId>BanTotal_Bridge_parte1</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
         </dependency>
 	</dependencies>
 
