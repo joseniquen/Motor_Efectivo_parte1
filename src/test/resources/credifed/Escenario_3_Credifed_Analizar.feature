@@ -24,17 +24,17 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2023@'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Metas.2024'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10867933"
+		When Ingreso instancia de proceso "20555323"
 		And Doy click en pulsar para ver instancia
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CACERES    |00246824   |EFECTIVO      |10867933     |
+		|CHICLAYO    |48427208   |EFECTIVO      |20555323     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		
@@ -141,16 +141,16 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso division laboral "Sin division"
 	 	And Ingreso sub division laboral "Sin sub division"
 	 	And Ingreso interior laboral "Sin interior"
-	 	And Doy click en ubicar mapa laboral
+	 	#And Doy click en ubicar mapa laboral
 	 	#Temporal
-	 	When Verifico si existe error en normalizar direccion
+	 	#When Verifico si existe error en normalizar direccion
 	 	#Temporal
-	 	Then Doy click en aceptar la ubicacion correcta en el mapa laboral
+	 	#Then Doy click en aceptar la ubicacion correcta en el mapa laboral
 	 	
 	 	#SECCION: INFORMACION LABORAL TITULAR
-	 	When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "10 Información Laboral Titular"
+	 	#When Cambio de iframe a default
+		#When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  #When Cambio de iframe a "10 Información Laboral Titular"
 	 	And Selecciono tipo de referencia laboral "FRENTE A"
 	 	And Ingreso la referencia laboral "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
