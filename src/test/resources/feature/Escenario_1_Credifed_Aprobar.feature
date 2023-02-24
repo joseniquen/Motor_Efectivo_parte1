@@ -5,7 +5,7 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		     #Usuario credifed
 		     #Contraseña credifed
 		     #instancia de proceso = Numero de solicitud
-		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta targetd
+		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
       
   @web
   Scenario: CP001: Generar solicitud en Motor para Línea de producto  Efectivo 
@@ -24,7 +24,7 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20554895"
+		When Ingreso instancia de proceso "20555289"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD

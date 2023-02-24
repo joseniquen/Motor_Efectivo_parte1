@@ -23,15 +23,15 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'EXT_JNIQUEN'
-		And Ingreso mi contraseña 'Efectiva.2023@'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Metas.2024'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
-		When Selecciono tienda "CACERES" 
+		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "00246824"
+		And Ingreso numero de documento "48427208"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -40,13 +40,13 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 			 	#SECCIÓN: NBK-NO-RENIEC
 				When Ingreso datos personales
 				 | primer_nombre  |   segundo_nombre   |   apellido_paterno  |  apellido_materno |  sexo      |  estado_civil  |  fecha_nac   |
-				 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  12/12/1942  |
+				 | Pedro          |   Carlos           |   Gonzales          |  Ramirez          |  MASCULINO |  SOLTERO(A)    |  01/01/1980  |
 				When Ingreso informacion de vivienda
 			   | departamento |  provincia  |  distrito  |  tipo_vivienda  |
 			   | LAMBAYEQUE   |  CHICLAYO   |  CHICLAYO  |  FAMILIAR       |   
 			  When Ingreso informacion laboral
 			   | situacion            | ocupacion |  ingreso  |  ant_laboral_anios | ant_laboral_meses |
-			   | FORMAL - DEPENDIENTE | ABOGADO   |  3000     |  20                | 11                |
+			   | FORMAL - DEPENDIENTE | ABOGADO   |  1025     |  30                | 7                 |
 	   	  #SECCIÓN: NBK-RENIEC
 			   When Ingreso informacion de vivienda nbk
 			   	|  departamento  |  provincia  |  distrito  |  tipo_de_vivienda |
@@ -54,7 +54,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 			   	
 			   When Ingreso informacion laboral nbk
 			   	|       perfil            |  ocupacion  | ingreso | anti_anios | anti_mese |
-			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 3000    |     10     |    11     |
+			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 1025    |     30     |    7     |
 	 #SECCIÓN: LINEA DE PRODUCTO
 	 When Selecciono linea de producto "EFECTIVO"
 	 And Confirmo alerta
@@ -67,7 +67,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono seguros
 	 |seguros|
 	 #|Seguro de Salud 12 Meses|
-	 |Seguro de Salud 24 Meses|
+	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
@@ -79,33 +79,33 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Confirmo alerta
 	 And Titular selecciono pais "PERU"
 	 And Titular selecciono tipo de vivienda "PROPIA"
-	 And Titular ingreso antiguedad domicialiaria en años "45"
-	 And Titular ingreso antiguedad domicialiaria en meses "11"
-	 And Titular ingreso declarado "8000"
+	 And Titular ingreso antiguedad domicialiaria en años "10"
+	 And Titular ingreso antiguedad domicialiaria en meses "2"
+	 And Titular ingreso declarado "1025"
 	 And Titular doy check a usar ingreso declarado
-	 And Titular ingreso situacion "FORMAL - DEPENDIENTE"
+	 And Titular ingreso situacion "FORMAL - INDEPENDIENTE"
 	 And Titular ingreso ocupacion "ABOGADO"
-	 And Titular ingreso antiguedad laboral en años "50"
-	 And Titular ingreso antiguedad laboral en meses "4"
+	 And Titular ingreso antiguedad laboral en años "30"
+	 And Titular ingreso antiguedad laboral en meses "7"
 	 #Conyuge
 	 And Conyuge selecciono tipo de documento "D.N.I."
-	 And Conyuge ingreso numero de documento "75252602"
+	 And Conyuge ingreso numero de documento "50897630"
 	 And Conyuge doy click en filtrar
 	 And Conyuge selecciono estado civil "CASADO(A)"
 	 And Conyuge selecciono departamento "LIMA"
 	 And Conyuge selecciono provincia "LIMA"
 	 And Conyuge selecciono distrito "SANTIAGO DE SURCO"
 	 And Conyuge selecciono tipo de vivienda "PROPIA"
-	 And Conyuge ingreso antiguedad domiciliaria en años "45"
-	 And Conyuge ingreso antiguedad domiciliaria en meses "11"
-	 And Conyuge selecciono perfil situacion "FORMAL - DEPENDIENTE" 
-	 And Conyuge selecciono ocupacion "ABOGADO"
-	 And Conyuge ingreso ingreso "8000"
-	 And Conyuge ingreso antiguedad laboral en años "25"
-	 And Conyuge ingreso antiguedad laboral en meses "11"	
+	 And Conyuge ingreso antiguedad domiciliaria en años "10"
+	 And Conyuge ingreso antiguedad domiciliaria en meses "2"
+	 And Conyuge selecciono perfil situacion "FORMAL - INDEPENDIENTE" 
+	 And Conyuge selecciono ocupacion "ACTOR"
+	 And Conyuge ingreso ingreso "1500"
+	 And Conyuge ingreso antiguedad laboral en años "10"
+	 And Conyuge ingreso antiguedad laboral en meses "2"	
 	 #Titular
-	 And Titular ingreso cantidad a solicitar "5000"
-	 And Titular selecciono fecha de pago "15 de cada mes"
+	 And Titular ingreso cantidad a solicitar "3000"
+	 And Titular selecciono fecha de pago "3 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "24 meses"
 	 And Doy click en el boton continuar
@@ -132,7 +132,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono provincia de informacion domiciliaria "LIMA"
 	 And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
 	 And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-	 And Doy click en confirmar geopoint de informacion domiciliaria
+	 #And Doy click en confirmar geopoint de informacion domiciliaria
 	 And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
 	 And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
 	 #Titular Laboral
@@ -145,7 +145,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Selecciono provincia de informacion laboral "LIMA"
 	 And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
 	 And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-	 And Doy click en confirmar geopoint de informacion laboral
+	 #And Doy click en confirmar geopoint de informacion laboral
 	 And Selecciono referencia de informacion laboral "PASANDO DEL"
 	 And Ingreso descripcion de informacion laboral "Parque de la amistad"
    #Conyuge
@@ -168,4 +168,3 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Obtengo el numero de solicitud 
 	 And Doy click en el boton solicitar
 	 Then Termino la solicitud
-	 

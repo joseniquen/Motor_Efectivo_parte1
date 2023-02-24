@@ -28,7 +28,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "27576164"
+		And Ingreso numero de documento "50897630"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -62,14 +62,14 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
  	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 #|Seguro de Salud 12 Meses|
+	 |Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
 	 #|Contigo Familia plan Básico|
 	 #|Contigo Familia plan Plus|
-	 |Accidentes Personales|
+	 #|Accidentes Personales|
 	 #|Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
 	 And Confirmo alerta
