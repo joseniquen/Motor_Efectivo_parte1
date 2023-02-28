@@ -1,6 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -114,6 +115,11 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Titular ingreso declarado {string}")
 	public void titularIngresoDeclarado(String ingresoDeclarado) {	
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;  
+		js.executeScript("document.getElementById(\"declaredIncome\").disabled = false");
+		
+		System.out.print(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly());
 		if (cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly()==null) {
 			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			cotifedOfertaComercialPage.getTxtIngresoDeclarado().sendKeys(ingresoDeclarado);	

@@ -27,7 +27,7 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "50897630"
+		And Ingreso numero de documento "07339470"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -66,6 +66,7 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad domicialiaria en meses "11"
 	 And Titular ingreso declarado "8000"
 	 And Titular doy check a usar ingreso declarado
+	 And Confirmo alerta
    And Titular ingreso situacion "FORMAL - DEPENDIENTE"
    And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
