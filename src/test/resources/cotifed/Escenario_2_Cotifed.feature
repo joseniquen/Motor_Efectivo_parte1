@@ -24,7 +24,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
     When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'Metas.2024'
+		And Ingreso mi contraseña 'XXXXXX'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		

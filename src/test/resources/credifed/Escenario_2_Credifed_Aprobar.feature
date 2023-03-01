@@ -19,7 +19,7 @@ Feature: Escenario 2 - Como usuario quiero aprobar una solicitud de crédito en 
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Chau2022'
+		And Ingreso mi contraseña bpm 'XXXXXX'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD

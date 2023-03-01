@@ -22,7 +22,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'ext_fsosa'
-		And Ingreso mi contraseña bpm 'Efectiva.2022'
+		And Ingreso mi contraseña bpm 'XXXXXX'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD

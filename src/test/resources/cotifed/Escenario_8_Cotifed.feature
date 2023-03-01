@@ -21,7 +21,7 @@ Feature: Escenario 8 - Como usuario quiero ingresar un DNI de un cliente y gener
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
     When Ingreso mi usuario 'ext_fsosa'
-		And Ingreso mi contraseña 'Efectiva.2022'
+		And Ingreso mi contraseña 'XXXXXX'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
