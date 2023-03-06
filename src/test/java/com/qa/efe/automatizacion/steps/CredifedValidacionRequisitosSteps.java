@@ -15,16 +15,26 @@ import io.cucumber.java.en.When;
 public class CredifedValidacionRequisitosSteps {
 
 	private CredifedValidacionRequisitosPage credifedValidacionRequisitosPage;
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+
 
 	public CredifedValidacionRequisitosSteps(CredifedValidacionRequisitosPage credifedValidacionRequisitosPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.credifedValidacionRequisitosPage = credifedValidacionRequisitosPage;
 		this.credifedValidacionRequisitosPage = credifedValidacionRequisitosPage;
+		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+
 	}
 	
 	@Then("Continuo a aprobacion de la solicitud")
 	public void continuoAprobacionSolicitud()
 	{
 		credifedValidacionRequisitosPage.aprobSolicitud().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 	}
 	
 	@When("Doy check a la lista de documentos")

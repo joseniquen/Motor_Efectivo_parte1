@@ -21,18 +21,21 @@ public class CotifedConfirmacionSolicitudSteps {
 	private CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage;
 	private CotifedGeneralidadesPage cotifedGeneralidadesPage;
 	private IntegracionStore integracionStore;
+	private CotifedGeneralidadesPage generalidadesPage;
 	private File file;
 
 	public CotifedConfirmacionSolicitudSteps(  
 			CotifedConfirmacionSolicitudPage cotifedConfirmacionSolicitudPage,
 			IntegracionStore integracionStore,
 			CotifedGeneralidadesPage cotifedGeneralidadesPage,
-			File file
+			File file,CotifedGeneralidadesPage generalidadesPage
 			 ) {
 		this.cotifedConfirmacionSolicitudPage = cotifedConfirmacionSolicitudPage;
 		this.integracionStore=integracionStore;
 		this.file=file;
 		this.cotifedGeneralidadesPage=cotifedGeneralidadesPage;
+		this.generalidadesPage=generalidadesPage;
+
 	}
 	
 	@When("Elijo tipo de desembolso {string}")
@@ -47,6 +50,12 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso("SANTIAGO DE SURCO").click();
 			cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso("OFICINA PRINCIPAL").click();
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Elijo departamento {string} provincia {string} distrito {string} y tienda {string}")
@@ -55,17 +64,35 @@ public class CotifedConfirmacionSolicitudSteps {
 		cotifedConfirmacionSolicitudPage.getProvinciaTipoDesembolso(provincia).click();
 		cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso(distrito).click();
 		cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso(tienda).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When ("Selecciono la entidad tipo {string}")
 	public void seleccionoEntidadTipoEfectiva(String entidad) {
 		cotifedGeneralidadesPage.cargarDatos();
 		cotifedConfirmacionSolicitudPage.getEntidadTipoDesembolso(entidad).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When ("Ingreso numero titular")
 	public void ingresoNumTitular() {
 		cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys(integracionStore.dni);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When ("Ingreso numero de cuenta {string} y CCI {string}")
@@ -75,6 +102,12 @@ public class CotifedConfirmacionSolicitudSteps {
 		if(valor.equals("OTRO")) {
 			cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolsoCci().sendKeys(cci);
 		}else {}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 		
 		
@@ -180,7 +213,13 @@ public class CotifedConfirmacionSolicitudSteps {
 					cotifedGeneralidadesPage.cargarDatos3();
 				} while (cotifedConfirmacionSolicitudPage.getErrorSharePoint4()!=null);
 			}
-		}	
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Ingreso referencias telefonicas")
@@ -204,11 +243,23 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getBtnAgregar().click();
 			SeleniumWaiters.waitSeconds(5);
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@When("Doy click en el boton solicitar")
 	public void doyClickBotonSolicitar() {
 		cotifedConfirmacionSolicitudPage.getBtnSolicitar().click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Obtengo el numero de solicitud")
@@ -218,6 +269,12 @@ public class CotifedConfirmacionSolicitudSteps {
 		file.cargarDatos(integracionStore.dni,nroSolicitud);
 		System.out.println(nroSolicitud);
 		System.out.println("Dni: "+integracionStore.dni);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Valido la observación de la edad del titular")
@@ -228,6 +285,12 @@ public class CotifedConfirmacionSolicitudSteps {
 	@Then("Termino la solicitud")
 	public void terminarSolicitud() {	
 		cotifedConfirmacionSolicitudPage.getBtnOk().click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -19,15 +19,15 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'XXXXXX'
+    When Ingreso mi usuario 'EXT_JNIQUEN'
+		And Ingreso mi contraseña 'Efectiva.2025'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "07339470"
+		And Ingreso numero de documento "50897630"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -72,7 +72,7 @@ Feature: Escenario 4 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "2500"
-	 And Titular selecciono fecha de pago "15 de cada mes"
+	 And Titular selecciono fecha de pago "5 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "6 meses"
 	 #And Titular selecciono requisito "AVAL"

@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 
 import io.cucumber.java.en.And;
@@ -14,6 +16,7 @@ public class CotifedFiltroSteps {
 	private CotifedFiltroPage filtroPage;
 	private IntegracionStore integracionStore;
 	private CotifedGeneralidadesPage generalidadesPage;
+
 	public CotifedFiltroSteps(
 			WebDriverManager driverManager, 
 			CotifedFiltroPage filtroPage,
@@ -27,8 +30,9 @@ public class CotifedFiltroSteps {
 
 	@When("Selecciono tienda {string}")
 	public void seleccionoTienda(String tienda) {
+		generalidadesPage.cargarDatos();
 		filtroPage.getCbxTienda().click();
-		filtroPage.getOpcionTienda(tienda).click();
+		filtroPage.getOpcionTienda(tienda).click();		
 	}
 
 	@And("Selecciono Tipo de documento {string}")
@@ -57,6 +61,12 @@ public class CotifedFiltroSteps {
 	public void doyClickFiltrar() {
 		filtroPage.getBtnFiltrar().click();
 		generalidadesPage.cargarDatos();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	

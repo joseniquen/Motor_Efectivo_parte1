@@ -2,21 +2,27 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CotifedNbkNoReniecPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 public class CotifedNbkNoReniecSteps {
 	private CotifedNbkNoReniecPage cotifedNbkNoReniecPage;
+	private CotifedGeneralidadesPage generalidadesPage;
 
-	public CotifedNbkNoReniecSteps(CotifedNbkNoReniecPage cotifedNbkNoReniecPage
+
+	public CotifedNbkNoReniecSteps(CotifedNbkNoReniecPage cotifedNbkNoReniecPage,CotifedGeneralidadesPage generalidadesPage
 			 ) {
 		this.cotifedNbkNoReniecPage = cotifedNbkNoReniecPage;
+		this.generalidadesPage = generalidadesPage;
+
 	}
 	
 	@When("Ingreso datos personales")
@@ -45,6 +51,12 @@ public class CotifedNbkNoReniecSteps {
 		}else {
 			System.out.println("No es una página de nbk-no-reniec");
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Ingreso informacion de vivienda")
@@ -69,7 +81,12 @@ public class CotifedNbkNoReniecSteps {
 		{
 			System.out.println("No es una página de nbk-no-reniec");	
 		}
-		
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@When("Ingreso informacion laboral")
@@ -115,6 +132,13 @@ public class CotifedNbkNoReniecSteps {
 		{
 			System.out.println("No es una página de nbk-no-reniec");	
 		}	
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}	
 }
 

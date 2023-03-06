@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedDatosTitularPage;
@@ -40,6 +42,12 @@ public class CredifedInfoDomiciliariaSteps {
 	public void seleccionoDistrito(String opcion)
 	{
 		credifedInfoDomiciliariaPage.selectDistrito(opcion).click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Ingreso direccion domiciliaria {string}")
@@ -66,6 +74,12 @@ public class CredifedInfoDomiciliariaSteps {
 	{
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en aceptar la ubicacion correcta en el mapa")
@@ -126,5 +140,11 @@ public class CredifedInfoDomiciliariaSteps {
 	{
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

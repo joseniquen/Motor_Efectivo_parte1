@@ -83,6 +83,7 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad domicialiaria en meses "2"
 	 And Titular ingreso declarado "1025"
 	 And Titular doy check a usar ingreso declarado
+	 And Confirmo alerta
 	 And Titular ingreso situacion "FORMAL - INDEPENDIENTE"
 	 And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "30"

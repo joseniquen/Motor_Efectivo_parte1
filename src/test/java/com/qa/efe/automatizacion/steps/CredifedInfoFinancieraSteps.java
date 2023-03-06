@@ -1,5 +1,6 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.Keys;
@@ -23,6 +24,12 @@ public class CredifedInfoFinancieraSteps {
 	public void SeleccionoPerfilIngresoPrincipal(String opcion)
 	{
 		credifedInfoFinancieraPage.perfilIngresoPrincipal(opcion).click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Selecciono situacion laboral {string}")
@@ -63,6 +70,13 @@ public class CredifedInfoFinancieraSteps {
 		credifedInfoFinancieraPage.antiguedadLaboralMes().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoFinancieraPage.antiguedadLaboralMes().sendKeys(opcion1);
 		credifedInfoFinancieraPage.bajarDeudas().click();
+		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Reviso el detalle de deudas subir sustento")
@@ -97,6 +111,11 @@ public class CredifedInfoFinancieraSteps {
 		} catch (Exception e) {
 			System.out.println("No es necesario subir sustento");
 		}
-		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

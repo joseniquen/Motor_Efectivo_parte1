@@ -1,40 +1,56 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedDatosTitularPage;
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class CredifedDatosTitularSteps {
 	private CredifedDatosTitularPage credifedDatosTitularPage;
-	public CredifedDatosTitularSteps(CredifedDatosTitularPage credifedDatosTitularPage) {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+
+	public CredifedDatosTitularSteps(CredifedDatosTitularPage credifedDatosTitularPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.credifedDatosTitularPage = credifedDatosTitularPage;
+		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+
 	}
 	
 	@When("Doy click en boton editar")
 	public void clickBtnEditar()
 	{
 		credifedDatosTitularPage.clickBtnEditar().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Selecciono tipo de venta {string}")
 	public void seleccionoTipoVenta(String opcion)
 	{
 		credifedDatosTitularPage.selectTipoVenta(opcion).click();
+		
 	}
 	
 	@When("Selecciono condicion especial {string}")
 	public void seleccionoCondicionEspecial(String opcion)
 	{
 		credifedDatosTitularPage.selectCondicionEspecial(opcion).click();
+		
 	}
 	
 	@When("Selecciono estado civil {string}")
 	public void seleccionoEstadoCivi(String opcion)
 	{
 		credifedDatosTitularPage.selectEstadoCivil(opcion).click();
+		
 	}
 	
 	@When("Selecciono pais de nacimiento {string}")
@@ -47,6 +63,12 @@ public class CredifedDatosTitularSteps {
 	public void SeleccionoPaisResidencia(String opcion)
 	{
 		credifedDatosTitularPage.selectPaisResidencia(opcion).click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_2");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Ingreso celular principal {string}")
@@ -81,6 +103,12 @@ public class CredifedDatosTitularSteps {
 	{
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Doy click en check delivery")

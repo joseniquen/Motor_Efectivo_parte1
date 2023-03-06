@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CotifedLineaProductoPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
@@ -27,12 +29,24 @@ public class CotifedLineaProductoSteps {
 	public void seleccionoLineaProducto(String lineaProducto) {
 		generalidadesPage.cargarDatos();
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Selecciono check {string}")
 	public void seleccionoCheck(String opcion) {
 		generalidadesPage.cargarDatos();
 		cotifedLineaProductoPage.getCheckOption(opcion).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	
@@ -41,6 +55,13 @@ public class CotifedLineaProductoSteps {
 		generalidadesPage.cargarDatos();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedLineaProductoPage.getBtnContinuar().click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
+		
 	}
 }

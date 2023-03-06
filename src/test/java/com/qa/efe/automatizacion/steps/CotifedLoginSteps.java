@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.And;
@@ -33,7 +35,7 @@ public class CotifedLoginSteps {
 	
 	@When("Ingreso mi usuario {string}")
 	public void ingresoUsuario(String usuario) {
-		loginPage.getTxtUsuario().sendKeys(usuario);		
+		loginPage.getTxtUsuario().sendKeys(usuario);	
 	}
 
 	@And("Ingreso mi contraseña {string}")
@@ -45,6 +47,12 @@ public class CotifedLoginSteps {
 	public void doyClickBotonIngresar() {
 		loginPage.getBtnIngresar().click();
 		cotifedGeneralidadesPage.cargarDatos();
+		try {
+			cotifedGeneralidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Valido que no haya sesiones abiertas")
@@ -53,7 +61,16 @@ public class CotifedLoginSteps {
 			loginPage.getBtnSesionesAbiertas().click();
 			SeleniumWaiters.waitSeconds(4);
 			loginPage.getBtnIngresar().click();
+		}else if(loginPage.getTextProblemasConexion().size()!=0){
+			SeleniumWaiters.waitSeconds(6);
+			loginPage.getBtnIngresar().click();
 		}
 		cotifedGeneralidadesPage.cargarDatos();
+		try {
+			cotifedGeneralidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

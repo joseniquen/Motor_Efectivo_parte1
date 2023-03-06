@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
@@ -47,6 +49,12 @@ public class CredifedInfoLaboralSteps {
 	public void ingresoCelular(String opcion) {
 		credifedInfoLaboralPage.getCelular().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getCelular().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Selecciono departamento laboral {string}")
@@ -92,6 +100,12 @@ public class CredifedInfoLaboralSteps {
 	{
 		credifedInfoLaboralPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresarReferencia().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en aceptar la ubicacion correcta en el mapa laboral")
@@ -121,12 +135,24 @@ public class CredifedInfoLaboralSteps {
 			credifedGeneralidadesPage.cambioIframe("10 Información Laboral Titular");
 			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
 		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_2");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@When("Ingreso numero de direccion domiciliaria laboral {string}")
 	public void ingresoNumeroDireccionDomiciliaria(String opcion)
 	{
 		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Ingreso agrupacion laboral {string}")
@@ -152,5 +178,11 @@ public class CredifedInfoLaboralSteps {
 	{
 		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(opcion);
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

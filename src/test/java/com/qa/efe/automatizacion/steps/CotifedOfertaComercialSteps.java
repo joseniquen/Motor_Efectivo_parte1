@@ -16,6 +16,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,12 @@ public class CotifedOfertaComercialSteps {
 	public void validoIngresoVigente() {
 		if(cotifedOfertaComercialPage.getValidaIngresoVigente().size()!=0) {
 			cotifedOfertaComercialPage.getValidaIngresoVigenteButtonOk().click();
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		generalidadesPage.cargarDatos();
 	}
@@ -62,6 +69,12 @@ public class CotifedOfertaComercialSteps {
 	@And("Valido seguros marcados")
 	public void validoSegurosMarcados() {
 		cotifedOfertaComercialPage.validarSegurosMarcados();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Selecciono seguros")
@@ -70,6 +83,12 @@ public class CotifedOfertaComercialSteps {
 		for (int i = 0; i < items.size(); i++) {
 			Map<String, String> item = items.get(i);
 			cotifedOfertaComercialPage.getSeleccionTipoSeguro(item.get("seguros")).click();
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -82,12 +101,24 @@ public class CotifedOfertaComercialSteps {
 		else{
 			System.out.println("Campo deshabilitado");
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular selecciono pais {string}")
 	public void titularSeleccionoPais(String pais) {
 		cotifedOfertaComercialPage.getCbxPais().click();
 		cotifedOfertaComercialPage.getOpcionPais(pais).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular selecciono tipo de vivienda {string}")
@@ -99,18 +130,36 @@ public class CotifedOfertaComercialSteps {
 		else{
 			System.out.println("campo deshabilitado");
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular ingreso antiguedad domicialiaria en años {string}")
 	public void titularIngresoAntiguedadDomicialiariaAnios(String anios) {
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomAnios().sendKeys(anios);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular ingreso antiguedad domicialiaria en meses {string}")
 	public void titularIngresoAntiguedadDomicialiariaMeses(String meses) {
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntDomMeses().sendKeys(meses);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular ingreso declarado {string}")
@@ -126,6 +175,12 @@ public class CotifedOfertaComercialSteps {
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 			System.out.println("EL CHECK ESTÁ MARCADO");
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	
@@ -136,6 +191,12 @@ public class CotifedOfertaComercialSteps {
 		}else if(cotifedOfertaComercialPage.getTxtIngresoDeclaradoReadOnly().equals("true")) {
 				System.out.println("EL CHECK ESTÁ SELECCIONADO");	
 		}	
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();	
 	}
 	
@@ -151,6 +212,12 @@ public class CotifedOfertaComercialSteps {
 			}
 		}else {
 			System.out.println("campo no existe");
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		generalidadesPage.cargarDatos();	
 	}
@@ -168,6 +235,12 @@ public class CotifedOfertaComercialSteps {
 		}else {
 			System.out.println("campo no existe");
 		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();	
 	}
 	
@@ -175,24 +248,48 @@ public class CotifedOfertaComercialSteps {
 	public void titularIngresoAntiguedadLaboralAnios(String LabAnios) {
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabAnios().sendKeys(LabAnios);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular ingreso antiguedad laboral en meses {string}")
 	public void titularIngresoAntiguedadLaboralMeses(String LabMeses) {
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtAntLabMeses().sendKeys(LabMeses);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Titular ingreso inicial {string}")
 	public void Titular_ingreso_inicial(String inicial) {
 		cotifedOfertaComercialPage.getTxtInicial().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtInicial().sendKeys(inicial);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@And("Titular ingreso cantidad a solicitar {string}")
 	public void titularIngresoCantidadASolicitar(String cantidadASolicitar) {
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		cotifedOfertaComercialPage.getTxtCantidadASolicitar().sendKeys(cantidadASolicitar);
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 
 	}
@@ -202,6 +299,12 @@ public class CotifedOfertaComercialSteps {
 		SeleniumWaiters.waitSeconds(6);
 		cotifedOfertaComercialPage.getCbxFechaPago().click();
 		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	
@@ -217,6 +320,12 @@ public class CotifedOfertaComercialSteps {
 	@And("Doy click en el boton simular")
 	public void doyClickBotonSimular() {
 		cotifedOfertaComercialPage.getBtnSimular().click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	
@@ -237,12 +346,24 @@ public class CotifedOfertaComercialSteps {
 		columnIndex=columnIndex+1;
 		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td["+columnIndex+"]/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	
 	@When("Doy click en el boton continuar")
 	public void doyClickBotonContinuar() {
 		cotifedOfertaComercialPage.getBtnContinuar().click();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		generalidadesPage.cargarDatos();
 	}
 	

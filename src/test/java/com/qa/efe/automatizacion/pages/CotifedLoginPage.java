@@ -33,6 +33,9 @@ public class CotifedLoginPage {
 	public List<WebElement> getTextSesionAbierta() {
 		return driver.findElements(By.xpath("//h2[contains(.,'EXCEDIO CANTIDAD SESIONES ACTIVAS')]/parent::div/parent::div[@style='display: flex;']"));
 	}
+	public List<WebElement> getTextProblemasConexion() {
+		return driver.findElements(By.xpath("//app-login//p[contains(.,'No se pudo conectar, volver a intentar')]"));
+	}
 	public WebElement getBtnSesionesAbiertas()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='ACEPTAR']"),10);

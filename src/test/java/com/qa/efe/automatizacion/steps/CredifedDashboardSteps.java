@@ -2,6 +2,7 @@ package com.qa.efe.automatizacion.steps;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,12 @@ public class CredifedDashboardSteps {
 	public void doyClickProcesos()
 	{
 		credifedDashboardPage.clickProcesos().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -43,7 +50,6 @@ public class CredifedDashboardSteps {
 		integracionStore.cuenta=instancia;
 		credifedDashboardPage.ingresarProceso().sendKeys(instancia);
 		credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
-
 	}
 	
 	@When("Doy click en pulsar para ver instancia")
@@ -54,7 +60,12 @@ public class CredifedDashboardSteps {
 		}catch (Exception e) {
 			credifedDashboardPage.verInstancia().click();
 		}
-		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en aprobar observaciones")
@@ -100,6 +111,12 @@ public class CredifedDashboardSteps {
 			assertTrue(credifedDashboardPage.comprueboNroDoc().getText().equals(doc_titular));
 			assertTrue(credifedDashboardPage.comprueboLineaProducto().getText().equals(linea_producto));	
 			assertTrue(credifedDashboardPage.comprueboNroSol().getText().equals(nro_solicitud));
+			try {
+				credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 	
 	@When("Doy click en analizar solicitud de credito")
@@ -109,6 +126,12 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickAnalizarSolCreditoEn().click();
 		}catch (Exception e) {
 			credifedDashboardPage.clickAnalizarSolCredito().click();
+		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -160,6 +183,12 @@ public class CredifedDashboardSteps {
 		if (credifedDashboardPage.validaExisteReclamarTarea().size()!=0) {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When ("Ingreso instancia de proceso anterior sin observaciones")

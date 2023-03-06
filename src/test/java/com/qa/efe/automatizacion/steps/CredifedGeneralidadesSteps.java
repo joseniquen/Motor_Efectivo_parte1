@@ -1,5 +1,6 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
 import java.util.Iterator;
 
 import org.openqa.selenium.WebDriver;
@@ -40,6 +41,12 @@ public class CredifedGeneralidadesSteps {
 	public void veriricarConsentimientoDigital()
 	{
 		credifedGeneralidadesPage.verificarConsentimientoDigital();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 		
 	}
 	
 	@When("Verifico si existe error en normalizar direccion")
@@ -58,12 +65,24 @@ public class CredifedGeneralidadesSteps {
 	public void veriricarErrorFiltroEvaluarDomicilio()
 	{
 		credifedGeneralidadesPage.verificarErrorEjecutarFiltroEvaluarDomicilio();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Verifico si existe error en referencias telefonicas")
 	public void veriricoErrorReferenciasTelefonicas()
 	{
 		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Verifico si existe error en filtro evaluacion financiera")
@@ -76,6 +95,12 @@ public class CredifedGeneralidadesSteps {
 	public void verificarErrorFiltroEvaluarPersonas()
 	{
 		credifedGeneralidadesPage.verificarErrorFiltroPersonas();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	
@@ -83,6 +108,12 @@ public class CredifedGeneralidadesSteps {
 	public void clickBtnGuardar()
 	{
 		credifedGeneralidadesPage.clickBtnGuardar().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Acepto para sobreescribir datos originales")
@@ -93,12 +124,24 @@ public class CredifedGeneralidadesSteps {
 		} catch (Exception e) {
 			System.out.println("Pasa ok");
 		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en boton continuar")
 	public void clickBtnContinuar()
 	{
 		credifedGeneralidadesPage.clickBtnContinuar().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Me dirijo a la pestaña de {string}")
@@ -164,6 +207,12 @@ public class CredifedGeneralidadesSteps {
 			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
 			veriricarConsentimientoDigital();
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
+		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

@@ -2,21 +2,27 @@ package com.qa.efe.automatizacion.steps;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CotifedNbkReniecPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 public class CotifedNbkReniecSteps {
 	private CotifedNbkReniecPage cotifedNbkReniecPage;
+	private CotifedGeneralidadesPage generalidadesPage;
+
 	String link="http://10.167.19.35:9080/cotifed/cotizador/nbk-reniec";
 	
-	public CotifedNbkReniecSteps(CotifedNbkReniecPage cotifedNbkReniecPage) {
-		this.cotifedNbkReniecPage = cotifedNbkReniecPage;		
+	public CotifedNbkReniecSteps(CotifedNbkReniecPage cotifedNbkReniecPage,CotifedGeneralidadesPage generalidadesPage) {
+		this.cotifedNbkReniecPage = cotifedNbkReniecPage;	
+		this.generalidadesPage = generalidadesPage;		
+
 	}
 	
 	/*@When("obtener link")
@@ -53,6 +59,12 @@ public class CotifedNbkReniecSteps {
 			}
 		}else {
 			System.out.println("No es una página de nbk-reniec");
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -96,6 +108,13 @@ public class CotifedNbkReniecSteps {
 		}
 		else {
 			System.out.println("No es una página de nbk-reniec");
+		}
+		
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

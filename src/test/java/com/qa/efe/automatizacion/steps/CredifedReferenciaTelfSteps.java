@@ -1,10 +1,12 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedReferenciaTelfPage;
 
 import io.cucumber.datatable.DataTable;
@@ -12,13 +14,23 @@ import io.cucumber.java.en.When;
 
 public class CredifedReferenciaTelfSteps {
 	private CredifedReferenciaTelfPage credifedReferenciaTelfPage;
-	public CredifedReferenciaTelfSteps(CredifedReferenciaTelfPage credifedReferenciaTelfPage) {
+	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+
+	public CredifedReferenciaTelfSteps(CredifedReferenciaTelfPage credifedReferenciaTelfPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
 		this.credifedReferenciaTelfPage = credifedReferenciaTelfPage;
+		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+
 	}
 	@When("Doy click en agregar nueva referencia")
 	public void clickNuevaReferencia()
 	{
 		credifedReferenciaTelfPage.clickNuevaReferencia().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 	}
 	@When("Creo referencia telefonica")
 	public void clickNuevaReferencia(DataTable referencia)
@@ -40,6 +52,12 @@ public class CredifedReferenciaTelfSteps {
 		credifedReferenciaTelfPage.getNombres().sendKeys(nombres);
 		credifedReferenciaTelfPage.getApellidos().sendKeys(apellidos);
 		credifedReferenciaTelfPage.clickAceptarReferencia().click();
-
+		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 	}
 }

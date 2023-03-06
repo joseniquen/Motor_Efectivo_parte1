@@ -1,7 +1,14 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.Random;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -159,5 +166,13 @@ public class CredifedGeneralidadesPage {
 	public WebElement clickMenuInicialExepcion()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Observaciones']"),15);
+	}
+	
+	public void captura_pantalla_credifed(String ruta, String nombre) throws IOException {
+		//SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		int i= new Random().nextInt(1000 + 1);
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\"+nombre+i+".png"));
 	}
 }
