@@ -42,11 +42,11 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarConsentimientoDigital();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 		
+		}	
 	}
 	
 	@When("Verifico si existe error en normalizar direccion")
@@ -66,7 +66,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorEjecutarFiltroEvaluarDomicilio();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +78,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,7 +96,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorFiltroPersonas();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -109,7 +109,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.clickBtnGuardar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -125,7 +125,7 @@ public class CredifedGeneralidadesSteps {
 			System.out.println("Pasa ok");
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.clickBtnContinuar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -209,7 +209,7 @@ public class CredifedGeneralidadesSteps {
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

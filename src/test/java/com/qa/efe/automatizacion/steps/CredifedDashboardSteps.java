@@ -33,14 +33,7 @@ public class CredifedDashboardSteps {
 	@When("Doy click en procesos")
 	public void doyClickProcesos()
 	{
-		credifedDashboardPage.clickProcesos().click();
-		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		credifedDashboardPage.clickProcesos().click();		
 	}
 	
 	@When("Ingreso instancia de proceso {string}")
@@ -61,7 +54,7 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.verInstancia().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -112,12 +105,11 @@ public class CredifedDashboardSteps {
 			assertTrue(credifedDashboardPage.comprueboLineaProducto().getText().equals(linea_producto));	
 			assertTrue(credifedDashboardPage.comprueboNroSol().getText().equals(nro_solicitud));
 			try {
-				credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+				credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-	}
+			}	}
 	
 	@When("Doy click en analizar solicitud de credito")
 	public void doyClickAnalizarSolicitudCredito()
@@ -128,7 +120,7 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickAnalizarSolCredito().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -184,7 +176,7 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

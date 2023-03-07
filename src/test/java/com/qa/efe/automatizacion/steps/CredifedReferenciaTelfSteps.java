@@ -26,11 +26,11 @@ public class CredifedReferenciaTelfSteps {
 	{
 		credifedReferenciaTelfPage.clickNuevaReferencia().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 	}
 	@When("Creo referencia telefonica")
 	public void clickNuevaReferencia(DataTable referencia)
@@ -54,10 +54,10 @@ public class CredifedReferenciaTelfSteps {
 		credifedReferenciaTelfPage.clickAceptarReferencia().click();
 		
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 	}
 }

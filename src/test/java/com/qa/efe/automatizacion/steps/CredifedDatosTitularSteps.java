@@ -64,7 +64,7 @@ public class CredifedDatosTitularSteps {
 	{
 		credifedDatosTitularPage.selectPaisResidencia(opcion).click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_2");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,7 +104,7 @@ public class CredifedDatosTitularSteps {
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

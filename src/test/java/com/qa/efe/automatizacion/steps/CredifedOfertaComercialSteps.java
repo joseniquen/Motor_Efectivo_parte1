@@ -1,5 +1,6 @@
 package com.qa.efe.automatizacion.steps;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -37,6 +38,12 @@ public class CredifedOfertaComercialSteps {
 			SeleniumWaiters.waitSeconds(3);
 			credifedOfertaComercialPage.clickSimular().click();
 		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en el boton aprobar")
@@ -48,7 +55,12 @@ public class CredifedOfertaComercialSteps {
 			clickBtnSimular();
 			credifedOfertaComercialPage.clickAprobar().click();
 		}
-		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en aceptar solicitud de credito")
@@ -131,6 +143,12 @@ public class CredifedOfertaComercialSteps {
 	public void verificoPantallaResumenCredito()
 	{
 		credifedOfertaComercialPage.verificarResumenSol();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Verifico que la solicitud de credito haya sido aprobada correctamente")
@@ -144,6 +162,12 @@ public class CredifedOfertaComercialSteps {
 		} else {
 			System.out.println("Su solicitud ah sido registrada y aprobada correctamente ");
 		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en seguro desgravamen con devolucion")
@@ -152,6 +176,12 @@ public class CredifedOfertaComercialSteps {
 		credifedOfertaComercialPage.scrollAval();
 		System.out.println(credifedOfertaComercialPage.getRbtConDevolucion());
 		credifedOfertaComercialPage.getRbtConDevolucion().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Acepto seguro desgravamen con devolucion")
@@ -161,7 +191,13 @@ public class CredifedOfertaComercialSteps {
 		credifedOfertaComercialPage.getBtnAceptoDesgravamenConDevolucion().click();
 		}catch(Exception e){
 			
-		}		
+		}	
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Doy click en seguro desgravamen sin devolucion")
@@ -180,7 +216,12 @@ public class CredifedOfertaComercialSteps {
 		} catch (Exception e) {
 			System.out.print("No salió alerta CME");
 		}
-		
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
