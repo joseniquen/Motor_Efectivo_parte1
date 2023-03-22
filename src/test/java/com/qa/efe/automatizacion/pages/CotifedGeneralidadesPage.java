@@ -113,7 +113,6 @@ public class CotifedGeneralidadesPage {
 	}
 	public void captura_pantalla_cotifed(String ruta, String nombre) throws IOException {
 		//SeleniumWaiters.waitSeconds(5);
-		;
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String newString1 = ruta.replace("\\", "\\\\");
 		FileUtils.copyFile(scrFile, new File(newString1+"\\cotifed\\"+nombre+integracionStore.captura_incremental_cotifed+".png"));
