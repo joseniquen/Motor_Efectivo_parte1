@@ -40,17 +40,15 @@ public class CredifedValidacionRequisitosSteps {
 	@When("Doy check a la lista de documentos")
 	public void ckeckListaDocumentos()
 	{
-		
 		List<WebElement> elements = credifedValidacionRequisitosPage.nroListDoc();
 		System.out.println("Archivos a cargar: "+elements.size());
 		int j=2;
 		int k=3;
-		SeleniumWaiters.waitSeconds(5);
 		for (int i = 0; i < elements.size(); i++) {
 			if(credifedValidacionRequisitosPage.ckeckListDocExists2(j)!=null) {
 				System.out.println("el doc adjunto si existe");
 			}else {
-				credifedValidacionRequisitosPage.cargarArchivo(i).click();
+				/*credifedValidacionRequisitosPage.cargarArchivo(i).click();
 				System.out.println("Está en la posición: "+elements.get(i));
 				SeleniumWaiters.waitSeconds(5);
 				credifedValidacionRequisitosPage.clickSeleccionarArchivo().get(i).click();
@@ -64,7 +62,7 @@ public class CredifedValidacionRequisitosSteps {
 				SeleniumWaiters.waitSeconds(15);
 				credifedValidacionRequisitosPage.clickCargarArchivo(i).click();
 				System.out.println("numero de boton "+i);
-				SeleniumWaiters.waitSeconds(15);
+				SeleniumWaiters.waitSeconds(15);*/
 			}
 			if(credifedValidacionRequisitosPage.ckeckListDocIsChecked(k).size()==0) {
 				credifedValidacionRequisitosPage.ckeckListDoc(i).click();
