@@ -154,19 +154,11 @@ public class CredifedOfertaComercialSteps {
 	@When("Verifico que la solicitud de credito haya sido aprobada correctamente")
 	public void verificarSolicitudAprobada()
 	{
-		SeleniumWaiters.waitSeconds(30);
-		List<WebElement> element = credifedOfertaComercialPage.verificarSolAprobada();
-		List<WebElement> element1 = credifedOfertaComercialPage.verificarExcepciones();
-		if (element1.size()!=0) {
-			System.out.println("La solicitud de credito contiene una excepcion");
-		} else {
-			System.out.println("Su solicitud ah sido registrada y aprobada correctamente ");
-		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			SeleniumWaiters.findElement(driver,By.xpath("//*[@id='TaskListController_0']//div[text()='No se han encontrado tareas.']"), 30);
+
+		} catch (Exception e) {
+			System.out.println("La solicitud contiene Exepciones");
 		}
 	}
 	
