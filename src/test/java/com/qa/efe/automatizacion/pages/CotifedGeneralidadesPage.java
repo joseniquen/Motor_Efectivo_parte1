@@ -15,12 +15,16 @@ import org.openqa.selenium.WebElement;
 import com.qa.efe.automatizacion.shared.NavigationHelpers;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 public class CotifedGeneralidadesPage {
 	private WebDriver driver;
+	private IntegracionStore integracionStore;
 
-	public CotifedGeneralidadesPage(WebDriverManager driverManager) {
+	public CotifedGeneralidadesPage(WebDriverManager driverManager,IntegracionStore integracionStore) {
 		this.driver = driverManager.getDriver();
+		this.integracionStore=integracionStore;
+
 	}
 	public void ConfirmarAlerta()
 	{
@@ -109,9 +113,10 @@ public class CotifedGeneralidadesPage {
 	}
 	public void captura_pantalla_cotifed(String ruta, String nombre) throws IOException {
 		//SeleniumWaiters.waitSeconds(5);
+		;
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		int i= new Random().nextInt(1000 + 1);
 		String newString1 = ruta.replace("\\", "\\\\");
-		FileUtils.copyFile(scrFile, new File(newString1+"\\cotifed\\"+nombre+i+".png"));
+		FileUtils.copyFile(scrFile, new File(newString1+"\\cotifed\\"+nombre+integracionStore.captura_incremental_cotifed+".png"));
+		integracionStore.captura_incremental_cotifed = integracionStore.captura_incremental_cotifed+1;
 	}
 }

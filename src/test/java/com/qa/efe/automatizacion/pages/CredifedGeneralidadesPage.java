@@ -16,11 +16,16 @@ import com.qa.efe.automatizacion.shared.NavigationHelpers;
 
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
+import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 public class CredifedGeneralidadesPage {
 	private WebDriver driver;
-	public CredifedGeneralidadesPage( WebDriverManager driverManager) {
+	private IntegracionStore integracionStore;
+
+	public CredifedGeneralidadesPage( WebDriverManager driverManager,IntegracionStore integracionStore) {
 		this.driver = driverManager.getDriver();
+		this.integracionStore=integracionStore;
+
 	}
 	public void cambioIframe(String titleIframe)
 	{
@@ -171,8 +176,8 @@ public class CredifedGeneralidadesPage {
 	public void captura_pantalla_credifed(String ruta, String nombre) throws IOException {
 		//SeleniumWaiters.waitSeconds(5);
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		int i= new Random().nextInt(1000 + 1);
 		String newString1 = ruta.replace("\\", "\\\\");
-		FileUtils.copyFile(scrFile, new File(newString1+"\\"+nombre+i+".png"));
+		FileUtils.copyFile(scrFile, new File(newString1+"\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
 	}
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-
+import com.qa.efe.automatizacion.stores.*;
 import com.qa.efe.automatizacion.pages.CotifedFiltroPage;
 import com.qa.efe.automatizacion.pages.CotifedGeneralidadesPage;
 import com.qa.efe.automatizacion.shared.devices.managers.WebDriverManager;
