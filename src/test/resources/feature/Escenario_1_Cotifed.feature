@@ -28,7 +28,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "90484254"
+		And Ingreso numero de documento "82223250"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -85,7 +85,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "2500"
-	 And Titular selecciono fecha de pago "5 de cada mes"
+	 And Titular selecciono fecha de pago "3 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
