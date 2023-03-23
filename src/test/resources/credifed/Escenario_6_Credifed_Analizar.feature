@@ -9,6 +9,12 @@ Feature: Escenario 6 - Como usuario quiero analizar una solicitud de crédito en
 		     #Agencia
 		     #Documento del titular
 		     #Numero de solicitud
+		     
+		     #ORDEN DE EJECUCION DE LOS FEATURE PARA LOS CASOS CON EXCEPCIÓN:
+		     #Escenario_6_Credifed_Analizar.feature
+		     #Escenario_6_Credifed_Aprobar_obs.feature
+		     #Aprobar_Observaciones.feature
+		     #Escenario_6_Credifed_Aprobar.feature
       
   @web
   Scenario: CP006: Generar solicitud en Motor para Línea de producto Efectivo 
