@@ -47,12 +47,6 @@ public class CotifedLoginSteps {
 	public void doyClickBotonIngresar() {
 		loginPage.getBtnIngresar().click();
 		cotifedGeneralidadesPage.cargarDatos();
-		try {
-			cotifedGeneralidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@And("Valido que no haya sesiones abiertas")
@@ -66,11 +60,5 @@ public class CotifedLoginSteps {
 			loginPage.getBtnIngresar().click();
 		}
 		cotifedGeneralidadesPage.cargarDatos();
-		try {
-			cotifedGeneralidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

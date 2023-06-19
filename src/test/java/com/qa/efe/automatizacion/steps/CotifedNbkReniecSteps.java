@@ -57,14 +57,14 @@ public class CotifedNbkReniecSteps {
 				cotifedNbkReniecPage.getCbxVivienda().click();
 				cotifedNbkReniecPage.getOpcionVivienda(item.get("tipo_de_vivienda")).click();
 			}
+			try {
+				generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}else {
 			System.out.println("No es una página de nbk-reniec");
-		}
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 	
@@ -106,6 +106,7 @@ public class CotifedNbkReniecSteps {
 			}
 			cotifedNbkReniecPage.getBtnFiltrar().click();
 		}
+		
 		else {
 			System.out.println("No es una página de nbk-reniec");
 		}

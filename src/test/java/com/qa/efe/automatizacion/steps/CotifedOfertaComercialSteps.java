@@ -69,12 +69,6 @@ public class CotifedOfertaComercialSteps {
 	@And("Valido seguros marcados")
 	public void validoSegurosMarcados() {
 		cotifedOfertaComercialPage.validarSegurosMarcados();
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@And("Selecciono seguros")
@@ -319,13 +313,13 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Doy click en el boton simular")
 	public void doyClickBotonSimular() {
-		cotifedOfertaComercialPage.getBtnSimular().click();
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		cotifedOfertaComercialPage.getBtnSimular().click();
 		generalidadesPage.cargarDatos();
 	}
 	
@@ -346,24 +340,18 @@ public class CotifedOfertaComercialSteps {
 		columnIndex=columnIndex+1;
 		String xpathForCreditSelection = "//table/tbody/tr/td/p[text()='"+plazo+"']/parent::td/parent::tr/td["+columnIndex+"]/div";
 		SeleniumWaiters.findElement(driver,By.xpath(xpathForCreditSelection),10).click();
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		generalidadesPage.cargarDatos();
 	}
 	
 	@When("Doy click en el boton continuar")
 	public void doyClickBotonContinuar() {
-		cotifedOfertaComercialPage.getBtnContinuar().click();
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		cotifedOfertaComercialPage.getBtnContinuar().click();
 		generalidadesPage.cargarDatos();
 	}
 	

@@ -48,14 +48,14 @@ public class CotifedNbkNoReniecSteps {
 				cotifedNbkNoReniecPage.getInputNac(item.get("fecha_nac"));
 				SeleniumWaiters.waitSeconds(3);
 			}
+			try {
+				generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}else {
 			System.out.println("No es una página de nbk-no-reniec");
-		}
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 	
@@ -77,15 +77,15 @@ public class CotifedNbkNoReniecSteps {
 				cotifedNbkNoReniecPage.getOpcionTipoVivienda(item.get("tipo_vivienda")).click();
 				SeleniumWaiters.waitSeconds(4);
 			}
+			try {
+				generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}else
 		{
 			System.out.println("No es una página de nbk-no-reniec");	
-		}
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 
@@ -123,22 +123,13 @@ public class CotifedNbkNoReniecSteps {
 					cotifedNbkNoReniecPage.getTxtAntLabMeses().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 					cotifedNbkNoReniecPage.getTxtAntLabMeses().sendKeys(item.get("ant_laboral_meses"));
 				}
-				
-				
 				SeleniumWaiters.waitSeconds(3);
 			}
 			cotifedNbkNoReniecPage.getBtnFiltrar().click();
 		}else
 		{
 			System.out.println("No es una página de nbk-no-reniec");	
-		}	
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		}		
 	}	
 }
 

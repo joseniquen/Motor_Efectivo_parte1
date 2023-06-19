@@ -20,12 +20,6 @@ public class CotifedGeneralidadesSteps {
 	@And("Confirmo alerta")
 	public void confirmacionAlerta() {
 		generalidadesPage.ConfirmarAlerta();
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@When("Espero {int} segundos")

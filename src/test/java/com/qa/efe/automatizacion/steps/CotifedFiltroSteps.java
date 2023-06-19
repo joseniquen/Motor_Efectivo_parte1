@@ -59,14 +59,15 @@ public class CotifedFiltroSteps {
 	}
 	@When("Doy click en filtrar")
 	public void doyClickFiltrar() {
-		filtroPage.getBtnFiltrar().click();
-		generalidadesPage.cargarDatos();
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		filtroPage.getBtnFiltrar().click();
+		generalidadesPage.cargarDatos();
+
 	}
 
 	

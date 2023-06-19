@@ -27,8 +27,8 @@ public class CotifedLineaProductoSteps {
 	
 	@When("Selecciono linea de producto {string}")
 	public void seleccionoLineaProducto(String lineaProducto) {
-		generalidadesPage.cargarDatos();
 		cotifedLineaProductoPage.getLineaProducto(lineaProducto).click();
+		generalidadesPage.cargarDatos();
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
@@ -55,12 +55,6 @@ public class CotifedLineaProductoSteps {
 		generalidadesPage.cargarDatos();
 		SeleniumWaiters.waitSeconds(2);
 		cotifedLineaProductoPage.getBtnContinuar().click();
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		generalidadesPage.cargarDatos();
 		
 	}

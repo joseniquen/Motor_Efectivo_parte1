@@ -108,9 +108,7 @@ public class CotifedConfirmacionSolicitudSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-		
-		
+	}	
 
 	@When("Selecciono requisito y cargo archivo")
 	public void seleccionoRequisitoCargoArchivo ()
@@ -253,13 +251,13 @@ public class CotifedConfirmacionSolicitudSteps {
 
 	@When("Doy click en el boton solicitar")
 	public void doyClickBotonSolicitar() {
-		cotifedConfirmacionSolicitudPage.getBtnSolicitar().click();
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		cotifedConfirmacionSolicitudPage.getBtnSolicitar().click();
 	}
 	
 	@When("Obtengo el numero de solicitud")
@@ -269,12 +267,6 @@ public class CotifedConfirmacionSolicitudSteps {
 		file.cargarDatos(integracionStore.dni,nroSolicitud);
 		System.out.println(nroSolicitud);
 		System.out.println("Dni: "+integracionStore.dni);
-		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@When("Valido la observación de la edad del titular")
@@ -291,8 +283,7 @@ public class CotifedConfirmacionSolicitudSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
+	}	
 }
 
 
