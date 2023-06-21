@@ -172,9 +172,29 @@ public class CredifedDashboardSteps {
 	@When("Doy click en reclamar tarea")
 	public void doyClickEnReclamarTarea()
 	{
+		SeleniumWaiters.waitSeconds(2);
 		if (credifedDashboardPage.validaExisteReclamarTarea().size()!=0) {
 			credifedDashboardPage.clickReclamarTarea().click();
 		}	
+		System.out.println("bb");
+		SeleniumWaiters.waitSeconds(2);
+		credifedGeneralidadesPage.iframeDefecto();
+		if(credifedGeneralidadesPage.validarMenuInicialCambiar("Paso: Recepción Solicitudes")!=null) {
+			System.out.println("aa");
+			credifedGeneralidadesPage.iframeDefecto();
+			credifedGeneralidadesPage.cambioIframe("Paso: Recepción Solicitudes");
+			credifedGeneralidadesPage.cambioIframe("Recepcion Solicitud");
+			credifedDashboardPage.clickRecibidaSolicitud().click();
+		credifedGeneralidadesPage.iframeDefecto();
+		SeleniumWaiters.waitSeconds(5);
+		credifedGeneralidadesPage.cambioIframe("View Instance Details");
+		try {
+			credifedDashboardPage.clickAnalizarSolCreditoEn().click();
+		}catch (Exception e) {
+			credifedDashboardPage.clickAnalizarSolCredito().click();
+		}	
+		credifedDashboardPage.clickReclamarTarea().click();
+		}
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {

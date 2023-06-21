@@ -7,29 +7,33 @@ import org.openqa.selenium.Keys;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
+import com.qa.efe.automatizacion.stores.IntegracionStore;
 
 import io.cucumber.java.en.When;
 
 public class CredifedInfoLaboralSteps {
 	private CredifedInfoLaboralPage credifedInfoLaboralPage;
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	private IntegracionStore integracionStore;
 
-	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage) {
+	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage,IntegracionStore integracionStore) {
 		this.credifedInfoLaboralPage = credifedInfoLaboralPage;
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
-
+		this.integracionStore = integracionStore;
 	}
 	
 	@When("Ingreso centro de trabajo {string}")
 	public void ingresoCentroTrabajo(String opcion) {
 		credifedInfoLaboralPage.getCentroTrabajo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getCentroTrabajo().sendKeys(opcion);
+		integracionStore.centroTrabajolaboral=opcion;
 	}
 	
 	@When("Ingreso ruc de centro de trabajo {string}")
 	public void ingresoRucCentroTrabajo(String opcion) {
 		credifedInfoLaboralPage.getRucCentroTrabajo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getRucCentroTrabajo().sendKeys(opcion);
+		integracionStore.rucCentroTrabajolaboral=opcion;
 	}
 	
 	@When("Elijo e ingreso telefono fijo informacion laboral {string} {string}")
@@ -43,6 +47,8 @@ public class CredifedInfoLaboralSteps {
 			credifedInfoLaboralPage.getTelefonoFijoOtros().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			credifedInfoLaboralPage.getTelefonoFijoOtros().sendKeys(nro);	
 		}	
+		integracionStore.DeptotelFijoLaboral=pais;
+		integracionStore.telFijoLaboral=nro;
 	}
 	
 	@When("Ingreso celular {string}")
@@ -55,6 +61,7 @@ public class CredifedInfoLaboralSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		integracionStore.celLaboral=opcion;
 	}
 	
 	@When("Selecciono departamento laboral {string}")

@@ -93,4 +93,7 @@ public class CredifedDashboardPage {
 	public WebElement comprueboNroSol() {
 		return SeleniumWaiters.findElement(driver,By.xpath("//*[@id='Data1_DataFactory_DataControl_DataPair_15']/span[2]"),10);
 	}
+	public WebElement clickRecibidaSolicitud() {
+		return SeleniumWaiters.findElement(driver,By.id("button-button-InicioSolicitudCV1:recibidaButton"),10);
+	}
 }

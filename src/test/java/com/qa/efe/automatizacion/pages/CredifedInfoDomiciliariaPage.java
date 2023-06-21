@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,6 +80,10 @@ public class CredifedInfoDomiciliariaPage {
 	public void refreshPage()
 	{
 		driver.navigate().refresh();
+	}
+	public List<WebElement> selectViaValida(String opcion)
+	{
+		return driver.findElements(By.xpath("//select[@id='singleselect-InformacionDomiciliariaCV:tipoViaSingle_Select']/option[text()='"+opcion+"']"));
 	}
 
 }

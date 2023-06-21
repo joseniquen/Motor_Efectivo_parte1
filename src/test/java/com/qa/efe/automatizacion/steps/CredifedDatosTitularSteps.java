@@ -35,22 +35,19 @@ public class CredifedDatosTitularSteps {
 	@When("Selecciono tipo de venta {string}")
 	public void seleccionoTipoVenta(String opcion)
 	{
-		credifedDatosTitularPage.selectTipoVenta(opcion).click();
-		
+		credifedDatosTitularPage.selectTipoVenta(opcion).click();	
 	}
 	
 	@When("Selecciono condicion especial {string}")
 	public void seleccionoCondicionEspecial(String opcion)
 	{
-		credifedDatosTitularPage.selectCondicionEspecial(opcion).click();
-		
+		credifedDatosTitularPage.selectCondicionEspecial(opcion).click();	
 	}
 	
 	@When("Selecciono estado civil {string}")
 	public void seleccionoEstadoCivi(String opcion)
 	{
-		credifedDatosTitularPage.selectEstadoCivil(opcion).click();
-		
+		credifedDatosTitularPage.selectEstadoCivil(opcion).click();	
 	}
 	
 	@When("Selecciono pais de nacimiento {string}")

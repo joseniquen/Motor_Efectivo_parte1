@@ -199,6 +199,7 @@ public class CredifedGeneralidadesSteps {
 	}
 	@When("Validar que el menu de analizar sea el inicial")
 	public void validarMenuInicialAnalizar() {
+		SeleniumWaiters.waitSeconds(5);
 		if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
 			driver.switchTo().defaultContent();
 			SeleniumWaiters.waitSeconds(1);
