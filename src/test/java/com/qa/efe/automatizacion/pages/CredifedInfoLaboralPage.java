@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -88,6 +90,10 @@ public class CredifedInfoLaboralPage {
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']/option[text()='"+opcion+"']"),10);
+	}
+	public List<WebElement> selectViaLaboralValida(String opcion)
+	{
+		return driver.findElements(By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']/option[text()='"+opcion+"']"));
 	}
 	public WebElement ingresoNumeroDireccionDomiciliariaLaboral()
 	{

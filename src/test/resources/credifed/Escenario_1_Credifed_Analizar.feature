@@ -22,17 +22,17 @@ Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'ychiroque'
-		And Ingreso mi contraseña bpm 'XXXXXX'
+		And Ingreso mi contraseña bpm 'Buenasvibras.2023'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20554824"
+		When Ingreso instancia de proceso "20565753"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 		When Valido datos de la solicitud de credito
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |14906044   |EFECTIVO      |20554824     |
+		|CHICLAYO   |00231112   |EFECTIVO      |20565753     |
 		When Doy click en analizar solicitud de credito
 		When Doy click en reclamar tarea
 		

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.Keys;
 
+import com.qa.efe.automatizacion.pages.CredifedDatosTitularPage;
 import com.qa.efe.automatizacion.pages.CredifedGeneralidadesPage;
 import com.qa.efe.automatizacion.pages.CredifedInfoLaboralPage;
 import com.qa.efe.automatizacion.shared.SeleniumWaiters;
@@ -14,11 +15,13 @@ import io.cucumber.java.en.When;
 public class CredifedInfoLaboralSteps {
 	private CredifedInfoLaboralPage credifedInfoLaboralPage;
 	private CredifedGeneralidadesPage credifedGeneralidadesPage;
+	private CredifedDatosTitularPage credifedDatosTitularPage;
 	private IntegracionStore integracionStore;
 
-	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage,IntegracionStore integracionStore) {
+	public CredifedInfoLaboralSteps(CredifedInfoLaboralPage credifedInfoLaboralPage,CredifedGeneralidadesPage credifedGeneralidadesPage, CredifedDatosTitularPage credifedDatosTitularPage, IntegracionStore integracionStore) {
 		this.credifedInfoLaboralPage = credifedInfoLaboralPage;
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
+		this.credifedDatosTitularPage = credifedDatosTitularPage;
 		this.integracionStore = integracionStore;
 	}
 	
@@ -68,18 +71,21 @@ public class CredifedInfoLaboralSteps {
 	public void seleccionoDepartamentoLaboral(String opcion)
 	{
 		credifedInfoLaboralPage.selectDepartamento(opcion).click();
+		integracionStore.departamentoLaboralTitular=opcion;
 	}
 	
 	@When("Selecciono provincia laboral {string}")
 	public void seleccionoProvincia_laboral(String opcion)
 	{
 		credifedInfoLaboralPage.selectProvincia(opcion).click();
+		integracionStore.provinciaDomLaboralTitular=opcion;
 	}
 	
 	@When("Selecciono distrito laboral {string}")
 	public void seleccionoDistrito_laboral(String opcion)
 	{
 		credifedInfoLaboralPage.selectDistrito(opcion).click();
+		integracionStore.distritoDomLaboralTitular=opcion;
 	}
 	
 	@When("Ingreso direccion domiciliaria laboral {string}")
@@ -126,29 +132,44 @@ public class CredifedInfoLaboralSteps {
 	@When("selecciono via laboral {string}")
 	public void selectVia(String opcion)
 	{
-		try {
-			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
-		} catch (Exception e) {
-			credifedGeneralidadesPage.clickBtnGuardar();
-			try {
+		do {
+			/*credifedGeneralidadesPage.clickBtnGuardar().click();
+			SeleniumWaiters.waitSeconds(10);
+			try {	
 				credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
 			} catch (Exception a) {
 				System.out.println("Pasa ok");
-			}			
+			}*/
 			credifedInfoLaboralPage.refreshPage();
 			SeleniumWaiters.waitSeconds(6);
 			credifedGeneralidadesPage.iframeDefecto();
 			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
 			credifedGeneralidadesPage.cambioIframe("10 Información Laboral Titular");
-			credifedInfoLaboralPage.selectViaLaboral(opcion).click();
-		}
-		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			credifedDatosTitularPage.clickBtnEditar().click();
+			ingresoCentroTrabajo(integracionStore.centroTrabajolaboral);
+			ingresoRucCentroTrabajo(integracionStore.rucCentroTrabajolaboral);
+			elijoIngresoTelefonoFijoInformacionLaboral(integracionStore.DeptotelFijoLaboral,integracionStore.telFijoLaboral);
+			ingresoCelular(integracionStore.celLaboral);
+			seleccionoDepartamentoLaboral(integracionStore.departamentoLaboralTitular);
+			seleccionoProvincia_laboral(integracionStore.provinciaDomLaboralTitular);
+			seleccionoDistrito_laboral(integracionStore.distritoDomLaboralTitular);
+		} while (errorVia(opcion)==true);
+		SeleniumWaiters.waitSeconds(2);
+		credifedGeneralidadesPage.iframeDefecto();
+		credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+		credifedGeneralidadesPage.cambioIframe("10 Información Laboral Titular");
+		credifedInfoLaboralPage.selectViaLaboral(opcion).click();
+	}
+	
+	public boolean errorVia(String opcion){
+		
+		if(credifedInfoLaboralPage.selectViaLaboralValida(opcion).size()!=0) {
+			return false;
+		}else {
+		return true;
 		}
 	}
+	
 	@When("Ingreso numero de direccion domiciliaria laboral {string}")
 	public void ingresoNumeroDireccionDomiciliaria(String opcion)
 	{
