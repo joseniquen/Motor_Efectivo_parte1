@@ -28,7 +28,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "00231112"
+		And Ingreso numero de documento "45822084"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar

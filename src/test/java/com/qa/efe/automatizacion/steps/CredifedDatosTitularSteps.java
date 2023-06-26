@@ -25,7 +25,7 @@ public class CredifedDatosTitularSteps {
 	{
 		credifedDatosTitularPage.clickBtnEditar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "cotifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
