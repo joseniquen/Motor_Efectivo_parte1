@@ -19,12 +19,12 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'ychiroque'
-		And Ingreso mi contraseña bpm 'Triunfos.2023'
+		And Ingreso mi contraseña bpm 'Buenasvibras.2023'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20557884"
+		When Ingreso instancia de proceso "20567503"
 		And Doy click en pulsar para ver instancia
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD
@@ -38,7 +38,7 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 		#When Cambio de iframe a default
 		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  #When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital
+	  When Verifico si existe error en consentimiento digital2
 	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default

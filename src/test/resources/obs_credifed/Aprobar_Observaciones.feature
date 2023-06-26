@@ -1,4 +1,4 @@
-#Author: ychiroque - jniquen - fsosa - dcruz
+#Author: ychiroque - jniquen
 Feature: Aprobar Observaciones
 
  #-USUARIOS PARA APROBAR OBSERVACIONES (EXEPCIONES Y AUTONOMIA INICIAL) 

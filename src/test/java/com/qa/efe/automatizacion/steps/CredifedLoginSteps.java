@@ -53,7 +53,7 @@ public class CredifedLoginSteps {
 	public void doyClickBotonContinuarBpm() {
 		credifedLoginPage.getbtnContinuar().click();	
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

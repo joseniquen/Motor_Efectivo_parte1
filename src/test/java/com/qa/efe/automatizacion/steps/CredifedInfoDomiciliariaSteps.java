@@ -48,7 +48,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.selectDistrito(opcion).click();
 		integracionStore.distritoDomTitular=opcion;
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -162,7 +162,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

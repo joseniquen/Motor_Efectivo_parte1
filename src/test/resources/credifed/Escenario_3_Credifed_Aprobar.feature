@@ -41,7 +41,7 @@ Feature: Escenario 3 - Como usuario quiero aprobar una solicitud de crédito en 
 		#When Cambio de iframe a default
 		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  #When Cambio de iframe a "07 Datos del Titular"
-	  #When Verifico si existe error en consentimiento digital
+	  When Verifico si existe error en consentimiento digital2
 	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default

@@ -26,7 +26,7 @@ public class CredifedReferenciaTelfSteps {
 	{
 		credifedReferenciaTelfPage.clickNuevaReferencia().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class CredifedReferenciaTelfSteps {
 		credifedReferenciaTelfPage.clickAceptarReferencia().click();
 		
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

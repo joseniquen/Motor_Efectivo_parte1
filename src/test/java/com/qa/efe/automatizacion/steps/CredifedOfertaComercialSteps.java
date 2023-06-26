@@ -39,7 +39,7 @@ public class CredifedOfertaComercialSteps {
 			credifedOfertaComercialPage.clickSimular().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,7 +56,7 @@ public class CredifedOfertaComercialSteps {
 			credifedOfertaComercialPage.clickAprobar().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -144,7 +144,7 @@ public class CredifedOfertaComercialSteps {
 	{
 		credifedOfertaComercialPage.verificarResumenSol();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -169,7 +169,7 @@ public class CredifedOfertaComercialSteps {
 		System.out.println(credifedOfertaComercialPage.getRbtConDevolucion());
 		credifedOfertaComercialPage.getRbtConDevolucion().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -185,7 +185,7 @@ public class CredifedOfertaComercialSteps {
 			
 		}	
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -209,7 +209,7 @@ public class CredifedOfertaComercialSteps {
 			System.out.print("No salió alerta CME");
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed4("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

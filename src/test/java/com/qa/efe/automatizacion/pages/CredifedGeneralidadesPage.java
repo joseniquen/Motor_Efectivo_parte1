@@ -152,8 +152,7 @@ public class CredifedGeneralidadesPage {
 			return SeleniumWaiters.findElement(driver,By.xpath("//iframe[@title='"+titleIframe+"']"),10);
 		} catch (Exception e) {
 			return null;
-		}
-		
+		}	
 	}
 	
 	public List<WebElement> validarMenuInicialIframe()
@@ -173,11 +172,32 @@ public class CredifedGeneralidadesPage {
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Observaciones']"),15);
 	}
 	
-	public void captura_pantalla_credifed(String ruta, String nombre) throws IOException {
+	public void captura_pantalla_credifed1(String ruta, String nombre) throws IOException {
 		//SeleniumWaiters.waitSeconds(5);
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String newString1 = ruta.replace("\\", "\\\\");
-		FileUtils.copyFile(scrFile, new File(newString1+"\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed parte 1\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
+	}
+	public void captura_pantalla_credifed2(String ruta, String nombre) throws IOException {
+		//SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed parte 2\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
+	}
+	public void captura_pantalla_credifed3(String ruta, String nombre) throws IOException {
+		//SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed parte 3\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
+	}
+	public void captura_pantalla_credifed4(String ruta, String nombre) throws IOException {
+		//SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed parte 4\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
 		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
 	}
 }

@@ -49,7 +49,7 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	  #Temporal
 		When Verifico si existe error en filtro evaluar personas
 		#Temporal
-	  When Verifico si existe error en consentimiento digital
+	  When Verifico si existe error en consentimiento digital1
 		When Doy click en boton editar
 		When Selecciono tipo de venta "RECEPTIVA"
 		And Selecciono condicion especial "SIN TESTIGO A RUEGO"
@@ -63,7 +63,7 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 		And Ingreso correo electronico "example_1@gmail.com"
 		And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Verifico si existe error en consentimiento digital
+		And Verifico si existe error en consentimiento digital1
 		And Doy click en boton continuar
 		
 		#SECCION: INFORMACION DOMICILIARIA TITULAR
@@ -97,7 +97,7 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso la referencia "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Verifico si existe error en consentimiento digital
+		And Verifico si existe error en consentimiento digital1
 		And Doy click en boton continuar
 		
 		#SECCION: INFORMACION FINANCIERA TITULAR
@@ -118,7 +118,7 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	 	#Temporal
 		When Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Verifico si existe error en consentimiento digital
+		And Verifico si existe error en consentimiento digital1
 		And Doy click en boton continuar
 		
 		#SECCION: INFORMACION LABORAL TITULAR
@@ -155,7 +155,7 @@ Feature: Escenario 3 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso la referencia laboral "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos
 		And Acepto para sobreescribir datos originales
-		And Verifico si existe error en consentimiento digital
+		And Verifico si existe error en consentimiento digital1
 		And Doy click en boton continuar
 		
 		#SECCION: REFERENCIAS TELEFONICAS

@@ -37,12 +37,24 @@ public class CredifedGeneralidadesSteps {
 		driver.switchTo().defaultContent();
 	}
 	
-	@When("Verifico si existe error en consentimiento digital")
-	public void veriricarConsentimientoDigital()
+	@When("Verifico si existe error en consentimiento digital1")
+	public void veriricarConsentimientoDigital1()
 	{
 		credifedGeneralidadesPage.verificarConsentimientoDigital();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	
+	@When("Verifico si existe error en consentimiento digital2")
+	public void veriricarConsentimientoDigital2()
+	{
+		credifedGeneralidadesPage.verificarConsentimientoDigital();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +78,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorEjecutarFiltroEvaluarDomicilio();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +90,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,7 +108,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.verificarErrorFiltroPersonas();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -109,7 +121,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.clickBtnGuardar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -125,7 +137,7 @@ public class CredifedGeneralidadesSteps {
 			System.out.println("Pasa ok");
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -137,7 +149,7 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.clickBtnContinuar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -168,7 +180,7 @@ public class CredifedGeneralidadesSteps {
 				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
 				int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
 				driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
-				veriricarConsentimientoDigital();
+				veriricarConsentimientoDigital2();
 				SeleniumWaiters.waitSeconds(2);
 			 	System.out.println("antes del click de requisitos");
 				credifedGeneralidadesPage.clickMenuInicialAprobar().click();
@@ -206,11 +218,11 @@ public class CredifedGeneralidadesSteps {
 			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
 			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
 			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
-			veriricarConsentimientoDigital();
+			veriricarConsentimientoDigital1();
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
