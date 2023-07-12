@@ -40,7 +40,7 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en consentimiento digital1")
 	public void veriricarConsentimientoDigital1()
 	{
-		credifedGeneralidadesPage.verificarConsentimientoDigital();
+		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
@@ -52,7 +52,7 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en consentimiento digital2")
 	public void veriricarConsentimientoDigital2()
 	{
-		credifedGeneralidadesPage.verificarConsentimientoDigital();
+		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {

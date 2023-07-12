@@ -34,16 +34,15 @@ public class CredifedGeneralidadesPage {
 	public void iframeDefecto() {
 		driver.switchTo().defaultContent();
 	}
-	public void verificarConsentimientoDigital()
+	public void verificarAlertaRoja()
 	{
 		try {
-			WebElement verificar =SeleniumWaiters.findElement(driver,By.xpath("//*[@id='div_19_1_5_2_2_1']"),15); 
-			if (verificar.isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
+			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
+				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).click();
 			} 
 		} catch (Exception e) {
-			System.out.println("No hay error en servicio verificar consentimiento digital");
-		} 
+			System.out.println("No salió error en alerta popup");
+		}
 	}
 	public void verificarErrorEjecutarServicioDireccion()
 	{
