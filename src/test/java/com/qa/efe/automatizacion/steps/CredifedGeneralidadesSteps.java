@@ -40,6 +40,7 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en consentimiento digital1")
 	public void veriricarConsentimientoDigital1()
 	{
+		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
 		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
@@ -52,6 +53,7 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en consentimiento digital2")
 	public void veriricarConsentimientoDigital2()
 	{
+		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
 		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
