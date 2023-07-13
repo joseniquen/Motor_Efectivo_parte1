@@ -137,6 +137,12 @@ public class CredifedOfertaComercialSteps {
 				}
 			}
 		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Verifico que estemos en la pantalla resumen del credito")
@@ -159,6 +165,12 @@ public class CredifedOfertaComercialSteps {
 
 		} catch (Exception e) {
 			System.out.println("La solicitud contiene Exepciones");
+		}
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	

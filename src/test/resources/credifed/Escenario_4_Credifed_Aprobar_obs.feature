@@ -18,7 +18,7 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Efectiva.2025'
+		And Ingreso mi contraseña bpm 'xxxxx'
 		And Doy click en boton continuar de bpm
 		
 		#SECCION: DASHBOARD
@@ -45,7 +45,7 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 5 segundos
 	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar
+	  When Doy click en boton continuar a
 	  
 	  #SECCION: OBSERVACIONES
 		When Cambio de iframe a default

@@ -49,6 +49,13 @@ public class CredifedGeneralidadesPage {
 			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).click();
 			} 
+			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
+				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).click();
+			} 
+			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).isDisplayed()) {
+				SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).click();
+			} 
+			
 		} catch (Exception e) {
 			System.out.println("No salió error en alerta popup");
 		}

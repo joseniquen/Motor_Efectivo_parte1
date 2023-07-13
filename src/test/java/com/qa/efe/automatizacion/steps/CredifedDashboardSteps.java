@@ -54,7 +54,7 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.verInstancia().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -196,7 +196,7 @@ public class CredifedDashboardSteps {
 		credifedDashboardPage.clickReclamarTarea().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

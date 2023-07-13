@@ -78,7 +78,7 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en filtro evaluar domicilio")
 	public void veriricarErrorFiltroEvaluarDomicilio()
 	{
-		credifedGeneralidadesPage.verificarErrorEjecutarFiltroEvaluarDomicilio();
+		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
@@ -108,7 +108,8 @@ public class CredifedGeneralidadesSteps {
 	@When("Verifico si existe error en filtro evaluar personas")
 	public void verificarErrorFiltroEvaluarPersonas()
 	{
-		credifedGeneralidadesPage.verificarErrorFiltroPersonas();
+		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
+		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
 		} catch (IOException e) {
@@ -152,6 +153,18 @@ public class CredifedGeneralidadesSteps {
 		credifedGeneralidadesPage.clickBtnContinuar().click();
 		try {
 			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@When("Doy click en boton continuar a")
+	public void clickBtnContinuara()
+	{
+		credifedGeneralidadesPage.clickBtnContinuar().click();
+		try {
+			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -29,8 +29,7 @@ public class CredifedLoginSteps {
 	
 	@Given("Ingreso a la pagina de credifed")
 	public void open_LoginCotifed() {
-		driver.get(propertiesManager.getProperties().getProperty("cretifed.url"));
-		
+		driver.get(propertiesManager.getProperties().getProperty("cretifed.url"));	
 	}
 	
 	@When("Doy click en conexion segura")

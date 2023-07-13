@@ -46,19 +46,19 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 5 segundos
 	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar
+	  When Doy click en boton continuar a
 	  
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
 	  When Espero 5 segundos
-	  When Doy click en boton continuar
+	  When Doy click en boton continuar a
 	  
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "23 Datos de Referidos"
 	  When Espero 5 segundos
-	  When Doy click en boton continuar
+	  When Doy click en boton continuar a
 
 	  When Espero 10 segundos
 	  When Cambio de iframe a default
