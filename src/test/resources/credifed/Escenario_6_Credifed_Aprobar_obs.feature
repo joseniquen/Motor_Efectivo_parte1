@@ -46,7 +46,7 @@ Feature: Escenario 6 - Como usuario quiero aprobar una solicitud de crédito en 
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 5 segundos
 	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar
+	  When Doy click en boton continuar a
 	  
 	  #SECCION: OBSERVACIONES
 		When Cambio de iframe a default
