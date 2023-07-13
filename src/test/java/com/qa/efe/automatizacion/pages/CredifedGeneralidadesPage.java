@@ -40,6 +40,9 @@ public class CredifedGeneralidadesPage {
 			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).click();
 			} 
+			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).isDisplayed()) {
+				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
+			} 
 		} catch (Exception e) {
 			System.out.println("No salió error en alerta popup");
 		}
