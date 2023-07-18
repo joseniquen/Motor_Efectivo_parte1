@@ -21,19 +21,32 @@ public class CredifedReferenciaTelfSteps {
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
 
 	}
-	@When("Doy click en agregar nueva referencia")
-	public void clickNuevaReferencia()
+	@When("Doy click en agregar nueva referencia {int}")
+	public void clickNuevaReferencia(int a)
 	{
 		credifedReferenciaTelfPage.clickNuevaReferencia().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	@When("Creo referencia telefonica")
-	public void clickNuevaReferencia(DataTable referencia)
+	@When("Creo referencia telefonica {int}")
+	public void clickNuevaReferencia(int a,DataTable referencia)
 	{
 		List<Map<String, String>> items = referencia.asMaps(String.class, String.class);
 		Map<String, String> item = items.get(0);
@@ -54,7 +67,20 @@ public class CredifedReferenciaTelfSteps {
 		credifedReferenciaTelfPage.clickAceptarReferencia().click();
 		
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -37,31 +37,31 @@ public class CredifedGeneralidadesSteps {
 		driver.switchTo().defaultContent();
 	}
 	
-	@When("Verifico si existe error en consentimiento digital1")
-	public void veriricarConsentimientoDigital1()
+	@When("Verifico si existe error en consentimiento digital {int}")
+	public void veriricarConsentimientoDigital(int a)
 	{
 		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
 		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
 	
-	@When("Verifico si existe error en consentimiento digital2")
-	public void veriricarConsentimientoDigital2()
-	{
-		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
-		credifedGeneralidadesPage.verificarAlertaRoja();
-		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-	}
 	
 	@When("Verifico si existe error en normalizar direccion")
 	public void verificoErrorNormalizarDireccion()
@@ -75,25 +75,49 @@ public class CredifedGeneralidadesSteps {
 		credifedGeneralidadesPage.verificarErrorEjecutarServicioDireccion();
 	}
 	
-	@When("Verifico si existe error en filtro evaluar domicilio")
-	public void veriricarErrorFiltroEvaluarDomicilio()
+	@When("Verifico si existe error en filtro evaluar domicilio {int}")
+	public void veriricarErrorFiltroEvaluarDomicilio(int a)
 	{
 		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@When("Verifico si existe error en referencias telefonicas")
-	public void veriricoErrorReferenciasTelefonicas()
+	@When("Verifico si existe error en referencias telefonicas {int}")
+	public void veriricoErrorReferenciasTelefonicas(int a)
 	{
 		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -105,34 +129,59 @@ public class CredifedGeneralidadesSteps {
 		credifedGeneralidadesPage.verificarErrorFiltroInformacionFinanciera();
 	}
 	
-	@When("Verifico si existe error en filtro evaluar personas")
-	public void verificarErrorFiltroEvaluarPersonas()
+	@When("Verifico si existe error en filtro evaluar personas {int}")
+	public void verificarErrorFiltroEvaluarPersonas(int a)
 	{
 		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
 		credifedGeneralidadesPage.verificarAlertaRoja();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	
-	@When("Doy click en guardar datos")
-	public void clickBtnGuardar()
+	@When("Doy click en guardar datos {int}")
+	public void clickBtnGuardar(int a)
 	{
 		credifedGeneralidadesPage.clickBtnGuardar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
+			 } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@When("Acepto para sobreescribir datos originales")
-	public void clickBtnSobreescribirDatos()
+	@When("Acepto para sobreescribir datos originales {int}")
+	public void clickBtnSobreescribirDatos(int a)
 	{
 		try {
 			credifedGeneralidadesPage.clickBtnSobreescribirDatos().click();
@@ -140,31 +189,45 @@ public class CredifedGeneralidadesSteps {
 			System.out.println("Pasa ok");
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@When("Doy click en boton continuar")
-	public void clickBtnContinuar()
+	@When("Doy click en boton continuar {int}")
+	public void clickBtnContinuar(int a)
 	{
 		credifedGeneralidadesPage.clickBtnContinuar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	@When("Doy click en boton continuar a")
-	public void clickBtnContinuara()
-	{
-		credifedGeneralidadesPage.clickBtnContinuar().click();
-		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -176,17 +239,17 @@ public class CredifedGeneralidadesSteps {
 	{
 		credifedGeneralidadesPage.pestañasMenu(opcion).click();
 	}
-	@When("Validar que el menu de aprobar sea el inicial")
-	public void validarMenuInicialAprobar() {
+	@When("Validar que el menu de aprobar sea el inicial {int}")
+	public void validarMenuInicialAprobar(int a) {
 		 if(credifedGeneralidadesPage.validarMenuInicialCambiar("Resumen Solicitud")!=null) {
 			 	System.out.println("Resumen Solicitud");
 			 	cambioIframeDefault();
 				cambioIframeNuevo("Paso: Aprobar Solicitud de Crédito");
 				cambioIframeNuevo("Resumen Solicitud");
-				credifedOfertaComercialSteps.clickAceptarSolicitudCredito();
+				credifedOfertaComercialSteps.clickAceptarSolicitudCredito(a);
 				cambioIframeDefault();
 				cambioIframeNuevo("View Instance Details");
-				credifedOfertaComercialSteps.verificarSolicitudAprobada();
+				credifedOfertaComercialSteps.verificarSolicitudAprobada(a);
 				driver.close();
 			}else if(credifedGeneralidadesPage.validarMenuInicialCambiar("20 Validación Requisitos")==null) {
 			 	System.out.println("validarMenuInicialCambiar");
@@ -195,7 +258,7 @@ public class CredifedGeneralidadesSteps {
 				credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
 				int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
 				driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
-				veriricarConsentimientoDigital2();
+				veriricarConsentimientoDigital(a);
 				SeleniumWaiters.waitSeconds(2);
 			 	System.out.println("antes del click de requisitos");
 				credifedGeneralidadesPage.clickMenuInicialAprobar().click();
@@ -224,8 +287,8 @@ public class CredifedGeneralidadesSteps {
 
 		}
 	}
-	@When("Validar que el menu de analizar sea el inicial")
-	public void validarMenuInicialAnalizar() {
+	@When("Validar que el menu de analizar sea el inicial {int}")
+	public void validarMenuInicialAnalizar(int a) {
 		SeleniumWaiters.waitSeconds(5);
 		if(credifedGeneralidadesPage.validarMenuInicialCambiar("07 Datos del Titular")==null) {
 			driver.switchTo().defaultContent();
@@ -233,12 +296,25 @@ public class CredifedGeneralidadesSteps {
 			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
 			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
 			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
-			veriricarConsentimientoDigital1();
+			veriricarConsentimientoDigital(a);
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
+			 } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

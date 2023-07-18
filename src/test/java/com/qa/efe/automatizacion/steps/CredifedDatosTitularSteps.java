@@ -20,12 +20,25 @@ public class CredifedDatosTitularSteps {
 
 	}
 	
-	@When("Doy click en boton editar")
-	public void clickBtnEditar()
+	@When("Doy click en boton editar {int}")
+	public void clickBtnEditar(int a)
 	{
 		credifedDatosTitularPage.clickBtnEditar().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,13 +69,26 @@ public class CredifedDatosTitularSteps {
 		credifedDatosTitularPage.selectPaisNacimiento(opcion).click();
 	}
 	
-	@When("Selecciono pais de residencia {string}")
-	public void SeleccionoPaisResidencia(String opcion)
+	@When("Selecciono pais de residencia {int} {string}")
+	public void SeleccionoPaisResidencia(int a,String opcion)
 	{
 		credifedDatosTitularPage.selectPaisResidencia(opcion).click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
+			 } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -95,13 +121,26 @@ public class CredifedDatosTitularSteps {
 		}	
 	}
 	
-	@When("Ingreso correo electronico {string}")
-	public void ingresoCorreo(String opcion)
+	@When("Ingreso correo electronico {int} {string}")
+	public void ingresoCorreo(int a,String opcion)
 	{
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedDatosTitularPage.ingresoCorreo().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

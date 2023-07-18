@@ -60,10 +60,29 @@ public class CredifedObservacionesSteps {
 		credifedObservacionesPage.scrollBtnAprobacion();
 		credifedObservacionesPage.enviarAprobacionExcepcion().click();
 	}
-	@When("Doy click en el boton responder aprobacion por excepcion")
-	public void doyClickBotonResponderAprobacionExcepcion() {
+	@When("Doy click en el boton responder aprobacion por excepcion {int}")
+	public void doyClickBotonResponderAprobacionExcepcion(int a) {
 		credifedObservacionesPage.scrollBtnResponderAprobacion();
 		credifedObservacionesPage.responderAprobacionExcepcion().click();
+		try {
+			switch (a) {
+	        case 1:
+				credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+	            break;
+	        case 2:
+				credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+	            break;
+	        case 3:
+				credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+	            break;
+	        default:
+				credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+	            break;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 	@When("Doy click en aceptar aprobacion por excepcion")
 	public void doyClickAceptarAprobacionExcepcion() {
@@ -77,10 +96,24 @@ public class CredifedObservacionesSteps {
 		SeleniumWaiters.waitSeconds(10);
 	}
 
-	@When("Tomo captura de la pagina de Obs {string}")
-	public void extraerAreaAprobadora(String opcion) throws IOException {
+	@When("Tomo captura de la pagina de Obs {int} {string}")
+	public void extraerAreaAprobadora(int a,String opcion) throws IOException {
 		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.captura_pantalla("target", "Obs caso "+opcion);
+		switch (a) {
+        case 1:
+			credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+            break;
+        case 2:
+			credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+            break;
+        case 3:
+			credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+            break;
+        default:
+			credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+            break;
+    }
 	}
 	
 }

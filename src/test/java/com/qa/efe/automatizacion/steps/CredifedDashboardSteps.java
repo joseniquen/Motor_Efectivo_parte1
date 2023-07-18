@@ -45,8 +45,8 @@ public class CredifedDashboardSteps {
 		credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
 	}
 	
-	@When("Doy click en pulsar para ver instancia")
-	public void doyClickPulsarParaVerInstancia()
+	@When("Doy click en pulsar para ver instancia {int}")
+	public void doyClickPulsarParaVerInstancia(int a)
 	{
 		try {
 			credifedDashboardPage.verInstanciaEn().click();
@@ -54,7 +54,20 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.verInstancia().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,8 +93,8 @@ public class CredifedDashboardSteps {
 		}
 		
 	}
-	@When("Valido datos de la solicitud de credito")
-	public void validoDatosSolicitudCredito(DataTable seguros) {
+	@When("Valido datos de la solicitud de credito {int}")
+	public void validoDatosSolicitudCredito(int a,DataTable seguros) {
 		credifedGeneralidadesPage.iframeDefecto();
 		SeleniumWaiters.waitSeconds(1);
 		credifedGeneralidadesPage.cambioIframe("View Instance Details");
@@ -105,14 +118,27 @@ public class CredifedDashboardSteps {
 			assertTrue(credifedDashboardPage.comprueboLineaProducto().getText().equals(linea_producto));	
 			assertTrue(credifedDashboardPage.comprueboNroSol().getText().equals(nro_solicitud));
 			try {
-				credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+				 switch (a) {
+			        case 1:
+						credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+			            break;
+			        case 2:
+						credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+			            break;
+			        case 3:
+						credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+			            break;
+			        default:
+						credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+			            break;
+			    }
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}	}
 	
-	@When("Doy click en analizar solicitud de credito")
-	public void doyClickAnalizarSolicitudCredito()
+	@When("Doy click en analizar solicitud de credito {int}")
+	public void doyClickAnalizarSolicitudCredito(int a)
 	{
 		try {
 			credifedDashboardPage.clickAnalizarSolCreditoEn().click();
@@ -120,8 +146,20 @@ public class CredifedDashboardSteps {
 			credifedDashboardPage.clickAnalizarSolCredito().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -169,8 +207,8 @@ public class CredifedDashboardSteps {
 		credifedDashboardPage.ingresarProceso().sendKeys(Keys.ENTER);
 	}
 	
-	@When("Doy click en reclamar tarea")
-	public void doyClickEnReclamarTarea()
+	@When("Doy click en reclamar tarea {int}")
+	public void doyClickEnReclamarTarea(int a)
 	{
 		SeleniumWaiters.waitSeconds(2);
 		if (credifedDashboardPage.validaExisteReclamarTarea().size()!=0) {
@@ -196,8 +234,20 @@ public class CredifedDashboardSteps {
 		credifedDashboardPage.clickReclamarTarea().click();
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed2("target", "credifed captura_");
-		} catch (IOException e) {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

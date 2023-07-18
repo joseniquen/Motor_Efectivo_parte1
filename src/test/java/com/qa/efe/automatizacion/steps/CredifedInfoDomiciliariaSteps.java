@@ -42,13 +42,26 @@ public class CredifedInfoDomiciliariaSteps {
 		integracionStore.provinciaDomTitular=opcion;
 	}
 	
-	@When("Selecciono distrito {string}")
-	public void seleccionoDistrito(String opcion)
+	@When("Selecciono distrito {int} {string}")
+	public void seleccionoDistrito(int a,String opcion)
 	{
 		credifedInfoDomiciliariaPage.selectDistrito(opcion).click();
 		integracionStore.distritoDomTitular=opcion;
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,13 +87,26 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.selectReferencia(opcion).click();
 	}
 	
-	@When("Ingreso la referencia {string}")
-	public void ingresoReferencia(String opcion)
+	@When("Ingreso la referencia {int} {string}")
+	public void ingresoReferencia(int a,String opcion)
 	{
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -156,13 +182,26 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.ingresoSubdivision().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresoSubdivision().sendKeys(opcion);
 	}
-	@When("Ingreso interior {string}")
-	public void ingresoInterior(String opcion)
+	@When("Ingreso interior {int} {string}")
+	public void ingresoInterior(int a,String opcion)
 	{
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

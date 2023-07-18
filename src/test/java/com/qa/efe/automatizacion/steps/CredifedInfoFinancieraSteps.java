@@ -20,12 +20,25 @@ public class CredifedInfoFinancieraSteps {
 		this.credifedGeneralidadesPage = credifedGeneralidadesPage;
 	}
 	
-	@When("Selecciono perfil de ingreso principal {string}")
-	public void SeleccionoPerfilIngresoPrincipal(String opcion)
+	@When("Selecciono perfil de ingreso principal {int} {string}")
+	public void SeleccionoPerfilIngresoPrincipal(int a,String opcion)
 	{
 		credifedInfoFinancieraPage.perfilIngresoPrincipal(opcion).click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,8 +73,8 @@ public class CredifedInfoFinancieraSteps {
 		} while (credifedInfoFinancieraPage.ingresoDeclaradoText().getAttribute("value").equals("0.00"));
 	}
 	
-	@When("Registro antiguedad laboral {string} años y {string} meses")
-	public void registroAntiguedadLaboral(String opcion,String opcion1)
+	@When("Registro antiguedad laboral {string} años y {string} meses {int}")
+	public void registroAntiguedadLaboral(String opcion,String opcion1, int a)
 	{
 		credifedInfoFinancieraPage.antiguedadLaboralAnio().click();
 		credifedInfoFinancieraPage.antiguedadLaboralAnio().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -72,15 +85,28 @@ public class CredifedInfoFinancieraSteps {
 		credifedInfoFinancieraPage.bajarDeudas().click();
 		
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@When("Reviso el detalle de deudas subir sustento")
-	public void revisoDetalleDeudas()
+	@When("Reviso el detalle de deudas subir sustento {int}")
+	public void revisoDetalleDeudas(int a)
 	{
 		try {			
 			credifedGeneralidadesPage.scrollTo(credifedInfoFinancieraPage.bajarDeudas());			
@@ -112,7 +138,20 @@ public class CredifedInfoFinancieraSteps {
 			System.out.println("No es necesario subir sustento");
 		}
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

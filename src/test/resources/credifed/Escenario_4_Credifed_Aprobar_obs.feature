@@ -19,25 +19,25 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
 		And Ingreso mi contraseña bpm 'xxxxx'
-		And Doy click en boton continuar de bpm
+		And Doy click en boton continuar de bpm 2
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
 		When Ingreso instancia de proceso "20555791"
-		And Doy click en pulsar para ver instancia
+		And Doy click en pulsar para ver instancia 2
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD
 		When Doy click en aprobar solicitud de credito
-		When Doy click en reclamar tarea
+		When Doy click en reclamar tarea 2
 		
 	  #SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-		When Validar que el menu de aprobar sea el inicial
+		When Validar que el menu de aprobar sea el inicial 2
 		#When Cambio de iframe a default
 		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  #When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital2
+	  When Verifico si existe error en consentimiento digital 2
 	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default
@@ -45,7 +45,7 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 	  When Cambio de iframe a "20 Validación Requisitos"
 	  When Espero 5 segundos
 	  When Doy check a la lista de documentos
-	  When Doy click en boton continuar a
+	  When Doy click en boton continuar 2
 	  
 	  #SECCION: OBSERVACIONES
 		When Cambio de iframe a default
@@ -55,4 +55,4 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 		When Selecciono estado "RESUELTA" e ingreso comentario "TODO OK"		
 	  When Doy click en el boton enviar aprobacion por excepcion
 	  When Doy click en aceptar aprobacion por excepcion
-	  When Tomo captura de la pagina de Obs "6"
+	  When Tomo captura de la pagina de Obs 2 "6"

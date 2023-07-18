@@ -54,12 +54,25 @@ public class CredifedInfoLaboralSteps {
 		integracionStore.telFijoLaboral=nro;
 	}
 	
-	@When("Ingreso celular {string}")
-	public void ingresoCelular(String opcion) {
+	@When("Ingreso celular {int} {string}")
+	public void ingresoCelular(int a, String opcion) {
 		credifedInfoLaboralPage.getCelular().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.getCelular().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,13 +121,26 @@ public class CredifedInfoLaboralSteps {
 		credifedInfoLaboralPage.selectReferencia(opcion).click();
 	}
 	
-	@When("Ingreso la referencia laboral {string}")
-	public void ingresoReferenciaLaboral(String opcion)
+	@When("Ingreso la referencia laboral {int} {string}")
+	public void ingresoReferenciaLaboral(int a,String opcion)
 	{
 		credifedInfoLaboralPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresarReferencia().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -129,8 +155,8 @@ public class CredifedInfoLaboralSteps {
 		credifedInfoLaboralPage.clickAceptarUbicarMapa().click();
 	}
 	
-	@When("selecciono via laboral {string}")
-	public void selectVia(String opcion)
+	@When("selecciono via laboral {int} {string}")
+	public void selectVia(int a, String opcion)
 	{
 		do {
 			/*credifedGeneralidadesPage.clickBtnGuardar().click();
@@ -149,7 +175,7 @@ public class CredifedInfoLaboralSteps {
 			ingresoCentroTrabajo(integracionStore.centroTrabajolaboral);
 			ingresoRucCentroTrabajo(integracionStore.rucCentroTrabajolaboral);
 			elijoIngresoTelefonoFijoInformacionLaboral(integracionStore.DeptotelFijoLaboral,integracionStore.telFijoLaboral);
-			ingresoCelular(integracionStore.celLaboral);
+			ingresoCelular(a,integracionStore.celLaboral);
 			seleccionoDepartamentoLaboral(integracionStore.departamentoLaboralTitular);
 			seleccionoProvincia_laboral(integracionStore.provinciaDomLaboralTitular);
 			seleccionoDistrito_laboral(integracionStore.distritoDomLaboralTitular);
@@ -170,13 +196,26 @@ public class CredifedInfoLaboralSteps {
 		}
 	}
 	
-	@When("Ingreso numero de direccion domiciliaria laboral {string}")
-	public void ingresoNumeroDireccionDomiciliaria(String opcion)
+	@When("Ingreso numero de direccion domiciliaria laboral {int} {string}")
+	public void ingresoNumeroDireccionDomiciliaria(int a, String opcion)
 	{
 		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresoNumeroDireccionDomiciliariaLaboral().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -201,13 +240,26 @@ public class CredifedInfoLaboralSteps {
 		credifedInfoLaboralPage.ingresoSubdivisionLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresoSubdivisionLaboral().sendKeys(opcion);
 	}
-	@When("Ingreso interior laboral {string}")
-	public void ingresoInterior(String opcion)
+	@When("Ingreso interior laboral {int} {string}")
+	public void ingresoInterior(int a,String opcion)
 	{
 		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoLaboralPage.ingresoInteriorLaboral().sendKeys(opcion);
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

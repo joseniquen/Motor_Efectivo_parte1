@@ -25,12 +25,25 @@ public class CredifedValidacionRequisitosSteps {
 
 	}
 	
-	@Then("Continuo a aprobacion de la solicitud")
-	public void continuoAprobacionSolicitud()
+	@Then("Continuo a aprobacion de la solicitud {int}")
+	public void continuoAprobacionSolicitud(int a)
 	{
 		credifedValidacionRequisitosPage.aprobSolicitud().click();
 		try {
-			credifedGeneralidadesPage.captura_pantalla_credifed1("target", "credifed captura_");
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
