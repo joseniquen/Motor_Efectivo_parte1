@@ -198,12 +198,37 @@ public class CredifedGeneralidadesPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Observaciones']"),15);
 	}
-	
+	public void captura_pantalla(int a) throws IOException {
+		 switch (a) {
+	        case 1:
+				captura_pantalla_credifed_analizar("target", "credifed captura_");
+	            break;
+	        case 2:
+				captura_pantalla_credifed_analizar_aval("target", "credifed captura_");
+	            break;
+	        case 3:
+				captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+	            break;
+	        case 4:
+				captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+	            break;
+	        default:
+				captura_pantalla_credifed_aprobar("target", "credifed captura_");
+	            break;
+	    }
+	}
 	public void captura_pantalla_credifed_analizar(String ruta, String nombre) throws IOException {
 		//SeleniumWaiters.waitSeconds(5);
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String newString1 = ruta.replace("\\", "\\\\");
 		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed analizar\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
+		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
+	}
+	public void captura_pantalla_credifed_analizar_aval(String ruta, String nombre) throws IOException {
+		//SeleniumWaiters.waitSeconds(5);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String newString1 = ruta.replace("\\", "\\\\");
+		FileUtils.copyFile(scrFile, new File(newString1+"\\credifed analizar aval\\"+nombre+integracionStore.captura_incremental_cretifed+".png"));
 		integracionStore.captura_incremental_cretifed = integracionStore.captura_incremental_cretifed +1;
 	}
 	public void captura_pantalla_credifed_enviar_obs(String ruta, String nombre) throws IOException {

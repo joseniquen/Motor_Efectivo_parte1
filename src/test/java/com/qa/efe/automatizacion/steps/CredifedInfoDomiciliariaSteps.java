@@ -48,20 +48,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.selectDistrito(opcion).click();
 		integracionStore.distritoDomTitular=opcion;
 		try {
-			 switch (a) {
-		        case 1:
-					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
-		            break;
-		        case 2:
-					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
-		            break;
-		        case 3:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
-		            break;
-		        default:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
-		            break;
-		    }
+			credifedGeneralidadesPage.captura_pantalla(a);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -93,20 +80,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresarReferencia().sendKeys(opcion);
 		try {
-			 switch (a) {
-		        case 1:
-					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
-		            break;
-		        case 2:
-					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
-		            break;
-		        case 3:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
-		            break;
-		        default:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
-		            break;
-		    }
+			credifedGeneralidadesPage.captura_pantalla(a);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -188,20 +162,7 @@ public class CredifedInfoDomiciliariaSteps {
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		credifedInfoDomiciliariaPage.ingresoInterior().sendKeys(opcion);
 		try {
-			 switch (a) {
-		        case 1:
-					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
-		            break;
-		        case 2:
-					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
-		            break;
-		        case 3:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
-		            break;
-		        default:
-					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
-		            break;
-		    }
+			credifedGeneralidadesPage.captura_pantalla(a);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
