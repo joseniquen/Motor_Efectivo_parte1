@@ -17,8 +17,8 @@ public class CredifedInfoFinancieraPage {
 		this.driver = driverManager.getDriver();
 	}
 	public WebElement perfilIngresoPrincipal(String opcion) {
-		SeleniumWaiters.findElement(driver, By.id("singleselect-InformacionAdicionalLaboralCV2:perfilSingle_Select"),10).click();
-		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-InformacionAdicionalLaboralCV2:perfilSingle_Select']/option[contains(.,'"+opcion+"')]"),10);
+		SeleniumWaiters.findElement(driver, By.id("singleselect-InformacionAdicionalLaboralCV2:perfilSingle_Select"),30).click();
+		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-InformacionAdicionalLaboralCV2:perfilSingle_Select']/option[contains(.,'"+opcion+"')]"),30);
 	}
 	public WebElement situacionLaboral(String opcion) {
 		SeleniumWaiters.findElement(driver, By.id("singleselect-InformacionAdicionalLaboralCV2:situacionLaboralSingle_Select"),10).click();

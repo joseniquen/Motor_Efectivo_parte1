@@ -9,6 +9,7 @@ public class IntegracionStore implements Store {
 	public int registro_operaciones;
 	public int carga_archivos;
 	public String dni;
+	public String dniAval;
 	//domiciliaria titular
 	public String departamentoDomTitular;
 	public String provinciaDomTitular;
@@ -70,6 +71,7 @@ public class IntegracionStore implements Store {
 		distritoDomLaboralTitularAval="";
 		captura_incremental_cotifed=1;
 		captura_incremental_cretifed=1;
+		dniAval="";
 	}
 	public IntegracionStore() {
 		tipo_documento="";
@@ -102,6 +104,7 @@ public class IntegracionStore implements Store {
 		distritoDomLaboralTitularAval="";
 		captura_incremental_cotifed=1;
 		captura_incremental_cretifed=1;
+		dniAval="";
 	}
 	
 	

@@ -233,6 +233,11 @@ public class CredifedGeneralidadesSteps {
 			e.printStackTrace();
 		}
 	}
+	@When("Doy click en boton cancelar")
+	public void clickBtnCancelar()
+	{
+		credifedGeneralidadesPage.clickBtnCancelar().click();
+	}
 	
 	@When("Me dirijo a la pestaña de {string}")
 	public void dirijoPestanaMenu(String opcion)
@@ -298,6 +303,70 @@ public class CredifedGeneralidadesSteps {
 			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
 			veriricarConsentimientoDigital(a);
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
+		}
+		try {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
+			 } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@When("Validar que el menu de aprobar obs sea el inicial {int}")
+	public void validarMenuInicialAnalizarAval(int a) {
+		SeleniumWaiters.waitSeconds(5);
+		if(credifedGeneralidadesPage.validarMenuInicialCambiar("21 Observaciones")==null) {
+			driver.switchTo().defaultContent();
+			SeleniumWaiters.waitSeconds(1);
+			credifedGeneralidadesPage.cambioIframe("Paso: Aprobar Solicitud de Crédito");
+			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+			veriricarConsentimientoDigital(a);
+			credifedGeneralidadesPage.clickMenuInicialExepcion().click();
+		}
+		try {
+			 switch (a) {
+		        case 1:
+					credifedGeneralidadesPage.captura_pantalla_credifed_analizar("target", "credifed captura_");
+		            break;
+		        case 2:
+					credifedGeneralidadesPage.captura_pantalla_credifed_enviar_obs("target", "credifed captura_");
+		            break;
+		        case 3:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar_obs("target", "credifed captura_");
+		            break;
+		        default:
+					credifedGeneralidadesPage.captura_pantalla_credifed_aprobar("target", "credifed captura_");
+		            break;
+		    }
+			 } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@When("Validar que el menu de analizar aval sea el inicial {int}")
+	public void validarMenuInicialAprobarObs(int a) {
+		SeleniumWaiters.waitSeconds(5);
+		if(credifedGeneralidadesPage.validarMenuInicialCambiar("15 Datos Aval")==null) {
+			driver.switchTo().defaultContent();
+			SeleniumWaiters.waitSeconds(1);
+			credifedGeneralidadesPage.cambioIframe("Paso: Analizar Solicitud de Crédito");
+			int i = credifedGeneralidadesPage.validarMenuInicialIframe().size();
+			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
+			veriricarConsentimientoDigital(a);
+			credifedGeneralidadesPage.clickMenuInicialAnalizarAval().click();
 		}
 		try {
 			 switch (a) {

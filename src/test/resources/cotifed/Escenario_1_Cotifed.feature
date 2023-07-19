@@ -20,15 +20,15 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'xxxxxxxx'
+    When Ingreso mi usuario 'EXT_JNIQUEN'
+		And Ingreso mi contraseña 'Julio.2023'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "69205200"
+		And Ingreso numero de documento "26283100"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar

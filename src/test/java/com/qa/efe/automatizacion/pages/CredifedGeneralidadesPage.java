@@ -37,24 +37,28 @@ public class CredifedGeneralidadesPage {
 	public void verificarAlertaRoja()
 	{
 		try {
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).click();
 			} 
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
 			} 
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).click();
 			} 
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).click();
 			} 
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).click();
 			} 
-			if (SeleniumWaiters.findElement(driver,By.xpath("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).isDisplayed()) {
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).isDisplayed()) {
 				SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).click();
 			} 
+			if (SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
+				SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),10).click();
+			}
+			
 			
 		} catch (Exception e) {
 			System.out.println("No salió error en alerta popup");
@@ -144,6 +148,10 @@ public class CredifedGeneralidadesPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Continuar >>']"),10);
 	}
+	public WebElement clickBtnCancelar()
+	{
+		return SeleniumWaiters.findElement(driver,By.id("button-button-MenuEditarCV1:buttonCancelar"),10);
+	}
 	public void scrollTo(WebElement element) {
 		NavigationHelpers.scrollToElement(driver, element);
 	}
@@ -178,6 +186,10 @@ public class CredifedGeneralidadesPage {
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Datos Titular']"),10);
 	}	
+	public WebElement clickMenuInicialAnalizarAval()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Datos Aval']"),10);
+	}
 	public WebElement clickMenuInicialAprobar()
 	{
 		return SeleniumWaiters.findElement(driver,By.xpath("//div/button[text()='Validar Requisitos']"),15);

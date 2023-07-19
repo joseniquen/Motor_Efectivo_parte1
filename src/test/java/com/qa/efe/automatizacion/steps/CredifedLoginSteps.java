@@ -70,6 +70,7 @@ public class CredifedLoginSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	@When("Cierro sesion de credifed")
 	public void cierroSesionCredifed() {

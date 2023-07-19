@@ -1,5 +1,7 @@
 package com.qa.efe.automatizacion.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,7 +40,15 @@ public class CredifedInfoDomiciliariaAvalPage {
 		WebElement element = SeleniumWaiters.findElement(driver,By.xpath("//span[text()='Referencia']"),10);
 		credifedGeneralidadesPage.scrollTo(element);
 	}
-	
+	public List<WebElement> selectViaValida(String opcion)
+	{
+		return driver.findElements(By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']/option[text()='"+opcion+"']"));
+	}
+	public WebElement selectVia(String opcion)
+	{
+		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']"),10).click();
+		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoViaSingle_Select']/option[text()='"+opcion+"']"),10);
+	}
 	public WebElement clickBtnUbicarMapa()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("button-button-UbicacionGeograficaCV1:ubicarMapaButton"),10);
@@ -63,7 +73,10 @@ public class CredifedInfoDomiciliariaAvalPage {
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoPropiedadSingle_Select']"),10).click();
 		return SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoPropiedadSingle_Select']/option[text()='"+opcion+"']"),10);
 	}
-	
+	public List<WebElement> tipoPropiedadValida(String opcion)
+	{
+		return driver.findElements(By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:tipoPropiedadSingle_Select']/option[text()='"+opcion+"']"));
+	}
 	public WebElement ingresarAntiguedadDomAnios()
 	{
 		return SeleniumWaiters.findElement(driver,By.id("decimal-input-UbicacionGeograficaCV1:antDomAniosInteger"),10);

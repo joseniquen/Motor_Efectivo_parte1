@@ -31,7 +31,12 @@ public class CredifedDatosAvalPage {
 	public WebElement textNumeroDocumento() {
 		return driver.findElement(By.xpath("//span[@id='text-label-informacionPersonaAvalCV:numeroDocumentoText']"));
 	}
-	
+	public WebElement getCambiarAval() {
+		return SeleniumWaiters.findElement(driver,By.id("button-button-CambiarAval1:CambiarAval"),40);
+	}
+	public WebElement getCambiarAvalAlerta() {
+		return driver.findElement(By.xpath("//button[@id='button-button-ModalCambioAvalCV1:buttonAceptar']"));
+	}
 	public WebElement selectCondicionEspecial(String opcion)
 	{
 		SeleniumWaiters.findElement(driver,By.xpath("//select[@id='singleselect-informacionPersonaAvalCV:condicionEspecialSingle_Select']"),10).click();

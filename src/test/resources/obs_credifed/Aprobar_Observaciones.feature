@@ -25,7 +25,7 @@ Feature: Aprobar Observaciones
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20555791"
+		When Ingreso instancia de proceso "20572753"
 		And Doy click en pulsar para ver obs
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD

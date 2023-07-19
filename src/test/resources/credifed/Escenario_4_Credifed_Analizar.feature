@@ -27,16 +27,16 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'xxxxxx'
+		And Ingreso mi contraseña bpm 'Julio.2023'
 		And Doy click en boton continuar de bpm 1
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20555791"
+		When Ingreso instancia de proceso "20572753"
 		And Doy click en pulsar para ver instancia 1
 		When Valido datos de la solicitud de credito 1
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |50897630   |EFECTIVO      |20555791     |
+		|CHICLAYO   |12541944   |EFECTIVO      |20572753     |
 		When Doy click en analizar solicitud de credito 1
 		When Doy click en reclamar tarea 1
 		
@@ -52,6 +52,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	  #Temporal
 		When Verifico si existe error en filtro evaluar personas 1
 		#Temporal
+		And Espero 5 segundos
 	  When Verifico si existe error en consentimiento digital 1
 		When Doy click en boton editar 1
 		When Selecciono tipo de venta "RECEPTIVA"
@@ -162,120 +163,4 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Acepto para sobreescribir datos originales 1
 		And Verifico si existe error en consentimiento digital 1
 		And Doy click en boton continuar 1
-		
-		#SECCION: DATOS AVAL
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "15 Datos Aval"
-	  When Doy click en boton editar 1
-	  When Selecciono tipo de documento aval "D.N.I."
-	  And Ingreso numero de documento aval "75739934"
-	  And Espero 5 segundos
-	  And Selecciono condicion especial aval "SIN TESTIGO A RUEGO"
-		And Selecciono estado civil aval "SOLTERO(A)"
-		And Selecciono pais de nacimiento aval "PERU"
-		And Selecciono pais de residencia aval "PERU"
-		And Ingreso celular principal aval "580458721"
-		And Ingreso celular secundario aval "423114987"
-		And Elijo e ingreso telefono fijo aval "LIMA" "1894651"
-		And Ingreso correo electronico aval "example_1@gmail.com"
-		And Doy click en guardar datos 1
-		And Acepto para sobreescribir datos originales 1
-		And Doy click en boton continuar 1
-	  
-	  #SECCION: INFORMACION DOMICILIARIA AVAL
-	  When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "16 Información Domiciliaria Aval"
-	  When Doy click en boton editar 1
-	  And Selecciono el tipo de propiedad "PROPIA"
-	  And Ingreso antiguedad domiciliaria "30" años y "7" meses
-	  #Informacion domiciliaria de titular
-	 	When Selecciono departamento aval "LIMA"
-	 	And Selecciono provincia aval "LIMA"
-	 	And Selecciono distrito aval "SANTIAGO DE SURCO"
-	 	And selecciono via laboral aval "AVENIDA"
-	 	And Ingreso direccion domiciliaria aval "AV CAMINOS DEL INCA"
-	 	And Ingreso numero de direccion domiciliaria laboral 1 "2412"	 	
-	 	And Ingreso agrupacion laboral "Sin agrupacion"
-	 	And Ingreso division laboral "Sin division"
-	 	And Ingreso sub division laboral "Sin sub division"
-	 	And Ingreso interior laboral 1 "Sin interior"
-	 	#And Doy click en ubicar mapa aval
-	 	#When Doy click en aceptar la ubicacion correcta en el mapa aval
-	  #And Cambio de iframe a default
-	 	#And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  #And Cambio de iframe a "16 Información Domiciliaria Aval"
-	 	And Selecciono tipo de referencia aval "FRENTE A"
-	 	And Ingreso la referencia aval "PARQUE DE LA AMISTAD"
-	 	And Doy click en guardar datos 1
-		And Acepto para sobreescribir datos originales 1
-		And Doy click en boton continuar 1
-		
-		#SECCION: INFORMACION FINANCIERA AVAL
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "17 Información Financiera Aval"
-	  When Doy click en boton editar 1
-	  #Informacion financiera de titular
-		When Selecciono perfil de ingreso principal aval "FORMAL"
-		And Selecciono situacion laboral aval "DEPENDIENTE"
-	  And Selecciono ocupacion aval "ABOGADO"
-		And Ingreso declarado aval "90000"
-		And Registro antiguedad laboral aval "30" años y "7" meses
-		And Espero 1 segundos
-		And Reviso el detalle de deudas subir sustento aval
-		When Doy click en guardar datos 1
-		And Acepto para sobreescribir datos originales 1
-		And Doy click en boton continuar 1
-	  
-	  #SECCION: INFORMACION LABORAL AVAL
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "18 Información Laboral Aval"
-	  When Doy click en boton editar 1
-	  #Informacion laboral de titular
-	  When Ingreso centro de trabajo aval "IDE SOLUTION"
-	  When Ingreso ruc de centro de trabajo aval "12345689745"
-	  And Elijo e ingreso telefono fijo informacion laboral aval "LIMA" "7894652"
-	  And Ingreso celular aval "987654321"
-	  And Selecciono departamento laboral aval "LIMA"
-	 	And Selecciono provincia laboral aval "LIMA"
-	 	And Selecciono distrito laboral aval "SANTIAGO DE SURCO"
-	 	And selecciono via laboral laboral aval "AVENIDA"
-	 	And Ingreso direccion domiciliaria laboral aval "AV CAMINOS DEL INCA"
-	 	And Ingreso numero de direccion domiciliaria laboral 1 "2412"	 	
-	 	And Ingreso agrupacion laboral "Sin agrupacion"
-	 	And Ingreso division laboral "Sin division"
-	 	And Ingreso sub division laboral "Sin sub division"
-	 	And Ingreso interior laboral 1 "Sin interior"
-	 	#And Doy click en ubicar mapa laboral aval
-	 	#Then Doy click en aceptar la ubicacion correcta en el mapa laboral aval
-	 	
-	 	#SECCION: INFORMACION LABORAL AVAL
-	 	#When Cambio de iframe a default
-		#When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  #When Cambio de iframe a "18 Información Laboral Aval"
-	 	And Selecciono tipo de referencia laboral aval "FRENTE A"
-	 	And Ingreso la referencia laboral aval "PARQUE DE LA AMISTAD"
-	 	And Doy click en guardar datos 1
-		And Acepto para sobreescribir datos originales 1
-		And Doy click en boton continuar 1
-		
-		#SECCION: REFERENCIAS TELEFONICAS
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "19 Referencias Telefónicas"
-	  #Informacion referencias telefonicas
-	  And Verifico si existe error en referencias telefonicas 1
-	  And Doy click en agregar nueva referencia 1
-	  And Creo referencia telefonica 1
-		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
-		|AMIGO      |LIMA      |1236547  |654987312|Juan    |Perez|
-		Then Doy click en boton continuar 1
-		When Cambio de iframe a default
-		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-	  When Cambio de iframe a "20 Validación Requisitos"
-	  Then Continuo a aprobacion de la solicitud 1
-	  
 	  

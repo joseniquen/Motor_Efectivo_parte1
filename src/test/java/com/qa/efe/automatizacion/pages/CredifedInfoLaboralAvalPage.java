@@ -22,8 +22,8 @@ public class CredifedInfoLaboralAvalPage {
 		return SeleniumWaiters.findElement(driver, By.id("maskedtext-input-UbicacionGeograficaCV1:rucTrabajoText"),10);
 	}
 	public WebElement getTipoTelefonoFijo(String opcion) {
-		SeleniumWaiters.findElement(driver, By.id("singleselect-UbicacionGeograficaCV1:telefonoFijoSelect"),10).click();
-		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:telefonoFijoSelect']/option[text()='"+opcion+"']"),10);
+		SeleniumWaiters.findElement(driver, By.id("singleselect-UbicacionGeograficaCV1:telefonoFijoSelect"),40).click();
+		return SeleniumWaiters.findElement(driver, By.xpath("//select[@id='singleselect-UbicacionGeograficaCV1:telefonoFijoSelect']/option[text()='"+opcion+"']"),40);
 	}
 	public WebElement getTelefonoFijoLima() {
 		return SeleniumWaiters.findElement(driver, By.id("maskedtext-input-UbicacionGeograficaCV1:telefonoLima"),10);
