@@ -21,7 +21,7 @@ Feature: Aprobar Observaciones
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'useradmision'
 		And Ingreso mi contraseña bpm 'Efectiva2021'
-		And Doy click en boton continuar de bpm 3
+		And Doy click en boton continuar de bpm 4
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
@@ -30,14 +30,14 @@ Feature: Aprobar Observaciones
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD
 		When Doy click en aprobar excepcion de credito
-		When Doy click en reclamar tarea 3
+		When Doy click en reclamar tarea 4
 		
 		When Cambio de iframe a default
 		When Cambio de iframe a "Aprobación por Excepción"
 		When Validar que el menu de exepciones sea el inicial
 		
 	  When Selecciono estado "CONFORME" e ingreso comentario aprobador "TODO OK"
-	  When Doy click en el boton responder aprobacion por excepcion 3
+	  When Doy click en el boton responder aprobacion por excepcion 4
 	  When Cambio de iframe a default
 	  When Espero 10 segundos
 	  When Cierro sesion de credifed

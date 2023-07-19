@@ -19,52 +19,52 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
     When Doy click en conexion segura 
     And Ingreso mi usuario bpm 'EXT_JNIQUEN'
 		And Ingreso mi contraseña bpm 'Julio.2023'
-		And Doy click en boton continuar de bpm 4
+		And Doy click en boton continuar de bpm 5
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
 		When Ingreso instancia de proceso "20572753"
-		And Doy click en pulsar para ver instancia 4
+		And Doy click en pulsar para ver instancia 5
 		When Espero 10 segundos
 		#PROCESO: APROBAR SOLICITUD
 		When Doy click en aprobar solicitud de credito
-		When Doy click en reclamar tarea 4
+		When Doy click en reclamar tarea 5
 		
 	  #SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-		When Validar que el menu de aprobar obs sea el inicial 4
+		When Validar que el menu de aprobar obs sea el inicial 5
 	  
 	  #SECCION: OBSERVACIONES
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "21 Observaciones"
 	  When Doy click en boton actualizar
-	  When Doy click en boton continuar 4
+	  When Doy click en boton continuar 5
 	  
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "23 Datos de Referidos"
-	  When Doy click en boton continuar 4
+	  When Doy click en boton continuar 5
 
 	  When Espero 10 segundos
 	  When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  When Cambio de iframe a "22 Oferta Comercial"
 	  When Espero 10 segundos
-	  When Verifico CME del cliente 4
+	  When Verifico CME del cliente 5
 	  When Doy click en seguro desgravamen sin devolucion
 	  #When Acepto seguro desgravamen sin devolucion
-	  When Doy click en simular 4
-	  When Doy click en el boton aprobar 4
+	  When Doy click en simular 5
+	  When Doy click en el boton aprobar 5
 	  
  		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Cambio de iframe a "Resumen Solicitud"
-	  When Verifico que estemos en la pantalla resumen del credito 4
-	  When Verifico si existe error en consentimiento digital 4
-	  When Doy click en aceptar solicitud de credito 4
+	  When Verifico que estemos en la pantalla resumen del credito 5
+	  When Verifico si existe error en consentimiento digital 5
+	  When Doy click en aceptar solicitud de credito 5
 	  
 		When Cambio de iframe a default
 		When Cambio de iframe a "View Instance Details"
-		Then Verifico que la solicitud de credito haya sido aprobada correctamente 4
+		Then Verifico que la solicitud de credito haya sido aprobada correctamente 5
