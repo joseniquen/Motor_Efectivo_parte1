@@ -65,7 +65,7 @@ public class CotifedConfirmacionSolicitudSteps {
 		cotifedConfirmacionSolicitudPage.getDistritoTipoDesembolso(distrito).click();
 		cotifedConfirmacionSolicitudPage.getTiendaTipoDesembolso(tienda).click();
 		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,7 +77,7 @@ public class CotifedConfirmacionSolicitudSteps {
 		cotifedGeneralidadesPage.cargarDatos();
 		cotifedConfirmacionSolicitudPage.getEntidadTipoDesembolso(entidad).click();
 		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -88,7 +88,7 @@ public class CotifedConfirmacionSolicitudSteps {
 	public void ingresoNumTitular() {
 		cotifedConfirmacionSolicitudPage.getTitularTipoDesembolso().sendKeys(integracionStore.dni);
 		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -103,7 +103,7 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getCuentaTipoDesembolsoCci().sendKeys(cci);
 		}else {}
 		try {
-			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_6");
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
