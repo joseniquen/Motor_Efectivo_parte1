@@ -62,6 +62,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Selecciono estado civil aval "SOLTERO(A)"
 		And Selecciono pais de nacimiento aval "PERU"
 		And Selecciono pais de residencia aval "PERU"
+		When Verifico si existe error en consentimiento digital 2
 		And Ingreso celular principal aval "580458721"
 		And Ingreso celular secundario aval "423114987"
 		And Elijo e ingreso telefono fijo aval "LIMA" "1894651"
