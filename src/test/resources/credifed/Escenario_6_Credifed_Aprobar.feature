@@ -6,6 +6,12 @@ Feature: Escenario 6 - Como usuario quiero aprobar una solicitud de crédito en 
 		     #Contraseña credifed
 		     #instancia de proceso = Numero de solicitud
 		     #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
+		     
+		     #ORDEN DE EJECUCION DE LOS FEATURE PARA LOS CASOS CON EXCEPCIÓN:
+		     #Escenario_6_Credifed_Analizar.feature
+		     #Escenario_6_Credifed_Aprobar_obs.feature
+		     #Aprobar_Observaciones.feature
+		     #Escenario_6_Credifed_Aprobar.feature
       
   @web
   Scenario: CP006: Generar solicitud en Motor para Línea de producto Efectivo 
