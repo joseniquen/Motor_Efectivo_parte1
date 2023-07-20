@@ -6,6 +6,9 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		     #Contraseña credifed
 		     #instancia de proceso = Numero de solicitud
          #El número de solicitud lo puede visualizar en el archivo que está en la carpeta target
+		     #Agencia
+		     #Documento del titular
+		     #Numero de solicitud
 		     
 		     #ORDEN DE EJECUCION DE LOS FEATURE PARA LOS CASOS CON EXCEPCIÓN:
 		     #Escenario_4_Credifed_Analizar.feature
@@ -60,6 +63,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Selecciono estado civil aval "SOLTERO(A)"
 		And Selecciono pais de nacimiento aval "PERU"
 		And Selecciono pais de residencia aval "PERU"
+		When Verifico si existe error en consentimiento digital 2
 		And Ingreso celular principal aval "580458721"
 		And Ingreso celular secundario aval "423114987"
 		And Elijo e ingreso telefono fijo aval "LIMA" "1894651"

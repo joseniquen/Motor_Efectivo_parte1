@@ -36,35 +36,38 @@ public class CredifedGeneralidadesPage {
 	}
 	public void verificarAlertaRoja()
 	{
-		try {
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),10).click();
-			} 
-			if (SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),10).click();
-			}
-			if (SeleniumWaiters.findElement(driver,By.id("informacionPersonaAvalCV:displayConsultaDatosPersonales:Button1"),10).isDisplayed()) {
-				SeleniumWaiters.findElement(driver,By.id("informacionPersonaAvalCV:displayConsultaDatosPersonales:Button1"),10).click();
-			}
-			
-		} catch (Exception e) {
+		if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
+			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Aceptar']"),10).click();
+		} 	
+		else {
 			System.out.println("No salió error en alerta popup");
 		}
+		
+	/*if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:dialogConsentimiento:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-informacionPersonalTitularCV:displayEDP:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-AprobacionCreditoCV1:displayMallaCrediticiaSC:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-InformacionDomiciliariaCV:DisplayServiceErrorCV1:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-RegistroReferenciasCV1:minRefTelfErrorCV:Button1"),20).click();
+	} 
+	if (SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("button-button-ResumenSolicitudCV1:DisplayServiceErrorCV1:Button1"),20).click();
+	}
+	if (SeleniumWaiters.findElement(driver,By.id("informacionPersonaAvalCV:displayConsultaDatosPersonales:Button1"),20).isDisplayed()) {
+		SeleniumWaiters.findElement(driver,By.id("informacionPersonaAvalCV:displayConsultaDatosPersonales:Button1"),20).click();
+	}*/
+		
 	}
 	public void verificarErrorEjecutarServicioDireccion()
 	{

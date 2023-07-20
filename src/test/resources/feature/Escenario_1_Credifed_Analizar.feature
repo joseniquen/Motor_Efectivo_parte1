@@ -1,5 +1,5 @@
 #Author: ychiroque - jniquen
-Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en BPM
+Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en BPM
 
 				 #Modificar obligatoriamente los siguientes inputs:
 		     #Usuario credifed
@@ -9,35 +9,31 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		     #Agencia
 		     #Documento del titular
 		     #Numero de solicitud
-		     
-		     #ORDEN DE EJECUCION DE LOS FEATURE PARA LOS CASOS CON EXCEPCIÓN:
-		     #Escenario_4_Credifed_Analizar.feature
-		     #Escenario_4_Credifed_Analizar_Aval.feature
-		     #Escenario_4_Credifed_Aprobar_obs.feature
-		     #Aprobar_Observaciones.feature
-		     #Escenario_4_Credifed_Aprobar.feature
       
   @web
-  Scenario: CP004: Generar solicitud en Motor para Línea de producto  Efectivo
-                   - Sin llenado de datos adicionales 
-                   - Sin seguros > a 78 años 
-                   - Abono en cuentas de ahorro titular 
-                   - Sin periodo de gracia y Desembolsar en BT
+  Scenario: CP001: Generar solicitud en Motor para Línea de producto  Efectivo 
+				  				- Con llenado de datos adicionales 
+				  				- Con seguros optativos 
+				  				- Desembolso efectivo en tienda vendedor 
+				  				- Plan A Desgravamen SDev 
+				  				- Sin periodo de gracia y Desembolsar en BT
 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Julio.2023'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Sisepuede.2023'
 		And Doy click en boton continuar de bpm 1
 		
 		#SECCION: DASHBOARD
+		When Espero 5 segundos
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20572753"
+		When Ingreso instancia de proceso "20572807"
 		And Doy click en pulsar para ver instancia 1
+		When Espero 10 segundos
 		When Valido datos de la solicitud de credito 1
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |12541944   |EFECTIVO      |20572753     |
+		|CHICLAYO   |17273200   |EFECTIVO      |20572807     |
 		When Doy click en analizar solicitud de credito 1
 		When Doy click en reclamar tarea 1
 		
@@ -45,7 +41,6 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		#SECCION: DATOS DEL TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-		When Verifico si existe error en consentimiento digital 1
 		When Validar que el menu de analizar sea el inicial 1
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
@@ -53,7 +48,6 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	  #Temporal
 		When Verifico si existe error en filtro evaluar personas 1
 		#Temporal
-		And Espero 5 segundos
 	  When Verifico si existe error en consentimiento digital 1
 		When Doy click en boton editar 1
 		When Selecciono tipo de venta "RECEPTIVA"
@@ -89,6 +83,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso division "Sin division"
 	 	And Ingreso sub division "Sin sub division"
 	 	And Ingreso interior 1 "Sin interior"
+	 	
 	 	#And Doy click en ubicar mapa
 	 	#Temporal
 	 	#When Verifico si existe error en ejecución de servicio
@@ -97,9 +92,6 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 	  #And Cambio de iframe a default
 	 	#And Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  #And Cambio de iframe a "08 Información Domiciliaria Titular"
-	  #Temporal
-	 	#When Verifico si existe error en ejecución de servicio
-	 	#Temporal
 	 	And Selecciono tipo de referencia "FRENTE A"
 	 	And Ingreso la referencia 1 "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos 1
@@ -164,4 +156,19 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Acepto para sobreescribir datos originales 1
 		And Verifico si existe error en consentimiento digital 1
 		And Doy click en boton continuar 1
-	  
+		
+		#SECCION: REFERENCIAS TELEFONICAS
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "19 Referencias Telefónicas"
+	  #Informacion referencias telefonicas
+	  And Verifico si existe error en referencias telefonicas 1
+	  And Doy click en agregar nueva referencia 1
+	  And Creo referencia telefonica 1
+		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
+		|AMIGO      |LIMA      |1236547  |654987312|Juan    |Perez|
+		Then Doy click en boton continuar 1
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+	  When Cambio de iframe a "20 Validación Requisitos"
+	  Then Continuo a aprobacion de la solicitud 1
