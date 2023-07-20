@@ -45,9 +45,6 @@ Feature: Escenario 1 - Como usuario quiero analizar una solicitud de crédito en
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
-	  #Temporal
-		When Verifico si existe error en filtro evaluar personas 1
-		#Temporal
 	  When Verifico si existe error en consentimiento digital 1
 		When Doy click en boton editar 1
 		When Selecciono tipo de venta "RECEPTIVA"

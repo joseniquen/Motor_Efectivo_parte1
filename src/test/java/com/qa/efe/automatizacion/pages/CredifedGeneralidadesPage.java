@@ -36,8 +36,8 @@ public class CredifedGeneralidadesPage {
 	}
 	public void verificarAlertaRoja()
 	{
-		if (SeleniumWaiters.findElement(driver,By.id("button-button-InformacionAdicionalLaboralCV2:displayFiltroFinanciero:Button1"),10).isDisplayed()) {
-			SeleniumWaiters.findElement(driver,By.xpath("//button[text()='Aceptar']"),10).click();
+		if (SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Error en Ejecución de Servicio')]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div[@style='display: block;']"),10).isDisplayed()) {
+			SeleniumWaiters.findElement(driver,By.xpath("//button[contains(.,'Aceptar')]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div[@style='display: block;']//button[contains(.,'Aceptar')]"),10).click();
 		} 	
 		else {
 			System.out.println("No salió error en alerta popup");
