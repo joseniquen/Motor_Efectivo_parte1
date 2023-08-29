@@ -37,7 +37,7 @@ public class CredifedGeneralidadesSteps {
 		driver.switchTo().defaultContent();
 	}
 	
-	@When("Verifico si existe error en consentimiento digital {int}")
+	@When("Verifico alerta de servicio {int}")
 	public void veriricarConsentimientoDigital(int a)
 	{
 		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
@@ -50,61 +50,7 @@ public class CredifedGeneralidadesSteps {
 			e.printStackTrace();
 		}	
 	}
-	
-	
-	@When("Verifico si existe error en normalizar direccion")
-	public void verificoErrorNormalizarDireccion()
-	{
-		credifedGeneralidadesPage.verificarErrorNormalizarDireccion();
-	}
-	
-	@When("Verifico si existe error en ejecución de servicio")
-	public void veriricarErrorEjecucionServicio()
-	{
-		credifedGeneralidadesPage.verificarErrorEjecutarServicioDireccion();
-	}
-	
-	@When("Verifico si existe error en filtro evaluar domicilio {int}")
-	public void veriricarErrorFiltroEvaluarDomicilio(int a)
-	{
-		credifedGeneralidadesPage.verificarAlertaRoja();
-		try {
-			credifedGeneralidadesPage.captura_pantalla(a);	} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	@When("Verifico si existe error en referencias telefonicas {int}")
-	public void veriricoErrorReferenciasTelefonicas(int a)
-	{
-		credifedGeneralidadesPage.verificarErrorReferenciasTelefonicas();
-		try {
-			credifedGeneralidadesPage.captura_pantalla(a);	} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	@When("Verifico si existe error en filtro evaluacion financiera")
-	public void verificoErrorFiltroEvaluacionFinanciera()
-	{
-		credifedGeneralidadesPage.verificarErrorFiltroInformacionFinanciera();
-	}
-	
-	@When("Verifico si existe error en filtro evaluar personas {int}")
-	public void verificarErrorFiltroEvaluarPersonas(int a)
-	{
-		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
-		credifedGeneralidadesPage.verificarAlertaRoja();
-		try {
-			credifedGeneralidadesPage.captura_pantalla(a);		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	
+		
 	@When("Doy click en guardar datos {int}")
 	public void clickBtnGuardar(int a)
 	{
