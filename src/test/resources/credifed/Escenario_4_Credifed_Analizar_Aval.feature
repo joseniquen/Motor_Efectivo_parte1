@@ -44,16 +44,16 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		#SECCION: DATOS DEL TITULAR
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
-		When Verifico si existe error en consentimiento digital 2
+		When Verifico alerta de servicio 2
 		When Validar que el menu de analizar aval sea el inicial 2
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "15 Datos Aval"
 	  #Temporal
-		When Verifico si existe error en filtro evaluar personas 2
+		When Verifico alerta de servicio 2
 		#Temporal
 		And Espero 5 segundos
-	  When Verifico si existe error en consentimiento digital 2
+	  When Verifico alerta de servicio 2
 		#SECCION: DATOS AVAL
 	  When Doy click en boton editar 2
 	  When Selecciono tipo de documento aval "D.N.I."
@@ -63,7 +63,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Selecciono estado civil aval "SOLTERO(A)"
 		And Selecciono pais de nacimiento aval "PERU"
 		And Selecciono pais de residencia aval "PERU"
-		When Verifico si existe error en consentimiento digital 2
+		When Verifico alerta de servicio 2
 		And Ingreso celular principal aval "580458721"
 		And Ingreso celular secundario aval "423114987"
 		And Elijo e ingreso telefono fijo aval "LIMA" "1894651"
@@ -116,7 +116,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		And Reviso el detalle de deudas subir sustento aval
 		When Doy click en guardar datos 2
 		And Acepto para sobreescribir datos originales 2
-		And Verifico si existe error en consentimiento digital 1
+		And Verifico alerta de servicio 1
 		And Doy click en boton continuar 2
 	  
 	  #SECCION: INFORMACION LABORAL AVAL
@@ -157,7 +157,7 @@ Feature: Escenario 4 - Como usuario quiero analizar una solicitud de crédito en
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "19 Referencias Telefónicas"
 	  #Informacion referencias telefonicas
-	  And Verifico si existe error en referencias telefonicas 2
+	  And Verifico alerta de servicio 2
 	  And Doy click en agregar nueva referencia 2
 	  And Creo referencia telefonica 2
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|

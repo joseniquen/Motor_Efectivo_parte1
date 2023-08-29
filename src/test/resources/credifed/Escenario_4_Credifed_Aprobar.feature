@@ -69,7 +69,7 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 		When Cambio de iframe a "Resumen Solicitud"
 	  When Verifico que estemos en la pantalla resumen del credito 5
-	  When Verifico si existe error en consentimiento digital 5
+	  When Verifico alerta de servicio 5
 	  When Doy click en aceptar solicitud de credito 5
 	  
 		When Cambio de iframe a default

@@ -40,12 +40,12 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 	  #SECCION: VALIDACION REQUISITOS
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
-		When Verifico si existe error en consentimiento digital 3
+		When Verifico alerta de servicio 3
 		When Validar que el menu de aprobar sea el inicial 3
 		#When Cambio de iframe a default
 		#When Cambio de iframe a "Paso: Aprobar Solicitud de Crédito"
 	  #When Cambio de iframe a "07 Datos del Titular"
-	  When Verifico si existe error en consentimiento digital 3
+	  When Verifico alerta de servicio 3
 	  #When Me dirijo a la pestaña de "Validar Requisitos"
 
 	 	When Cambio de iframe a default

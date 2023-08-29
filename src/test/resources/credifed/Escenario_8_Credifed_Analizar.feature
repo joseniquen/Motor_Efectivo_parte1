@@ -44,9 +44,9 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"
 	  #Temporal
-		When Verifico si existe error en filtro evaluar personas 1
+		When Verifico alerta de servicio 1
 		#Temporal
-	  When Verifico si existe error en consentimiento digital 1
+	  When Verifico alerta de servicio 1
 		When Doy click en boton editar 1
 		When Selecciono tipo de venta "RECEPTIVA"
 		And Selecciono condicion especial "SIN TESTIGO A RUEGO"
@@ -59,7 +59,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 		And Ingreso correo electronico 1 "example_1@gmail.com"
 		And Doy click en guardar datos 1
 		And Acepto para sobreescribir datos originales 1
-		And Verifico si existe error en consentimiento digital 1
+		And Verifico alerta de servicio 1
 		And Doy click en boton continuar 1
 
 		#SECCION: INFORMACION DOMICILIARIA TITULAR
@@ -67,7 +67,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "08 Información Domiciliaria Titular"
 	  #Temporal
-	  When Verifico si existe error en filtro evaluar domicilio 1
+	  When Verifico alerta de servicio 1
 	  #Temporal
 	  When Doy click en boton editar 1
 	  #Informacion domiciliaria de titular
@@ -93,7 +93,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso la referencia 1 "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos 1
 		And Acepto para sobreescribir datos originales 1
-		And Verifico si existe error en consentimiento digital 1
+		And Verifico alerta de servicio 1
 		And Doy click en boton continuar 1
 		
 		#SECCION: INFORMACION FINANCIERA TITULAR
@@ -110,11 +110,11 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 		And Espero 1 segundos
 		And Reviso el detalle de deudas subir sustento 1
 		#Temporal
-	 	When Verifico si existe error en filtro evaluacion financiera
+	 	When Verifico alerta de servicio 1
 	 	#Temporal
 		When Doy click en guardar datos 1
 		And Acepto para sobreescribir datos originales 1
-		And Verifico si existe error en consentimiento digital 1 
+		And Verifico alerta de servicio 1 
 		And Doy click en boton continuar 1
 		
 		#SECCION: INFORMACION LABORAL TITULAR
@@ -151,7 +151,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 	 	And Ingreso la referencia laboral 1 "PARQUE DE LA AMISTAD"
 	 	And Doy click en guardar datos 1
 		And Acepto para sobreescribir datos originales 1
-		And Verifico si existe error en consentimiento digital 1
+		And Verifico alerta de servicio 1
 		And Doy click en boton continuar 1
 		
 		#SECCION: REFERENCIAS TELEFONICAS
@@ -159,7 +159,7 @@ Feature: Escenario 8 - Como usuario quiero analizar una solicitud de crédito en
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "19 Referencias Telefónicas"
 	  #Informacion referencias telefonicas
-	  And Verifico si existe error en referencias telefonicas 1
+	  And Verifico alerta de servicio 1
 	  And Doy click en agregar nueva referencia 1
 	  And Creo referencia telefonica 1
 		|parentesco	|lugar_telf|telefono |celular  |nombres |apellidos|
