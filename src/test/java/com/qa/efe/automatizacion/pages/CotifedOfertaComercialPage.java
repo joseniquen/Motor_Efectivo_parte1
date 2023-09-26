@@ -154,6 +154,12 @@ public class CotifedOfertaComercialPage {
 	{
 		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//button[contains(.,'CONTINUAR')]"),10);	
 	}
+	public WebElement getOpcionFlechas()
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//p[text()='TITULAR - REGISTRAR INGRESO']/parent::div/button"),40);
+		//return  SeleniumWaiters.findElement(driver,By.xpath("/html/body/app-root/app-modules/app-products/div[2]/app-register-income/div/div[1]/div/button/img[1]"),5);	
+
+	}
 	public WebElement getSituacion()
 	{
 		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Perfil/Situación*']/parent::div//select"),5);

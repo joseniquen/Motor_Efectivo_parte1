@@ -34,14 +34,21 @@ public class CredifedGeneralidadesPage {
 	public void iframeDefecto() {
 		driver.switchTo().defaultContent();
 	}
-	public void verificarAlertaRoja()
+	public boolean verificarAlertaRoja()
 	{
 		if (SeleniumWaiters.findElement(driver,By.xpath("//span[contains(.,'Error en Ejecución de Servicio')]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div[@style='display: block;']"),10).isDisplayed()) {
-			SeleniumWaiters.findElement(driver,By.xpath("//button[contains(.,'Aceptar')]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div[@style='display: block;']//button[contains(.,'Aceptar')]"),10).click();
-		} 	
-		else {
-			System.out.println("No salió error en alerta popup");
+			System.out.println("true");
+			return true;
+		}else {
+			System.out.println("false");
+			return false;
 		}
+			
+	}
+	public List<WebElement> AceptarAlertaRoja()
+	{
+			return driver.findElements(By.xpath("//button[contains(.,'Aceptar')]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div[@style='display: block;']//button[contains(.,'Aceptar')]"));
+		
 	}
 	public WebElement clickBtnGuardar()
 	{

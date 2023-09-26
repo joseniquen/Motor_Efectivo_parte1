@@ -21,14 +21,14 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
     When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'XXXXXX'
+		And Ingreso mi contraseña 'Lologramos.2023'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "43226359"
+		And Ingreso numero de documento "48057304"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -78,10 +78,12 @@ Feature: Escenario 6 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular selecciono tipo de vivienda "PROPIA"
 	 And Titular ingreso antiguedad domicialiaria en años "45"
 	 And Titular ingreso antiguedad domicialiaria en meses "11"
-	 And Titular ingreso cantidad a solicitar "8000"
+	  And Titular ingreso situacion "FORMAL - DEPENDIENTE"
+   And Titular ingreso ocupacion "ABOGADO"
+	 And Titular ingreso cantidad a solicitar "2000"
 	 And Titular selecciono fecha de pago "5 de cada mes"
 	 And Doy click en el boton simular
-	 When Elijo campaña "CAMPANHA EFECTIVO COLABORADOR" con plazo "24 meses"
+	 When Elijo campaña "CAMP_EMP_FAP_EFECTIVO" con plazo "24 meses"
 	 And Doy click en el boton continuar
 
 	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD

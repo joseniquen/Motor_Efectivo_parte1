@@ -21,22 +21,25 @@ Feature: Escenario 9 - Como usuario quiero analizar una solicitud de crédito en
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'XXXXXX'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Lologramos.2023'
 		And Doy click en boton continuar de bpm 1
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "10854441"
+		When Ingreso instancia de proceso "20578205"
 		And Doy click en pulsar para ver instancia 1
 		When Valido datos de la solicitud de credito 1
 		|agencia 		|doc_titular|linea_producto|nro_solicitud|
-		|CHICLAYO   |04645301   |EFECTIVO      |10854441     |
+		|CHICLAYO   |29490574   |EFECTIVO      |20578205     |
 		When Doy click en analizar solicitud de credito 1
 		When Doy click en reclamar tarea 1
 		
 		#PROCESO: ANALIZAR SOLICITUD
 		#SECCION: DATOS DEL TITULAR
+		When Cambio de iframe a default
+		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
+		When Validar que el menu de analizar sea el inicial 1
 		When Cambio de iframe a default
 		When Cambio de iframe a "Paso: Analizar Solicitud de Crédito"
 	  When Cambio de iframe a "07 Datos del Titular"

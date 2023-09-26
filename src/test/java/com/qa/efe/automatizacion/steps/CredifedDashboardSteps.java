@@ -33,8 +33,18 @@ public class CredifedDashboardSteps {
 	@When("Doy click en procesos")
 	public void doyClickProcesos()
 	{
-		credifedDashboardPage.clickProcesos().click();		
-	}
+		try {
+			credifedDashboardPage.clickMostarmas().click();	
+
+		} catch (Exception e) {
+			credifedDashboardPage.clickMostarmasIN().click();	
+		}
+		try {
+			credifedDashboardPage.clickProcesos().click();		
+
+		} catch (Exception e) {
+			credifedDashboardPage.clickProcesosIN().click();		
+		}	}
 	
 	@When("Ingreso instancia de proceso {string}")
 	public void ingresoInstanciaProceso(String instancia)

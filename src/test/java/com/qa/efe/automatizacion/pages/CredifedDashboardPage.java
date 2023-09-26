@@ -19,7 +19,19 @@ public class CredifedDashboardPage {
 	
 	public WebElement clickProcesos()
 	{
-		return SeleniumWaiters.findElement(driver,By.xpath("//div/div[@id='dashboard-menu-item-2015.13335']"),10);
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Procesos']"),10);
+	}
+	public WebElement clickProcesosIN()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[@title='Processes']"),10);
+	}
+	public WebElement clickMostarmas()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[contains(.,'Mostrar más...')]"),10);
+	}
+	public WebElement clickMostarmasIN()
+	{
+		return SeleniumWaiters.findElement(driver,By.xpath("//a[contains(.,'Show more...')]"),10);
 	}
 	public WebElement ingresarProceso()
 	{

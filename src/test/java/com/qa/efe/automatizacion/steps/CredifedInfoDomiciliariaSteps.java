@@ -38,8 +38,14 @@ public class CredifedInfoDomiciliariaSteps {
 	@When("Selecciono provincia {string}")
 	public void seleccionoProvincia(String opcion)
 	{
-		credifedInfoDomiciliariaPage.selectProvincia(opcion).click();
-		integracionStore.provinciaDomTitular=opcion;
+		try {
+			credifedInfoDomiciliariaPage.selectProvincia(opcion).click();
+			integracionStore.provinciaDomTitular=opcion;
+		} catch (Exception e) {
+			SeleniumWaiters.waitSeconds(10);
+			credifedInfoDomiciliariaPage.selectProvincia(opcion).click();
+			integracionStore.provinciaDomTitular=opcion;		}
+		
 	}
 	
 	@When("Selecciono distrito {int} {string}")

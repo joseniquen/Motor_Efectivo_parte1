@@ -48,7 +48,7 @@ public class CredifedObservacionesSteps {
 	
 	@When("Selecciono estado {string} e ingreso comentario aprobador {string}")
 	public void seleccionoEstadoIngresoComentarioAprobador(String estado, String comentario) {
-		SeleniumWaiters.waitSeconds(3);
+		SeleniumWaiters.waitSeconds(8);
 		credifedObservacionesPage.scrollAprobacionExcepcion();
 		SeleniumWaiters.waitSeconds(3);
 		credifedObservacionesPage.estadoExcepcion(estado).click();

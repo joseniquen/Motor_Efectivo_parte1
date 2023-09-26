@@ -215,17 +215,27 @@ public class CredifedOfertaComercialSteps {
 	@When("Verifico CME del cliente {int}")
 	public void verificoCmeCliente(int a)
 	{
-		try {
-			credifedOfertaComercialPage.getBtnCmeCliente().click();
-		} catch (Exception e) {
-			System.out.print("No salió alerta CME");
-		}
-		try {
-			credifedGeneralidadesPage.captura_pantalla(a);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
+				SeleniumWaiters.waitSeconds(4);
+				int i=credifedGeneralidadesPage.AceptarAlertaRoja().size()-1;
+				System.out.println("i"+i);
+				try {
+					do {
+						System.out.println("antes click alerta");
+						credifedGeneralidadesPage.AceptarAlertaRoja().get(i).click();
+						i=i-1;
+						System.out.println("click alerta");
+						SeleniumWaiters.waitSeconds(5);
+					} while (credifedGeneralidadesPage.verificarAlertaRoja()==true);
+				} catch (Exception e) {
+				}
+				
+				
+				try {
+					credifedGeneralidadesPage.captura_pantalla(a);		} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
 	}
 	
 }

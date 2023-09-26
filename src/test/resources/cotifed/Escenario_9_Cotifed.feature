@@ -20,15 +20,15 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'EXT_JNIQUEN'
-		And Ingreso mi contraseña 'XXXXXX'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Lologramos.2023'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "04645301"
+		And Ingreso numero de documento "29490574"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -89,7 +89,7 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso cantidad a solicitar "4000"
 	 And Titular selecciono fecha de pago "15 de cada mes"
 	 And Doy click en el boton simular
-	 When Elijo campaña "CREDIEFECTIVO REENGANCHE" con plazo "6 meses"
+	 When Elijo campaña "CREDIEFECTIVO REENGANCHE" con plazo "12 meses"
 	 And Doy click en el boton continuar
 
 	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
@@ -111,7 +111,7 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion domiciliaria "LIMA"
    And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion domiciliaria
+   #And Doy click en confirmar geopoint de informacion domiciliaria
    And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
    And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
    #Laboral
@@ -124,7 +124,7 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Selecciono provincia de informacion laboral "LIMA"
    And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
    And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   And Doy click en confirmar geopoint de informacion laboral
+   #And Doy click en confirmar geopoint de informacion laboral
    And Selecciono referencia de informacion laboral "PASANDO DEL"
    And Ingreso descripcion de informacion laboral "Parque de la amistad"
 	 

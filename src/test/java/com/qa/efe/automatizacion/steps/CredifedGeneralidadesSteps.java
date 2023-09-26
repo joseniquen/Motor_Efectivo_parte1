@@ -41,11 +41,23 @@ public class CredifedGeneralidadesSteps {
 	public void veriricarConsentimientoDigital(int a)
 	{
 		//funcion para revisar si sale algun popup de consentimiento, de domicilio, de info laboral, de malla, etc
-		credifedGeneralidadesPage.verificarAlertaRoja();
+		SeleniumWaiters.waitSeconds(4);
+		int i=credifedGeneralidadesPage.AceptarAlertaRoja().size()-1;
+		System.out.println("i"+i);
 		try {
-			 
-			 credifedGeneralidadesPage.captura_pantalla(a);
-		    	} catch (IOException e) {
+			do {
+				System.out.println("antes click alerta");
+				credifedGeneralidadesPage.AceptarAlertaRoja().get(i).click();
+				i=i-1;
+				System.out.println("click alerta");
+				SeleniumWaiters.waitSeconds(5);
+			} while (credifedGeneralidadesPage.verificarAlertaRoja()==true);
+		} catch (Exception e) {
+		}
+		
+		
+		try {
+			credifedGeneralidadesPage.captura_pantalla(a);		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
@@ -160,13 +172,13 @@ public class CredifedGeneralidadesSteps {
 			driver.switchTo().frame(credifedGeneralidadesPage.validarMenuInicialIframe().get(i-1));
 			veriricarConsentimientoDigital(a);
 			credifedGeneralidadesPage.clickMenuInicialAnalizar().click();
-		}
+		}	
 		try {
 			credifedGeneralidadesPage.captura_pantalla(a);
-			 } catch (IOException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}	
 	}
 	@When("Validar que el menu de aprobar obs sea el inicial {int}")
 	public void validarMenuInicialAnalizarAval(int a) {

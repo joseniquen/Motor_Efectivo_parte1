@@ -154,6 +154,8 @@ public class CotifedOfertaComercialSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		generalidadesPage.ClickenMenuBar();
+		generalidadesPage.cargarDatos();
 	}
 	
 	@And("Titular ingreso declarado {string}")
@@ -196,6 +198,14 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Titular ingreso situacion {string}")
 	public void titularIngresoSituacion(String situacion) {
+		SeleniumWaiters.waitSeconds(10);
+		try {
+			cotifedOfertaComercialPage.getOpcionFlechas().click();
+			System.out.println("aca1");
+		} catch (Exception e) {
+			cotifedOfertaComercialPage.getOpcionFlechas().click();
+			System.out.println("aca2");
+		}
 		if(cotifedOfertaComercialPage.getSituacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {
 				cotifedOfertaComercialPage.getSituacion().click();
@@ -235,7 +245,8 @@ public class CotifedOfertaComercialSteps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		generalidadesPage.cargarDatos();	
+		generalidadesPage.ClickenMenuBar();
+		generalidadesPage.cargarDatos();
 	}
 	
 	@And("Titular ingreso antiguedad laboral en años {string}")

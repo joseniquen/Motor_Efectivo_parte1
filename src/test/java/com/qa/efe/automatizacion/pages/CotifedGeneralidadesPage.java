@@ -76,7 +76,15 @@ public class CotifedGeneralidadesPage {
 	public void scrollTo(WebElement element) {
 		NavigationHelpers.scrollToElement(driver, element);
 	}
-	
+	public void ClickenMenuBar()
+	{
+		try {
+			SeleniumWaiters.findElement(driver,By.xpath("/html/body/app-root/app-modules/app-products"),10).click();
+		} catch (Exception e) {
+			System.out.println("No se dio click");
+		}
+		
+	}
 	public void cargarDatos() {
 		try {
 			while(Pantalla_Carga().size()!=0) {
