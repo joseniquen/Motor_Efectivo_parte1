@@ -63,6 +63,7 @@ Feature: Escenario 4 - Como usuario quiero aprobar una solicitud de crédito en 
 	  When Doy click en seguro desgravamen sin devolucion
 	  #When Acepto seguro desgravamen sin devolucion
 	  When Doy click en simular 5
+	  When Visualizo el resumen de la solicitud 5
 	  When Doy click en el boton aprobar 5
 	  
  		When Cambio de iframe a default

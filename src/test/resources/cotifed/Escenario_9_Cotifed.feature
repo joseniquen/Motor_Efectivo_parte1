@@ -20,15 +20,17 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'ychiroque'
-		And Ingreso mi contraseña 'Lologramos.2023'
+    When Ingreso mi usuario 'EXT_JNIQUEN'
+		And Ingreso mi contraseña 'Agosto.2023'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
+		#25562081
+		#72284972
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "29490574"
+		And Ingreso numero de documento "72284972"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -62,14 +64,14 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
    #SECCIÓN: OFERTA COMERCIAL
    When Valido que se recupero ingreso vigente
    And Valido seguros marcados
- 	 And Selecciono seguros
-	 |seguros|
+ 	 #And Selecciono seguros
+	 #|seguros|
 	 #|Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
-	 |Contigo Familia plan Básico|
+	 #|Contigo Familia plan Básico|
 	 #|Contigo Familia plan Plus|
 	 #|Accidentes Personales|
 	 #|Seguro Oncológico|
@@ -86,7 +88,7 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
    And Titular ingreso ocupacion "ABOGADO"
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
-	 And Titular ingreso cantidad a solicitar "4000"
+	 And Titular ingreso cantidad a solicitar "4500"
 	 And Titular selecciono fecha de pago "15 de cada mes"
 	 And Doy click en el boton simular
 	 When Elijo campaña "CREDIEFECTIVO REENGANCHE" con plazo "12 meses"
@@ -99,36 +101,11 @@ Feature: Escenario 9 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
-		   
-	 #SECCION: DATOS ADICIONALES   
-   And Doy click en el boton continuar datos adicionales
-   And Ingreso correo de datos principales "correo_prueba@gmail.com"
-   And Ingreso numero de celular de datos principales "924695269"
-   And Selecciono prefijo de datos principales "01-LIMA"
-   And Ingreso numero de telefono fijo de datos principales "454787"
-   #Domicilio
-   And Selecciono departamento de informacion domiciliaria "LIMA"
-   And Selecciono provincia de informacion domiciliaria "LIMA"
-   And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
-   #And Doy click en confirmar geopoint de informacion domiciliaria
-   And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
-   And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
-   #Laboral
-   And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
-   And Selecciono prefijo de informacion laboral "01-LIMA"
-   And Ingreso numero de telefono fijo de informacion laboral "754787"
-   And Ingreso celular de informacion laboral "974695869"
-   And Ingreso ruc de centro de informacion laboral "20605554114"
-   And Selecciono departamento de informacion laboral "LIMA"
-   And Selecciono provincia de informacion laboral "LIMA"
-   And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
-   And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
-   #And Doy click en confirmar geopoint de informacion laboral
-   And Selecciono referencia de informacion laboral "PASANDO DEL"
-   And Ingreso descripcion de informacion laboral "Parque de la amistad"
 	 
 	 #SECCION: OBTENER NUMERO DE SOLICITUD
 	 And Obtengo el numero de solicitud 
+	 And Ingresar datos vendedor
+	 	   | tipo_doc  | num_doc    | nombres   | apellidos    | 
+		   | D.N.I.    | 70224048   | jose      | lopez        |
 	 And Doy click en el boton solicitar
 	 Then Termino la solicitud

@@ -198,13 +198,14 @@ public class CotifedOfertaComercialSteps {
 	
 	@And("Titular ingreso situacion {string}")
 	public void titularIngresoSituacion(String situacion) {
+		generalidadesPage.cargarDatos();	
 		SeleniumWaiters.waitSeconds(10);
 		try {
-			cotifedOfertaComercialPage.getOpcionFlechas().click();
+			//cotifedOfertaComercialPage.getOpcionFlechas().click();
 			System.out.println("aca1");
 		} catch (Exception e) {
-			cotifedOfertaComercialPage.getOpcionFlechas().click();
-			System.out.println("aca2");
+			//cotifedOfertaComercialPage.getOpcionFlechas().click();
+			System.out.println("no levantar boton");
 		}
 		if(cotifedOfertaComercialPage.getSituacionExiste().size()!=0) {
 			if (cotifedOfertaComercialPage.getSituacion().isEnabled()) {

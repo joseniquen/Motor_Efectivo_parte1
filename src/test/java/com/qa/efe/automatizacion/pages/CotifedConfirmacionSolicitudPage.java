@@ -164,4 +164,25 @@ public class CotifedConfirmacionSolicitudPage {
 		WebElement element=driver.findElement(By.xpath("//h3[contains(.,'Referencias Telefónicas')]"));
 		cotifedGeneralidadesPage.scrollTo(element);
 	}
+	public WebElement getTipoDocVendedor()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div//select"),10);
+	}
+	public WebElement getOpcionTipoDocVendedor(String parentesco)
+	{
+		return  SeleniumWaiters.findClickableElement(driver,By.xpath("//div/label[text()='Tipo de documento*']/parent::div//select/option[contains(.,'"+parentesco+"')]"),10);	
+	}
+	public WebElement getNumDocVendedor()
+	{
+		return  SeleniumWaiters.findElement(driver,By.id("numberDocVendedor"),10);
+	}
+	public WebElement getNombresVendedor()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Nombres']/parent::div/input[@formcontrolname='nombresVendedor']"),10);
+	}
+	public WebElement getApellidosVendedor()
+	{
+		return  SeleniumWaiters.findElement(driver,By.xpath("//div/label[text()='Apellidos']/parent::div/input[@formcontrolname='apellidosVendedor']"),10);
+	}
+	
 }

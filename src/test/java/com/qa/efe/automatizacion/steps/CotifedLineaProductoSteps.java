@@ -23,6 +23,13 @@ public class CotifedLineaProductoSteps {
 	public void selecciono_categoria_linea_producto(String lineaProducto, String opcion) {
 		cotifedLineaProductoPage.getCategoriaLineaProducto(lineaProducto).click();
 		cotifedLineaProductoPage.getOpcionCategoriaLineaProducto(lineaProducto,opcion).click();
+		generalidadesPage.cargarDatos();
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@When("Selecciono linea de producto {string}")

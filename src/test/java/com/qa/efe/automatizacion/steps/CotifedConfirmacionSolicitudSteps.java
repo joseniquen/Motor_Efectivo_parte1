@@ -240,6 +240,7 @@ public class CotifedConfirmacionSolicitudSteps {
 			cotifedConfirmacionSolicitudPage.getTxtCelular().sendKeys(item.get("celular"));
 			cotifedConfirmacionSolicitudPage.getBtnAgregar().click();
 			SeleniumWaiters.waitSeconds(5);
+
 		}
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
@@ -272,6 +273,30 @@ public class CotifedConfirmacionSolicitudSteps {
 	@When("Valido la observación de la edad del titular")
 	public void observacionesTitular() {
 		System.out.println(cotifedConfirmacionSolicitudPage.getObservacionesTitular().getText());
+	}
+	
+	@When("Ingresar datos vendedor")
+	public void ingresoDatosVendedor(DataTable referencias) {
+		List<Map<String, String>> items = referencias.asMaps(String.class, String.class);
+		cotifedConfirmacionSolicitudPage.scrollReferencias();
+		for (int i = 0; i < items.size(); i++) {
+			Map<String, String> item = items.get(i);
+			cotifedConfirmacionSolicitudPage.getTipoDocVendedor().click();
+			cotifedConfirmacionSolicitudPage.getOpcionTipoDocVendedor(item.get("tipo_doc")).click();
+			cotifedConfirmacionSolicitudPage.getNumDocVendedor().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			cotifedConfirmacionSolicitudPage.getNumDocVendedor().sendKeys(item.get("num_doc"));
+			cotifedConfirmacionSolicitudPage.getNombresVendedor().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			cotifedConfirmacionSolicitudPage.getNombresVendedor().sendKeys(item.get("nombres"));
+			cotifedConfirmacionSolicitudPage.getApellidosVendedor().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			cotifedConfirmacionSolicitudPage.getApellidosVendedor().sendKeys(item.get("apellidos"));
+			SeleniumWaiters.waitSeconds(5);
+		}
+		try {
+			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Then("Termino la solicitud")

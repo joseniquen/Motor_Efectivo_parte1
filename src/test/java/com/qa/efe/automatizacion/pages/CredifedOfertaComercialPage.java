@@ -76,4 +76,10 @@ public class CredifedOfertaComercialPage {
 	public WebElement getBtnCmeCliente() {
 		return SeleniumWaiters.findElement(driver, By.xpath("//button[@id='modalalert-button-AprobacionCreditoCV1:mallaCrediticiaModal_Alert']"),15);
 	}
+	public WebElement detalleCredito() {
+		return SeleniumWaiters.findElement(driver, By.id("button-button-AprobacionCreditoCV1:detalleCreditoButton"),10);
+	}
+	public WebElement salirDetalleCredito() {
+		return SeleniumWaiters.findElement(driver, By.xpath("//span[contains(.,'Detalle Crédito')]/parent::div/div/div"),10);
+	}
 }

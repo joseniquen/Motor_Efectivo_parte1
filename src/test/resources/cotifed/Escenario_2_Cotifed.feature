@@ -120,7 +120,9 @@ Feature: Escenario 3 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Pedro   | LLanos    |  01-LIMA   | 454545        | 924695268|
-		
+	 And Ingresar datos vendedor
+ 	   | tipo_doc  | num_doc    | nombres   | apellidos    | 
+	   | D.N.I.    | 70224048   | jose      | lopez        |
 	 #SECCION: DATOS ADICIONALES
 	 #Titular   
 	 And Doy click en el boton continuar datos adicionales

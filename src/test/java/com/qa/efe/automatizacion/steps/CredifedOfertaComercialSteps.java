@@ -46,6 +46,21 @@ public class CredifedOfertaComercialSteps {
 		}
 	}
 	
+	@When("Visualizo el resumen de la solicitud {int}")
+	public void VisualizarResumenSolicitud(int a)
+	{
+		credifedOfertaComercialPage.detalleCredito().click();
+		SeleniumWaiters.waitSeconds(5);
+		try {
+			credifedGeneralidadesPage.captura_pantalla(a);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SeleniumWaiters.waitSeconds(5);
+		credifedOfertaComercialPage.salirDetalleCredito().click();
+		
+	}
 	@When("Doy click en el boton aprobar {int}")
 	public void clickBtnAprobar(int a)
 	{
