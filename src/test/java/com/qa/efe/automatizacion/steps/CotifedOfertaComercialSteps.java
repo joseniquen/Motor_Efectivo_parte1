@@ -301,10 +301,16 @@ public class CotifedOfertaComercialSteps {
 	}
 	
 	@And("Titular selecciono fecha de pago {string}")
-	public void titularFechaPago(String fechaPago) {
+	public void titularFechaPago(String fechaPago) throws IOException {
 		SeleniumWaiters.waitSeconds(6);
-		cotifedOfertaComercialPage.getCbxFechaPago().click();
-		cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();
+		
+		try {
+			cotifedOfertaComercialPage.getCbxFechaPago().click();
+			cotifedOfertaComercialPage.getOpcionFechaPago(fechaPago).click();			
+		} catch (Exception e) {
+			cotifedOfertaComercialPage.getCbxFechaPagos().click();
+			cotifedOfertaComercialPage.getOpcionFechaPagos(fechaPago).click();
+		}
 		try {
 			generalidadesPage.captura_pantalla_cotifed("target", "cotifed captura_");
 		} catch (IOException e) {
