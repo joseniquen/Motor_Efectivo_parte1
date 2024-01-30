@@ -20,15 +20,15 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
   	
   	#SECCIÓN: LOGIN			
     Given Ingreso a la pagina de cotifed
-    When Ingreso mi usuario 'EXT_JNIQUEN'
-		And Ingreso mi contraseña 'Noviembre.2023'
+    When Ingreso mi usuario 'ychiroque'
+		And Ingreso mi contraseña 'Logros.2024'
 		And Doy click en el boton ingresar
 		And Valido que no haya sesiones abiertas
 		
 		#SECCIÓN: FILTRO
 		When Selecciono tienda "CHICLAYO" 
 		And Selecciono Tipo de documento "D.N.I."
-		And Ingreso numero de documento "75238000"
+		And Ingreso numero de documento "12363000"
 		And Ingreso correo "correo_prueba@gmail.com"
 		And Ingreso numero celular "924695269"
 		When Doy click en filtrar
@@ -53,7 +53,7 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 			   	|       perfil            |  ocupacion  | ingreso | anti_anios | anti_mese |
 			   	| FORMAL - INDEPENDIENTE  | FUNCIONARIO | 20000    |     10     |    11     |
 	 #SECCIÓN: LINEA DE PRODUCTO
-	 And Selecciono categoria de linea de producto "EFECTIVO" "Prestahorro 15%"
+	 And Selecciono categoria de linea de producto "EFECTIVO" "Flujo Normal"
 	 When Selecciono linea de producto "EFECTIVO"
 	 And Confirmo alerta
 	 When Doy click en continuar
@@ -63,13 +63,13 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
  	 And Valido seguros marcados
  	 And Selecciono seguros
 	 |seguros|
-	 #|Seguro de Salud 12 Meses|
+	 |Seguro de Salud 12 Meses|
 	 #|Seguro de Salud 24 Meses|
 	 #|Seguro de Salud 36 Meses|
 	 #|Seguro de Salud 48 Meses|
 	 #|Seguro de Salud 60 Meses|
 	 #|Contigo Familia plan Básico|
-	 |Contigo Familia plan Plus|
+	 #|Contigo Familia plan Plus|
 	 #|Accidentes Personales|
 	 #|Seguro Oncológico|
 	 And Titular selecciono estado civil "SOLTERO(A)"
@@ -86,16 +86,13 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 And Titular ingreso antiguedad laboral en años "50"
 	 And Titular ingreso antiguedad laboral en meses "4"
 	 And Titular ingreso cantidad a solicitar "3000"
-	 And Titular selecciono fecha de pago "10 de cada mes"
+	 And Titular selecciono fecha de pago "5 de cada mes"
 	 And Doy click en el boton simular
-	 When Elijo campaña "CAMP_PRESTAHORRO" con plazo "12 meses"
+	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
 
 	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
-	 And Selecciono la entidad tipo "EFECTIVA"
-	 And Ingreso numero titular
-	 And Ingreso numero de cuenta "19496386122018" y CCI "00219419638612201795"
-	 And Selecciono requisito y cargo archivo
+	 And Elijo tipo de desembolso "Desembolso de efectivo en tienda vendedor"
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Pedro   | LLanos    |  -LIMA   | 454545        | 924695268|
