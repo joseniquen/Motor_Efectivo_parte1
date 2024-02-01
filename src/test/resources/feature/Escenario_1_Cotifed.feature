@@ -91,14 +91,40 @@ Feature: Escenario 1 - Como usuario quiero ingresar un DNI de un cliente y gener
 	 When Elijo campaña "EFE_PROD_EFECTIVO_3" con plazo "12 meses"
 	 And Doy click en el boton continuar
 
-	 #SECCIÓN: CONFIRMACIÓN DE SOLICITUD
+	 #SECCIÓN: REFERENCIAS TELEFONICAS
 	 And Elijo tipo de desembolso "Desembolso de efectivo en tienda vendedor"
 	 And Ingreso referencias telefonicas
 	     | parentesco| nombres | apellidos | prefijo    | telefono_fijo | celular  |
 		   | AMIGO     | Pedro   | LLanos    |  -LIMA   | 454545        | 924695268|
-	#And Ingresar datos vendedor
- 	#   | tipo_doc  | num_doc    | nombres   | apellidos    | 
-	#   | D.N.I.    | 70224048   | jose      | lopez        |
+		   
+	 #SECCION: DATOS ADICIONALES
+	 #Titular   
+	 And Doy click en el boton continuar datos adicionales
+	 And Ingreso correo de datos principales "correo_prueba@gmail.com"
+	 And Ingreso numero de celular de datos principales "924695269"
+	 And Selecciono prefijo de datos principales "01-LIMA"
+	 And Ingreso numero de telefono fijo de datos principales "454787"
+	 #Titular Domicilio
+	 And Selecciono departamento de informacion domiciliaria "LIMA"
+	 And Selecciono provincia de informacion domiciliaria "LIMA"
+	 And Selecciono distrito de informacion domiciliaria "SANTIAGO DE SURCO"
+	 And Ingreso avenida de informacion domiciliaria "Av. Caminos del inca 2461"
+	 #And Doy click en confirmar geopoint de informacion domiciliaria
+	 And Selecciono referencia de informacion domiciliaria "PASANDO DEL"
+	 And Ingreso descripcion de informacion domiciliaria "Parque de la amistad"
+	 #Titular Laboral
+	 And Ingreso nombre centro de informacion laboral "FINANCIERA EFECTIVA S.A."
+	 And Selecciono prefijo de informacion laboral "01-LIMA"
+	 And Ingreso numero de telefono fijo de informacion laboral "754787"
+	 And Ingreso celular de informacion laboral "974695869"
+	 And Ingreso ruc de centro de informacion laboral "20605554114"
+	 And Selecciono departamento de informacion laboral "LIMA"
+	 And Selecciono provincia de informacion laboral "LIMA"
+	 And Selecciono distrito de informacion laboral "SANTIAGO DE SURCO"
+	 And Ingreso avenida de informacion laboral "Av. Caminos del inca 2461"
+	 #And Doy click en confirmar geopoint de informacion laboral
+	 And Selecciono referencia de informacion laboral "PASANDO DEL"
+	 And Ingreso descripcion de informacion laboral "Parque de la amistad"
 	 
 	 #SECCION: OBTENER NUMERO DE SOLICITUD
 	 And Obtengo el numero de solicitud 

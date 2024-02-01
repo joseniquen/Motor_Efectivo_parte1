@@ -18,13 +18,13 @@ Feature: Escenario 1 - Como usuario quiero aprobar una solicitud de crédito en 
     #SECCION: LOGIN		
     Given Ingreso a la pagina de credifed
     When Doy click en conexion segura 
-    And Ingreso mi usuario bpm 'EXT_JNIQUEN'
-		And Ingreso mi contraseña bpm 'Noviembre.2023'
+    And Ingreso mi usuario bpm 'ychiroque'
+		And Ingreso mi contraseña bpm 'Logros.2024'
 		And Doy click en boton continuar de bpm 5
 		
 		#SECCION: DASHBOARD
 		When Doy click en procesos
-		When Ingreso instancia de proceso "20589527"
+		When Ingreso instancia de proceso "20598006"
 		And Doy click en pulsar para ver instancia 5
 		When Espero 10 segundos
 	  #PROCESO: APROBAR SOLICITUD

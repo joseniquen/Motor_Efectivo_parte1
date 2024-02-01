@@ -49,6 +49,13 @@ public class CredifedOfertaComercialSteps {
 	@When("Visualizo el resumen de la solicitud {int}")
 	public void VisualizarResumenSolicitud(int a)
 	{
+		
+		try {
+			credifedGeneralidadesPage.captura_pantalla(a);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		credifedOfertaComercialPage.detalleCredito().click();
 		SeleniumWaiters.waitSeconds(5);
 		try {
